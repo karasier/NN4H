@@ -3,75 +3,75 @@
 module _____00003aT0( addr, data ); 
    input [3:0] addr;
    output [7:0] data;
-   reg [7:0] content  [31:0];
+   reg [31:0] mask  [31:0];
 
-   assign data = content[addr];
+   assign data = mask[addr];
 
    initial begin
 
-      content[32'd0] = 32'd0;
+      mask[32'd0] = 32'd0;
 
-      content[32'd1] = 32'd1;
+      mask[32'd1] = 32'd1;
 
-      content[32'd2] = 32'd6;
+      mask[32'd2] = 32'd3;
 
-      content[32'd3] = 32'd11;
+      mask[32'd3] = 32'd7;
 
-      content[32'd4] = 32'd20;
+      mask[32'd4] = 32'd15;
 
-      content[32'd5] = 32'd37;
+      mask[32'd5] = 32'd31;
 
-      content[32'd6] = 32'd70;
+      mask[32'd6] = 32'd63;
 
-      content[32'd7] = 32'd135;
+      mask[32'd7] = 32'd127;
 
-      content[32'd8] = 32'd264;
+      mask[32'd8] = 32'd255;
 
-      content[32'd9] = 32'd521;
+      mask[32'd9] = 32'd511;
 
-      content[32'd10] = 32'd1034;
+      mask[32'd10] = 32'd1023;
 
-      content[32'd11] = 32'd2059;
+      mask[32'd11] = 32'd2047;
 
-      content[32'd12] = 32'd4108;
+      mask[32'd12] = 32'd4095;
 
-      content[32'd13] = 32'd8205;
+      mask[32'd13] = 32'd8191;
 
-      content[32'd14] = 32'd16398;
+      mask[32'd14] = 32'd16383;
 
-      content[32'd15] = 32'd32783;
+      mask[32'd15] = 32'd32767;
 
-      content[32'd16] = 32'd65552;
+      mask[32'd16] = 32'd65535;
 
-      content[32'd17] = 32'd131089;
+      mask[32'd17] = 32'd131071;
 
-      content[32'd18] = 32'd262162;
+      mask[32'd18] = 32'd262143;
 
-      content[32'd19] = 32'd524307;
+      mask[32'd19] = 32'd524287;
 
-      content[32'd20] = 32'd1048596;
+      mask[32'd20] = 32'd1048575;
 
-      content[32'd21] = 32'd2097173;
+      mask[32'd21] = 32'd2097151;
 
-      content[32'd22] = 32'd4194326;
+      mask[32'd22] = 32'd4194303;
 
-      content[32'd23] = 32'd8388631;
+      mask[32'd23] = 32'd8388607;
 
-      content[32'd24] = 32'd16777240;
+      mask[32'd24] = 32'd16777215;
 
-      content[32'd25] = 32'd33554457;
+      mask[32'd25] = 32'd33554431;
 
-      content[32'd26] = 32'd67108890;
+      mask[32'd26] = 32'd67108863;
 
-      content[32'd27] = 32'd134217755;
+      mask[32'd27] = 32'd134217727;
 
-      content[32'd28] = 32'd268435484;
+      mask[32'd28] = 32'd268435455;
 
-      content[32'd29] = 32'd536870941;
+      mask[32'd29] = 32'd536870911;
 
-      content[32'd30] = 32'd1073741854;
+      mask[32'd30] = 32'd1073741823;
 
-      content[32'd31] = 32'd2147483679;
+      mask[32'd31] = 32'd2147483647;
 
    end
 
