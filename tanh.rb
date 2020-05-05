@@ -7,7 +7,7 @@ system :tanh do |width|
   size = 2**width
 
   [width].input :addr
-  [8].output :data
+  signed[8][8].output :data
 
   signed[8][size].constant content: (-size/2).upto(size/2).map(&func)
 

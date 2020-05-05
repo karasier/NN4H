@@ -2,7 +2,7 @@
 
 module _____00003aT0( addr, data ); 
    input [7:0] addr;
-   output [255:0] data;
+   output reg [7:0] data;
    reg signed[7:0] content  [255:0];
 
    assign data = content[addr];
