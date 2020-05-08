@@ -4,9 +4,8 @@ include HDLRuby::High::Std
 
 # System for testing the fixed point library.
 system :fix_test do
-
     # Declare three 4-bit integer part 4-bit fractional part
-    bit[3..0][3..0].inner :x,:y,:z
+    bit[3..0,3..0].inner :x,:y,:z
 
     # Performs calculation between then
     timed do
