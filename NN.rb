@@ -1,3 +1,7 @@
+# メモ
+# ・inputとoutputにfix_pointは使えない？
+# ・constantのビット幅がおかしい
+
 require "std/fixpoint.rb"
 
 include HDLRuby::High::Std
@@ -5,23 +9,23 @@ include HDLRuby::High::Std
 size = 2**8 # size of LUT
 
 system :tester do
-  [32].input :data
-  [32].output :tanh_output
+  signed[32].input :data
+  signed[32].output :tanh_output
 
-  [32].inner :data_prev,:data_next
+  signed[32].inner :base,:next_data
 
-  table(:tanh).(data[31..24],data_prev,data_next)
-  linear(:my_linear).(data[23..0],data_prev,data_next,tanh_output)
+  table(:tanh).(data[31..24],base,next_data)
+  calculator(:my_calculator).(data[23..0],base,next_data,tanh_output)
 end
 
 # compute tanh
-system :linear do
+system :calculator do
   [24].input :decimal_part
-  signed[32].input :data_prev,:data_next
+  signed[32].input :base,:next_data
 
-  [32].output :g
+  signed[32].output :estimated_value
 
-  g <= data_prev + (data_next - data_prev) * decimal_part
+  estimated_value <= base + (next_data - base) * decimal_part
 end
 
 # module of tanh LUT
@@ -31,26 +35,29 @@ system :table do
   [8].input :addr
 
   # value of LUT that corresponds to address
-  signed[8].output :data_prev,:data_next
+  signed[32].output :base,:next_data
 
   # a linear approximated tanh
-  signed[32][size].constant table_prev: approximate_tanh(size,:prev)
-  signed[32][size].constant table_next: approximate_tanh(size,:next)
+  signed[32][size].constant table: tanh(size)
 
-  data_prev <= table_prev[addr]
-  data_next <= table_next[addr]
+  base <= table[addr]
+  hif(addr == _b8b11111111) { next_data <= table[addr] }
+  helse { next_data <= table[addr+1] }
 end
 
-# make array for LUT
-def approximate_tanh(size,symbol)
-  th = size/4 # threshold
-  range = (-size/2).upto(size/2-1).to_a
+# Make an array consists of a point of tanh.
+# @param [Int] size the size of LUT
+# @return [Array] arr an array consists of a point of tanh
+def tanh(size)
+  func = proc{ |i| Math.tanh(i) }
+  range_array = Range.new(-size/2,size/2 - 1 ).to_a
+  range_array.map!{ |value| convert(value,-size/2.to_f,size/2.to_f,-3.0,3.0) }
+  table = range_array.map(&func).map{ |value| value }
+  return table
+end
 
-  if symbol == :next
-    arr = range.map{ |num| num.abs < th ? num : num >= 0 ? th : -th }
-  else
-    arr = range.map{ |num| num.abs < th ? num+1 : num >= 0 ? th : -th }
-  end
-
-  return arr
+# Convert value's range.
+# @param [float] value the value you want to convert range
+def convert(value,imin,imax,omin,omax)
+  return omin + (omax - omin) * ((value - imin) / (imax - imin))
 end
