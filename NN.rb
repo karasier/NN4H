@@ -38,11 +38,11 @@ system :table do
   [8].input :addr
 
   # value of LUT that corresponds to address
-  signed[32].output :base,:next_data
+  signed[8,24].output :base,:next_data
   
   # points of tanh
   # tanhの点を格納するLUT
-  signed[32][size].constant table: tanh(size)
+  signed[8,24][size].constant table: tanh(size)
 
   base <= table[addr]
 
