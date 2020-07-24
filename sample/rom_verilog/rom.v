@@ -1,22 +1,19 @@
 `timescale 1ps/1ps
 
-module _____00003aT0( addr, data0, data1, data2, data ); 
-   input [2:0] addr;
-   output [7:0] data0;
-   output [7:0] data1;
-   output [7:0] data2;
-   output [7:0] data;
-   reg [7:0] content  [2:0];
+module _____00003aT0( ); 
+   reg [1:0] addr;
+   wire [7:0] data;
+   wire [1:0] _00005e_0000600;
+   wire [7:0] _00005e_0000601;
 
-   assign data = content[addr];
+   _____00003aT0_00003a_00003amy__table_00003aT0 my__table(.addr(_00005e_0000600),.data(_00005e_0000601));
+   assign _00005e_0000600 = addr;
+
+   assign data = _00005e_0000601;
 
    initial begin
 
-      content[32'd0] = 32'd0;
-
-      content[32'd1] = 32'd1;
-
-      content[32'd2] = 32'd2;
+      addr = 2'b0;
 
    end
 

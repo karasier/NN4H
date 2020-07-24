@@ -16,19 +16,8 @@ system :tester do
   calculator(4, 28).(:my_calculator).(z[23..0],base,next_data,a)
 
   timed do
-    z <= _b0 * 32
+    z <= _b32b00000001010111111111101110000000
   end
-end
-
-# compute tanh
-# LUTの点の間の値を計算するモジュール
-system :calculator do |integer_width, decimal_width|
-  [decimal_width].input :decimal_part
-  signed[integer_width, decimal_width].input :base,:next_data
-
-  signed[integer_width, decimal_width].output :estimated_value
-
-  estimated_value <= base + (next_data - base) * decimal_part
 end
 
 # module of activation function's LUT
@@ -45,13 +34,24 @@ system :table do |addr_width, integer_width, decimal_width, activation_function|
   
   # points of tanh
   # tanhの点を格納するLUT
-  signed[integer_width, decimal_width].constant table: initialize_table(size, integer_width, decimal_width, activation_function)
+  signed[integer_width, decimal_width][size].constant table: initialize_table(size, integer_width, decimal_width, activation_function)
 
   base <= table[addr]
 
   # アドレスが255の場合、次のデータは最後のデータと等しい
   hif(addr == [_b1] * size.width ) { next_data <= table[addr] }
   helse { next_data <= table[addr+1] }
+end
+
+# compute tanh
+# LUTの点の間の値を計算するモジュール
+system :calculator do |integer_width, decimal_width|
+  [decimal_width].input :decimal_part
+  signed[integer_width, decimal_width].input :base,:next_data
+
+  signed[integer_width, decimal_width].output :estimated_value
+
+  estimated_value <= base + (next_data - base) * decimal_part
 end
 
 # Make an array consists of a point of tanh.
@@ -65,7 +65,7 @@ def initialize_table(size, integer_width, decimal_width, func)
   range_array.map!{ |value| convert(value,-size/2.to_f,size/2.to_f,-3.0,3.0) }
 
   # 活性化関数の適用
-  table = range_array.map(&func).map{ |value| value.q(integer_width, decimal_width) }
+  table = range_array.map(&func).map{ |value| value.to_fix(decimal_width) }
 
   # 配列を分割して順番入れ替え
   sliced = table.each_slice(size/2).to_a
