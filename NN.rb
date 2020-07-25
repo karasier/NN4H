@@ -65,7 +65,7 @@ def initialize_table(size, integer_width, decimal_width, func)
   range_array.map!{ |value| convert(value,-size/2.to_f,size/2.to_f,-3.0,3.0) }
 
   # 活性化関数の適用
-  table = range_array.map(&func).map{ |value| value.to_fix(decimal_width) }
+  table = range_array.map(&func).map{ |value| value.q(integer_width, decimal_width) }
 
   # 配列を分割して順番入れ替え
   sliced = table.each_slice(size/2).to_a

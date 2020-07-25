@@ -2,8 +2,8 @@
 
 module _____00003aT0_00003a_00003amy__table_00003aT0( addr, data ); 
    input [1:0] addr;
-   output [7:0] data;
-   reg [7:0] content  [3:0];
+   output [1:0] data;
+   reg [1:0] content  [3:0];
 
    assign data = content[addr];
 

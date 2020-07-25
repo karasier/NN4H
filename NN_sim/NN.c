@@ -3,8 +3,8 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__calculator_58_840_48317520();
-   makemy__table_58_840_46066780();
-   make_____58_840_43627720();
+   makemy__calculator_58_840_45426340();
+   makemy__table_58_840_45873540();
+   make_____58_840_43571960();
    hruby_sim_core(-1);
 }
