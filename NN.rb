@@ -16,7 +16,10 @@ system :tester do
   calculator(4, 28).(:my_calculator).(z[23..0],base,next_data,a)
 
   timed do
+    z <= _b32b0
+    !10.ps
     z <= _b32b00000001010111111111101110000000
+    !10.ps
   end
 end
 

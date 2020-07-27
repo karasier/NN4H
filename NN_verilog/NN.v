@@ -31,8 +31,21 @@ module _____00003aT0( );
 
    initial begin
 
+      z = 32'b0;
+
+      #10
+
       z = 32'b00000001010111111111101110000000;
 
+      #10
+
+      $finish;
+   end
+
+   initial begin
+      $monitor("z=%d, base=%d, next_data=%d, a=%d", z, base, next__data, a);
+      $dumpfile("NN.vcd");
+      $dumpvars(0,_____00003aT0);
    end
 
 endmodule

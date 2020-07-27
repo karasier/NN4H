@@ -1,0 +1,36 @@
+$date
+	Tue Jul 28 01:48:05 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module _____00003aT0 $end
+$var wire 2 ! data [1:0] $end
+$var wire 2 " _00005e_0000601 [1:0] $end
+$var wire 2 # _00005e_0000600 [1:0] $end
+$var reg 2 $ addr [1:0] $end
+$scope module my__table $end
+$var wire 2 % addr [1:0] $end
+$var wire 2 & data [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+b1 !
+b1 "
+b1 &
+b1 #
+b1 $
+b1 %

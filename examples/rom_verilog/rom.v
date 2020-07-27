@@ -13,14 +13,19 @@ module _____00003aT0( );
 
    initial begin
 
-      #10
+      addr = 2'b00;
 
-      addr = 2'b11;
-
-      #10
+      #10000
 
       addr = 2'b01;
 
+      $finish;
+   end
+
+   initial begin
+      $monitor("addr=%d, data=%d", addr, data);
+      $dumpfile("rom.vcd");
+      $dumpvars(0,_____00003aT0);
    end
 
 endmodule
