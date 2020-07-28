@@ -3,21 +3,10 @@
 module _____00003aT0_00003a_00003amy__table_00003aT0( addr, base, next__data ); 
    input [7:0] addr;
    output signed[31:0] base;
-   output reg signed[31:0] next__data;
+   output signed[31:0] next__data;
    wire signed[31:0] table  :4[255:0];
 
    assign base = table[addr];
-
-   always @( * ) begin
-
-      if ((addr == {1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1})) begin
-         next__data <= table[addr];
-      end
-      else begin
-         next__data <= table[(addr + 32'd1)];
-      end
-
-   end
 
    initial begin
 

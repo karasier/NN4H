@@ -1,24 +1,34 @@
 # メモ
+# HDLRubyシミュレータの動作確認
+# Icarus Verilogでのエラーの原因特定
 
 require "std/fixpoint.rb"
 require_relative "binfixed.rb"
 
 include HDLRuby::High::Std
 
+int_width = 4
+dec_width = 28
+addr_w = 8
+
 # インスタンス化のテストモジュール
 system :tester do
-  signed[4,28].inner :z
-  signed[4,28].inner :a
+  signed[int_width, dec_width].inner :z_value
+  signed[int_width, dec_width].inner :a
 
-  signed[4,28].inner :base,:next_data
+  signed[int_width, dec_width].inner :base,:next_data
+  
+  [addr_w].inner :addr
+  [z_value.width-addr_w].inner :remaining
 
-  table(8, 4, 28, proc{ |i| Math.tanh(i) }).(:my_table).(z[31..24],base,next_data)
-  calculator(4, 28).(:my_calculator).(z[23..0],base,next_data,a)
+  address_translator(int_width, dec_width, addr_w).(:my_translator).(z_value, addr, remaining)
+  table(addr_w, int_width, dec_width, proc{ |i| Math.tanh(i) }).(:my_table).(addr,base,next_data)
+  calculator(int_width, dec_width, remaining.width).(:my_calculator).(remaining, z_value, base, next_data, addr << remaining.width, a)
 
   timed do
-    z <= _b32b0
+    z_value <= _b32b0
     !10.ps
-    z <= _b32b00000001010111111111101110000000
+    z_value <= _b32b00000001010111111111101110000000
     !10.ps
   end
 end
@@ -42,19 +52,30 @@ system :table do |addr_width, integer_width, decimal_width, activation_function|
   base <= table[addr]
 
   # アドレスが255の場合、次のデータは最後のデータと等しい
-  hif(addr == [_b1] * size.width ) { next_data <= table[addr] }
-  helse { next_data <= table[addr+1] }
+  #hif(addr == [_b1] * size.width ) { next_data <= table[addr] }
+  #helse { next_data <= table[addr+1] }
 end
 
 # compute tanh
 # LUTの点の間の値を計算するモジュール
-system :calculator do |integer_width, decimal_width|
-  [decimal_width].input :decimal_part
-  signed[integer_width, decimal_width].input :base,:next_data
+system :calculator do |integer_width, decimal_width, remaining_width|
+  [remaining_width].input :remaining
+  signed[integer_width, decimal_width].input :z_value, :base, :next_data, :addr
 
   signed[integer_width, decimal_width].output :estimated_value
 
-  estimated_value <= base + (next_data - base) * decimal_part
+  #estimated_value <= base + (next_data - base) * remaining.as([estimated_value.width])
+  estimated_value <= (next_data - base) * z_value + base - (next_data - base) * addr
+end
+
+# 入力データからアドレスを取り出すモジュール
+system :address_translator do |integer_width, decimal_width, addr_width|
+  signed[integer_width + decimal_width].input :z_value  
+  [addr_width].output :addr
+  [z_value.width - addr_width].output :remaining
+
+  addr <= z_value[z_value.width-1..z_value.width-addr_width]
+  remaining <= z_value[z_value.width-addr_width-1..0]
 end
 
 # Make an array consists of a point of tanh.
