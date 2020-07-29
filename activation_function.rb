@@ -1,20 +1,17 @@
 # メモ
-# HDLRubyシミュレータの動作確認
-# Icarus Verilogでのエラーの原因特定
 
 require "std/fixpoint.rb"
 require_relative "binfixed.rb"
 
 include HDLRuby::High::Std
 
-int_width = 4
-dec_width = 28
-addr_w = 8
+# 活性化関数のモジュール
+system :activation_function do |func, int_width, dec_width, addr_w|
+  # 活性化関数適用前の計算値
+  signed[int_width, dec_width].input :z_value
 
-# インスタンス化のテストモジュール
-system :tester do
-  signed[int_width, dec_width].inner :z_value
-  signed[int_width, dec_width].inner :a
+  # 活性化関数適用後の値
+  signed[int_width, dec_width].output :a
 
   signed[int_width, dec_width].inner :base,:next_data
   
@@ -22,15 +19,8 @@ system :tester do
   [z_value.width-addr_w].inner :remaining
 
   address_translator(int_width, dec_width, addr_w).(:my_translator).(z_value, addr, remaining)
-  table(addr_w, int_width, dec_width, proc{ |i| Math.tanh(i) }).(:my_table).(addr,base,next_data)
+  table(addr_w, int_width, dec_width, func).(:my_table).(addr,base,next_data)
   calculator(int_width, dec_width, remaining.width).(:my_calculator).(remaining, z_value, base, next_data, addr << remaining.width, a)
-
-  timed do
-    z_value <= _b32b0
-    !10.ps
-    z_value <= _b32b00000001010111111111101110000000
-    !10.ps
-  end
 end
 
 # module of activation function's LUT
@@ -47,13 +37,13 @@ system :table do |addr_width, integer_width, decimal_width, activation_function|
   
   # points of tanh
   # tanhの点を格納するLUT
-  signed[integer_width, decimal_width][size].constant table: initialize_table(size, integer_width, decimal_width, activation_function)
+  signed[integer_width, decimal_width][-size].constant lut: initialize_table(size, integer_width, decimal_width, activation_function)
 
-  base <= table[addr]
+  base <= lut[addr]
 
   # アドレスが255の場合、次のデータは最後のデータと等しい
-  #hif(addr == [_b1] * size.width ) { next_data <= table[addr] }
-  #helse { next_data <= table[addr+1] }
+  hif(addr == [_b1] * size.width ) { next_data <= lut[addr] }
+  helse { next_data <= lut[addr+1] }
 end
 
 # compute tanh

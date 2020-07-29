@@ -3,7 +3,7 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__table_58_840_42973540();
-   make_____58_840_42968340();
+   makemy__table_58_840_42884460();
+   make_____58_840_43974200();
    hruby_sim_core(-1);
 }
