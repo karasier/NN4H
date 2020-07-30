@@ -1,32 +1,45 @@
-# メモ
-
 require "std/fixpoint.rb"
 require_relative "binfixed.rb"
 
 include HDLRuby::High::Std
 
 # 活性化関数のモジュール
-system :activation_function do |func, int_width, dec_width, addr_w|
+system :activation_function do |func, integer_width, decimal_width, addr_width|
   # 活性化関数適用前の計算値
-  signed[int_width, dec_width].input :z_value
+  signed[integer_width, decimal_width].input :z_value
 
   # 活性化関数適用後の値
-  signed[int_width, dec_width].output :a
+  signed[integer_width, decimal_width].output :a
 
-  signed[int_width, dec_width].inner :base,:next_data
+  signed[integer_width, decimal_width].inner :base,:next_data
   
-  [addr_w].inner :addr
-  [z_value.width-addr_w].inner :remaining
+  [addr_width].inner :addr
+  [z_value.width - addr_width].inner :remaining
 
-  address_translator(int_width, dec_width, addr_w).(:my_translator).(z_value, addr, remaining)
-  table(addr_w, int_width, dec_width, func).(:my_table).(addr,base,next_data)
-  calculator(int_width, dec_width, remaining.width).(:my_calculator).(remaining, z_value, base, next_data, addr << remaining.width, a)
+  # 計算値をアドレスに変換する
+  address_translator(integer_width, decimal_width, addr_width).(:my_translator).(z_value, addr, remaining)
+
+  # 活性化関数のLUT
+  table(addr_width, integer_width, decimal_width, func).(:my_table).(addr, base, next_data)
+
+  # 線形補間
+  calculator(integer_width, decimal_width, remaining.width).(:my_calculator).(remaining, z_value, base, next_data, addr << remaining.width, a)
+end
+
+# 入力データからアドレスを取り出すモジュール
+system :address_translator do |integer_width, decimal_width, addr_width|
+  signed[integer_width + decimal_width].input :z_value  
+  [addr_width].output :addr
+  [z_value.width - addr_width].output :remaining
+
+  addr <= z_value[z_value.width-1..z_value.width-addr_width]
+  remaining <= z_value[z_value.width-addr_width-1..0]
 end
 
 # module of activation function's LUT
 # 活性化関数のLUTを表現するモジュール
 # 任意の活性化関数をprocで渡せる
-system :table do |addr_width, integer_width, decimal_width, activation_function|
+system :table do |addr_width, integer_width, decimal_width, func|
   size = 2 ** addr_width
 
   # address of LUT
@@ -37,7 +50,7 @@ system :table do |addr_width, integer_width, decimal_width, activation_function|
   
   # points of tanh
   # tanhの点を格納するLUT
-  signed[integer_width, decimal_width][-size].constant lut: initialize_table(size, integer_width, decimal_width, activation_function)
+  signed[integer_width, decimal_width][-size].constant lut: initialize_table(size, integer_width, decimal_width, func)
 
   base <= lut[addr]
 
@@ -56,16 +69,6 @@ system :calculator do |integer_width, decimal_width, remaining_width|
 
   #estimated_value <= base + (next_data - base) * remaining.as([estimated_value.width])
   estimated_value <= (next_data - base) * z_value + base - (next_data - base) * addr
-end
-
-# 入力データからアドレスを取り出すモジュール
-system :address_translator do |integer_width, decimal_width, addr_width|
-  signed[integer_width + decimal_width].input :z_value  
-  [addr_width].output :addr
-  [z_value.width - addr_width].output :remaining
-
-  addr <= z_value[z_value.width-1..z_value.width-addr_width]
-  remaining <= z_value[z_value.width-addr_width-1..0]
 end
 
 # Make an array consists of a point of tanh.

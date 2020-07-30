@@ -5,17 +5,15 @@ require_relative "activation_function.rb"
 
 include HDLRuby::High::Std
 
-integer_width = 4
-decimal_width = 28
-addr_width = 8
+int_w = 4
+dec_w = 28
+addr_w = 8
 func = proc{ |i| Math.tanh(i) }
 
-# インスタンス化のテストモジュール
 system :tester do
-  signed[integer_width, decimal_width].inner :z_value
-  signed[integer_width, decimal_width].inner :a
+  signed[int_w, dec_w].inner :z_value, :a
 
-  activation_function(func, integer_width, decimal_width, addr_width).(:tanh).(z_value, a)
+  activation_function(func, int_w, dec_w, addr_w).(:tanh).(z_value, a)
 
   timed do
     z_value <= _b32b0
