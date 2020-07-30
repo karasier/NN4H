@@ -1,3 +1,5 @@
+# 活性化関数のモジュール
+
 require "std/fixpoint.rb"
 require_relative "binfixed.rb"
 

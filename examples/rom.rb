@@ -5,10 +5,13 @@ system :table_test do
   table(:my_table).(addr, data)
   
   timed do
-    addr <= 0
-    !10.ns
+    addr <= _b2b00
+    !10.ps
     addr <= _b2b01
-    !10.ns
+    !10.ps
+    addr <= _b2b10
+    !10.ps
+    addr <= _b2b11
   end
 
 end

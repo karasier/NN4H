@@ -20,5 +20,7 @@ system :tester do
     !10.ps
     z_value <= _b32b00000001010111111111101110000000
     !10.ps
+    z_value <= _b32b0
+    !10.ps
   end
 end
