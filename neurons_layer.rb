@@ -6,33 +6,80 @@ require 'std/linear.rb'
 include HDLRuby::High::Std
 
 system :neuron_layer do
-  inner :clk,:rst, :req
-
-  # Input memories
-  # mem_dual([8],256,clk,rst, rinc: :rst,winc: :rst).(:memL0)
-  # The first memory is 4-bank for testing purpose.
-  mem_bank([8],4,256/4,clk,rst, rinc: :rst,winc: :rst).(:memL0)
+  inner :clk, # clock用
+        :rst, # reset用
+        :req  # request用
   
-  # The others are standard dual-edge memories.
-  mem_dual([8],256,clk,rst, rinc: :rst,winc: :rst).(:memL1)
-  mem_dual([8],256,clk,rst, rinc: :rst,winc: :rst).(:memR)
+  # mem_dual(データ型, メモリサイズ, クロック, リセット)
+  # 重み
+  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memW0)  
+  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memW1)
+
+  # 入力値
+  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memX)
 
   # Access ports.
-  memL0.branch(:rinc).inner :readL0
-  memL1.branch(:rinc).inner :readL1 
-  memR.branch(:rinc).inner :readR
+  # ブランチはアクセスポートを用意できる
+  # 順次読み出し
+  # :rinc -> read increments
+  memW0.branch(:rinc).inner :readW0
+  memW1.branch(:rinc).inner :readW1 
+  memX.branch(:rinc).inner :readX
 
   # Prepares the left and acc arrays.
-  lefts = [readL0, readL1]
+  # 重みをまとめる
+  weights = [readW0, readW1]
   
   # Accumulators memory.
-  mem_file([8],2,clk,rst,rinc: :rst).(:memAcc)
-  memAcc.branch(:anum).inner :accs
-  accs_out = [accs.wrap(0), accs.wrap(1)]
+  # 計算結果の格納用メモリ
+  mem_file([8], 2, clk, rst, rinc: :rst).(:memAcc)
+  memAcc.branch(:anum).inner :sop # sum of products
+  sop_out = [sop.wrap(0), sop.wrap(1)]
 
   # Layer 0 ack.
   inner :ack0
     
   # Instantiate the matrix product.
-  mac_n1([8],clk,req,ack0,lefts,readR,accs_out)
+  # mac_n1(データ型, クロック, リクエスト, ack, 入力(行列), 入力(ベクトル), 出力)
+  mac_n1([8], clk, req, ack0, weights, readX, sop_out)
+
+  memW0.branch(:winc).inner :writeW0
+  memW1.branch(:winc).inner :writeW1
+  memX.branch(:winc).inner :writeX
+
+  # メモリの初期化
+  [8].inner :val
+  par(clk.posedge) do
+    writeW0.write(val)
+    writeW1.write(val + 1)
+    writeX.write(val + 1)
+  end
+
+  timed do
+    # メモリのリセット
+    req <= 0
+    clk <= 0
+    rst <= 0
+    val  <= 0
+    !10.ns
+
+    # メモリの初期化
+    rst <= 1
+    !10.ns
+    clk <= 1
+    !10.ns
+    
+    # First layer
+    clk <= 0
+    rst <= 0    
+    !10.ns
+
+    2.times do |i|
+      clk <= 1
+      !10.ns
+      clk <= 0
+      val <= val + 1
+      !10.ns
+    end
+  end
 end
