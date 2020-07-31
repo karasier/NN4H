@@ -2,127 +2,116 @@
 #include "hruby_sim.h"
 #include "hruby_sim_gen.h"
 
-SystemT _____58_840_50117360;
+SystemT _____58_840_43211700;
 
-Block __49643420;
+Block __50216660;
 
-void code__49643420() {
+void code__50216660() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__50110940(),z__value_46335420___45591340______58_840_50117360);
+      transmit_to_signal_seq(make__43323280(),z__value_42273840___47765300______58_840_43211700);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__50117480);
+   hw_wait(make_delay(10,PS),__43173260);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__50110880(),z__value_46335420___45591340______58_840_50117360);
+      transmit_to_signal_seq(make__43323120(),z__value_42273840___47765300______58_840_43211700);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__50117480);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__50110820(),z__value_46335420___45591340______58_840_50117360);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,PS),__50117480);
+   hw_wait(make_delay(10,PS),__43173260);
 }
 
-Block make__49643420() {
+Block make__50216660() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __49643420 = block;
-   block->owner = (Object)__50117480;
+   __50216660 = block;
+   block->owner = (Object)__43173260;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__49643420;
+   block->function = &code__50216660;
 
    return block;
 };
 
-Block __50114060;
+Block __43221360;
 
-void code__50114060() {
+void code__43221360() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal(({
       Value src0, dst = get_value();
       unsigned int pool_state = get_value_pos();
-      src0 = z__value_46335420___45591340______58_840_50117360->c_value;
+      src0 = z__value_42273840___47765300______58_840_43211700->c_value;
       dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
       set_value_pos(pool_state);
-   dst; }),z__value_47568420_tanh_58_840_47423860___45591340______58_840_50117360);
+   dst; }),z__value_49658960_tanh_58_840_49517820___47765300______58_840_43211700);
       set_value_pos(pool_state);
    }
 }
 
-Block make__50114060() {
+Block make__43221360() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __50114060 = block;
-   block->owner = (Object)__50112460;
+   __43221360 = block;
+   block->owner = (Object)__43289500;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__50114060;
+   block->function = &code__43221360;
 
    return block;
 };
 
-Block __50114000;
+Block __43221260;
 
-void code__50114000() {
+void code__43221260() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal(({
       Value src0, dst = get_value();
       unsigned int pool_state = get_value_pos();
-      src0 = a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->c_value;
+      src0 = a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->c_value;
       dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
       set_value_pos(pool_state);
-   dst; }),a_46919980___45591340______58_840_50117360);
+   dst; }),a_43475620___47765300______58_840_43211700);
       set_value_pos(pool_state);
    }
 }
 
-Block make__50114000() {
+Block make__43221260() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __50114000 = block;
-   block->owner = (Object)__50112300;
+   __43221260 = block;
+   block->owner = (Object)__43288900;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__50114000;
+   block->function = &code__43221260;
 
    return block;
 };
 
-Value make__50110940() {
+Value make__43323280() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__50110880() {
-   static unsigned long long data[] = { 23067520ULL };
+Value make__43323120() {
+   static unsigned long long data[] = { 4294967295ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__50110820() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_vector(get_type_signed(),32),1,data);
-}
+Scope __47765300;
 
-Scope __45591340;
+SignalI z__value_42273840___47765300______58_840_43211700;
 
-SignalI z__value_46335420___45591340______58_840_50117360;
-
-SignalI makez__value_46335420() {
+SignalI makez__value_42273840() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   z__value_46335420___45591340______58_840_50117360 = signalI;
-   signalI->owner = (Object)__45591340;
+   z__value_42273840___47765300______58_840_43211700 = signalI;
+   signalI->owner = (Object)__47765300;
    signalI->name = "z_value";
    signalI->type = get_type_vector(get_type_signed(),32);
    signalI->c_value = make_value(signalI->type,0);
@@ -141,14 +130,14 @@ SignalI makez__value_46335420() {
    return signalI;
 };
 
-SignalI a_46919980___45591340______58_840_50117360;
+SignalI a_43475620___47765300______58_840_43211700;
 
-SignalI makea_46919980() {
+SignalI makea_43475620() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   a_46919980___45591340______58_840_50117360 = signalI;
-   signalI->owner = (Object)__45591340;
+   a_43475620___47765300______58_840_43211700 = signalI;
+   signalI->owner = (Object)__47765300;
    signalI->name = "a";
    signalI->type = get_type_vector(get_type_signed(),32);
    signalI->c_value = make_value(signalI->type,0);
@@ -167,112 +156,112 @@ SignalI makea_46919980() {
    return signalI;
 };
 
-SystemI tanh_47717440;
+SystemI tanh_49720040;
 
-SystemI maketanh_47717440() {
+SystemI maketanh_49720040() {
    SystemI systemI = malloc(sizeof(SystemIS));
    systemI->kind = SYSTEMI;
 
-   tanh_47717440 = systemI;
-   systemI->owner = (Object)__45591340;
+   tanh_49720040 = systemI;
+   systemI->owner = (Object)__47765300;
    systemI->name = "tanh";
-   systemI->system = tanh_58_840_47423860;
+   systemI->system = tanh_58_840_49517820;
 
    return systemI;
 };
 
-Behavior __50117480;
+Behavior __43173260;
 
-Behavior make__50117480() {
+Behavior make__43173260() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __50117480 = behavior;
+   __43173260 = behavior;
    register_timed_behavior(behavior);
-   behavior->owner = (Object)__45591340;
+   behavior->owner = (Object)__47765300;
    behavior->activated = 0;
    behavior->timed = 1;
    behavior->num_events = 0;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->block = make__49643420();
+   behavior->block = make__50216660();
 
    return behavior;
 }
 
-Behavior __50112460;
+Behavior __43289500;
 
-Behavior make__50112460() {
+Behavior make__43289500() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __50112460 = behavior;
-   behavior->owner = (Object)__45591340;
+   __43289500 = behavior;
+   behavior->owner = (Object)__47765300;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,z__value_46335420___45591340______58_840_50117360);
-   z__value_46335420___45591340______58_840_50117360->num_any += 1;
-   z__value_46335420___45591340______58_840_50117360->any = realloc(z__value_46335420___45591340______58_840_50117360->any,z__value_46335420___45591340______58_840_50117360->num_any*sizeof(Object));
-z__value_46335420___45591340______58_840_50117360->any[z__value_46335420___45591340______58_840_50117360->num_any-1] = (Object)behavior;
-   behavior->block = make__50114060();
+   behavior->events[0] = make_event(ANYEDGE,z__value_42273840___47765300______58_840_43211700);
+   z__value_42273840___47765300______58_840_43211700->num_any += 1;
+   z__value_42273840___47765300______58_840_43211700->any = realloc(z__value_42273840___47765300______58_840_43211700->any,z__value_42273840___47765300______58_840_43211700->num_any*sizeof(Object));
+z__value_42273840___47765300______58_840_43211700->any[z__value_42273840___47765300______58_840_43211700->num_any-1] = (Object)behavior;
+   behavior->block = make__43221360();
 
    return behavior;
 }
 
-Behavior __50112300;
+Behavior __43288900;
 
-Behavior make__50112300() {
+Behavior make__43288900() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __50112300 = behavior;
-   behavior->owner = (Object)__45591340;
+   __43288900 = behavior;
+   behavior->owner = (Object)__47765300;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,a_47717820_tanh_58_840_47423860___45591340______58_840_50117360);
-   a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->num_any += 1;
-   a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->any = realloc(a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->any,a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->num_any*sizeof(Object));
-a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->any[a_47717820_tanh_58_840_47423860___45591340______58_840_50117360->num_any-1] = (Object)behavior;
-   behavior->block = make__50114000();
+   behavior->events[0] = make_event(ANYEDGE,a_49720180_tanh_58_840_49517820___47765300______58_840_43211700);
+   a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->num_any += 1;
+   a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->any = realloc(a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->any,a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->num_any*sizeof(Object));
+a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->any[a_49720180_tanh_58_840_49517820___47765300______58_840_43211700->num_any-1] = (Object)behavior;
+   behavior->block = make__43221260();
 
    return behavior;
 }
 
-Scope make__45591340() {
+Scope make__47765300() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __45591340 = scope;
-   scope->owner = (Object)_____58_840_50117360;
+   __47765300 = scope;
+   scope->owner = (Object)_____58_840_43211700;
    scope->name = "";
    scope->num_systemIs = 1;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->systemIs[0] = maketanh_47717440();
+   scope->systemIs[0] = maketanh_49720040();
    scope->num_inners = 2;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makez__value_46335420();
-   scope->inners[1] = makea_46919980();
+   scope->inners[0] = makez__value_42273840();
+   scope->inners[1] = makea_43475620();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 3;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__50117480();
-   scope->behaviors[1] = make__50112460();
-   scope->behaviors[2] = make__50112300();
+   scope->behaviors[0] = make__43173260();
+   scope->behaviors[1] = make__43289500();
+   scope->behaviors[2] = make__43288900();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-SystemT make_____58_840_50117360() {
+SystemT make_____58_840_43211700() {
    SystemT systemT = malloc(sizeof(SystemTS));
    systemT->kind = SYSTEMT;
 
-   _____58_840_50117360 = systemT;
+   _____58_840_43211700 = systemT;
 systemT->owner = NULL;
    systemT->name = "__:T0";
    systemT->num_inputs = 0;
@@ -282,7 +271,7 @@ systemT->owner = NULL;
    systemT->num_inouts = 0;
    systemT->inouts = calloc(sizeof(SignalI),systemT->num_inouts);
 
-   systemT->scope = make__45591340();
+   systemT->scope = make__47765300();
 
    return systemT;
 }

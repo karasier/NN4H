@@ -13,18 +13,21 @@ module _____00003aT0( );
 
    initial begin
 
-      z__value = 32'b0;
+      z__value = 32'b00000000000000000000000000000000;
 
       #10
 
-      z__value = 32'b00000001010111111111101110000000;
+      z__value = 32'b11111111111111111111111111111111;
 
       #10
 
-      z__value = 32'b0;
+      $finish;
 
-      #10
+   end
 
+   initial begin
+      $dumpfile("tester.vcd");
+      $dumpvars(0, _____00003aT0);
    end
 
 endmodule

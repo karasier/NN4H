@@ -7,44 +7,44 @@ module _____00003aT0_00003a_00003atanh_00003aT0( z__value, a );
    wire signed[31:0] next__data;
    wire [7:0] addr;
    wire [23:0] remaining;
-   wire signed[31:0] _00005e_00006012;
+   wire signed[31:0] _00005e_00006010;
+   wire [7:0] _00005e_00006011;
+   wire [23:0] _00005e_00006012;
    wire [7:0] _00005e_00006013;
-   wire [23:0] _00005e_00006014;
-   wire [7:0] _00005e_00006015;
-   wire signed[31:0] _00005e_00006016;
+   wire signed[31:0] _00005e_00006014;
+   wire signed[31:0] _00005e_00006015;
+   wire [23:0] _00005e_00006016;
    wire signed[31:0] _00005e_00006017;
-   wire [23:0] _00005e_00006018;
+   wire signed[31:0] _00005e_00006018;
    wire signed[31:0] _00005e_00006019;
    wire signed[31:0] _00005e_00006020;
    wire signed[31:0] _00005e_00006021;
-   wire signed[31:0] _00005e_00006022;
-   wire signed[31:0] _00005e_00006023;
 
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__translator_00003aT0 my__translator(.z__value(_00005e_00006012),.addr(_00005e_00006013),.remaining(_00005e_00006014));
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__table_00003aT0 my__table(.addr(_00005e_00006015),.base(_00005e_00006016),.next__data(_00005e_00006017));
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__calculator_00003aT0 my__calculator(.remaining(_00005e_00006018),.z__value(_00005e_00006019),.base(_00005e_00006020),.next__data(_00005e_00006021),.addr(_00005e_00006022),.estimated__value(_00005e_00006023));
-   assign _00005e_00006012 = z__value;
+   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__translator_00003aT0 my__translator(.z__value(_00005e_00006010),.addr(_00005e_00006011),.remaining(_00005e_00006012));
+   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__table_00003aT0 my__table(.addr(_00005e_00006013),.base(_00005e_00006014),.next__data(_00005e_00006015));
+   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__calculator_00003aT0 my__calculator(.remaining(_00005e_00006016),.z__value(_00005e_00006017),.base(_00005e_00006018),.next__data(_00005e_00006019),.addr(_00005e_00006020),.estimated__value(_00005e_00006021));
+   assign _00005e_00006010 = z__value;
 
-   assign addr = _00005e_00006013;
+   assign addr = _00005e_00006011;
 
-   assign remaining = _00005e_00006014;
+   assign remaining = _00005e_00006012;
 
-   assign _00005e_00006015 = addr;
+   assign _00005e_00006013 = addr;
 
-   assign base = _00005e_00006016;
+   assign base = _00005e_00006014;
 
-   assign next__data = _00005e_00006017;
+   assign next__data = _00005e_00006015;
 
-   assign _00005e_00006018 = remaining;
+   assign _00005e_00006016 = remaining;
 
-   assign _00005e_00006019 = z__value;
+   assign _00005e_00006017 = z__value;
 
-   assign _00005e_00006020 = base;
+   assign _00005e_00006018 = base;
 
-   assign _00005e_00006021 = next__data;
+   assign _00005e_00006019 = next__data;
 
-   assign _00005e_00006022 = (addr << 32'd24);
+   assign _00005e_00006020 = (addr << 32'd24);
 
-   assign a = _00005e_00006023;
+   assign a = _00005e_00006021;
 
 endmodule

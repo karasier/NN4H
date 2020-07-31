@@ -4,13 +4,13 @@ module _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__table_00003aT0(
    input [7:0] addr;
    output signed[31:0] base;
    output reg signed[31:0] next__data;
-   wire signed[31:0] lut  :5[0:255];
+   reg signed[31:0] lut  [0:255];
 
    assign base = lut[addr];
 
    always @( * ) begin
 
-      if ((addr == {1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1})) begin
+      if ((addr == 32'd255)) begin
          next__data <= lut[addr];
       end
       else begin

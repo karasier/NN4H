@@ -42,7 +42,7 @@ end
 # 活性化関数のLUTを表現するモジュール
 # 任意の活性化関数をprocで渡せる
 system :table do |addr_width, integer_width, decimal_width, func|
-  size = 2 ** addr_width
+  lut_size = 2 ** addr_width
 
   # address of LUT
   [addr_width].input :addr
@@ -52,12 +52,12 @@ system :table do |addr_width, integer_width, decimal_width, func|
   
   # points of tanh
   # tanhの点を格納するLUT
-  signed[integer_width, decimal_width][-size].constant lut: initialize_table(size, integer_width, decimal_width, func)
+  signed[integer_width, decimal_width][-lut_size].constant lut: initialize_table(lut_size, integer_width, decimal_width, func)
 
   base <= lut[addr]
 
-  # アドレスが255の場合、次のデータは最後のデータと等しい
-  hif(addr == [_b1] * size.width ) { next_data <= lut[addr] }
+  # アドレスの全ビットが1の場合、次のデータは最後のデータと等しい
+  hif(addr == (lut_size - 1)) { next_data <= lut[addr] }
   helse { next_data <= lut[addr+1] }
 end
 
@@ -74,20 +74,20 @@ system :calculator do |integer_width, decimal_width, remaining_width|
 end
 
 # Make an array consists of a point of tanh.
-# @param [Integer] size the size of LUT
+# @param [Integer] lut_size the lut_size of LUT
 # @return [Array] table an array consists of a point of tanh
-def initialize_table(size, integer_width, decimal_width, func)
+def initialize_table(lut_size, integer_width, decimal_width, func)
   # 表現可能なアドレスの範囲
-  range_array = Range.new(-size/2,size/2 - 1).to_a
+  range_array = Range.new(-lut_size/2,lut_size/2 - 1).to_a
 
   # 範囲の変換
-  range_array.map!{ |value| convert(value,-size/2.to_f,size/2.to_f,-3.0,3.0) }
+  range_array.map!{ |value| convert(value,-lut_size/2.to_f,lut_size/2.to_f,-3.0,3.0) }
 
   # 活性化関数の適用
   table = range_array.map(&func).map{ |value| value.q(integer_width, decimal_width) }
 
   # 配列を分割して順番入れ替え
-  sliced = table.each_slice(size/2).to_a
+  sliced = table.each_slice(lut_size/2).to_a
   table = [sliced[1], sliced[0]].flatten
   
   return table
