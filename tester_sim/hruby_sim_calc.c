@@ -397,6 +397,9 @@ static Value set_undefined_bitstring(Value dst) {
 
     /* set the type and size of the destination. */
     dst->numeric = 0;
+    /* Ensures the buffer of dst has the write size (in cas it was a fromer
+     * numeric for example). */
+    resize_value(dst,width);
 
     /* Get access to the destination data. */
     char* dst_data = dst->data_str;
@@ -604,7 +607,7 @@ static Value mul_value_defined_bitstring(Value src0, Value src1, Value dst) {
     dst->type = src0->type;
     dst->numeric = 1;
 
-    /* Perform the addition. */
+    /* Perform the multiplication. */
     dst->data_int = value2integer(src0) * value2integer(src1);
     return dst;
 }
@@ -620,8 +623,25 @@ static Value div_value_defined_bitstring(Value src0, Value src1, Value dst) {
     dst->type = src0->type;
     dst->numeric = 1;
 
-    /* Perform the addition. */
+    /* Perform the division. */
     dst->data_int = value2integer(src0) / value2integer(src1);
+    return dst;
+}
+
+
+/** Computes the modulo of two defined bitstring values.
+ *  @param src0 the first source value of the addition
+ *  @param src1 the second source value of the addition
+ *  @param dst the destination value
+ *  @return dst */
+static Value mod_value_defined_bitstring(Value src0, Value src1, Value dst) {
+    /* Sets state of the destination using the first source. */
+    dst->type = src0->type;
+    dst->numeric = 1;
+
+    /* Perform the modulo. */
+    // printf("modulo with src0=%lld src1=%lld, result=%lld\n",value2integer(src0),value2integer(src1),value2integer(src0) % value2integer(src1));
+    dst->data_int = value2integer(src0) % value2integer(src1);
     return dst;
 }
 
@@ -1415,7 +1435,10 @@ fix_numeric_type(Type type, unsigned long long val) {
     /* Get the width of the type. */
     int width = type_width(type);
     /* Compute the base mask. */
-    unsigned long long mask = ((unsigned long long)(-1)) << width;
+    // unsigned long long mask = ((unsigned long long)(-1)) << width;
+    /* NOTE: (ull)-1 << 64 becomes (ull)-1 on Intel processors, this is
+     * totally not what I expected (I expected 0). */
+    unsigned long long mask = width == 64 ? 0 : ((unsigned long long)(-1)) << width;
     // printf("width=%i val=%llu mask=%llx\n",width,val,mask);
 
     /* Is the type signed? */
@@ -1512,6 +1535,23 @@ static Value div_value_numeric(Value src0, Value src1, Value dst) {
 
     /* Perform the division. */
     dst->data_int = fix_numeric_type(dst->type, src0->data_int / src1->data_int);
+    return dst;
+}
+
+
+/** Computes the modulo of two numeric values.
+ *  @param src0 the first source value of the addition
+ *  @param src1 the second source value of the addition
+ *  @param dst the destination value
+ *  @return dst */
+static Value mod_value_numeric(Value src0, Value src1, Value dst) {
+    /* Sets state of the destination using the first source. */
+    dst->type = src0->type;
+    dst->numeric = 1;
+
+    /* Perform the division. */
+    // printf("modulo numeric with src0=%lld src1=%lld, result=%lld\n",src0->data_int, src1->data_int,src0->data_int % src1->data_int);
+    dst->data_int = fix_numeric_type(dst->type, src0->data_int % src1->data_int);
     return dst;
 }
 
@@ -1690,7 +1730,7 @@ static Value concat_value_numeric_array(int num, int dir,
     unsigned int i,pos;
     /* Compute the bit width of the destination. */
     unsigned int width = 0;
-    // printf("concat_value_numeric with dir=%d\n",dir);
+    // printf("concat_value_numeric with dir=%d and width=%llu\n",dir,type_width(args[0]->type));
     for(i=0; i<num; ++i) width += type_width(args[i]->type);
 
     /* Sets state of the destination using the bit width. */
@@ -1714,6 +1754,7 @@ static Value concat_value_numeric_array(int num, int dir,
         pos += arg_width;
     }
     /* Return the destination. */
+    // printf("Result is dst=%llx\n",dst->data_int);
     return dst;
 }
 
@@ -1724,6 +1765,7 @@ static Value concat_value_numeric_array(int num, int dir,
  *  @param dst the destination value
  *  @return dst */
 static Value cast_value_numeric(Value src, Type type, Value dst) {
+    // printf("cast_value_numeric with src=%llx",src->data_int);
     /* Copy the source to the destination. */
     dst->data_int = src->data_int;
     /* Update the destination type to the cast. */
@@ -1783,6 +1825,7 @@ static int same_content_value_range_numeric(Value value0,
  *  @return dst */
 Value read_range_numeric(Value value, long long first, long long last,
         Type base, Value dst) {
+    /* printf("read_range_numeric with value=%llx and first=%llu and last=%llu\n",value->data_int,first,last); */
     /* Ensure first is the smaller. */
     if (first > last) {
         long long tmp = last;
@@ -1795,15 +1838,18 @@ Value read_range_numeric(Value value, long long first, long long last,
     unsigned long long bw = type_width(base);
     /* Scale the range according to the base type. */
     first *= bw;
+    last  *= bw;
     length *= bw;
-    // printf("first=%lld last=%lld bw=%llu length=%lld\n",first,last,bw,length);
+    /* printf("first=%lld last=%lld bw=%llu length=%lld\n",first,last,bw,length); */
 
     /* Set the type and size of the destination from the type of the source.*/
     dst->type = make_type_vector(get_type_bit(),length);
     dst->numeric = 1;
 
     /* Compute the read mask. */
-    unsigned long long mask = ((-1LL) << first) & (~((-1LL) << (last+1)));
+    // unsigned long long mask = ((-1LL) << first) & (~((-1LL) << (last+1)));
+    /* NOTE: once again, << 64 does not work like expected. */
+    unsigned long long mask = mask+bw < 64 ? (~((-1LL) << (last+bw))) : -1LL;
     /* Performs the read. */
     unsigned long long data = (value->data_int & mask) >> first;
     /* Write it to the destination. */
@@ -1988,6 +2034,33 @@ Value div_value(Value src0, Value src1, Value dst) {
     } else if (is_defined_value(src0) && is_defined_value(src1)) {
         /* Both sources can be converted to numeric values. */
         return div_value_defined_bitstring(src0,src1,dst);
+    } else {
+        /* Cannot compute (for now), simply undefines the destination. */
+        /* First ensure dst has the right shape. */
+        copy_value(src0,dst);
+        /* Then make it undefined. */
+        set_undefined_bitstring(dst);
+    }
+    return dst;
+}
+
+
+/** Computes the modulo of two general values.
+ *  @param src0 the first source value of the addition
+ *  @param src1 the second source value of the addition
+ *  @param dst the destination value
+ *  @return dst */
+Value mod_value(Value src0, Value src1, Value dst) {
+    /* Might allocate a new value so save the current pool state. */
+    unsigned int pos = get_value_pos();
+    /* Do a numeric computation if possible, otherwise fallback to bitstring
+     * computation. */
+    if (src0->numeric && src1->numeric) {
+        /* Both sources are numeric. */
+        return mod_value_numeric(src0,src1,dst);
+    } else if (is_defined_value(src0) && is_defined_value(src1)) {
+        /* Both sources can be converted to numeric values. */
+        return mod_value_defined_bitstring(src0,src1,dst);
     } else {
         /* Cannot compute (for now), simply undefines the destination. */
         /* First ensure dst has the right shape. */
