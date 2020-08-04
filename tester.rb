@@ -8,12 +8,15 @@ include HDLRuby::High::Std
 integer_width = 4
 decimal_width = 28
 addr_width = 8
+
+typ = signed[integer_width, decimal_width]
+
 func = proc{ |i| Math.tanh(i) }
 
 system :tester do
-  signed[integer_width, decimal_width].inner :z_value, :a
+  typ.inner :z_value, :a
 
-  activation_function(func, integer_width, decimal_width, addr_width).(:tanh).(z_value, a)
+  activation_function(func, typ, integer_width, decimal_width, addr_width).(:tanh).(z_value, a)
 
   timed do
     z_value <= _b32b00000000000000000000000000000000

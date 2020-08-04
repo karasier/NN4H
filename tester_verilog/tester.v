@@ -21,13 +21,6 @@ module _____00003aT0( );
 
       #10
 
-      $finish;
-
-   end
-
-   initial begin
-      $dumpfile("tester.vcd");
-      $dumpvars(0, _____00003aT0);
    end
 
 endmodule

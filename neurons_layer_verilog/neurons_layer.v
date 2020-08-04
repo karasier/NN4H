@@ -189,17 +189,6 @@ module _____00003aT0( );
 
       #10000
 
-      clk = 32'd1;
-
-      #10000
-
-      $finish;
-
-   end
-
-   initial begin
-      $dumpfile("nn.vcd");
-      $dumpvars(0, _____00003aT0);
    end
 
    always @( negedge clk ) begin
