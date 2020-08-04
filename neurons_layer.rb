@@ -17,10 +17,10 @@ system :neuron_layer do
   inner :clk, # clock用
         :rst, # reset用
         :req  # request用
-  
+
   # mem_dual(データ型, メモリサイズ, クロック, リセット)
   # 重み
-  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memW0)  
+  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memW0)
   mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:memW1)
 
   # 入力値
@@ -31,13 +31,13 @@ system :neuron_layer do
   # 順次読み出し
   # :rinc -> read increments
   memW0.branch(:rinc).inner :readW0
-  memW1.branch(:rinc).inner :readW1 
+  memW1.branch(:rinc).inner :readW1
   memX.branch(:rinc).inner :readX
 
   # Prepares the left and acc arrays.
   # 重みをまとめる
   weights = [readW0, readW1]
-  
+
   # Accumulators memory.
   # 計算結果の格納用メモリ
   mem_file([8], 2, clk, rst, rinc: :rst).(:memAcc)
@@ -46,7 +46,7 @@ system :neuron_layer do
 
   # Layer 0 ack.
   inner :ack0
-    
+
   # Instantiate the matrix product.
   # mac_n1(データ型, クロック, リクエスト, ack, 入力(行列), 入力(ベクトル), 出力)
   mac_n1([8], clk, req, ack0, weights, readX, sop_out)
@@ -76,10 +76,10 @@ system :neuron_layer do
     !10.ns
     clk <= 1
     !10.ns
-    
+
     # First layer
     clk <= 0
-    rst <= 0    
+    rst <= 0
     !10.ns
 
     2.times do |i|
