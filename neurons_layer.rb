@@ -10,11 +10,12 @@ require 'std/linear.rb'
 include HDLRuby::High::Std
 
 system :neuron_layer do
-  inner :clk, # clock用
-        :rst, # reset用
-        :req, # request用
+  inner :clk,  # clock用
+        :rst,  # reset用
+        :req,  # request用
         :ackA, # 積和計算のack
-        :ackB  # バイアスの計算のack
+        :ackB, # バイアスの計算のack
+        :fill  # メモリへの書き込み用
   
 
   #--------------------------------------------------------------
@@ -85,19 +86,23 @@ system :neuron_layer do
 
   # クロックの立ち上がりの度にvalをメモリに書き込み
   # wincのため、書き込むたびにアドレスが1つ増える
+  # fill == 1のときだけ書き込む
   par(clk.posedge) do
-    w0Writer.write(val)
-    w1Writer.write(val)
-    xWriter.write(val)
-    biasWriter.write(val)
+    hif(fill) do
+      w0Writer.write(val)
+      w1Writer.write(val)
+      xWriter.write(val)
+      biasWriter.write(val)
+    end
   end
 
   timed do
     # リセット
-    req <= 0
     clk <= 0
     rst <= 0
+    req <= 0
     val  <= 0
+    fill <= 0
     !10.ns
 
     # メモリ読み出し位置の初期化
@@ -109,6 +114,7 @@ system :neuron_layer do
     # メモリの内容の初期化
     clk <= 0
     rst <= 0
+    fill <= 1
     val <= 1
     !10.ns
     2.times do |i|
@@ -117,6 +123,9 @@ system :neuron_layer do
       clk <= 0
       !10.ns
     end    
+
+    fill <= 0
+    clk <= 1
 
     # 計算の実行
     clk <= 0
