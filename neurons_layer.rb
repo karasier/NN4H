@@ -1,7 +1,6 @@
 # NOTE
-# 配列をジェネリックにまとめる方法
 # ジェネリックパラメータとしてデータ型を渡す
-# シミュレーションの結果確認
+# gccの問題でシミュレーションが上手く実行できない
 
 # ニューロンの計算モジュール
 
@@ -13,8 +12,13 @@ include HDLRuby::High::Std
 system :neuron_layer do
   inner :clk, # clock用
         :rst, # reset用
-        :req  # request用
+        :req, # request用
+        :ackA, # 積和計算のack
+        :ackB  # バイアスの計算のack
   
+
+  #--------------------------------------------------------------
+  # 積和計算
   # mem_dual(データ型, メモリサイズ, クロック, リセット)
   # 重み
   mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:w0Mem)  
@@ -44,14 +48,14 @@ system :neuron_layer do
   accumMem.branch(:anum).inner :sop # sum of products
   sop_out = [sop.wrap(0), sop.wrap(1)]
 
-  # Accumulator ack
-  inner :ackA
-    
   # Instantiate the matrix product.
   # mac_n1(データ型, クロック, リクエスト, ack, 入力(行列), 入力(ベクトル), 出力)
+  
   # 重みと入力の積和計算
   mac_n1([8], clk, req, ackA, weights, xReader, sop_out)
 
+  #-------------------------------------------------------------
+  # バイアスの計算
   # バイアスのメモリ
   mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:biasMem)
 
@@ -63,13 +67,13 @@ system :neuron_layer do
 
   bias = [biasReader.wrap(0), biasReader.wrap(1)]
   z = [zWriter.wrap(0), zWriter.wrap(1)]
-    
-  # Bias ack
-  inner :ackB
 
   # add_nはmem_fileでないと使えない？
   add_n([8], clk, ackA, ackB, sop_out, bias, z)
 
+
+  #------------------------------------------------------------
+  # メモリに書き込み
   # メモリの書き込み用にwriteのbranchを用意
   w0Mem.branch(:winc).inner :w0Writer
   w1Mem.branch(:winc).inner :w1Writer
@@ -122,7 +126,9 @@ system :neuron_layer do
       clk <= 1
       !10.ns
       clk <= 0
-      !10.ns
+      # ackが1になったら計算終了する
+      hif(ackB == 1) { req <= 0 }
+      !10.ns     
     end
   end
 end
