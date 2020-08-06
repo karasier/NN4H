@@ -1,4 +1,5 @@
 # neurons_layerのテストモジュール
+# A module of calculation for sum of vector and confirmation for channel as generic parameters.
 # 入力値と出力値のブランチを用意する
 require 'std/memory.rb'
 require 'std/linear.rb'
@@ -6,37 +7,33 @@ require 'std/linear.rb'
 include HDLRuby::High::Std
 
 system :neurons_tester do
-  inner :clk, :rst, :req, :ack, :val
-  mem_file([8], 2, clk, rst, rinc: :rst).(:xMem)
-  mem_file([8], 2, clk, rst, rinc: :rst).(:zMem)
+  inner :clk, :rst, :req, :flag, :ack
+  mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:x_channel)
+  mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:z_channel)
 
-  neurons_layer(xMem, zMem).(:layer).(clk, rst, req, ack)
+  x_channel.branch(:anum).inner :x_reader
+  z_channel.branch(:anum).inner :z_writer
 
-  xMem.branch(:winc).inner :xWriter
-  zMem.branch(:winc).inner :zWriter
+  x_channel.branch(:winc).inner :x_writer
   
-  par(clk.posedge) do
-    hif(fill) do
-      xWriter.write(val)
-      zWriter.write(val)
-    end
-  end
+  neurons_layer(x_reader, x_writer, z_writer).(:my_layer).(clk, rst, req, flag, ack)
 
   timed do
     clk <= 0
     rst <= 0
     req <= 0
     ack <= 0
-    val <= 1
 
     !10.ns
 
+    # メモリ読み出し位置の初期化
     clk <= 1
     rst <= 1
-    fill <= 1
+    flag <= 1
 
     !10.ns
 
+    # メモリへ書き込み
     clk <= 0
     2.times do
       clk <= 1
@@ -44,40 +41,59 @@ system :neurons_tester do
       clk <= 0
       !10.ns
     end
-    fill <= 0
+
+    flag <= 0
     clk <= 1
 
     !10.ns
 
+    # 計算の実行
+    clk <= 0
     req <= 1
     !10.ns
     10.times do
       clk <= 1
       !10.ns
       clk <= 0
+
+      # ニューロンの層の計算が終わったかどうか判定
       hif(ack == 1) { req <= 0 }
       !10.ns
     end
   end
 end
 
-system :neurons_layer do |input_channel, output_channel|
-  input :clk, :rst, :req
-  input_channel.branch(:anum).input :xRW
-  output_channel.branch(:anum).output :zRW
+# ニューロンの層のモジュール
+# channelをジェネリックパラメータにするための簡易版
+system :neurons_layer do |x_reader, x_writer, z_writer|
+  input :clk, :rst, :req, :flag
   output :ack
+  
+  mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:bias_channel)
 
-  mem_file([8], 2, clk, rst, rinc: :rst).(:biasMem)
-  biasMem.branch(:anum).inner :biasReader
-  biasMem.branch(:winc).inner :biasWriter
+  bias_channel.branch(:anum).inner :bias_reader
+  bias_channel.branch(:winc).inner :bias_writer
 
-  bias = [biasReader.wrap(0), biasReader.wrap(1)]
-  x = [xRW.wrap(0), xRW.wrap(1)]
-  z = [zRW.wrap(0), zRW.wrap(1)]
+  bias = [bias_reader.wrap(0), bias_reader.wrap(1)]
+  x = [x_reader.wrap(0), x_reader.wrap(1)]
+  z = [z_writer.wrap(0), z_writer.wrap(1)]
 
+  mem_initializer(x_writer, bias_writer).(:my_initializer).(clk, flag)
   add_n([8], clk, req, ack, x, bias, z)
+end
 
+# メモリの値の初期化用モジュール
+system :mem_initializer do |x_writer, bias_writer|
+  input :clk, :flag # クロックと書き込みフラグ
+  inner :val # メモリに書き込む値
+  
+  val <= 1  
+
+  # クロックの度に書き込む
   par(clk.posedge) do
-    biasWriter.write(1)
+    hif(flag) do
+      x_writer.write(val)
+      bias_writer.write(val)
+    end
   end
 end
