@@ -1,11 +1,14 @@
 # NOTE
 # ジェネリックパラメータとしてデータ型を渡す
 # gccの問題でシミュレーションが上手く実行できない
+# 活性化関数の実装
+# 活性化関数の適用ができたが、活性化関数の入力値が1つ前の状態の値になっている。
 
 # ニューロンの計算モジュール
 
 require 'std/memory.rb'
 require 'std/linear.rb'
+require_relative 'activation_function.rb'
 
 include HDLRuby::High::Std
 
@@ -15,10 +18,12 @@ system :neuron_layer do
         :req,  # request用
         :ackA, # 積和計算のack
         :ackB, # バイアスの計算のack
+        :ack,  # 活性化関数のack
         :fill  # メモリへの書き込み用
   
 
   #--------------------------------------------------------------
+  
   # 積和計算
   # mem_dual(データ型, メモリサイズ, クロック, リセット)
   # 重み
@@ -56,6 +61,7 @@ system :neuron_layer do
   mac_n1([8], clk, req, ackA, weights, xReader, sop_out)
 
   #-------------------------------------------------------------
+
   # バイアスの計算
   # バイアスのメモリ
   mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:biasMem)
@@ -64,16 +70,43 @@ system :neuron_layer do
   mem_file([8], 2, clk, rst, rinc: :rst).(:zMem)
 
   biasMem.branch(:anum).inner :biasReader
-  zMem.branch(:anum).inner :zWriter
+  zMem.branch(:anum).inner :zAccessor
 
   bias = [biasReader.wrap(0), biasReader.wrap(1)]
-  z = [zWriter.wrap(0), zWriter.wrap(1)]
+  z = [zAccessor.wrap(0), zAccessor.wrap(1)]
 
-  # add_nはmem_fileでないと使えない？
+  # add_nはmem_fileでないと使えない → 並列アクセスのため
   add_n([8], clk, ackA, ackB, sop_out, bias, z)
 
-
   #------------------------------------------------------------
+
+  # 活性化関数の適用
+  # 活性化関数適用後の値のメモリ
+  mem_file([8], 2, clk, rst, rinc: :rst).(:aMem)
+  aMem.branch(:anum).inner :aAccessor
+  a = [aAccessor.wrap(0), aAccessor.wrap(1)]
+
+  # zの値
+  [8].inner :z0_val, :z1_val
+  [8].inner :a0_val, :a1_val
+
+  # zの中身の読み出し
+  par(clk.posedge) do
+    hif(ackB) do
+      z[0].read(z0_val)
+      z[1].read(z1_val)
+
+      activation_function(proc{|i| Math.tanh(i)}, bit[8], 4, 4, 4).(:func0).(z0_val, a0_val)
+      activation_function(proc{|i| Math.tanh(i)}, bit[8], 4, 4, 4).(:func1).(z1_val, a1_val)
+
+      a[0].write(a0_val)
+      a[1].write(a1_val) do
+        ack <= 1
+      end
+    end
+  end
+  #------------------------------------------------------------
+
   # メモリに書き込み
   # メモリの書き込み用にwriteのbranchを用意
   w0Mem.branch(:winc).inner :w0Writer

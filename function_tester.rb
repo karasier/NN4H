@@ -6,10 +6,11 @@ require_relative "activation_function.rb"
 include HDLRuby::High::Std
 
 integer_width = 4
-decimal_width = 28
-addr_width = 8
+decimal_width = 4
+addr_width = 4
 
-typ = signed[integer_width, decimal_width]
+#typ = signed[integer_width, decimal_width]
+typ = bit[integer_width + decimal_width]
 
 func = proc{ |i| Math.tanh(i) }
 

@@ -1,6 +1,7 @@
 # neurons_layerのテストモジュール
 # A module of calculation for sum of vector and confirmation for channel as generic parameters.
 # 入力値と出力値のブランチを用意する
+# ブランチの動作確認用
 require 'std/memory.rb'
 require 'std/linear.rb'
 
@@ -12,9 +13,9 @@ system :neurons_tester do
   mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:z_channel)
 
   x_channel.branch(:anum).inner :x_reader
-  z_channel.branch(:anum).inner :z_writer
-
   x_channel.branch(:winc).inner :x_writer
+
+  z_channel.branch(:anum).inner :z_writer
   
   neurons_layer(x_reader, x_writer, z_writer).(:my_layer).(clk, rst, req, flag, ack)
 
@@ -23,6 +24,7 @@ system :neurons_tester do
     rst <= 0
     req <= 0
     ack <= 0
+    flag <= 0
 
     !10.ns
 
