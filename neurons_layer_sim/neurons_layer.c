@@ -3,14 +3,12 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__calculator_58_8400_48505320();
-   makemy__table_58_8400_48510000();
-   makemy__translator_58_8400_48163280();
-   makefunc1_58_840_48523280();
-   makemy__calculator_58_841_48135080();
-   makemy__table_58_841_48115280();
-   makemy__translator_58_841_48081840();
-   makefunc0_58_840_48148040();
-   make_____58_840_48588700();
+   makemy__interpolator_58_8400_49418880();
+   makemy__lut_58_8400_50536500();
+   makefunc1_58_840_49967480();
+   makemy__interpolator_58_841_47486960();
+   makemy__lut_58_841_49859860();
+   makefunc0_58_840_47438020();
+   make_____58_840_45098000();
    hruby_sim_core(-1);
 }

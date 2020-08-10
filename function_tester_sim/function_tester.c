@@ -3,10 +3,9 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__calculator_58_840_47557240();
-   makemy__table_58_840_47114600();
-   makemy__translator_58_840_47102200();
-   maketanh_58_840_47591360();
-   make_____58_840_47587520();
+   makemy__interpolator_58_840_46598340();
+   makemy__lut_58_840_47770120();
+   maketanh_58_840_48442500();
+   make_____58_840_46688540();
    hruby_sim_core(-1);
 }

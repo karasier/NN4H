@@ -1,50 +1,41 @@
 `timescale 1ps/1ps
 
 module _____00003aT0_00003a_00003atanh_00003aT0( z__value, a ); 
-   input [31:0] z__value;
-   output [31:0] a;
-   wire [31:0] base;
-   wire [31:0] next__data;
-   wire [7:0] addr;
-   wire [23:0] remaining;
-   wire [31:0] _00005e_00006010;
-   wire [7:0] _00005e_00006011;
-   wire [23:0] _00005e_00006012;
-   wire [7:0] _00005e_00006013;
-   wire [31:0] _00005e_00006014;
-   wire [31:0] _00005e_00006015;
-   wire [23:0] _00005e_00006016;
-   wire [31:0] _00005e_00006017;
-   wire [31:0] _00005e_00006018;
-   wire [31:0] _00005e_00006019;
-   wire [31:0] _00005e_00006020;
-   wire [31:0] _00005e_00006021;
+   input signed[7:0] z__value;
+   output signed[7:0] a;
+   wire signed[7:0] base;
+   wire signed[7:0] next__data;
+   wire [3:0] addr;
+   wire signed[7:0] integer__part;
+   wire [3:0] _00005e_00006012;
+   wire signed[7:0] _00005e_00006013;
+   wire signed[7:0] _00005e_00006014;
+   wire signed[7:0] _00005e_00006015;
+   wire signed[7:0] _00005e_00006016;
+   wire signed[7:0] _00005e_00006017;
+   wire signed[7:0] _00005e_00006018;
+   wire signed[7:0] _00005e_00006019;
 
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__translator_00003aT0 my__translator(.z__value(_00005e_00006010),.addr(_00005e_00006011),.remaining(_00005e_00006012));
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__table_00003aT0 my__table(.addr(_00005e_00006013),.base(_00005e_00006014),.next__data(_00005e_00006015));
-   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__calculator_00003aT0 my__calculator(.remaining(_00005e_00006016),.z__value(_00005e_00006017),.base(_00005e_00006018),.next__data(_00005e_00006019),.addr(_00005e_00006020),.estimated__value(_00005e_00006021));
-   assign _00005e_00006010 = z__value;
+   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__lut_00003aT0 my__lut(.addr(_00005e_00006012),.base(_00005e_00006013),.next__data(_00005e_00006014));
+   _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__interpolator_00003aT0 my__interpolator(.z__value(_00005e_00006015),.base(_00005e_00006016),.next__data(_00005e_00006017),.integer__part(_00005e_00006018),.interpolated__value(_00005e_00006019));
+   assign addr = z__value[7:4];
 
-   assign addr = _00005e_00006011;
+   assign integer__part = {addr,{1'b0,1'b0,1'b0,1'b0}};
 
-   assign remaining = _00005e_00006012;
+   assign _00005e_00006012 = addr;
 
-   assign _00005e_00006013 = addr;
+   assign base = _00005e_00006013;
 
-   assign base = _00005e_00006014;
+   assign next__data = _00005e_00006014;
 
-   assign next__data = _00005e_00006015;
+   assign _00005e_00006015 = z__value;
 
-   assign _00005e_00006016 = remaining;
+   assign _00005e_00006016 = base;
 
-   assign _00005e_00006017 = z__value;
+   assign _00005e_00006017 = next__data;
 
-   assign _00005e_00006018 = base;
+   assign _00005e_00006018 = integer__part;
 
-   assign _00005e_00006019 = next__data;
-
-   assign _00005e_00006020 = (addr << 32'd24);
-
-   assign a = _00005e_00006021;
+   assign a = _00005e_00006019;
 
 endmodule

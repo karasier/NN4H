@@ -1,10 +1,10 @@
 `timescale 1ps/1ps
 
 module _____00003aT0( ); 
-   reg [31:0] z__value;
-   wire [31:0] a;
-   wire [31:0] _00005e_0000600;
-   wire [31:0] _00005e_0000601;
+   reg signed[7:0] z__value;
+   wire signed[7:0] a;
+   wire signed[7:0] _00005e_0000600;
+   wire signed[7:0] _00005e_0000601;
 
    _____00003aT0_00003a_00003atanh_00003aT0 tanh(.z__value(_00005e_0000600),.a(_00005e_0000601));
    assign _00005e_0000600 = z__value;
@@ -13,11 +13,15 @@ module _____00003aT0( );
 
    initial begin
 
-      z__value = 32'b00000000000000000000000000000000;
+      z__value = 8'b00000000;
 
       #10
 
-      z__value = 32'b11111111111111111111111111111111;
+      z__value = 8'b00110011;
+
+      #10
+
+      z__value = 8'b11111111;
 
       #10
 

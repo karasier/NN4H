@@ -3,6 +3,7 @@
 # gccの問題でシミュレーションが上手く実行できない
 # 活性化関数の実装
 # 活性化関数の適用ができたが、活性化関数の入力値が1つ前の状態の値になっている。
+# innerをinput, output, inoutに適時変更する必要あり。
 
 # ニューロンの計算モジュール
 
@@ -39,9 +40,9 @@ system :neuron_layer do
   # :rinc -> read increments
   # メモリ読み出し用にreadのbranchを用意
 
-  w0Mem.branch(:rinc).inner :w0Reader
-  w1Mem.branch(:rinc).inner :w1Reader
-  xMem.branch(:rinc).inner :xReader
+  w0Mem.branch(:rinc).input :w0Reader
+  w1Mem.branch(:rinc).input :w1Reader
+  xMem.branch(:rinc).input :xReader
 
   # Prepares the left and acc arrays.
   # 重みをまとめる
@@ -51,7 +52,7 @@ system :neuron_layer do
   # 計算結果の格納用メモリ
   mem_file([8], 2, clk, rst, rinc: :rst).(:accumMem)
 
-  accumMem.branch(:anum).inner :sop # sum of products
+  accumMem.branch(:anum).inout :sop # sum of products
   sop_out = [sop.wrap(0), sop.wrap(1)]
 
   # Instantiate the matrix product.
@@ -69,8 +70,8 @@ system :neuron_layer do
   # zのメモリ
   mem_file([8], 2, clk, rst, rinc: :rst).(:zMem)
 
-  biasMem.branch(:anum).inner :biasReader
-  zMem.branch(:anum).inner :zAccessor
+  biasMem.branch(:anum).input :biasReader
+  zMem.branch(:anum).inout :zAccessor
 
   bias = [biasReader.wrap(0), biasReader.wrap(1)]
   z = [zAccessor.wrap(0), zAccessor.wrap(1)]
@@ -83,21 +84,21 @@ system :neuron_layer do
   # 活性化関数の適用
   # 活性化関数適用後の値のメモリ
   mem_file([8], 2, clk, rst, rinc: :rst).(:aMem)
-  aMem.branch(:anum).inner :aAccessor
+  aMem.branch(:anum).output :aAccessor
   a = [aAccessor.wrap(0), aAccessor.wrap(1)]
 
   # zの値
   [8].inner :z0_val, :z1_val
   [8].inner :a0_val, :a1_val
 
+  activation_function(proc{|i| Math.tanh(i)}, bit[4, 4], 4, 4).(:func0).(z0_val, a0_val)
+  activation_function(proc{|i| Math.tanh(i)}, bit[4, 4], 4, 4).(:func1).(z1_val, a1_val)
+
   # zの中身の読み出し
   par(clk.posedge) do
     hif(ackB) do
       z[0].read(z0_val)
       z[1].read(z1_val)
-
-      activation_function(proc{|i| Math.tanh(i)}, bit[8], 4, 4, 4).(:func0).(z0_val, a0_val)
-      activation_function(proc{|i| Math.tanh(i)}, bit[8], 4, 4, 4).(:func1).(z1_val, a1_val)
 
       a[0].write(a0_val)
       a[1].write(a1_val) do
@@ -109,10 +110,10 @@ system :neuron_layer do
 
   # メモリに書き込み
   # メモリの書き込み用にwriteのbranchを用意
-  w0Mem.branch(:winc).inner :w0Writer
-  w1Mem.branch(:winc).inner :w1Writer
-  xMem.branch(:winc).inner :xWriter
-  biasMem.branch(:winc).inner :biasWriter
+  w0Mem.branch(:winc).output :w0Writer
+  w1Mem.branch(:winc).output :w1Writer
+  xMem.branch(:winc).output :xWriter
+  biasMem.branch(:winc).output :biasWriter
 
   # メモリに格納する値
   [8].inner :val
