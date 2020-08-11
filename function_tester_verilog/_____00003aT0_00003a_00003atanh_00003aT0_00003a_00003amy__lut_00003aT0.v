@@ -4,7 +4,7 @@ module _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__lut_00003aT0( a
    input [3:0] addr;
    output signed[7:0] base;
    output reg signed[7:0] next__data;
-   wire signed[7:0] lut  :0[0:15];
+   reg signed[7:0] lut  [0:15];
 
    assign base = lut[addr];
 

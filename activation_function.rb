@@ -6,6 +6,12 @@ include HDLRuby::High::Std
 
 # 活性化関数のモジュール
 system :activation_function do |func, typ, integer_width, decimal_width|
+  # ジェネリックパラメータの整合性の確認
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+
   # 活性化関数適用前の計算値
   typ.input :z_value
 
@@ -35,6 +41,11 @@ end
 # 活性化関数のLUTを表現するモジュール
 # 任意の活性化関数をprocで渡せる
 system :lut do |func, typ, integer_width, decimal_width|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+
   lut_size = 2 ** integer_width
 
   # address of LUT
@@ -65,6 +76,8 @@ end
 # compute tanh
 # LUTの点の間の値を計算するモジュール
 system :interpolator do |typ|
+  typ = typ.to_type
+
   # アドレスに対応する値など
   typ.input :z_value, :base, :next_data, :integer_part
 

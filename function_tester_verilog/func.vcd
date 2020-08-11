@@ -1,0 +1,128 @@
+$date
+	Wed Aug 12 03:08:48 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module _____00003aT0 $end
+$var wire 8 ! a [7:0] $end
+$var wire 8 " _00005e_0000601 [7:0] $end
+$var wire 8 # _00005e_0000600 [7:0] $end
+$var reg 8 $ z__value [7:0] $end
+$scope module tanh $end
+$var wire 4 % _00005e_00006012 [3:0] $end
+$var wire 8 & _00005e_00006015 [7:0] $end
+$var wire 8 ' _00005e_00006016 [7:0] $end
+$var wire 8 ( _00005e_00006017 [7:0] $end
+$var wire 8 ) _00005e_00006018 [7:0] $end
+$var wire 8 * a [7:0] $end
+$var wire 8 + base [7:0] $end
+$var wire 8 , next__data [7:0] $end
+$var wire 8 - z__value [7:0] $end
+$var wire 8 . integer__part [7:0] $end
+$var wire 4 / addr [3:0] $end
+$var wire 8 0 _00005e_00006019 [7:0] $end
+$var wire 8 1 _00005e_00006014 [7:0] $end
+$var wire 8 2 _00005e_00006013 [7:0] $end
+$scope module my__interpolator $end
+$var wire 8 3 base [7:0] $end
+$var wire 8 4 integer__part [7:0] $end
+$var wire 8 5 next__data [7:0] $end
+$var wire 8 6 z__value [7:0] $end
+$var wire 8 7 interpolated__value [7:0] $end
+$upscope $end
+$scope module my__lut $end
+$var wire 4 8 addr [3:0] $end
+$var wire 8 9 base [7:0] $end
+$var reg 8 : next__data [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1100 :
+b0 9
+b0 8
+b0 7
+b0 6
+b1100 5
+b0 4
+b0 3
+b0 2
+b1100 1
+b0 0
+b0 /
+b0 .
+b0 -
+b1100 ,
+b0 +
+b0 *
+b0 )
+b1100 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1111 (
+b1111 5
+b1111 ,
+b1111 1
+b1111 :
+b110000 )
+b110000 4
+b110000 .
+b1111 !
+b1111 "
+b1111 *
+b1111 0
+b1111 7
+b1111 '
+b1111 3
+b1111 +
+b1111 2
+b1111 9
+b11 %
+b11 8
+b11 /
+b110011 &
+b110011 6
+b110011 #
+b110011 $
+b110011 -
+#20
+b0 (
+b0 5
+b0 ,
+b0 1
+b0 :
+b11110000 )
+b11110000 4
+b11110000 .
+b11111111 !
+b11111111 "
+b11111111 *
+b11111111 0
+b11111111 7
+b11110100 '
+b11110100 3
+b11110100 +
+b11110100 2
+b11110100 9
+b1111 %
+b1111 8
+b1111 /
+b11111111 &
+b11111111 6
+b11111111 #
+b11111111 $
+b11111111 -
+#30

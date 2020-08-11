@@ -9,9 +9,12 @@
 
 require 'std/memory.rb'
 require 'std/linear.rb'
+require 'std/fixpoint.rb'
 require_relative 'activation_function.rb'
 
 include HDLRuby::High::Std
+
+typ = signed[4, 4]
 
 system :neuron_layer do
   inner :clk,  # clock用
@@ -28,11 +31,11 @@ system :neuron_layer do
   # 積和計算
   # mem_dual(データ型, メモリサイズ, クロック, リセット)
   # 重み
-  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:w0Mem)  
-  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:w1Mem)
+  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:w0Mem)  
+  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:w1Mem)
 
   # 入力値
-  mem_dual([8], 2, clk, rst, rinc: :rst, winc: :rst).(:xMem)
+  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:xMem)
 
   # Access ports.
   # ブランチはアクセスポートを用意できる
@@ -50,7 +53,7 @@ system :neuron_layer do
   
   # Accumulators memory.
   # 計算結果の格納用メモリ
-  mem_file([8], 2, clk, rst, rinc: :rst).(:accumMem)
+  mem_file(typ, 2, clk, rst, rinc: :rst).(:accumMem)
 
   accumMem.branch(:anum).inout :sop # sum of products
   sop_out = [sop.wrap(0), sop.wrap(1)]
@@ -59,16 +62,16 @@ system :neuron_layer do
   # mac_n1(データ型, クロック, リクエスト, ack, 入力(行列), 入力(ベクトル), 出力)
   
   # 重みと入力の積和計算
-  mac_n1([8], clk, req, ackA, weights, xReader, sop_out)
+  mac_n1(typ, clk, req, ackA, weights, xReader, sop_out)
 
   #-------------------------------------------------------------
 
   # バイアスの計算
   # バイアスのメモリ
-  mem_file([8], 2, clk, rst, rinc: :rst, winc: :rst).(:biasMem)
+  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:biasMem)
 
   # zのメモリ
-  mem_file([8], 2, clk, rst, rinc: :rst).(:zMem)
+  mem_file(typ, 2, clk, rst, rinc: :rst).(:zMem)
 
   biasMem.branch(:anum).input :biasReader
   zMem.branch(:anum).inout :zAccessor
@@ -77,22 +80,22 @@ system :neuron_layer do
   z = [zAccessor.wrap(0), zAccessor.wrap(1)]
 
   # add_nはmem_fileでないと使えない → 並列アクセスのため
-  add_n([8], clk, ackA, ackB, sop_out, bias, z)
+  add_n(typ, clk, ackA, ackB, sop_out, bias, z)
 
   #------------------------------------------------------------
 
   # 活性化関数の適用
   # 活性化関数適用後の値のメモリ
-  mem_file([8], 2, clk, rst, rinc: :rst).(:aMem)
+  mem_file(typ, 2, clk, rst, rinc: :rst).(:aMem)
   aMem.branch(:anum).output :aAccessor
   a = [aAccessor.wrap(0), aAccessor.wrap(1)]
 
   # zの値
-  [8].inner :z0_val, :z1_val
-  [8].inner :a0_val, :a1_val
+  typ.inner :z0_val, :z1_val
+  typ.inner :a0_val, :a1_val
 
-  activation_function(proc{|i| Math.tanh(i)}, bit[4, 4], 4, 4).(:func0).(z0_val, a0_val)
-  activation_function(proc{|i| Math.tanh(i)}, bit[4, 4], 4, 4).(:func1).(z1_val, a1_val)
+  activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func0).(z0_val, a0_val)
+  activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func1).(z1_val, a1_val)
 
   # zの中身の読み出し
   par(clk.posedge) do
@@ -116,7 +119,7 @@ system :neuron_layer do
   biasMem.branch(:winc).output :biasWriter
 
   # メモリに格納する値
-  [8].inner :val
+  typ.inner :val
 
   # クロックの立ち上がりの度にvalをメモリに書き込み
   # wincのため、書き込むたびにアドレスが1つ増える
@@ -135,7 +138,7 @@ system :neuron_layer do
     clk <= 0
     rst <= 0
     req <= 0
-    val  <= 0
+    val  <= _b8b00000000
     fill <= 0
     !10.ns
 
@@ -149,7 +152,7 @@ system :neuron_layer do
     clk <= 0
     rst <= 0
     fill <= 1
-    val <= 1
+    val <= _b8b00010000
     !10.ns
     2.times do |i|
       clk <= 1
