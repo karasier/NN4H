@@ -48,21 +48,21 @@ module _____00003aT0( );
    wire signed[7:0] _00003a334_00003a_00003adbus__w;
    wire [0:0] _00003a334_00003a_00003aabus__r;
    wire [0:0] _00003a334_00003a_00003aabus__w;
-   wire signed[7:0] _00003a334_00003a_00003amem  [0:1];
+   wire signed[7:0] _00003a334_00003a_00003amem  :0[0:1];
    wire _00003a335_00003a_00003atrig__r;
    wire _00003a335_00003a_00003atrig__w;
    reg signed[7:0] _00003a335_00003a_00003adbus__r;
    wire signed[7:0] _00003a335_00003a_00003adbus__w;
    wire [0:0] _00003a335_00003a_00003aabus__r;
    wire [0:0] _00003a335_00003a_00003aabus__w;
-   wire signed[7:0] _00003a335_00003a_00003amem  [0:1];
+   wire signed[7:0] _00003a335_00003a_00003amem  :0[0:1];
    wire _00003a336_00003a_00003atrig__r;
    wire _00003a336_00003a_00003atrig__w;
    reg signed[7:0] _00003a336_00003a_00003adbus__r;
    wire signed[7:0] _00003a336_00003a_00003adbus__w;
    wire [0:0] _00003a336_00003a_00003aabus__r;
    wire [0:0] _00003a336_00003a_00003aabus__w;
-   wire signed[7:0] _00003a336_00003a_00003amem  [0:1];
+   wire signed[7:0] _00003a336_00003a_00003amem  :0[0:1];
    wire signed[7:0] _00003a337_00003a_00003areg__0;
    wire signed[7:0] _00003a337_00003a_00003areg__1;
    wire [0:0] _00003a337_00003a_00003a_00003a238_00003a_00003aabus__r;
@@ -419,12 +419,6 @@ module _____00003aT0( );
 
       #10000
 
-      $finish;
-   end
-
-   initial begin
-      $dumpfile("nn.vcd");
-      $dumpvars(0, _____00003aT0);
    end
 
    always @( negedge clk ) begin

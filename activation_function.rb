@@ -101,7 +101,7 @@ def initialize_lut(func, lut_size, typ, integer_width, decimal_width)
     range_array = Range.new(-lut_size/2, lut_size/2 - 1).to_a
 
     # 活性化関数の適用
-    table = range_array.map(&func).map{ |value| value.to_fix(decimal_width) }
+    table = range_array.map(&func).map{ |value| value.to_fix(decimal_width).to_expr.as(typ) }
 
     # 配列を分割して順番入れ替え
     sliced = table.each_slice(lut_size/2).to_a
@@ -111,7 +111,7 @@ def initialize_lut(func, lut_size, typ, integer_width, decimal_width)
     range_array = Range.new(0, lut_size - 1).to_a
     
     # 活性化関数の適用
-    table = range_array.map(&func).map{ |value| value.to_fix(decimal_width) }
+    table = range_array.map(&func).map{ |value| value.to_fix(decimal_width).to_expr.as(typ) }
   end
   
   return table

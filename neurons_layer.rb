@@ -92,6 +92,8 @@ system :neuron_layer do
 
   # zの値
   typ.inner :z0_val, :z1_val
+
+  # aの値
   typ.inner :a0_val, :a1_val
 
   activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func0).(z0_val, a0_val)
