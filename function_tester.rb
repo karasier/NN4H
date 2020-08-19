@@ -22,7 +22,7 @@ system :tester do
   timed do
     z_value <= _b8b00000000
     !10.ps
-    z_value <= _b8b10110000
+    z_value <= _b8b01110000
     !10.ps
     z_value <= _b8b11111111
     !10.ps

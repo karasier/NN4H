@@ -69,7 +69,14 @@ system :lut do |func, typ, integer_width, decimal_width|
     end
   end
   helse do
-    next_data <= lut[addr+1]
+    hif(addr == [_b1b0, [_b1b1] * (addr.width - 1)]) do          
+      if typ.signed?
+        next_data <= lut[addr]
+      else
+        next_data <= lut[addr + 1]
+      end
+    end
+    helse { next_data <= lut[addr + 1] }  
   end
 end
 

@@ -14,7 +14,12 @@ module _____00003aT0_00003a_00003atanh_00003aT0_00003a_00003amy__lut_00003aT0( a
          next__data <= lut[32'd0];
       end
       else begin
-         next__data <= lut[(addr + 32'd1)];
+         if ((addr == {1'b0,{1'b1,1'b1,1'b1}})) begin
+            next__data <= lut[addr];
+         end
+         else begin
+            next__data <= lut[(addr + 32'd1)];
+         end
       end
 
    end

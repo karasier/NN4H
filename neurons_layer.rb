@@ -16,7 +16,7 @@ include HDLRuby::High::Std
 
 typ = signed[4, 4]
 
-system :neuron_layer do
+system :neurons_layer do
   inner :clk,  # clock用
         :rst,  # reset用
         :req,  # request用
@@ -99,18 +99,27 @@ system :neuron_layer do
   activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func0).(z0_val, a0_val)
   activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func1).(z1_val, a1_val)
 
-  # zの中身の読み出し
-  par(clk.posedge) do
-    hif(ackB) do
-      z[0].read(z0_val)
-      z[1].read(z1_val)
 
-      a[0].write(a0_val)
-      a[1].write(a1_val) do
-        ack <= 1
-      end
+  inner :z0_flag, :z1_flag, :a0_ack, :a1_ack, :layer_ack
+
+  # zの中身の読み出して、読み出しフラグを1にする
+  par(clk.negedge) do
+    hif(ackB) do      
+      z[0].read(z0_val) { z0_flag <= 1 }
+      z[1].read(z1_val) { z1_flag <= 1 }
+    end
+    helse { z0_flag <= 0; z1_flag <= 0 }
+  end
+
+  # 読み出しが終わったら、書き込んでackを1にする
+  par(clk.posedge) do
+    hif(z0_flag & z1_flag) do      
+      a[0].write(a0_val) { a0_ack <= 1 }              
+      a[1].write(a1_val) { a1_ack <= 1 }            
     end
   end
+
+  layer_ack <= a0_ack & a1_ack
   #------------------------------------------------------------
 
   # メモリに書き込み
@@ -175,7 +184,7 @@ system :neuron_layer do
       !10.ns
       clk <= 0
       # ackが1になったら計算終了する
-      hif(ackB == 1) { req <= 0 }
+      hif(ackB) { req <= 0 }
       !10.ns     
     end
   end

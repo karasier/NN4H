@@ -3,9 +3,9 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__interpolator_58_840_48016600();
-   makemy__lut_58_840_47597180();
-   maketanh_58_840_47310920();
-   make_____58_840_50428240();
+   makemy__interpolator_58_840_47114560();
+   makemy__lut_58_840_45875900();
+   maketanh_58_840_45478980();
+   make_____58_840_42212840();
    hruby_sim_core(-1);
 }
