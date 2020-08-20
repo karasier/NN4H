@@ -10,11 +10,12 @@ include HDLRuby::High::Std
 typ = signed[4, 4] # データ型
 
 system :layer_bench do
-  inner :clk,  # clock 
-        :rst,  # reset
-        :req,  # request
+  inner :clk,   # clock 
+        :rst,   # reset
+        :req,   # request
         :ack_0, # 第1層のack
-        :ack_1  # 第2層のack
+        :ack_1, # 第2層のack
+        :fill   # メモリの初期化用
 
   # ニューラルネットワークへの入力のメモリ
   mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_x)
@@ -34,11 +35,10 @@ system :layer_bench do
   # ニューラルネットワークの出力のR/W用ポート作成
   channel_a1.branch(:anum).inout :accessor_a1
 
-  a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
-  a1 = [accessor_a1.wrap(0)]
+  #a1 = [accessor_a1.wrap(0)]
 
   # 第1層の計算
-  neurons_layer0(typ, reader_x, a0).(:layer0).(clk, rst, req, fill, ack_0)
+  neurons_layer0(typ, reader_x, accessor_a0).(:layer0).(clk, rst, req, fill, ack_0)
 
   # 第2層の計算
   #neurons_layer1(typ, a0, a1).(:layer1).(clk, rst, ack_0, fill, ack_1)
@@ -86,7 +86,7 @@ system :layer_bench do
   end
 end
 
-system :neurons_layer0 do |typ, reader_x, a0|
+system :neurons_layer0 do |typ, reader_x, accessor_a0|
   input :clk, :rst, :req, :fill
   output :ack_0
 
@@ -107,7 +107,7 @@ system :neurons_layer0 do |typ, reader_x, a0|
   # 積和計算の結果の格納用
   mem_file(typ, 2, clk, rst, rinc: :rst).(:channel_accum)
 
-  channel_accum.branch(:anum).output :accum
+  channel_accum.branch(:anum).inout :accum
   result_mac = [accum.wrap(0), accum.wrap(1)]
 
   mac_n1(typ, clk, req, ack_mac, weights, reader_x, result_mac)
@@ -126,6 +126,8 @@ system :neurons_layer0 do |typ, reader_x, a0|
   add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
+  a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
+  
   typ.inner :value_z0, :value_z1
   typ.inner :value_a00, :value_a01
 
