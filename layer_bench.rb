@@ -28,6 +28,7 @@ system :layer_bench do
 
   # 入力値のRead用ポート作成
   channel_x.branch(:rinc).input :reader_x
+  channel_x.branch(:winc).output :writer_x
 
   # 第1層の出力値のR/W用ポート作成
   channel_a0.branch(:anum).inout :accessor_a0
@@ -35,13 +36,24 @@ system :layer_bench do
   # ニューラルネットワークの出力のR/W用ポート作成
   channel_a1.branch(:anum).inout :accessor_a1
 
+  a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
   #a1 = [accessor_a1.wrap(0)]
 
   # 第1層の計算
-  neurons_layer0(typ, reader_x, accessor_a0).(:layer0).(clk, rst, req, fill, ack_0)
+  neurons_layer0(typ, reader_x, a0).(:layer0).(clk, rst, req, fill, ack_0)
 
   # 第2層の計算
   #neurons_layer1(typ, a0, a1).(:layer1).(clk, rst, ack_0, fill, ack_1)
+
+  typ.inner :val
+
+  val <= _b8b00010000
+
+  par(clk.posedge) do
+    hif(fill) do
+      writer_x.write(val)
+    end
+  end
 
   timed do
     # リセット
@@ -63,7 +75,7 @@ system :layer_bench do
     fill <= 1
 
     !10.ns
-    2.times do |i|
+    10.times do |i|
       clk <= 1
       !10.ns
       clk <= 0
@@ -86,7 +98,7 @@ system :layer_bench do
   end
 end
 
-system :neurons_layer0 do |typ, reader_x, accessor_a0|
+system :neurons_layer0 do |typ, reader_x, a0|
   input :clk, :rst, :req, :fill
   output :ack_0
 
@@ -126,8 +138,6 @@ system :neurons_layer0 do |typ, reader_x, accessor_a0|
   add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
-  a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
-  
   typ.inner :value_z0, :value_z1
   typ.inner :value_a00, :value_a01
 
