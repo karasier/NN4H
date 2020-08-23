@@ -21,13 +21,14 @@ system :layer_bench do
   mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_x)
 
   # 第1層のニューロンの出力のメモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_a0)
+  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a0)
 
   # ニューラルネットワークの出力のメモリ
-  mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_a1)
+  mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a1)
 
   # 入力値のRead用ポート作成
-  channel_x.branch(:rinc).input :reader_x
+  #channel_x.branch(:rinc).input :reader_x
+  reader_x = channel_x.branch(:rinc)
   channel_x.branch(:winc).output :writer_x
 
   # 第1層の出力値のR/W用ポート作成
@@ -45,13 +46,9 @@ system :layer_bench do
   # 第2層の計算
   #neurons_layer1(typ, a0, a1).(:layer1).(clk, rst, ack_0, fill, ack_1)
 
-  typ.inner :val
-
-  val <= _b8b00010000
-
   par(clk.posedge) do
     hif(fill) do
-      writer_x.write(val)
+      writer_x.write(_b8b00010000)
     end
   end
 
@@ -89,6 +86,10 @@ system :layer_bench do
     clk <= 0
     req <= 1
     !10.ns
+    clk <= 1
+    !10.ns
+    clk <= 0
+    req <= 0
     10.times do
       clk <= 1
       !10.ns
@@ -117,7 +118,7 @@ system :neurons_layer0 do |typ, reader_x, a0|
   weights = [reader_w0, reader_w1]
 
   # 積和計算の結果の格納用
-  mem_file(typ, 2, clk, rst, rinc: :rst).(:channel_accum)
+  mem_file(typ, 2, clk, rst, anum: :rst).(:channel_accum)
 
   channel_accum.branch(:anum).inout :accum
   result_mac = [accum.wrap(0), accum.wrap(1)]
@@ -125,9 +126,9 @@ system :neurons_layer0 do |typ, reader_x, a0|
   mac_n1(typ, clk, req, ack_mac, weights, reader_x, result_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_bias)
+  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
 
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_z)
+  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
   channel_bias.branch(:anum).input :reader_bias
   channel_z.branch(:anum).inout :accessor_z
@@ -168,19 +169,15 @@ system :neurons_layer0 do |typ, reader_x, a0|
   channel_w1.branch(:winc).output :writer_w1
   channel_bias.branch(:winc).output :writer_bias
 
-  typ.inner :val
-  
-  val <= _b8b00010000
-
   par(clk.posedge) do
     hif(fill) do
-      writer_w0.write(val)
-      writer_w1.write(val)
-      writer_bias.write(val)
+      writer_w0.write(_b8b00010000)
+      writer_w1.write(_b8b00010000)
+      writer_bias.write(_b8b00010000)
     end
   end
 
-  par(clk.posedge) do
-    hif(ack_add) { req <= 0 }
-  end
+  #par(clk.posedge) do
+  #  hif(ack_add) { req <= 0 }
+  #end
 end

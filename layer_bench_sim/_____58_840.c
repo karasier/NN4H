@@ -2,36 +2,36 @@
 #include "hruby_sim.h"
 #include "hruby_sim_gen.h"
 
-SystemT _____58_840_52937200;
+SystemT _____58_840_51546480;
 
-Block __52366240;
+Block __51239320;
 
-Block __52366020;
+Block __51239000;
 
-Block __52365380;
+Block __51238320;
 
-void code__52365380() {
+void code__51238320() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__53228540(),_5818_42218680___48385240______58_840_52937200);
+      transmit_to_signal(make__51892580(),_5818_47886720______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__52365380() {
+Block make__51238320() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52365380 = block;
-   block->owner = (Object)__52366020;
+   __51238320 = block;
+   block->owner = (Object)__51239000;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52365380;
+   block->function = &code__51238320;
 
    return block;
 };
 
-void code__52366020() {
+void code__51239000() {
    {
       Value cond = ({
          Value src0,src1,dst = get_value();
@@ -39,47 +39,47 @@ void code__52366020() {
          src0 = ({
                Value src0, dst = get_value();
                unsigned int pool_state = get_value_pos();
-               src0 = rst_49171700___48385240______58_840_52937200->c_value;
+               src0 = rst_47886960______58_84_43395440______58_840_51546480->c_value;
                dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                set_value_pos(pool_state);
             dst; });
-         src1 = make__53228640();
+         src1 = make__51892740();
          dst = equal_value(src0,src1,dst);
          set_value_pos(pool_state);
       dst; });
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__52365380();
+    code__51238320();
    }
       }
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__53228460(),_5817_42219840___48385240______58_840_52937200);
+      transmit_to_signal(make__51892520(),_5817_47886840______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__52366020() {
+Block make__51239000() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52366020 = block;
-   block->owner = (Object)__52366240;
+   __51239000 = block;
+   block->owner = (Object)__51239320;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52366020;
+   block->function = &code__51239000;
 
    return block;
 };
 
-Block __52363880;
+Block __51237200;
 
-Block __52363300;
+Block __51236880;
 
-Block __52411860;
+Block __51236360;
 
-void code__52411860() {
+void code__51236360() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal(({
@@ -91,45 +91,45 @@ void code__52411860() {
             src0 = ({
                   Value src0, dst = get_value();
                   unsigned int pool_state = get_value_pos();
-                  src0 = _5818_42218680___48385240______58_840_52937200->c_value;
+                  src0 = _5818_47886720______58_84_43395440______58_840_51546480->c_value;
                   dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                   set_value_pos(pool_state);
                dst; });
-            src1 = make__53227740();
+            src1 = make__51892160();
             dst = add_value(src0,src1,dst);
             set_value_pos(pool_state);
          dst; });
       dst = cast_value(src0,get_type_vector(get_type_bit(),1),dst);
       set_value_pos(pool_state);
-   dst; }),_5818_42218680___48385240______58_840_52937200);
+   dst; }),_5818_47886720______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__53227560(),_5817_42219840___48385240______58_840_52937200);
+      transmit_to_signal(make__51891980(),_5817_47886840______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(val_48350580___48385240______58_840_52937200->c_value,_5819_44106140___48385240______58_840_52937200);
+      transmit_to_signal(make__51891840(),_5819_47966200______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__52411860() {
+Block make__51236360() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52411860 = block;
-   block->owner = (Object)__52363300;
+   __51236360 = block;
+   block->owner = (Object)__51236880;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52411860;
+   block->function = &code__51236360;
 
    return block;
 };
 
-void code__52363300() {
+void code__51236880() {
    {
       Value cond = ({
          Value src0,src1,dst = get_value();
@@ -137,515 +137,508 @@ void code__52363300() {
          src0 = ({
                Value src0, dst = get_value();
                unsigned int pool_state = get_value_pos();
-               src0 = rst_49171700___48385240______58_840_52937200->c_value;
+               src0 = rst_47886960______58_84_43395440______58_840_51546480->c_value;
                dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                set_value_pos(pool_state);
             dst; });
-         src1 = make__53228020();
+         src1 = make__51892340();
          dst = equal_value(src0,src1,dst);
          set_value_pos(pool_state);
       dst; });
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__52411860();
+    code__51236360();
    }
       }
    }
 }
 
-Block make__52363300() {
+Block make__51236880() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52363300 = block;
-   block->owner = (Object)__52363880;
+   __51236880 = block;
+   block->owner = (Object)__51237200;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52363300;
+   block->function = &code__51236880;
 
    return block;
 };
 
-void code__52363880() {
- code__52363300();
+void code__51237200() {
+ code__51236880();
 }
 
-Block make__52363880() {
+Block make__51237200() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52363880 = block;
-   block->owner = (Object)__52366240;
+   __51237200 = block;
+   block->owner = (Object)__51239320;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52363880;
+   block->function = &code__51237200;
 
    return block;
 };
 
-void code__52366240() {
- code__52366020();
+void code__51239320() {
+ code__51239000();
    {
-      Value cond = fill_49171620___48385240______58_840_52937200->c_value;
+      Value cond = fill_47886880______58_84_43395440______58_840_51546480->c_value;
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__52363880();
+    code__51237200();
    }
       }
    }
 }
 
-Block make__52366240() {
+Block make__51239320() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52366240 = block;
-   block->owner = (Object)__52879220;
+   __51239320 = block;
+   block->owner = (Object)__51510300;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52366240;
+   block->function = &code__51239320;
 
    return block;
 };
 
-Block __52878940;
+Block __51509960;
 
-void code__52878940() {
+void code__51509960() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53227320(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891680(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53227240(),rst_49171700___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891580(),rst_47886960______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53227140(),req_49171680___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891480(),req_47886940______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53227080(),fill_49171620___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891340(),fill_47886880______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53227020(),rst_49171700___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891220(),rst_47886960______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226960(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51891100(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226880(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226800(),rst_49171700___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51890920(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226740(),fill_49171620___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226640(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226500(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226400(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226300(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226140(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53226080(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225940(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225780(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225660(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225540(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225480(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225280(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53225120(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224900(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224820(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224720(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224660(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224600(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224520(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224440(),clk_49171720___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-   hw_wait(make_delay(10,NS),__52937500);
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224380(),fill_49171620___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51890820(),rst_47886960______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224320(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51890720(),fill_47886880______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890660(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890480(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890340(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890260(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890140(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51890040(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889980(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889900(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889820(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889760(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889700(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889580(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889520(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889460(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889400(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889320(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889240(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889160(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51889080(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51888960(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51888900(),fill_47886880______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224200(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51888720(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224140(),req_49171680___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51888560(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224080(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51888260(),req_47886940______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53224020(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51888180(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53223940(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51912400(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53223840(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51912340(),req_47886940______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53223740(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51912140(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53223600(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911920(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53223520(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911680(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280680(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911620(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280560(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911560(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280460(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911500(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280300(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911440(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280200(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911360(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53280080(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911240(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279800(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911140(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279720(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51911060(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279620(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51910840(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279440(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51910780(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279360(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51910680(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279240(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51910580(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__53279080(),clk_49171720___48385240______58_840_52937200);
+      transmit_to_signal_seq(make__51910500(),clk_47886980______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,NS),__52937500);
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51910340(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51910240(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51910120(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__51910060(),clk_47886980______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   hw_wait(make_delay(10,NS),__51547240);
 }
 
-Block make__52878940() {
+Block make__51509960() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52878940 = block;
-   block->owner = (Object)__52937500;
+   __51509960 = block;
+   block->owner = (Object)__51547240;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52878940;
+   block->function = &code__51509960;
 
    return block;
 };
 
-Block __53004100;
+Block __51603400;
 
-void code__53004100() {
+void code__51603400() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__53278980(),val_48350580___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__53004100() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __53004100 = block;
-   block->owner = (Object)__53003960;
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53004100;
-
-   return block;
-};
-
-Block __53009880;
-
-void code__53009880() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(clk_49171720___48385240______58_840_52937200->c_value,clk_52135060_layer0_58_840_52138560___48385240______58_840_52937200);
+      transmit_to_signal(clk_47886980______58_84_43395440______58_840_51546480->c_value,clk_51056900_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(rst_49171700___48385240______58_840_52937200->c_value,rst_52135040_layer0_58_840_52138560___48385240______58_840_52937200);
+      transmit_to_signal(rst_47886960______58_84_43395440______58_840_51546480->c_value,rst_51056780_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(req_49171680___48385240______58_840_52937200->c_value,req_52135020_layer0_58_840_52138560___48385240______58_840_52937200);
+      transmit_to_signal(req_47886940______58_84_43395440______58_840_51546480->c_value,req_51056760_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(fill_49171620___48385240______58_840_52937200->c_value,fill_52135000_layer0_58_840_52138560___48385240______58_840_52937200);
+      transmit_to_signal(fill_47886880______58_84_43395440______58_840_51546480->c_value,fill_51056740_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53009880() {
+Block make__51603400() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53009880 = block;
-   block->owner = (Object)__53003760;
+   __51603400 = block;
+   block->owner = (Object)__51622360;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53009880;
+   block->function = &code__51603400;
 
    return block;
 };
 
-Block __53009760;
+Block __51603220;
 
-void code__53009760() {
+void code__51603220() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->c_value,ack__0_49171660___48385240______58_840_52937200);
+      transmit_to_signal(ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->c_value,ack__0_47886920______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53009760() {
+Block make__51603220() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53009760 = block;
-   block->owner = (Object)__53003460;
+   __51603220 = block;
+   block->owner = (Object)__51621820;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53009760;
+   block->function = &code__51603220;
 
    return block;
 };
 
-Block __49124360;
+Block __47773940;
 
-Block __44020480;
+Block __48019960;
 
-void code__44020480() {
+void code__48019960() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_range(dbus__w_48774060___48384940___48385240______58_840_52937200->c_value,make_ref_rangeS(mem_48819920___48384940___48385240______58_840_52937200,value2integer(abus__w_48773900___48384940___48385240______58_840_52937200->c_value),value2integer(abus__w_48773900___48384940___48385240______58_840_52937200->c_value)));
+      transmit_to_signal_range(dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value,make_ref_rangeS(mem_46809180_channel__x_581_43394860______58_84_43395440______58_840_51546480,value2integer(abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value),value2integer(abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value)));
       set_value_pos(pool_state);
    }
 }
 
-Block make__44020480() {
+Block make__48019960() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __44020480 = block;
-   block->owner = (Object)__49124360;
+   __48019960 = block;
+   block->owner = (Object)__47773940;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__44020480;
+   block->function = &code__48019960;
 
    return block;
 };
 
-void code__49124360() {
+void code__47773940() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal(({
@@ -655,763 +648,691 @@ void code__49124360() {
             Value ref,dst = get_value();
             unsigned long long idx;
             unsigned int pool_state = get_value_pos();
-            ref = mem_48819920___48384940___48385240______58_840_52937200->c_value;
-            idx = value2integer(abus__r_48773980___48384940___48385240______58_840_52937200->c_value);
+            ref = mem_46809180_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value;
+            idx = value2integer(abus__r_46322280_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value);
             dst = read_range(ref,idx,idx,get_type_vector(get_type_signed(),8),dst);
             set_value_pos(pool_state);
          dst; });
       dst = cast_value(src0,get_type_vector(get_type_signed(),8),dst);
       set_value_pos(pool_state);
-   dst; }),dbus__r_48482860___48384940___48385240______58_840_52937200);
+   dst; }),dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
    {
-      Value cond = trig__w_48437300___48384940___48385240______58_840_52937200->c_value;
+      Value cond = trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value;
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__44020480();
+    code__48019960();
    }
       }
    }
 }
 
-Block make__49124360() {
+Block make__47773940() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __49124360 = block;
-   block->owner = (Object)__47975500;
+   __47773940 = block;
+   block->owner = (Object)__48384340;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__49124360;
+   block->function = &code__47773940;
 
    return block;
 };
 
-Block __53026720;
+Block __51620880;
 
-void code__53026720() {
+void code__51620880() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(dbus__r_48482860___48384940___48385240______58_840_52937200->c_value,_5815_42221240___48385240______58_840_52937200);
+      transmit_to_signal(trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value,_5817_47886840______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53026720() {
+Block make__51620880() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53026720 = block;
-   block->owner = (Object)__53026440;
+   __51620880 = block;
+   block->owner = (Object)__51620700;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53026720;
+   block->function = &code__51620880;
 
    return block;
 };
 
-Block __53026340;
+Block __51620640;
 
-void code__53026340() {
+void code__51620640() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5815_42221240___48385240______58_840_52937200->c_value,dbus__r_48482860___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5817_47886840______58_84_43395440______58_840_51546480->c_value,trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53026340() {
+Block make__51620640() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53026340 = block;
-   block->owner = (Object)__53026140;
+   __51620640 = block;
+   block->owner = (Object)__51620420;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53026340;
+   block->function = &code__51620640;
 
    return block;
 };
 
-Block __53025740;
+Block __51619940;
 
-void code__53025740() {
+void code__51619940() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(trig__r_48437320___48384940___48385240______58_840_52937200->c_value,_5813_42221180___48385240______58_840_52937200);
+      transmit_to_signal(abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value,_5818_47886720______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53025740() {
+Block make__51619940() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53025740 = block;
-   block->owner = (Object)__53025420;
+   __51619940 = block;
+   block->owner = (Object)__51619620;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53025740;
+   block->function = &code__51619940;
 
    return block;
 };
 
-Block __53025340;
+Block __51619540;
 
-void code__53025340() {
+void code__51619540() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5813_42221180___48385240______58_840_52937200->c_value,trig__r_48437320___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5818_47886720______58_84_43395440______58_840_51546480->c_value,abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53025340() {
+Block make__51619540() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53025340 = block;
-   block->owner = (Object)__53025160;
+   __51619540 = block;
+   block->owner = (Object)__51619300;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53025340;
+   block->function = &code__51619540;
 
    return block;
 };
 
-Block __53024620;
+Block __51618460;
 
-void code__53024620() {
+void code__51618460() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(abus__r_48773980___48384940___48385240______58_840_52937200->c_value,_5814_42219880___48385240______58_840_52937200);
+      transmit_to_signal(dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value,_5819_47966200______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53024620() {
+Block make__51618460() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53024620 = block;
-   block->owner = (Object)__53024180;
+   __51618460 = block;
+   block->owner = (Object)__51618260;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53024620;
+   block->function = &code__51618460;
 
    return block;
 };
 
-Block __53024120;
+Block __51618180;
 
-void code__53024120() {
+void code__51618180() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5814_42219880___48385240______58_840_52937200->c_value,abus__r_48773980___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5819_47966200______58_84_43395440______58_840_51546480->c_value,dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53024120() {
+Block make__51618180() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53024120 = block;
-   block->owner = (Object)__53023860;
+   __51618180 = block;
+   block->owner = (Object)__51618000;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53024120;
+   block->function = &code__51618180;
 
    return block;
 };
 
-Block __53023380;
+Block __51641820;
 
-void code__53023380() {
+void code__51641820() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(trig__w_48437300___48384940___48385240______58_840_52937200->c_value,_5817_42219840___48385240______58_840_52937200);
+      transmit_to_signal(dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->c_value,_5815_51192580_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53023380() {
+Block make__51641820() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53023380 = block;
-   block->owner = (Object)__53023020;
+   __51641820 = block;
+   block->owner = (Object)__51661500;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53023380;
+   block->function = &code__51641820;
 
    return block;
 };
 
-Block __53022960;
+Block __51641740;
 
-void code__53022960() {
+void code__51641740() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5817_42219840___48385240______58_840_52937200->c_value,trig__w_48437300___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->c_value,trig__r_45671900_channel__x_581_43394860______58_84_43395440______58_840_51546480);
+      set_value_pos(pool_state);
+   }
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal(_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->c_value,abus__r_46322280_channel__x_581_43394860______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53022960() {
+Block make__51641740() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53022960 = block;
-   block->owner = (Object)__53022740;
+   __51641740 = block;
+   block->owner = (Object)__51660680;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53022960;
+   block->function = &code__51641740;
 
    return block;
 };
 
-Block __53022080;
+Block __51659180;
 
-void code__53022080() {
+void code__51659180() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(abus__w_48773900___48384940___48385240______58_840_52937200->c_value,_5818_42218680___48385240______58_840_52937200);
+      transmit_to_signal(reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->c_value,_5832_48033360______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53022080() {
+Block make__51659180() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53022080 = block;
-   block->owner = (Object)__53021920;
+   __51659180 = block;
+   block->owner = (Object)__51658940;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53022080;
+   block->function = &code__51659180;
 
    return block;
 };
 
-Block __53021860;
+Block __51658780;
 
-void code__53021860() {
+void code__51658780() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5818_42218680___48385240______58_840_52937200->c_value,abus__w_48773900___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5832_48033360______58_84_43395440______58_840_51546480->c_value,reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53021860() {
+Block make__51658780() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53021860 = block;
-   block->owner = (Object)__53021600;
+   __51658780 = block;
+   block->owner = (Object)__51813400;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53021860;
+   block->function = &code__51658780;
 
    return block;
 };
 
-Block __53020520;
+Block __51813000;
 
-void code__53020520() {
+void code__51813000() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(dbus__w_48774060___48384940___48385240______58_840_52937200->c_value,_5819_44106140___48385240______58_840_52937200);
+      transmit_to_signal(reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->c_value,_5833_48171780______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53020520() {
+Block make__51813000() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53020520 = block;
-   block->owner = (Object)__53020300;
+   __51813000 = block;
+   block->owner = (Object)__51812600;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53020520;
+   block->function = &code__51813000;
 
    return block;
 };
 
-Block __53020220;
+Block __51812560;
 
-void code__53020220() {
+void code__51812560() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5819_44106140___48385240______58_840_52937200->c_value,dbus__w_48774060___48384940___48385240______58_840_52937200);
+      transmit_to_signal(_5833_48171780______58_84_43395440______58_840_51546480->c_value,reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53020220() {
+Block make__51812560() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53020220 = block;
-   block->owner = (Object)__53020000;
+   __51812560 = block;
+   block->owner = (Object)__51812340;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53020220;
+   block->function = &code__51812560;
 
    return block;
 };
 
-Block __53074680;
+Block __51809800;
 
-void code__53074680() {
+void code__51809800() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(reg__0_48336580___47975380___48385240______58_840_52937200->c_value,_5832_46360980___48385240______58_840_52937200);
+      transmit_to_signal(reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->c_value,_5862_48321100______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53074680() {
+Block make__51809800() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53074680 = block;
-   block->owner = (Object)__53074400;
+   __51809800 = block;
+   block->owner = (Object)__51809460;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53074680;
+   block->function = &code__51809800;
 
    return block;
 };
 
-Block __53074360;
+Block __51809380;
 
-void code__53074360() {
+void code__51809380() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5832_46360980___48385240______58_840_52937200->c_value,reg__0_48336580___47975380___48385240______58_840_52937200);
+      transmit_to_signal(_5862_48321100______58_84_43395440______58_840_51546480->c_value,reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480);
       set_value_pos(pool_state);
    }
 }
 
-Block make__53074360() {
+Block make__51809380() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __53074360 = block;
-   block->owner = (Object)__53074200;
+   __51809380 = block;
+   block->owner = (Object)__51809220;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53074360;
+   block->function = &code__51809380;
 
    return block;
 };
 
-Block __53073820;
-
-void code__53073820() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(reg__1_48450120___47975380___48385240______58_840_52937200->c_value,_5833_47690040___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__53073820() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __53073820 = block;
-   block->owner = (Object)__53073540;
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53073820;
-
-   return block;
-};
-
-Block __53073400;
-
-void code__53073400() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5833_47690040___48385240______58_840_52937200->c_value,reg__1_48450120___47975380___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__53073400() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __53073400 = block;
-   block->owner = (Object)__53072980;
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53073400;
-
-   return block;
-};
-
-Block __53070520;
-
-void code__53070520() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(reg__0_49004720___48941940___48385240______58_840_52937200->c_value,_5862_48690340___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__53070520() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __53070520 = block;
-   block->owner = (Object)__53070260;
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53070520;
-
-   return block;
-};
-
-Block __53070180;
-
-void code__53070180() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5862_48690340___48385240______58_840_52937200->c_value,reg__0_49004720___48941940___48385240______58_840_52937200);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__53070180() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __53070180 = block;
-   block->owner = (Object)__53070000;
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__53070180;
-
-   return block;
-};
-
-Value make__53228640() {
+Value make__51892740() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__53228540() {
+Value make__51892580() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_vector(get_type_bit(),1),1,data);
 }
 
-Value make__53228460() {
+Value make__51892520() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__53228020() {
+Value make__51892340() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__53227740() {
+Value make__51892160() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__53227560() {
+Value make__51891980() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__53227320() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53227240() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53227140() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53227080() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53227020() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226960() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226880() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226800() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226740() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226640() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226500() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226400() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226300() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226140() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53226080() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225940() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225780() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225660() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225540() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225480() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225280() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53225120() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224900() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224820() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224720() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224660() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224600() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224520() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224440() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224380() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224320() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224200() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224140() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224080() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53224020() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53223940() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53223840() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53223740() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53223600() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53223520() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280680() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280560() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280460() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280300() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280200() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53280080() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279800() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279720() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279620() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279440() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279360() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279240() {
-   static unsigned long long data[] = { 1ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53279080() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_bit(),1,data);
-}
-
-Value make__53278980() {
+Value make__51891840() {
    static unsigned long long data[] = { 16ULL };
    return make_set_value(get_type_vector(get_type_signed(),8),1,data);
 }
 
-Scope __48385240;
+Value make__51891680() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
 
-SignalI clk_49171720___48385240______58_840_52937200;
+Value make__51891580() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
 
-SignalI makeclk_49171720() {
+Value make__51891480() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51891340() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51891220() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51891100() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890920() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890820() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890720() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890660() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890480() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890340() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890260() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890140() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51890040() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889980() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889900() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889820() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889760() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889700() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889580() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889520() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889460() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889400() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889320() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889240() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889160() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51889080() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888960() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888900() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888720() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888560() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888260() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51888180() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51912400() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51912340() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51912140() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911920() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911680() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911620() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911560() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911500() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911440() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911360() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911240() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911140() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51911060() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910840() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910780() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910680() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910580() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910500() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910340() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910240() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910120() {
+   static unsigned long long data[] = { 1ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Value make__51910060() {
+   static unsigned long long data[] = { 0ULL };
+   return make_set_value(get_type_bit(),1,data);
+}
+
+Scope _____58_84_43395440;
+
+SignalI clk_47886980______58_84_43395440______58_840_51546480;
+
+SignalI makeclk_47886980() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   clk_49171720___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   clk_47886980______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "clk";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1430,14 +1351,14 @@ SignalI makeclk_49171720() {
    return signalI;
 };
 
-SignalI rst_49171700___48385240______58_840_52937200;
+SignalI rst_47886960______58_84_43395440______58_840_51546480;
 
-SignalI makerst_49171700() {
+SignalI makerst_47886960() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   rst_49171700___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   rst_47886960______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "rst";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1456,14 +1377,14 @@ SignalI makerst_49171700() {
    return signalI;
 };
 
-SignalI req_49171680___48385240______58_840_52937200;
+SignalI req_47886940______58_84_43395440______58_840_51546480;
 
-SignalI makereq_49171680() {
+SignalI makereq_47886940() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   req_49171680___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   req_47886940______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "req";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1482,14 +1403,14 @@ SignalI makereq_49171680() {
    return signalI;
 };
 
-SignalI ack__0_49171660___48385240______58_840_52937200;
+SignalI ack__0_47886920______58_84_43395440______58_840_51546480;
 
-SignalI makeack__0_49171660() {
+SignalI makeack__0_47886920() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack__0_49171660___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   ack__0_47886920______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "ack_0";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1508,14 +1429,14 @@ SignalI makeack__0_49171660() {
    return signalI;
 };
 
-SignalI ack__1_49171640___48385240______58_840_52937200;
+SignalI ack__1_47886900______58_84_43395440______58_840_51546480;
 
-SignalI makeack__1_49171640() {
+SignalI makeack__1_47886900() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack__1_49171640___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   ack__1_47886900______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "ack_1";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1534,14 +1455,14 @@ SignalI makeack__1_49171640() {
    return signalI;
 };
 
-SignalI fill_49171620___48385240______58_840_52937200;
+SignalI fill_47886880______58_84_43395440______58_840_51546480;
 
-SignalI makefill_49171620() {
+SignalI makefill_47886880() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   fill_49171620___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   fill_47886880______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = "fill";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1560,92 +1481,14 @@ SignalI makefill_49171620() {
    return signalI;
 };
 
-SignalI _5815_42221240___48385240______58_840_52937200;
+SignalI _5817_47886840______58_84_43395440______58_840_51546480;
 
-SignalI make_5815_42221240() {
+SignalI make_5817_47886840() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5815_42221240___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
-   signalI->name = ":15";
-   signalI->type = get_type_vector(get_type_signed(),8);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI _5813_42221180___48385240______58_840_52937200;
-
-SignalI make_5813_42221180() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   _5813_42221180___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
-   signalI->name = ":13";
-   signalI->type = get_type_bit();
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI _5814_42219880___48385240______58_840_52937200;
-
-SignalI make_5814_42219880() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   _5814_42219880___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
-   signalI->name = ":14";
-   signalI->type = get_type_vector(get_type_bit(),1);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI _5817_42219840___48385240______58_840_52937200;
-
-SignalI make_5817_42219840() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   _5817_42219840___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5817_47886840______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":17";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1664,14 +1507,14 @@ SignalI make_5817_42219840() {
    return signalI;
 };
 
-SignalI _5818_42218680___48385240______58_840_52937200;
+SignalI _5818_47886720______58_84_43395440______58_840_51546480;
 
-SignalI make_5818_42218680() {
+SignalI make_5818_47886720() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5818_42218680___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5818_47886720______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":18";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -1690,14 +1533,14 @@ SignalI make_5818_42218680() {
    return signalI;
 };
 
-SignalI _5819_44106140___48385240______58_840_52937200;
+SignalI _5819_47966200______58_84_43395440______58_840_51546480;
 
-SignalI make_5819_44106140() {
+SignalI make_5819_47966200() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5819_44106140___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5819_47966200______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":19";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1716,14 +1559,14 @@ SignalI make_5819_44106140() {
    return signalI;
 };
 
-SignalI _5832_46360980___48385240______58_840_52937200;
+SignalI _5832_48033360______58_84_43395440______58_840_51546480;
 
-SignalI make_5832_46360980() {
+SignalI make_5832_48033360() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5832_46360980___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5832_48033360______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":32";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1742,14 +1585,14 @@ SignalI make_5832_46360980() {
    return signalI;
 };
 
-SignalI _5833_47690040___48385240______58_840_52937200;
+SignalI _5833_48171780______58_84_43395440______58_840_51546480;
 
-SignalI make_5833_47690040() {
+SignalI make_5833_48171780() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5833_47690040___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5833_48171780______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":33";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1768,14 +1611,14 @@ SignalI make_5833_47690040() {
    return signalI;
 };
 
-SignalI _5862_48690340___48385240______58_840_52937200;
+SignalI _5862_48321100______58_84_43395440______58_840_51546480;
 
-SignalI make_5862_48690340() {
+SignalI make_5862_48321100() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   _5862_48690340___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
+   _5862_48321100______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)_____58_84_43395440;
    signalI->name = ":62";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1794,56 +1637,30 @@ SignalI make_5862_48690340() {
    return signalI;
 };
 
-SignalI val_48350580___48385240______58_840_52937200;
+SystemI layer0_51192180;
 
-SignalI makeval_48350580() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   val_48350580___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48385240;
-   signalI->name = "val";
-   signalI->type = get_type_vector(get_type_signed(),8);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SystemI layer0_52134700;
-
-SystemI makelayer0_52134700() {
+SystemI makelayer0_51192180() {
    SystemI systemI = malloc(sizeof(SystemIS));
    systemI->kind = SYSTEMI;
 
-   layer0_52134700 = systemI;
-   systemI->owner = (Object)__48385240;
+   layer0_51192180 = systemI;
+   systemI->owner = (Object)_____58_84_43395440;
    systemI->name = "layer0";
-   systemI->system = layer0_58_840_52138560;
+   systemI->system = layer0_58_840_51003420;
 
    return systemI;
 };
 
-Scope __48384940;
+Scope channel__x_581_43394860;
 
-SignalI trig__r_48437320___48384940___48385240______58_840_52937200;
+SignalI trig__r_45671900_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI maketrig__r_48437320() {
+SignalI maketrig__r_45671900() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   trig__r_48437320___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   trig__r_45671900_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "trig_r";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1862,14 +1679,14 @@ SignalI maketrig__r_48437320() {
    return signalI;
 };
 
-SignalI trig__w_48437300___48384940___48385240______58_840_52937200;
+SignalI trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI maketrig__w_48437300() {
+SignalI maketrig__w_45671880() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   trig__w_48437300___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "trig_w";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1888,14 +1705,14 @@ SignalI maketrig__w_48437300() {
    return signalI;
 };
 
-SignalI dbus__r_48482860___48384940___48385240______58_840_52937200;
+SignalI dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI makedbus__r_48482860() {
+SignalI makedbus__r_46733740() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   dbus__r_48482860___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "dbus_r";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1914,14 +1731,14 @@ SignalI makedbus__r_48482860() {
    return signalI;
 };
 
-SignalI dbus__w_48774060___48384940___48385240______58_840_52937200;
+SignalI dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI makedbus__w_48774060() {
+SignalI makedbus__w_46322360() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   dbus__w_48774060___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "dbus_w";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -1940,14 +1757,14 @@ SignalI makedbus__w_48774060() {
    return signalI;
 };
 
-SignalI abus__r_48773980___48384940___48385240______58_840_52937200;
+SignalI abus__r_46322280_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__r_48773980() {
+SignalI makeabus__r_46322280() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__r_48773980___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   abus__r_46322280_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "abus_r";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -1966,14 +1783,14 @@ SignalI makeabus__r_48773980() {
    return signalI;
 };
 
-SignalI abus__w_48773900___48384940___48385240______58_840_52937200;
+SignalI abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__w_48773900() {
+SignalI makeabus__w_46322200() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__w_48773900___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "abus_w";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -1992,14 +1809,14 @@ SignalI makeabus__w_48773900() {
    return signalI;
 };
 
-SignalI mem_48819920___48384940___48385240______58_840_52937200;
+SignalI mem_46809180_channel__x_581_43394860______58_84_43395440______58_840_51546480;
 
-SignalI makemem_48819920() {
+SignalI makemem_46809180() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   mem_48819920___48384940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48384940;
+   mem_46809180_channel__x_581_43394860______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__x_581_43394860;
    signalI->name = "mem";
    signalI->type = get_type_vector(get_type_vector(get_type_signed(),8),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -2018,15 +1835,15 @@ SignalI makemem_48819920() {
    return signalI;
 };
 
-Scope __48384640;
+Scope raddr_582_43244520;
 
-Scope make__48384640() {
+Scope makeraddr_582_43244520() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48384640 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
+   raddr_582_43244520 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "raddr:2";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2041,15 +1858,15 @@ Scope make__48384640() {
    return scope;
 }
 
-Scope __48383460;
+Scope waddr_587_42979440;
 
-Scope make__48383460() {
+Scope makewaddr_587_42979440() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48383460 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
+   waddr_587_42979440 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "waddr:7";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2064,15 +1881,86 @@ Scope make__48383460() {
    return scope;
 }
 
-Scope __48439020;
+Scope rinc_5812_42978700;
 
-Scope make__48439020() {
+Behavior __51661500;
+
+Behavior make__51661500() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51661500 = behavior;
+   behavior->owner = (Object)rinc_5812_42978700;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480);
+   dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any += 1;
+   dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->any = realloc(dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->any,dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->any[dbus__r_46733740_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51641820();
+
+   return behavior;
+}
+
+Behavior __51660680;
+
+Behavior make__51660680() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51660680 = behavior;
+   behavior->owner = (Object)rinc_5812_42978700;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 2;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
+   _5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any += 1;
+   _5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any = realloc(_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any,_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any[_5813_51192460_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->events[1] = make_event(ANYEDGE,_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
+   _5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any += 1;
+   _5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any = realloc(_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any,_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any[_5814_51192380_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51641740();
+
+   return behavior;
+}
+
+Scope makerinc_5812_42978700() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48439020 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
+   rinc_5812_42978700 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "rinc:12";
+   scope->num_systemIs = 0;
+   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
+   scope->num_inners = 0;
+   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
+   scope->num_scopes = 0;
+   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
+   scope->num_behaviors = 2;
+   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
+   scope->behaviors[0] = make__51661500();
+   scope->behaviors[1] = make__51660680();
+   scope->num_codes = 0;
+   scope->codes = calloc(sizeof(Code),scope->num_codes);
+
+   return scope;
+}
+
+Scope winc_5816_45673200;
+
+Scope makewinc_5816_45673200() {
+   Scope scope = malloc(sizeof(ScopeS));
+   scope->kind = SCOPE;
+
+   winc_5816_45673200 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "winc:16";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2087,15 +1975,15 @@ Scope make__48439020() {
    return scope;
 }
 
-Scope __48438600;
+Scope rdec_5820_45672760;
 
-Scope make__48438600() {
+Scope makerdec_5820_45672760() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48438600 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
+   rdec_5820_45672760 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "rdec:20";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2110,15 +1998,15 @@ Scope make__48438600() {
    return scope;
 }
 
-Scope __48438180;
+Scope wdec_5825_45672340;
 
-Scope make__48438180() {
+Scope makewdec_5825_45672340() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48438180 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
+   wdec_5825_45672340 = scope;
+   scope->owner = (Object)channel__x_581_43394860;
+   scope->name = "wdec:25";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2133,359 +2021,204 @@ Scope make__48438180() {
    return scope;
 }
 
-Scope __48437760;
+Behavior __48384340;
 
-Scope make__48437760() {
+Behavior make__48384340() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __48384340 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(NEGEDGE,clk_47886980______58_84_43395440______58_840_51546480);
+   clk_47886980______58_84_43395440______58_840_51546480->num_neg += 1;
+   clk_47886980______58_84_43395440______58_840_51546480->neg = realloc(clk_47886980______58_84_43395440______58_840_51546480->neg,clk_47886980______58_84_43395440______58_840_51546480->num_neg*sizeof(Object));
+clk_47886980______58_84_43395440______58_840_51546480->neg[clk_47886980______58_84_43395440______58_840_51546480->num_neg-1] = (Object)behavior;
+   behavior->block = make__47773940();
+
+   return behavior;
+}
+
+Behavior __51620700;
+
+Behavior make__51620700() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51620700 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480);
+   trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any += 1;
+   trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->any = realloc(trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->any,trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->any[trig__w_45671880_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51620880();
+
+   return behavior;
+}
+
+Behavior __51620420;
+
+Behavior make__51620420() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51620420 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,_5817_47886840______58_84_43395440______58_840_51546480);
+   _5817_47886840______58_84_43395440______58_840_51546480->num_any += 1;
+   _5817_47886840______58_84_43395440______58_840_51546480->any = realloc(_5817_47886840______58_84_43395440______58_840_51546480->any,_5817_47886840______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5817_47886840______58_84_43395440______58_840_51546480->any[_5817_47886840______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51620640();
+
+   return behavior;
+}
+
+Behavior __51619620;
+
+Behavior make__51619620() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51619620 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480);
+   abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any += 1;
+   abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->any = realloc(abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->any,abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->any[abus__w_46322200_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51619940();
+
+   return behavior;
+}
+
+Behavior __51619300;
+
+Behavior make__51619300() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51619300 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,_5818_47886720______58_84_43395440______58_840_51546480);
+   _5818_47886720______58_84_43395440______58_840_51546480->num_any += 1;
+   _5818_47886720______58_84_43395440______58_840_51546480->any = realloc(_5818_47886720______58_84_43395440______58_840_51546480->any,_5818_47886720______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5818_47886720______58_84_43395440______58_840_51546480->any[_5818_47886720______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51619540();
+
+   return behavior;
+}
+
+Behavior __51618260;
+
+Behavior make__51618260() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51618260 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480);
+   dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any += 1;
+   dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->any = realloc(dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->any,dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->any[dbus__w_46322360_channel__x_581_43394860______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51618460();
+
+   return behavior;
+}
+
+Behavior __51618000;
+
+Behavior make__51618000() {
+   Behavior behavior = malloc(sizeof(BehaviorS));
+   behavior->kind = BEHAVIOR;
+
+   __51618000 = behavior;
+   behavior->owner = (Object)channel__x_581_43394860;
+   behavior->activated = 0;
+   behavior->timed = 0;
+   behavior->num_events = 1;
+   behavior->events = calloc(sizeof(Event),behavior->num_events);
+   behavior->events[0] = make_event(ANYEDGE,_5819_47966200______58_84_43395440______58_840_51546480);
+   _5819_47966200______58_84_43395440______58_840_51546480->num_any += 1;
+   _5819_47966200______58_84_43395440______58_840_51546480->any = realloc(_5819_47966200______58_84_43395440______58_840_51546480->any,_5819_47966200______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5819_47966200______58_84_43395440______58_840_51546480->any[_5819_47966200______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51618180();
+
+   return behavior;
+}
+
+Scope makechannel__x_581_43394860() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48437760 = scope;
-   scope->owner = (Object)__48384940;
-   scope->name = "";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Behavior __47975500;
-
-Behavior make__47975500() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __47975500 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(NEGEDGE,clk_49171720___48385240______58_840_52937200);
-   clk_49171720___48385240______58_840_52937200->num_neg += 1;
-   clk_49171720___48385240______58_840_52937200->neg = realloc(clk_49171720___48385240______58_840_52937200->neg,clk_49171720___48385240______58_840_52937200->num_neg*sizeof(Object));
-clk_49171720___48385240______58_840_52937200->neg[clk_49171720___48385240______58_840_52937200->num_neg-1] = (Object)behavior;
-   behavior->block = make__49124360();
-
-   return behavior;
-}
-
-Behavior __53026440;
-
-Behavior make__53026440() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53026440 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,dbus__r_48482860___48384940___48385240______58_840_52937200);
-   dbus__r_48482860___48384940___48385240______58_840_52937200->num_any += 1;
-   dbus__r_48482860___48384940___48385240______58_840_52937200->any = realloc(dbus__r_48482860___48384940___48385240______58_840_52937200->any,dbus__r_48482860___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-dbus__r_48482860___48384940___48385240______58_840_52937200->any[dbus__r_48482860___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53026720();
-
-   return behavior;
-}
-
-Behavior __53026140;
-
-Behavior make__53026140() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53026140 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5815_42221240___48385240______58_840_52937200);
-   _5815_42221240___48385240______58_840_52937200->num_any += 1;
-   _5815_42221240___48385240______58_840_52937200->any = realloc(_5815_42221240___48385240______58_840_52937200->any,_5815_42221240___48385240______58_840_52937200->num_any*sizeof(Object));
-_5815_42221240___48385240______58_840_52937200->any[_5815_42221240___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53026340();
-
-   return behavior;
-}
-
-Behavior __53025420;
-
-Behavior make__53025420() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53025420 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,trig__r_48437320___48384940___48385240______58_840_52937200);
-   trig__r_48437320___48384940___48385240______58_840_52937200->num_any += 1;
-   trig__r_48437320___48384940___48385240______58_840_52937200->any = realloc(trig__r_48437320___48384940___48385240______58_840_52937200->any,trig__r_48437320___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-trig__r_48437320___48384940___48385240______58_840_52937200->any[trig__r_48437320___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53025740();
-
-   return behavior;
-}
-
-Behavior __53025160;
-
-Behavior make__53025160() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53025160 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5813_42221180___48385240______58_840_52937200);
-   _5813_42221180___48385240______58_840_52937200->num_any += 1;
-   _5813_42221180___48385240______58_840_52937200->any = realloc(_5813_42221180___48385240______58_840_52937200->any,_5813_42221180___48385240______58_840_52937200->num_any*sizeof(Object));
-_5813_42221180___48385240______58_840_52937200->any[_5813_42221180___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53025340();
-
-   return behavior;
-}
-
-Behavior __53024180;
-
-Behavior make__53024180() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53024180 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,abus__r_48773980___48384940___48385240______58_840_52937200);
-   abus__r_48773980___48384940___48385240______58_840_52937200->num_any += 1;
-   abus__r_48773980___48384940___48385240______58_840_52937200->any = realloc(abus__r_48773980___48384940___48385240______58_840_52937200->any,abus__r_48773980___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-abus__r_48773980___48384940___48385240______58_840_52937200->any[abus__r_48773980___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53024620();
-
-   return behavior;
-}
-
-Behavior __53023860;
-
-Behavior make__53023860() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53023860 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5814_42219880___48385240______58_840_52937200);
-   _5814_42219880___48385240______58_840_52937200->num_any += 1;
-   _5814_42219880___48385240______58_840_52937200->any = realloc(_5814_42219880___48385240______58_840_52937200->any,_5814_42219880___48385240______58_840_52937200->num_any*sizeof(Object));
-_5814_42219880___48385240______58_840_52937200->any[_5814_42219880___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53024120();
-
-   return behavior;
-}
-
-Behavior __53023020;
-
-Behavior make__53023020() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53023020 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,trig__w_48437300___48384940___48385240______58_840_52937200);
-   trig__w_48437300___48384940___48385240______58_840_52937200->num_any += 1;
-   trig__w_48437300___48384940___48385240______58_840_52937200->any = realloc(trig__w_48437300___48384940___48385240______58_840_52937200->any,trig__w_48437300___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-trig__w_48437300___48384940___48385240______58_840_52937200->any[trig__w_48437300___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53023380();
-
-   return behavior;
-}
-
-Behavior __53022740;
-
-Behavior make__53022740() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53022740 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5817_42219840___48385240______58_840_52937200);
-   _5817_42219840___48385240______58_840_52937200->num_any += 1;
-   _5817_42219840___48385240______58_840_52937200->any = realloc(_5817_42219840___48385240______58_840_52937200->any,_5817_42219840___48385240______58_840_52937200->num_any*sizeof(Object));
-_5817_42219840___48385240______58_840_52937200->any[_5817_42219840___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53022960();
-
-   return behavior;
-}
-
-Behavior __53021920;
-
-Behavior make__53021920() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53021920 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,abus__w_48773900___48384940___48385240______58_840_52937200);
-   abus__w_48773900___48384940___48385240______58_840_52937200->num_any += 1;
-   abus__w_48773900___48384940___48385240______58_840_52937200->any = realloc(abus__w_48773900___48384940___48385240______58_840_52937200->any,abus__w_48773900___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-abus__w_48773900___48384940___48385240______58_840_52937200->any[abus__w_48773900___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53022080();
-
-   return behavior;
-}
-
-Behavior __53021600;
-
-Behavior make__53021600() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53021600 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5818_42218680___48385240______58_840_52937200);
-   _5818_42218680___48385240______58_840_52937200->num_any += 1;
-   _5818_42218680___48385240______58_840_52937200->any = realloc(_5818_42218680___48385240______58_840_52937200->any,_5818_42218680___48385240______58_840_52937200->num_any*sizeof(Object));
-_5818_42218680___48385240______58_840_52937200->any[_5818_42218680___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53021860();
-
-   return behavior;
-}
-
-Behavior __53020300;
-
-Behavior make__53020300() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53020300 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,dbus__w_48774060___48384940___48385240______58_840_52937200);
-   dbus__w_48774060___48384940___48385240______58_840_52937200->num_any += 1;
-   dbus__w_48774060___48384940___48385240______58_840_52937200->any = realloc(dbus__w_48774060___48384940___48385240______58_840_52937200->any,dbus__w_48774060___48384940___48385240______58_840_52937200->num_any*sizeof(Object));
-dbus__w_48774060___48384940___48385240______58_840_52937200->any[dbus__w_48774060___48384940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53020520();
-
-   return behavior;
-}
-
-Behavior __53020000;
-
-Behavior make__53020000() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53020000 = behavior;
-   behavior->owner = (Object)__48384940;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5819_44106140___48385240______58_840_52937200);
-   _5819_44106140___48385240______58_840_52937200->num_any += 1;
-   _5819_44106140___48385240______58_840_52937200->any = realloc(_5819_44106140___48385240______58_840_52937200->any,_5819_44106140___48385240______58_840_52937200->num_any*sizeof(Object));
-_5819_44106140___48385240______58_840_52937200->any[_5819_44106140___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53020220();
-
-   return behavior;
-}
-
-Scope make__48384940() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   __48384940 = scope;
-   scope->owner = (Object)__48385240;
-   scope->name = "";
+   channel__x_581_43394860 = scope;
+   scope->owner = (Object)_____58_84_43395440;
+   scope->name = "channel_x:1";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 7;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = maketrig__r_48437320();
-   scope->inners[1] = maketrig__w_48437300();
-   scope->inners[2] = makedbus__r_48482860();
-   scope->inners[3] = makedbus__w_48774060();
-   scope->inners[4] = makeabus__r_48773980();
-   scope->inners[5] = makeabus__w_48773900();
-   scope->inners[6] = makemem_48819920();
+   scope->inners[0] = maketrig__r_45671900();
+   scope->inners[1] = maketrig__w_45671880();
+   scope->inners[2] = makedbus__r_46733740();
+   scope->inners[3] = makedbus__w_46322360();
+   scope->inners[4] = makeabus__r_46322280();
+   scope->inners[5] = makeabus__w_46322200();
+   scope->inners[6] = makemem_46809180();
    scope->num_scopes = 6;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = make__48384640();
-   scope->scopes[1] = make__48383460();
-   scope->scopes[2] = make__48439020();
-   scope->scopes[3] = make__48438600();
-   scope->scopes[4] = make__48438180();
-   scope->scopes[5] = make__48437760();
-   scope->num_behaviors = 13;
+   scope->scopes[0] = makeraddr_582_43244520();
+   scope->scopes[1] = makewaddr_587_42979440();
+   scope->scopes[2] = makerinc_5812_42978700();
+   scope->scopes[3] = makewinc_5816_45673200();
+   scope->scopes[4] = makerdec_5820_45672760();
+   scope->scopes[5] = makewdec_5825_45672340();
+   scope->num_behaviors = 7;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__47975500();
-   scope->behaviors[1] = make__53026440();
-   scope->behaviors[2] = make__53026140();
-   scope->behaviors[3] = make__53025420();
-   scope->behaviors[4] = make__53025160();
-   scope->behaviors[5] = make__53024180();
-   scope->behaviors[6] = make__53023860();
-   scope->behaviors[7] = make__53023020();
-   scope->behaviors[8] = make__53022740();
-   scope->behaviors[9] = make__53021920();
-   scope->behaviors[10] = make__53021600();
-   scope->behaviors[11] = make__53020300();
-   scope->behaviors[12] = make__53020000();
+   scope->behaviors[0] = make__48384340();
+   scope->behaviors[1] = make__51620700();
+   scope->behaviors[2] = make__51620420();
+   scope->behaviors[3] = make__51619620();
+   scope->behaviors[4] = make__51619300();
+   scope->behaviors[5] = make__51618260();
+   scope->behaviors[6] = make__51618000();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-Scope __47975380;
+Scope channel__a0_5830_48384220;
 
-SignalI reg__0_48336580___47975380___48385240______58_840_52937200;
+SignalI reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makereg__0_48336580() {
+SignalI makereg__0_43560740() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   reg__0_48336580___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__47975380;
+   reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__a0_5830_48384220;
    signalI->name = "reg_0";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -2504,14 +2237,14 @@ SignalI makereg__0_48336580() {
    return signalI;
 };
 
-SignalI reg__1_48450120___47975380___48385240______58_840_52937200;
+SignalI reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makereg__1_48450120() {
+SignalI makereg__1_44675700() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   reg__1_48450120___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__47975380;
+   reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__a0_5830_48384220;
    signalI->name = "reg_1";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -2530,15 +2263,15 @@ SignalI makereg__1_48450120() {
    return signalI;
 };
 
-Scope __47975060;
+Scope anum_5831_48383700;
 
-Scope make__47975060() {
+Scope makeanum_5831_48383700() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47975060 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   anum_5831_48383700 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "anum:31";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2553,15 +2286,15 @@ Scope make__47975060() {
    return scope;
 }
 
-Scope __47974520;
+Scope raddr_5834_48383200;
 
-Scope make__47974520() {
+Scope makeraddr_5834_48383200() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47974520 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   raddr_5834_48383200 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "raddr:34";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2576,15 +2309,15 @@ Scope make__47974520() {
    return scope;
 }
 
-Scope __47973980;
+Scope waddr_5838_48382740;
 
-Scope make__47973980() {
+Scope makewaddr_5838_48382740() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47973980 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   waddr_5838_48382740 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "waddr:38";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2599,16 +2332,16 @@ Scope make__47973980() {
    return scope;
 }
 
-Scope __47973160;
+Scope rinc_5842_48406120;
 
-SignalI abus__r_47972680___47973160___47975380___48385240______58_840_52937200;
+SignalI abus__r_48404740_rinc_5842_48406120_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__r_47972680() {
+SignalI makeabus__r_48404740() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__r_47972680___47973160___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__47973160;
+   abus__r_48404740_rinc_5842_48406120_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)rinc_5842_48406120;
    signalI->name = "abus_r";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -2627,18 +2360,18 @@ SignalI makeabus__r_47972680() {
    return signalI;
 };
 
-Scope make__47973160() {
+Scope makerinc_5842_48406120() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47973160 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   rinc_5842_48406120 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "rinc:42";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__r_47972680();
+   scope->inners[0] = makeabus__r_48404740();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -2649,16 +2382,16 @@ Scope make__47973160() {
    return scope;
 }
 
-Scope __47972560;
+Scope winc_5846_48404540;
 
-SignalI abus__w_48676540___47972560___47975380___48385240______58_840_52937200;
+SignalI abus__w_48404000_winc_5846_48404540_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__w_48676540() {
+SignalI makeabus__w_48404000() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__w_48676540___47972560___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__47972560;
+   abus__w_48404000_winc_5846_48404540_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)winc_5846_48404540;
    signalI->name = "abus_w";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -2677,18 +2410,18 @@ SignalI makeabus__w_48676540() {
    return signalI;
 };
 
-Scope make__47972560() {
+Scope makewinc_5846_48404540() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47972560 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   winc_5846_48404540 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "winc:46";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__w_48676540();
+   scope->inners[0] = makeabus__w_48404000();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -2699,16 +2432,16 @@ Scope make__47972560() {
    return scope;
 }
 
-Scope __48676420;
+Scope rdec_5850_48403880;
 
-SignalI abus__r_48675700___48676420___47975380___48385240______58_840_52937200;
+SignalI abus__r_48403240_rdec_5850_48403880_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__r_48675700() {
+SignalI makeabus__r_48403240() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__r_48675700___48676420___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48676420;
+   abus__r_48403240_rdec_5850_48403880_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)rdec_5850_48403880;
    signalI->name = "abus_r";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -2727,18 +2460,18 @@ SignalI makeabus__r_48675700() {
    return signalI;
 };
 
-Scope make__48676420() {
+Scope makerdec_5850_48403880() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48676420 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   rdec_5850_48403880 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "rdec:50";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__r_48675700();
+   scope->inners[0] = makeabus__r_48403240();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -2749,16 +2482,16 @@ Scope make__48676420() {
    return scope;
 }
 
-Scope __48675580;
+Scope wdec_5855_48403120;
 
-SignalI abus__w_48675060___48675580___47975380___48385240______58_840_52937200;
+SignalI abus__w_48401700_wdec_5855_48403120_channel__a0_5830_48384220______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__w_48675060() {
+SignalI makeabus__w_48401700() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__w_48675060___48675580___47975380___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48675580;
+   abus__w_48401700_wdec_5855_48403120_channel__a0_5830_48384220______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)wdec_5855_48403120;
    signalI->name = "abus_w";
    signalI->type = get_type_vector(get_type_bit(),1);
    signalI->c_value = make_value(signalI->type,0);
@@ -2777,18 +2510,18 @@ SignalI makeabus__w_48675060() {
    return signalI;
 };
 
-Scope make__48675580() {
+Scope makewdec_5855_48403120() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48675580 = scope;
-   scope->owner = (Object)__47975380;
-   scope->name = "";
+   wdec_5855_48403120 = scope;
+   scope->owner = (Object)channel__a0_5830_48384220;
+   scope->name = "wdec:55";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__w_48675060();
+   scope->inners[0] = makeabus__w_48401700();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -2799,134 +2532,134 @@ Scope make__48675580() {
    return scope;
 }
 
-Behavior __53074400;
+Behavior __51658940;
 
-Behavior make__53074400() {
+Behavior make__51658940() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53074400 = behavior;
-   behavior->owner = (Object)__47975380;
+   __51658940 = behavior;
+   behavior->owner = (Object)channel__a0_5830_48384220;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,reg__0_48336580___47975380___48385240______58_840_52937200);
-   reg__0_48336580___47975380___48385240______58_840_52937200->num_any += 1;
-   reg__0_48336580___47975380___48385240______58_840_52937200->any = realloc(reg__0_48336580___47975380___48385240______58_840_52937200->any,reg__0_48336580___47975380___48385240______58_840_52937200->num_any*sizeof(Object));
-reg__0_48336580___47975380___48385240______58_840_52937200->any[reg__0_48336580___47975380___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53074680();
+   behavior->events[0] = make_event(ANYEDGE,reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480);
+   reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any += 1;
+   reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any = realloc(reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any,reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any[reg__0_43560740_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51659180();
 
    return behavior;
 }
 
-Behavior __53074200;
+Behavior __51813400;
 
-Behavior make__53074200() {
+Behavior make__51813400() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53074200 = behavior;
-   behavior->owner = (Object)__47975380;
+   __51813400 = behavior;
+   behavior->owner = (Object)channel__a0_5830_48384220;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5832_46360980___48385240______58_840_52937200);
-   _5832_46360980___48385240______58_840_52937200->num_any += 1;
-   _5832_46360980___48385240______58_840_52937200->any = realloc(_5832_46360980___48385240______58_840_52937200->any,_5832_46360980___48385240______58_840_52937200->num_any*sizeof(Object));
-_5832_46360980___48385240______58_840_52937200->any[_5832_46360980___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53074360();
+   behavior->events[0] = make_event(ANYEDGE,_5832_48033360______58_84_43395440______58_840_51546480);
+   _5832_48033360______58_84_43395440______58_840_51546480->num_any += 1;
+   _5832_48033360______58_84_43395440______58_840_51546480->any = realloc(_5832_48033360______58_84_43395440______58_840_51546480->any,_5832_48033360______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5832_48033360______58_84_43395440______58_840_51546480->any[_5832_48033360______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51658780();
 
    return behavior;
 }
 
-Behavior __53073540;
+Behavior __51812600;
 
-Behavior make__53073540() {
+Behavior make__51812600() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53073540 = behavior;
-   behavior->owner = (Object)__47975380;
+   __51812600 = behavior;
+   behavior->owner = (Object)channel__a0_5830_48384220;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,reg__1_48450120___47975380___48385240______58_840_52937200);
-   reg__1_48450120___47975380___48385240______58_840_52937200->num_any += 1;
-   reg__1_48450120___47975380___48385240______58_840_52937200->any = realloc(reg__1_48450120___47975380___48385240______58_840_52937200->any,reg__1_48450120___47975380___48385240______58_840_52937200->num_any*sizeof(Object));
-reg__1_48450120___47975380___48385240______58_840_52937200->any[reg__1_48450120___47975380___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53073820();
+   behavior->events[0] = make_event(ANYEDGE,reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480);
+   reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any += 1;
+   reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any = realloc(reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any,reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->any[reg__1_44675700_channel__a0_5830_48384220______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51813000();
 
    return behavior;
 }
 
-Behavior __53072980;
+Behavior __51812340;
 
-Behavior make__53072980() {
+Behavior make__51812340() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53072980 = behavior;
-   behavior->owner = (Object)__47975380;
+   __51812340 = behavior;
+   behavior->owner = (Object)channel__a0_5830_48384220;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5833_47690040___48385240______58_840_52937200);
-   _5833_47690040___48385240______58_840_52937200->num_any += 1;
-   _5833_47690040___48385240______58_840_52937200->any = realloc(_5833_47690040___48385240______58_840_52937200->any,_5833_47690040___48385240______58_840_52937200->num_any*sizeof(Object));
-_5833_47690040___48385240______58_840_52937200->any[_5833_47690040___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53073400();
+   behavior->events[0] = make_event(ANYEDGE,_5833_48171780______58_84_43395440______58_840_51546480);
+   _5833_48171780______58_84_43395440______58_840_51546480->num_any += 1;
+   _5833_48171780______58_84_43395440______58_840_51546480->any = realloc(_5833_48171780______58_84_43395440______58_840_51546480->any,_5833_48171780______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5833_48171780______58_84_43395440______58_840_51546480->any[_5833_48171780______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51812560();
 
    return behavior;
 }
 
-Scope make__47975380() {
+Scope makechannel__a0_5830_48384220() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __47975380 = scope;
-   scope->owner = (Object)__48385240;
-   scope->name = "";
+   channel__a0_5830_48384220 = scope;
+   scope->owner = (Object)_____58_84_43395440;
+   scope->name = "channel_a0:30";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 2;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makereg__0_48336580();
-   scope->inners[1] = makereg__1_48450120();
+   scope->inners[0] = makereg__0_43560740();
+   scope->inners[1] = makereg__1_44675700();
    scope->num_scopes = 7;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = make__47975060();
-   scope->scopes[1] = make__47974520();
-   scope->scopes[2] = make__47973980();
-   scope->scopes[3] = make__47973160();
-   scope->scopes[4] = make__47972560();
-   scope->scopes[5] = make__48676420();
-   scope->scopes[6] = make__48675580();
+   scope->scopes[0] = makeanum_5831_48383700();
+   scope->scopes[1] = makeraddr_5834_48383200();
+   scope->scopes[2] = makewaddr_5838_48382740();
+   scope->scopes[3] = makerinc_5842_48406120();
+   scope->scopes[4] = makewinc_5846_48404540();
+   scope->scopes[5] = makerdec_5850_48403880();
+   scope->scopes[6] = makewdec_5855_48403120();
    scope->num_behaviors = 4;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__53074400();
-   scope->behaviors[1] = make__53074200();
-   scope->behaviors[2] = make__53073540();
-   scope->behaviors[3] = make__53072980();
+   scope->behaviors[0] = make__51658940();
+   scope->behaviors[1] = make__51813400();
+   scope->behaviors[2] = make__51812600();
+   scope->behaviors[3] = make__51812340();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-Scope __48941940;
+Scope channel__a1_5860_46812800;
 
-SignalI reg__0_49004720___48941940___48385240______58_840_52937200;
+SignalI reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480;
 
-SignalI makereg__0_49004720() {
+SignalI makereg__0_47661000() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   reg__0_49004720___48941940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48941940;
+   reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)channel__a1_5860_46812800;
    signalI->name = "reg_0";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -2945,15 +2678,15 @@ SignalI makereg__0_49004720() {
    return signalI;
 };
 
-Scope __48941640;
+Scope anum_5861_46812380;
 
-Scope make__48941640() {
+Scope makeanum_5861_46812380() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48941640 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   anum_5861_46812380 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "anum:61";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2968,15 +2701,15 @@ Scope make__48941640() {
    return scope;
 }
 
-Scope __48941220;
+Scope raddr_5863_46811240;
 
-Scope make__48941220() {
+Scope makeraddr_5863_46811240() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48941220 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   raddr_5863_46811240 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "raddr:63";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -2991,15 +2724,15 @@ Scope make__48941220() {
    return scope;
 }
 
-Scope __48940800;
+Scope waddr_5866_46810580;
 
-Scope make__48940800() {
+Scope makewaddr_5866_46810580() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48940800 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   waddr_5866_46810580 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "waddr:66";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 0;
@@ -3014,16 +2747,16 @@ Scope make__48940800() {
    return scope;
 }
 
-Scope __48940280;
+Scope rinc_5869_46809980;
 
-SignalI abus__r_48939900___48940280___48941940___48385240______58_840_52937200;
+SignalI abus__r_46809380_rinc_5869_46809980_channel__a1_5860_46812800______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__r_48939900() {
+SignalI makeabus__r_46809380() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__r_48939900___48940280___48941940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48940280;
+   abus__r_46809380_rinc_5869_46809980_channel__a1_5860_46812800______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)rinc_5869_46809980;
    signalI->name = "abus_r";
    signalI->type = get_type_vector(get_type_bit(),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -3042,18 +2775,18 @@ SignalI makeabus__r_48939900() {
    return signalI;
 };
 
-Scope make__48940280() {
+Scope makerinc_5869_46809980() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48940280 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   rinc_5869_46809980 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "rinc:69";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__r_48939900();
+   scope->inners[0] = makeabus__r_46809380();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -3064,16 +2797,16 @@ Scope make__48940280() {
    return scope;
 }
 
-Scope __48939780;
+Scope winc_5872_46833580;
 
-SignalI abus__w_48939400___48939780___48941940___48385240______58_840_52937200;
+SignalI abus__w_46832020_winc_5872_46833580_channel__a1_5860_46812800______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__w_48939400() {
+SignalI makeabus__w_46832020() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__w_48939400___48939780___48941940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48939780;
+   abus__w_46832020_winc_5872_46833580_channel__a1_5860_46812800______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)winc_5872_46833580;
    signalI->name = "abus_w";
    signalI->type = get_type_vector(get_type_bit(),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -3092,18 +2825,18 @@ SignalI makeabus__w_48939400() {
    return signalI;
 };
 
-Scope make__48939780() {
+Scope makewinc_5872_46833580() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48939780 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   winc_5872_46833580 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "winc:72";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__w_48939400();
+   scope->inners[0] = makeabus__w_46832020();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -3114,16 +2847,16 @@ Scope make__48939780() {
    return scope;
 }
 
-Scope __48939280;
+Scope rdec_5875_46831860;
 
-SignalI abus__r_48963440___48939280___48941940___48385240______58_840_52937200;
+SignalI abus__r_46830180_rdec_5875_46831860_channel__a1_5860_46812800______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__r_48963440() {
+SignalI makeabus__r_46830180() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__r_48963440___48939280___48941940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48939280;
+   abus__r_46830180_rdec_5875_46831860_channel__a1_5860_46812800______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)rdec_5875_46831860;
    signalI->name = "abus_r";
    signalI->type = get_type_vector(get_type_bit(),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -3142,18 +2875,18 @@ SignalI makeabus__r_48963440() {
    return signalI;
 };
 
-Scope make__48939280() {
+Scope makerdec_5875_46831860() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48939280 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   rdec_5875_46831860 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "rdec:75";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__r_48963440();
+   scope->inners[0] = makeabus__r_46830180();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -3164,16 +2897,16 @@ Scope make__48939280() {
    return scope;
 }
 
-Scope __48963320;
+Scope wdec_5879_46829080;
 
-SignalI abus__w_48962880___48963320___48941940___48385240______58_840_52937200;
+SignalI abus__w_46849820_wdec_5879_46829080_channel__a1_5860_46812800______58_84_43395440______58_840_51546480;
 
-SignalI makeabus__w_48962880() {
+SignalI makeabus__w_46849820() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   abus__w_48962880___48963320___48941940___48385240______58_840_52937200 = signalI;
-   signalI->owner = (Object)__48963320;
+   abus__w_46849820_wdec_5879_46829080_channel__a1_5860_46812800______58_84_43395440______58_840_51546480 = signalI;
+   signalI->owner = (Object)wdec_5879_46829080;
    signalI->name = "abus_w";
    signalI->type = get_type_vector(get_type_bit(),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -3192,18 +2925,18 @@ SignalI makeabus__w_48962880() {
    return signalI;
 };
 
-Scope make__48963320() {
+Scope makewdec_5879_46829080() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48963320 = scope;
-   scope->owner = (Object)__48941940;
-   scope->name = "";
+   wdec_5879_46829080 = scope;
+   scope->owner = (Object)channel__a1_5860_46812800;
+   scope->name = "wdec:79";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeabus__w_48962880();
+   scope->inners[0] = makeabus__w_46849820();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 0;
@@ -3214,240 +2947,218 @@ Scope make__48963320() {
    return scope;
 }
 
-Behavior __53070260;
+Behavior __51809460;
 
-Behavior make__53070260() {
+Behavior make__51809460() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53070260 = behavior;
-   behavior->owner = (Object)__48941940;
+   __51809460 = behavior;
+   behavior->owner = (Object)channel__a1_5860_46812800;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,reg__0_49004720___48941940___48385240______58_840_52937200);
-   reg__0_49004720___48941940___48385240______58_840_52937200->num_any += 1;
-   reg__0_49004720___48941940___48385240______58_840_52937200->any = realloc(reg__0_49004720___48941940___48385240______58_840_52937200->any,reg__0_49004720___48941940___48385240______58_840_52937200->num_any*sizeof(Object));
-reg__0_49004720___48941940___48385240______58_840_52937200->any[reg__0_49004720___48941940___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53070520();
+   behavior->events[0] = make_event(ANYEDGE,reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480);
+   reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->num_any += 1;
+   reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->any = realloc(reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->any,reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->any[reg__0_47661000_channel__a1_5860_46812800______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51809800();
 
    return behavior;
 }
 
-Behavior __53070000;
+Behavior __51809220;
 
-Behavior make__53070000() {
+Behavior make__51809220() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53070000 = behavior;
-   behavior->owner = (Object)__48941940;
+   __51809220 = behavior;
+   behavior->owner = (Object)channel__a1_5860_46812800;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5862_48690340___48385240______58_840_52937200);
-   _5862_48690340___48385240______58_840_52937200->num_any += 1;
-   _5862_48690340___48385240______58_840_52937200->any = realloc(_5862_48690340___48385240______58_840_52937200->any,_5862_48690340___48385240______58_840_52937200->num_any*sizeof(Object));
-_5862_48690340___48385240______58_840_52937200->any[_5862_48690340___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53070180();
+   behavior->events[0] = make_event(ANYEDGE,_5862_48321100______58_84_43395440______58_840_51546480);
+   _5862_48321100______58_84_43395440______58_840_51546480->num_any += 1;
+   _5862_48321100______58_84_43395440______58_840_51546480->any = realloc(_5862_48321100______58_84_43395440______58_840_51546480->any,_5862_48321100______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+_5862_48321100______58_84_43395440______58_840_51546480->any[_5862_48321100______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51809380();
 
    return behavior;
 }
 
-Scope make__48941940() {
+Scope makechannel__a1_5860_46812800() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48941940 = scope;
-   scope->owner = (Object)__48385240;
-   scope->name = "";
+   channel__a1_5860_46812800 = scope;
+   scope->owner = (Object)_____58_84_43395440;
+   scope->name = "channel_a1:60";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makereg__0_49004720();
+   scope->inners[0] = makereg__0_47661000();
    scope->num_scopes = 7;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = make__48941640();
-   scope->scopes[1] = make__48941220();
-   scope->scopes[2] = make__48940800();
-   scope->scopes[3] = make__48940280();
-   scope->scopes[4] = make__48939780();
-   scope->scopes[5] = make__48939280();
-   scope->scopes[6] = make__48963320();
+   scope->scopes[0] = makeanum_5861_46812380();
+   scope->scopes[1] = makeraddr_5863_46811240();
+   scope->scopes[2] = makewaddr_5866_46810580();
+   scope->scopes[3] = makerinc_5869_46809980();
+   scope->scopes[4] = makewinc_5872_46833580();
+   scope->scopes[5] = makerdec_5875_46831860();
+   scope->scopes[6] = makewdec_5879_46829080();
    scope->num_behaviors = 2;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__53070260();
-   scope->behaviors[1] = make__53070000();
+   scope->behaviors[0] = make__51809460();
+   scope->behaviors[1] = make__51809220();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-Behavior __52879220;
+Behavior __51510300;
 
-Behavior make__52879220() {
+Behavior make__51510300() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __52879220 = behavior;
-   behavior->owner = (Object)__48385240;
+   __51510300 = behavior;
+   behavior->owner = (Object)_____58_84_43395440;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(POSEDGE,clk_49171720___48385240______58_840_52937200);
-   clk_49171720___48385240______58_840_52937200->num_pos += 1;
-   clk_49171720___48385240______58_840_52937200->pos = realloc(clk_49171720___48385240______58_840_52937200->pos,clk_49171720___48385240______58_840_52937200->num_pos*sizeof(Object));
-clk_49171720___48385240______58_840_52937200->pos[clk_49171720___48385240______58_840_52937200->num_pos-1] = (Object)behavior;
-   behavior->block = make__52366240();
+   behavior->events[0] = make_event(POSEDGE,clk_47886980______58_84_43395440______58_840_51546480);
+   clk_47886980______58_84_43395440______58_840_51546480->num_pos += 1;
+   clk_47886980______58_84_43395440______58_840_51546480->pos = realloc(clk_47886980______58_84_43395440______58_840_51546480->pos,clk_47886980______58_84_43395440______58_840_51546480->num_pos*sizeof(Object));
+clk_47886980______58_84_43395440______58_840_51546480->pos[clk_47886980______58_84_43395440______58_840_51546480->num_pos-1] = (Object)behavior;
+   behavior->block = make__51239320();
 
    return behavior;
 }
 
-Behavior __52937500;
+Behavior __51547240;
 
-Behavior make__52937500() {
+Behavior make__51547240() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __52937500 = behavior;
+   __51547240 = behavior;
    register_timed_behavior(behavior);
-   behavior->owner = (Object)__48385240;
+   behavior->owner = (Object)_____58_84_43395440;
    behavior->activated = 0;
    behavior->timed = 1;
    behavior->num_events = 0;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->block = make__52878940();
+   behavior->block = make__51509960();
 
    return behavior;
 }
 
-Behavior __53003960;
+Behavior __51622360;
 
-Behavior make__53003960() {
+Behavior make__51622360() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53003960 = behavior;
-   behavior->owner = (Object)__48385240;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 0;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->block = make__53004100();
-
-   return behavior;
-}
-
-Behavior __53003760;
-
-Behavior make__53003760() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __53003760 = behavior;
-   behavior->owner = (Object)__48385240;
+   __51622360 = behavior;
+   behavior->owner = (Object)_____58_84_43395440;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 4;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,clk_49171720___48385240______58_840_52937200);
-   clk_49171720___48385240______58_840_52937200->num_any += 1;
-   clk_49171720___48385240______58_840_52937200->any = realloc(clk_49171720___48385240______58_840_52937200->any,clk_49171720___48385240______58_840_52937200->num_any*sizeof(Object));
-clk_49171720___48385240______58_840_52937200->any[clk_49171720___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,rst_49171700___48385240______58_840_52937200);
-   rst_49171700___48385240______58_840_52937200->num_any += 1;
-   rst_49171700___48385240______58_840_52937200->any = realloc(rst_49171700___48385240______58_840_52937200->any,rst_49171700___48385240______58_840_52937200->num_any*sizeof(Object));
-rst_49171700___48385240______58_840_52937200->any[rst_49171700___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->events[2] = make_event(ANYEDGE,req_49171680___48385240______58_840_52937200);
-   req_49171680___48385240______58_840_52937200->num_any += 1;
-   req_49171680___48385240______58_840_52937200->any = realloc(req_49171680___48385240______58_840_52937200->any,req_49171680___48385240______58_840_52937200->num_any*sizeof(Object));
-req_49171680___48385240______58_840_52937200->any[req_49171680___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->events[3] = make_event(ANYEDGE,fill_49171620___48385240______58_840_52937200);
-   fill_49171620___48385240______58_840_52937200->num_any += 1;
-   fill_49171620___48385240______58_840_52937200->any = realloc(fill_49171620___48385240______58_840_52937200->any,fill_49171620___48385240______58_840_52937200->num_any*sizeof(Object));
-fill_49171620___48385240______58_840_52937200->any[fill_49171620___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53009880();
+   behavior->events[0] = make_event(ANYEDGE,clk_47886980______58_84_43395440______58_840_51546480);
+   clk_47886980______58_84_43395440______58_840_51546480->num_any += 1;
+   clk_47886980______58_84_43395440______58_840_51546480->any = realloc(clk_47886980______58_84_43395440______58_840_51546480->any,clk_47886980______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+clk_47886980______58_84_43395440______58_840_51546480->any[clk_47886980______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->events[1] = make_event(ANYEDGE,rst_47886960______58_84_43395440______58_840_51546480);
+   rst_47886960______58_84_43395440______58_840_51546480->num_any += 1;
+   rst_47886960______58_84_43395440______58_840_51546480->any = realloc(rst_47886960______58_84_43395440______58_840_51546480->any,rst_47886960______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+rst_47886960______58_84_43395440______58_840_51546480->any[rst_47886960______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->events[2] = make_event(ANYEDGE,req_47886940______58_84_43395440______58_840_51546480);
+   req_47886940______58_84_43395440______58_840_51546480->num_any += 1;
+   req_47886940______58_84_43395440______58_840_51546480->any = realloc(req_47886940______58_84_43395440______58_840_51546480->any,req_47886940______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+req_47886940______58_84_43395440______58_840_51546480->any[req_47886940______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->events[3] = make_event(ANYEDGE,fill_47886880______58_84_43395440______58_840_51546480);
+   fill_47886880______58_84_43395440______58_840_51546480->num_any += 1;
+   fill_47886880______58_84_43395440______58_840_51546480->any = realloc(fill_47886880______58_84_43395440______58_840_51546480->any,fill_47886880______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+fill_47886880______58_84_43395440______58_840_51546480->any[fill_47886880______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51603400();
 
    return behavior;
 }
 
-Behavior __53003460;
+Behavior __51621820;
 
-Behavior make__53003460() {
+Behavior make__51621820() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __53003460 = behavior;
-   behavior->owner = (Object)__48385240;
+   __51621820 = behavior;
+   behavior->owner = (Object)_____58_84_43395440;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200);
-   ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->num_any += 1;
-   ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->any = realloc(ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->any,ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->num_any*sizeof(Object));
-ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->any[ack__0_52134940_layer0_58_840_52138560___48385240______58_840_52937200->num_any-1] = (Object)behavior;
-   behavior->block = make__53009760();
+   behavior->events[0] = make_event(ANYEDGE,ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480);
+   ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any += 1;
+   ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any = realloc(ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any,ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any*sizeof(Object));
+ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->any[ack__0_51192480_layer0_58_840_51003420______58_84_43395440______58_840_51546480->num_any-1] = (Object)behavior;
+   behavior->block = make__51603220();
 
    return behavior;
 }
 
-Scope make__48385240() {
+Scope make_____58_84_43395440() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __48385240 = scope;
-   scope->owner = (Object)_____58_840_52937200;
-   scope->name = "";
+   _____58_84_43395440 = scope;
+   scope->owner = (Object)_____58_840_51546480;
+   scope->name = "__:T";
    scope->num_systemIs = 1;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->systemIs[0] = makelayer0_52134700();
-   scope->num_inners = 16;
+   scope->systemIs[0] = makelayer0_51192180();
+   scope->num_inners = 12;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeclk_49171720();
-   scope->inners[1] = makerst_49171700();
-   scope->inners[2] = makereq_49171680();
-   scope->inners[3] = makeack__0_49171660();
-   scope->inners[4] = makeack__1_49171640();
-   scope->inners[5] = makefill_49171620();
-   scope->inners[6] = make_5815_42221240();
-   scope->inners[7] = make_5813_42221180();
-   scope->inners[8] = make_5814_42219880();
-   scope->inners[9] = make_5817_42219840();
-   scope->inners[10] = make_5818_42218680();
-   scope->inners[11] = make_5819_44106140();
-   scope->inners[12] = make_5832_46360980();
-   scope->inners[13] = make_5833_47690040();
-   scope->inners[14] = make_5862_48690340();
-   scope->inners[15] = makeval_48350580();
+   scope->inners[0] = makeclk_47886980();
+   scope->inners[1] = makerst_47886960();
+   scope->inners[2] = makereq_47886940();
+   scope->inners[3] = makeack__0_47886920();
+   scope->inners[4] = makeack__1_47886900();
+   scope->inners[5] = makefill_47886880();
+   scope->inners[6] = make_5817_47886840();
+   scope->inners[7] = make_5818_47886720();
+   scope->inners[8] = make_5819_47966200();
+   scope->inners[9] = make_5832_48033360();
+   scope->inners[10] = make_5833_48171780();
+   scope->inners[11] = make_5862_48321100();
    scope->num_scopes = 3;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = make__48384940();
-   scope->scopes[1] = make__47975380();
-   scope->scopes[2] = make__48941940();
-   scope->num_behaviors = 5;
+   scope->scopes[0] = makechannel__x_581_43394860();
+   scope->scopes[1] = makechannel__a0_5830_48384220();
+   scope->scopes[2] = makechannel__a1_5860_46812800();
+   scope->num_behaviors = 4;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__52879220();
-   scope->behaviors[1] = make__52937500();
-   scope->behaviors[2] = make__53003960();
-   scope->behaviors[3] = make__53003760();
-   scope->behaviors[4] = make__53003460();
+   scope->behaviors[0] = make__51510300();
+   scope->behaviors[1] = make__51547240();
+   scope->behaviors[2] = make__51622360();
+   scope->behaviors[3] = make__51621820();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-SystemT make_____58_840_52937200() {
+SystemT make_____58_840_51546480() {
    SystemT systemT = malloc(sizeof(SystemTS));
    systemT->kind = SYSTEMT;
 
-   _____58_840_52937200 = systemT;
+   _____58_840_51546480 = systemT;
 systemT->owner = NULL;
    systemT->name = "__:T0";
    systemT->num_inputs = 0;
@@ -3457,7 +3168,7 @@ systemT->owner = NULL;
    systemT->num_inouts = 0;
    systemT->inouts = calloc(sizeof(SignalI),systemT->num_inouts);
 
-   systemT->scope = make__48385240();
+   systemT->scope = make_____58_84_43395440();
 
    return systemT;
 }
