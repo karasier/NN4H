@@ -123,6 +123,7 @@ system :neurons_layer0 do |typ, reader_x, a0|
   channel_accum.branch(:anum).inout :accum
   result_mac = [accum.wrap(0), accum.wrap(1)]
 
+  # ニューロンの数だけ繰り返す必要あり
   mac_n1(typ, clk, req, ack_mac, weights, reader_x, result_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
@@ -176,8 +177,4 @@ system :neurons_layer0 do |typ, reader_x, a0|
       writer_bias.write(_b8b00010000)
     end
   end
-
-  #par(clk.posedge) do
-  #  hif(ack_add) { req <= 0 }
-  #end
 end

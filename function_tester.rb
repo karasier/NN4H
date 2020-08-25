@@ -9,7 +9,7 @@ include HDLRuby::High::Std
 
 integer_width = 4
 decimal_width = 4
-address_width = 6
+address_width = 4
 
 typ = signed[integer_width, decimal_width]
 
