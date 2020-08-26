@@ -3,7 +3,7 @@
 # 整数部のみの場合の対応を検討する必要あり
 
 require "std/fixpoint.rb"
-require_relative "function.rb"
+require_relative "activation_function.rb"
 
 include HDLRuby::High::Std
 
@@ -15,7 +15,7 @@ typ = signed[integer_width, decimal_width]
 
 func = proc{ |i| Math.tanh(i) }
 
-system :tester do
+system :function_bench do
   typ.inner :z_value, :a
 
   activation_function(func, typ, integer_width, decimal_width, address_width).(:tanh).(z_value, a)
