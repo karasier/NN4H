@@ -47,10 +47,10 @@ system :layer_bench do
   a1 = [accessor_a1.wrap(0)]
 
   # 第1層の計算
-  neurons_layer0(typ, reader_x, a0).(:layer0).(clk, rst, fill, req, ack_0)
+  neurons_layer(typ, reader_x, a0).(:layer0).(clk, rst, fill, req, ack_0)
 
   # 第2層の計算
-  neurons_layer1(typ, reader_a0, a1).(:layer1).(clk, rst, fill, ack_0, ack_1)
+  output_layer(typ, reader_a0, a1).(:layer1).(clk, rst, fill, ack_0, ack_1)
 
   par(clk.posedge) do
     hif(fill) do
@@ -105,7 +105,7 @@ system :layer_bench do
   end
 end
 
-system :neurons_layer0 do |typ, reader_x, a0|
+system :neurons_layer do |typ, reader_x, a0|
   input :clk, :rst, :fill, :req
   output :ack_0
 
@@ -185,7 +185,7 @@ system :neurons_layer0 do |typ, reader_x, a0|
   end
 end
 
-system :neurons_layer1 do |typ, reader_a0, a1|
+system :output_layer do |typ, reader_a0, a1|
   input :clk, :rst, :fill, :req
   output :ack_1
 
@@ -194,14 +194,15 @@ system :neurons_layer1 do |typ, reader_a0, a1|
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
   # 第1層の重みのメモリ
-  mem_dual(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_w0)
-  mem_dual(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_w1)
+  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_w0)
+  #mem_dual(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_w1)
   
   # 重みのRead用ポート作成
   channel_w0.branch(:rinc).input :reader_w0
-  channel_w1.branch(:rinc).input :reader_w1
+  #channel_w1.branch(:rinc).input :reader_w1
 
-  weights = [reader_w0, reader_w1]
+  #weights = [reader_w0, reader_w1]
+  weights = [reader_w0]
 
   # 積和計算の結果の格納用
   mem_file(typ, 1, clk, rst, anum: :rst).(:channel_accum)
@@ -250,13 +251,13 @@ system :neurons_layer1 do |typ, reader_a0, a1|
   #---------------------------------------------------------------------------
   # パラメータの初期化
   channel_w0.branch(:winc).output :writer_w0
-  channel_w1.branch(:winc).output :writer_w1
+  #channel_w1.branch(:winc).output :writer_w1
   channel_bias.branch(:winc).output :writer_bias
 
   par(clk.posedge) do
     hif(fill) do
       writer_w0.write(_b8b00010000)
-      writer_w1.write(_b8b00010000)
+      #writer_w1.write(_b8b00010000)
       writer_bias.write(_b8b00010000)
     end
   end
