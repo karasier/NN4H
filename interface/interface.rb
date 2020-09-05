@@ -1,11 +1,11 @@
 # rubyを用いてHDLRubyで記述した回路を
 # ジェネリックにインスタンス化するプログラム
-
+require 'HDLRuby'
+configure_high
 require_relative 'adder.rb'
 
-set_parameter(15)
 # Instantiate it for checking.
-adder :adderI
+adder(signed[15]).(:adderI)
 
 # Generate the low level representation.
 low = adderI.systemT.to_low

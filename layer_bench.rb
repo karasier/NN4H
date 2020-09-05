@@ -195,6 +195,7 @@ system :output_layer do |typ, reader_a0, a1|
   # 入力と重みの積和計算
   # 第1層の重みのメモリ
   mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_w0)
+  #mem_dual(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_w0)
   #mem_dual(typ, 1, clk, rst, rinc: :rst, winc: :rst).(:channel_w1)
   
   # 重みのRead用ポート作成
