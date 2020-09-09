@@ -1,9 +1,11 @@
-#neurons_layerのテストベンチ
+# neurons_layerのテストベンチ
+# mac_n1のackが1度しか変化していない可能性がある。
 
 require "std/memory.rb"
 require "std/linear.rb"
 require "std/fixpoint.rb"
 require_relative "activation_function.rb"
+require_relative "mac_counter.rb"
 
 include HDLRuby::High::Std
 
@@ -94,8 +96,7 @@ system :layer_bench do
     !10.ns
     clk <= 1
     !10.ns
-    clk <= 0
-    req <= 0
+    clk <= 0    
     10.times do
       clk <= 1
       !10.ns
@@ -109,7 +110,7 @@ system :neurons_layer do |typ, reader_x, a0|
   input :clk, :rst, :fill, :req
   output :ack_0
 
-  inner :ack_mac0, :ack_mac1, :ack_add
+  inner :ack, :ack_mac, :ack_add
 
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
@@ -130,8 +131,8 @@ system :neurons_layer do |typ, reader_x, a0|
   result_mac = [accum.wrap(0), accum.wrap(1)]
 
   # ニューロンの数だけ繰り返す必要あり
-  mac_n1(typ, clk, req, ack_mac0, weights, reader_x, result_mac)
-  mac_n1(typ, clk, ack_mac0, ack_mac1, weights, reader_x, result_mac)
+  mac_n1(typ, clk, req, ack, weights, reader_x, result_mac)
+  mac_counter(2).(:counter0).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
@@ -144,7 +145,7 @@ system :neurons_layer do |typ, reader_x, a0|
   bias = [reader_bias.wrap(0), reader_bias.wrap(1)]
   z = [accessor_z.wrap(0), accessor_z.wrap(1)]
 
-  add_n(typ, clk, ack_mac1, ack_add, result_mac, bias, z)
+  add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
   typ.inner :value_z0, :value_z1
@@ -190,7 +191,7 @@ system :output_layer do |typ, reader_a0, a1|
   input :clk, :rst, :fill, :req
   output :ack_1
 
-  inner :ack_mac0, :ack_mac1, :ack_add
+  inner :ack, :ack_mac, :ack_add
 
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
@@ -213,8 +214,8 @@ system :output_layer do |typ, reader_a0, a1|
   result_mac = [accum.wrap(0)]
 
   # ニューロンの数だけ繰り返す必要あり
-  mac_n1(typ, clk, req, ack_mac0, weights, reader_a0, result_mac)
-  mac_n1(typ, clk, ack_mac0, ack_mac1, weights, reader_a0, result_mac)
+  mac_n1(typ, clk, req, ack, weights, reader_a0, result_mac)
+  mac_counter(1).(:counter1).(clk, ack, rst, ack_mac)  
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
@@ -227,7 +228,7 @@ system :output_layer do |typ, reader_a0, a1|
   bias = [reader_bias.wrap(0)]
   z = [accessor_z.wrap(0)]
 
-  add_n(typ, clk, ack_mac1, ack_add, result_mac, bias, z)
+  add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
   typ.inner :value_z0

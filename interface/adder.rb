@@ -5,6 +5,3 @@ system :adder do |type|
 
   s <= x + y
 end
-
-
-
