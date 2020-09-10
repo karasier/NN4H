@@ -132,7 +132,7 @@ system :neurons_layer do |typ, reader_x, a0|
 
   # ニューロンの数だけ繰り返す必要あり
   mac_n1(typ, clk, req, ack, weights, reader_x, result_mac)
-  mac_counter(2).(:counter0).(clk, ack, rst, ack_mac)
+  mac_counter(2).(:counter0).(ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
@@ -215,7 +215,7 @@ system :output_layer do |typ, reader_a0, a1|
 
   # ニューロンの数だけ繰り返す必要あり
   mac_n1(typ, clk, req, ack, weights, reader_a0, result_mac)
-  mac_counter(1).(:counter1).(clk, ack, rst, ack_mac)  
+  mac_counter(1).(:counter1).(ack, rst, ack_mac)  
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)

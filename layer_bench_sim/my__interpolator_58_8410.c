@@ -2,16 +2,16 @@
 #include "hruby_sim.h"
 #include "hruby_sim_gen.h"
 
-SystemT my__interpolator_58_8410_60870240;
+SystemT my__interpolator_58_8410_60479400;
 
-SignalI remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700;
+SignalI remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920;
 
-SignalI makeremaining_61060580() {
+SignalI makeremaining_60686180() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700 = signalI;
-   signalI->owner = (Object)my__interpolator_58_8410_60870240;
+   remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920 = signalI;
+   signalI->owner = (Object)my__interpolator_58_8410_60479400;
    signalI->name = "remaining";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -30,14 +30,14 @@ SignalI makeremaining_61060580() {
    return signalI;
 };
 
-SignalI base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700;
+SignalI base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920;
 
-SignalI makebase_61121840() {
+SignalI makebase_60886640() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700 = signalI;
-   signalI->owner = (Object)my__interpolator_58_8410_60870240;
+   base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920 = signalI;
+   signalI->owner = (Object)my__interpolator_58_8410_60479400;
    signalI->name = "base";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -56,14 +56,14 @@ SignalI makebase_61121840() {
    return signalI;
 };
 
-SignalI next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700;
+SignalI next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920;
 
-SignalI makenext__data_61502480() {
+SignalI makenext__data_61046100() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700 = signalI;
-   signalI->owner = (Object)my__interpolator_58_8410_60870240;
+   next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920 = signalI;
+   signalI->owner = (Object)my__interpolator_58_8410_60479400;
    signalI->name = "next_data";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -82,14 +82,14 @@ SignalI makenext__data_61502480() {
    return signalI;
 };
 
-SignalI interpolated__value_61760260_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700;
+SignalI interpolated__value_61123760_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920;
 
-SignalI makeinterpolated__value_61760260() {
+SignalI makeinterpolated__value_61123760() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   interpolated__value_61760260_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700 = signalI;
-   signalI->owner = (Object)my__interpolator_58_8410_60870240;
+   interpolated__value_61123760_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920 = signalI;
+   signalI->owner = (Object)my__interpolator_58_8410_60479400;
    signalI->name = "interpolated_value";
    signalI->type = get_type_vector(get_type_signed(),8);
    signalI->c_value = make_value(signalI->type,0);
@@ -108,15 +108,15 @@ SignalI makeinterpolated__value_61760260() {
    return signalI;
 };
 
-Block __61030480;
+Block __60398520;
 
-void code__61030480() {
+void code__60398520() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal(({
       Value src0,src1,dst = get_value();
       unsigned int pool_state = get_value_pos();
-      src0 = base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->c_value;
+      src0 = base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->c_value;
       src1 = ({
             Value src0,src1,dst = get_value();
             unsigned int pool_state = get_value_pos();
@@ -132,8 +132,8 @@ void code__61030480() {
                               src0 = ({
                                     Value src0,src1,dst = get_value();
                                     unsigned int pool_state = get_value_pos();
-                                    src0 = next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->c_value;
-                                    src1 = base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->c_value;
+                                    src0 = next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->c_value;
+                                    src1 = base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->c_value;
                                     dst = sub_value(src0,src1,dst);
                                     set_value_pos(pool_state);
                                  dst; });
@@ -143,7 +143,7 @@ void code__61030480() {
                         src1 = ({
                               Value src0, dst = get_value();
                               unsigned int pool_state = get_value_pos();
-                              src0 = remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->c_value;
+                              src0 = remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->c_value;
                               dst = cast_value(src0,get_type_vector(get_type_bit(),12),dst);
                               set_value_pos(pool_state);
                            dst; });
@@ -153,45 +153,45 @@ void code__61030480() {
                   dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                   set_value_pos(pool_state);
                dst; });
-            src1 = make__61059700();
+            src1 = make__60395140();
             dst = shift_right_value(src0,src1,dst);
             set_value_pos(pool_state);
          dst; });
       dst = add_value(src0,src1,dst);
       set_value_pos(pool_state);
-   dst; }),interpolated__value_61760260_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700);
+   dst; }),interpolated__value_61123760_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920);
       set_value_pos(pool_state);
    }
 }
 
-Block make__61030480() {
+Block make__60398520() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __61030480 = block;
-   block->owner = (Object)__61061840;
+   __60398520 = block;
+   block->owner = (Object)__60397080;
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__61030480;
+   block->function = &code__60398520;
 
    return block;
 };
 
-Value make__61059700() {
+Value make__60395140() {
    static unsigned long long data[] = { 4ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Scope my__interpolator_58_841_59772100;
+Scope my__interpolator_58_841_59168080;
 
-Scope __59771760;
+Scope __59167780;
 
-Scope make__59771760() {
+Scope make__59167780() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   __59771760 = scope;
-   scope->owner = (Object)my__interpolator_58_841_59772100;
+   __59167780 = scope;
+   scope->owner = (Object)my__interpolator_58_841_59168080;
    scope->name = "";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
@@ -207,41 +207,41 @@ Scope make__59771760() {
    return scope;
 }
 
-Behavior __61061840;
+Behavior __60397080;
 
-Behavior make__61061840() {
+Behavior make__60397080() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __61061840 = behavior;
-   behavior->owner = (Object)my__interpolator_58_841_59772100;
+   __60397080 = behavior;
+   behavior->owner = (Object)my__interpolator_58_841_59168080;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 3;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700);
-   base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any += 1;
-   base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any = realloc(base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any,base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any*sizeof(Object));
-base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any[base_61121840_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700);
-   next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any += 1;
-   next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any = realloc(next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any,next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any*sizeof(Object));
-next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any[next__data_61502480_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any-1] = (Object)behavior;
-   behavior->events[2] = make_event(ANYEDGE,remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700);
-   remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any += 1;
-   remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any = realloc(remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any,remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any*sizeof(Object));
-remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->any[remaining_61060580_my__interpolator_58_8410_60870240_func0_58_840_59119860_func0_58_8400_53788120_layer1_58_84_52987540_layer1_58_840_59550200______58_84_49481440______58_840_59916700->num_any-1] = (Object)behavior;
-   behavior->block = make__61030480();
+   behavior->events[0] = make_event(ANYEDGE,base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920);
+   base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any += 1;
+   base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any = realloc(base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any,base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any*sizeof(Object));
+base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any[base_60886640_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any-1] = (Object)behavior;
+   behavior->events[1] = make_event(ANYEDGE,next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920);
+   next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any += 1;
+   next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any = realloc(next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any,next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any*sizeof(Object));
+next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any[next__data_61046100_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any-1] = (Object)behavior;
+   behavior->events[2] = make_event(ANYEDGE,remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920);
+   remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any += 1;
+   remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any = realloc(remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any,remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any*sizeof(Object));
+remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->any[remaining_60686180_my__interpolator_58_8410_60479400_func0_58_840_54778500_func0_58_8400_49278760_layer1_58_84_49952460_layer1_58_840_54426020______58_84_49433100______58_840_59034920->num_any-1] = (Object)behavior;
+   behavior->block = make__60398520();
 
    return behavior;
 }
 
-Scope makemy__interpolator_58_841_59772100() {
+Scope makemy__interpolator_58_841_59168080() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   my__interpolator_58_841_59772100 = scope;
-   scope->owner = (Object)my__interpolator_58_8410_60870240;
+   my__interpolator_58_841_59168080 = scope;
+   scope->owner = (Object)my__interpolator_58_8410_60479400;
    scope->name = "my_interpolator:T1";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
@@ -249,35 +249,35 @@ Scope makemy__interpolator_58_841_59772100() {
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
    scope->num_scopes = 1;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = make__59771760();
+   scope->scopes[0] = make__59167780();
    scope->num_behaviors = 1;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__61061840();
+   scope->behaviors[0] = make__60397080();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-SystemT makemy__interpolator_58_8410_60870240() {
+SystemT makemy__interpolator_58_8410_60479400() {
    SystemT systemT = malloc(sizeof(SystemTS));
    systemT->kind = SYSTEMT;
 
-   my__interpolator_58_8410_60870240 = systemT;
+   my__interpolator_58_8410_60479400 = systemT;
 systemT->owner = NULL;
    systemT->name = "my_interpolator:T10";
    systemT->num_inputs = 3;
    systemT->inputs = calloc(sizeof(SignalI),systemT->num_inputs);
-   systemT->inputs[0] = makeremaining_61060580();
-   systemT->inputs[1] = makebase_61121840();
-   systemT->inputs[2] = makenext__data_61502480();
+   systemT->inputs[0] = makeremaining_60686180();
+   systemT->inputs[1] = makebase_60886640();
+   systemT->inputs[2] = makenext__data_61046100();
    systemT->num_outputs = 1;
    systemT->outputs = calloc(sizeof(SignalI),systemT->num_outputs);
-   systemT->outputs[0] = makeinterpolated__value_61760260();
+   systemT->outputs[0] = makeinterpolated__value_61123760();
    systemT->num_inouts = 0;
    systemT->inouts = calloc(sizeof(SignalI),systemT->num_inouts);
 
-   systemT->scope = makemy__interpolator_58_841_59772100();
+   systemT->scope = makemy__interpolator_58_841_59168080();
 
    return systemT;
 }

@@ -1,7 +1,7 @@
 require 'std/memory.rb'
 require 'std/linear.rb'
 
-system :mem_bench do
+system :mem_gen_test do
   inner :clk, :rst, :req
 
   mem = []
