@@ -1,5 +1,6 @@
 # neurons_layerのテストベンチ
-# mac_n1のackが1度しか変化していない可能性がある。
+# mac_counterが正常に動作していることを確認。
+# ack_macが1になった後にmac_n1のreqを0にする方法を検討する必要がある。
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -48,11 +49,11 @@ system :layer_bench do
   a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
   a1 = [accessor_a1.wrap(0)]
 
-  # 第1層の計算
-  neurons_layer(typ, reader_x, a0).(:layer0).(clk, rst, fill, req, ack_0)
+  # 入力層→隠れ層の計算
+  neurons_layer(typ, reader_x, a0).(:layer_hidden).(clk, rst, fill, req, ack_0)
 
-  # 第2層の計算
-  output_layer(typ, reader_a0, a1).(:layer1).(clk, rst, fill, ack_0, ack_1)
+  # 隠れ層→出力層の計算
+  output_layer(typ, reader_a0, a1).(:layer_output).(clk, rst, fill, ack_0, ack_1)
 
   par(clk.posedge) do
     hif(fill) do
@@ -110,8 +111,10 @@ system :neurons_layer do |typ, reader_x, a0|
   input :clk, :rst, :fill, :req
   output :ack_0
 
+  inner :req_mac
   inner :ack, :ack_mac, :ack_add
 
+  req_mac <= req & ~ack_mac
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
   # 第1層の重みのメモリ
@@ -131,8 +134,8 @@ system :neurons_layer do |typ, reader_x, a0|
   result_mac = [accum.wrap(0), accum.wrap(1)]
 
   # ニューロンの数だけ繰り返す必要あり
-  mac_n1(typ, clk, req, ack, weights, reader_x, result_mac)
-  mac_counter(2).(:counter0).(ack, rst, ack_mac)
+  mac_n1(typ, clk, req_mac, ack, weights, reader_x, result_mac)
+  mac_counter(2).(:counter0).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
@@ -191,8 +194,10 @@ system :output_layer do |typ, reader_a0, a1|
   input :clk, :rst, :fill, :req
   output :ack_1
 
+  inner :req_mac
   inner :ack, :ack_mac, :ack_add
 
+  req_mac <= req & ~ack_mac
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
   # 第1層の重みのメモリ
@@ -214,8 +219,8 @@ system :output_layer do |typ, reader_a0, a1|
   result_mac = [accum.wrap(0)]
 
   # ニューロンの数だけ繰り返す必要あり
-  mac_n1(typ, clk, req, ack, weights, reader_a0, result_mac)
-  mac_counter(1).(:counter1).(ack, rst, ack_mac)  
+  mac_n1(typ, clk, req_mac, ack, weights, reader_a0, result_mac)
+  mac_counter(1).(:counter1).(clk, ack, rst, ack_mac)  
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
