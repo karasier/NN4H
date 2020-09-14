@@ -67,25 +67,25 @@ system :layer_bench do
     rst <= 0
     req <= 0
     fill <= 0
-    !10.ns
+    !10.ps
 
     # メモリ読み出し位置の初期化
     rst <= 1
-    !10.ns
+    !10.ps
     clk <= 1
-    !10.ns
+    !10.ps
     
     # メモリの内容の初期化
     clk <= 0
     rst <= 0
     fill <= 1
 
-    !10.ns
+    !10.ps
     10.times do |i|
       clk <= 1
-      !10.ns
+      !10.ps
       clk <= 0
-      !10.ns
+      !10.ps
     end    
 
     fill <= 0
@@ -94,15 +94,15 @@ system :layer_bench do
     # 計算の実行
     clk <= 0
     req <= 1
-    !10.ns
+    !10.ps
     clk <= 1
-    !10.ns
+    !10.ps
     clk <= 0    
-    10.times do
+    20.times do
       clk <= 1
-      !10.ns
+      !10.ps
       clk <= 0
-      !10.ns     
+      !10.ps     
     end
   end
 end
@@ -220,7 +220,7 @@ system :output_layer do |typ, reader_a0, a1|
 
   # ニューロンの数だけ繰り返す必要あり
   mac_n1(typ, clk, req_mac, ack, weights, reader_a0, result_mac)
-  mac_counter(1).(:counter1).(clk, ack, rst, ack_mac)  
+  mac_counter(2).(:counter1).(clk, ack, rst, ack_mac)  
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
@@ -241,7 +241,7 @@ system :output_layer do |typ, reader_a0, a1|
 
   inner :flag_z0, :ack_a10
 
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func0).(value_z0, value_a10)
+  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func10).(value_z0, value_a10)
 
   par(clk.posedge) do
     hif(ack_add) do
