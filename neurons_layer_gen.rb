@@ -1,6 +1,4 @@
-# neurons_layerのテストベンチ
-# mac_counterが正常に動作していることを確認。
-# ack_macが1になった後にmac_n1のreqを0にする方法を検討する必要がある。
+# neurons_layerのジェネリック化のテストベンチ
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -27,16 +25,16 @@ system :layer_bench do
   mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_x)
 
   # 第1層のニューロンの出力のメモリ
-  #mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a0)
+  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a0)
 
   # ニューラルネットワークの出力のメモリ
-  #mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a1)
+  mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a1)
 
-  channel_a = []
-  col = [2, 1]
-  2.times do |i|
-    mem_dual(typ, col[i], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}")
-  end 
+  #channel_a = []
+  #col = [2, 1]
+  #2.times do |i|
+  #  mem_dual(typ, col[i], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}")
+  #end 
 
   # 入力値のRead用ポート作成
   channel_x.branch(:rinc).input :reader_x
@@ -52,8 +50,11 @@ system :layer_bench do
   # ニューラルネットワークの出力のR/W用ポート作成
   channel_a1.branch(:anum).inout :accessor_a1
 
-  a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
-  a1 = [accessor_a1.wrap(0)]
+  # ジェネリック化
+  #a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
+  #a1 = [accessor_a1.wrap(0)]
+  a0 = 2.times.map{ |i| accessor_a0.wrap(i) }
+  a1 = 1.times.map{ |i| accessor_a1.wrap(i) }
 
   # 入力層→隠れ層の計算
   neurons_layer(typ, reader_x, a0).(:layer_hidden).(clk, rst, fill, req, ack_0)
