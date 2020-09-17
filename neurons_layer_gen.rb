@@ -62,7 +62,7 @@ system :layer_gen_bench do
     else
       neurons_layer(func, typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i]).(:"layer#{i}").(clk, rst, fill, ack[i-1], ack[i])
     end
-  end  
+  end
   #---------------テストベンチと入力値の書き込み-------------------
   par(clk.posedge) do
     hif(fill) do
