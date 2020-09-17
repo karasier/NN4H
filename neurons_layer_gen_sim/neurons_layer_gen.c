@@ -3,19 +3,19 @@
 #include "hruby_sim_gen.h"
 
 int main(int argc, char* argv[]) {
-   makemy__interpolator_58_8410_51849960();
-   makemy__lut_58_8410_60780120();
-   makefunc10_58_840_59228360();
-   makecounter1_58_840_60095900();
-   makelayer__output_58_840_61018740();
-   makemy__interpolator_58_8400_47364740();
-   makemy__lut_58_8400_51707160();
-   makefunc1_58_840_47267620();
-   makemy__interpolator_58_842_51454160();
-   makemy__lut_58_842_53615400();
-   makefunc0_58_840_49052180();
-   makecounter_58_840_48899140();
-   makelayer__hidden_58_840_49263940();
-   make_____58_840_49030160();
+   makemy__interpolator_58_8410_60024300();
+   makemy__lut_58_8410_58708480();
+   makefunc0_58_8400_51983520();
+   makecounter_58_8400_51525140();
+   makelayer1_58_840_58721340();
+   makemy__interpolator_58_8400_47345060();
+   makemy__lut_58_8400_52519180();
+   makefunc1_58_840_54225300();
+   makemy__interpolator_58_842_52815800();
+   makemy__lut_58_842_49272420();
+   makefunc0_58_841_51761000();
+   makecounter_58_841_52367160();
+   makelayer0_58_840_48911000();
+   make_____58_840_59229340();
    hruby_sim_core(-1);
 }

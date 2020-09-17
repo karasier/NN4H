@@ -103,8 +103,8 @@ module _____00003aT0_00003a_00003alayer__hidden_00003aT0( clk, rst, fill, req, _
    wire signed[7:0] _00005e_00006081;
    wire signed[7:0] _00005e_00006082;
 
-   _____00003aT0_00003a_00003alayer__hidden_00003aT0_00003a_00003acounter_00003aT0 counter(.clk(_00005e_00006075),.ack(_00005e_00006076),.rst(_00005e_00006077),.ack__mac(_00005e_00006078));
-   _____00003aT0_00003a_00003alayer__hidden_00003aT0_00003a_00003afunc0_00003aT0 func0(.z__value(_00005e_00006079),.a(_00005e_00006080));
+   _____00003aT0_00003a_00003alayer__hidden_00003aT0_00003a_00003acounter_00003aT1 counter(.clk(_00005e_00006075),.ack(_00005e_00006076),.rst(_00005e_00006077),.ack__mac(_00005e_00006078));
+   _____00003aT0_00003a_00003alayer__hidden_00003aT0_00003a_00003afunc0_00003aT1 func0(.z__value(_00005e_00006079),.a(_00005e_00006080));
    _____00003aT0_00003a_00003alayer__hidden_00003aT0_00003a_00003afunc1_00003aT0 func1(.z__value(_00005e_00006081),.a(_00005e_00006082));
    assign req__mac = (req & ~ack__mac);
 

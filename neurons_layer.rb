@@ -1,188 +1,110 @@
-# NOTE
-# ジェネリックパラメータとしてデータ型を渡す
-# gccの問題でシミュレーションが上手く実行できない
-
 # ニューロンの計算モジュール
 
-require 'std/memory.rb'
-require 'std/linear.rb'
-require 'std/fixpoint.rb'
-require_relative 'activation_function.rb'
+require "std/memory.rb"
+require "std/linear.rb"
+require "std/fixpoint.rb"
+require_relative "activation_function.rb"
+require_relative "mac_counter.rb"
 
 include HDLRuby::High::Std
 
-typ = signed[4, 4]
+system :neurons_layer do |func, typ, integer_width, decimal_width, address_width, input_size, output_size, reader_input, a|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+  address_width = address_width.to_i
+  input_size = input_size.to_i
+  output_size = output_size.to_i
 
-system :neurons_layer do
-  inner :clk,  # clock用
-        :rst,  # reset用
-        :req,  # request用
-        :ackA, # 積和計算のack
-        :ackB, # バイアスの計算のack
-        :ack,  # 活性化関数のack
-        :fill  # メモリへの書き込み用
+  input :clk, :rst, :fill, :req
+  output :ack_layer
+
+  inner :req_mac
+  inner :ack, :ack_mac, :ack_add
+
+  req_mac <= req & ~ack_mac
+  #---------------------------------------------------------------------------
+  # 入力と重みの積和計算
+  # 重みのメモリ
+  channel_w = output_size.times.map{ |i| mem_dual(typ, input_size, clk, rst, rinc: :rst, winc: :rst).(:"channel_w#{i}") }
+
+  # 重みのRead用ポートの作成
+  reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
   
+  weights = output_size.times.map{ |i| reader_w[i] }
 
-  #--------------------------------------------------------------
+  # 積和計算の結果の格納用
+  mem_file(typ, output_size, clk, rst, anum: :rst).(:channel_accum)
+
+  accum = channel_accum.branch(:anum)
   
-  # 積和計算
-  # mem_dual(データ型, メモリサイズ, クロック, リセット)
-  # 重み
-  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:w0Mem)  
-  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:w1Mem)
-
-  # 入力値
-  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:xMem)
-
-  # Access ports.
-  # ブランチはアクセスポートを用意できる
-  # 順次読み出し
-  # :rinc -> read increments
-  # メモリ読み出し用にreadのbranchを用意
-
-  w0Mem.branch(:rinc).input :w0Reader
-  w1Mem.branch(:rinc).input :w1Reader
-  xMem.branch(:rinc).input :xReader
-
-  # Prepares the left and acc arrays.
-  # 重みをまとめる
-  weights = [w0Reader, w1Reader]
+  result_mac = output_size.times.map{ |i| accum.wrap(i) }
   
-  # Accumulators memory.
-  # 計算結果の格納用メモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst).(:accumMem)
+  # 積和演算のモジュール
+  # 入力のニューロンの数だけackを出力する
+  mac_n1(typ, clk, req_mac, ack, weights, reader_input, result_mac)
 
-  accumMem.branch(:anum).inout :sop # sum of products
-  sop_out = [sop.wrap(0), sop.wrap(1)]
-
-  # Instantiate the matrix product.
-  # mac_n1(データ型, クロック, リクエスト, ack, 入力(行列), 入力(ベクトル), 出力)
-  
-  # 重みと入力の積和計算
-  mac_n1(typ, clk, req, ackA, weights, xReader, sop_out)
-
-  #-------------------------------------------------------------
-
+  # mac_n1のackのカウンタ
+  mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
+  #---------------------------------------------------------------------------
   # バイアスの計算
-  # バイアスのメモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:biasMem)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
 
-  # zのメモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst).(:zMem)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
-  biasMem.branch(:anum).input :biasReader
-  zMem.branch(:anum).inout :zAccessor
+  reader_bias = channel_bias.branch(:anum) 
+  accessor_z = channel_z.branch(:anum)
+  
+  bias = output_size.times.map{ |i| reader_bias.wrap(i) }  
+  z = output_size.times.map{ |i| accessor_z.wrap(i) }
 
-  bias = [biasReader.wrap(0), biasReader.wrap(1)]
-  z = [zAccessor.wrap(0), zAccessor.wrap(1)]
-
-  # add_nはmem_fileでないと使えない → 並列アクセスのため
-  add_n(typ, clk, ackA, ackB, sop_out, bias, z)
-
-  #------------------------------------------------------------
-
+  add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
+  #---------------------------------------------------------------------------
   # 活性化関数の適用
-  # 活性化関数適用後の値のメモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst).(:aMem)
-  aMem.branch(:anum).output :aAccessor
-  a = [aAccessor.wrap(0), aAccessor.wrap(1)]
+  value_z = output_size.times.map{ |i| typ.inner :"value_z#{i}"}
+  value_a = output_size.times.map{ |i| typ.inner :"value_a#{i}"}     
 
-  # zの値
-  typ.inner :z0_val, :z1_val
+  flag_z = output_size.times.map{ |i| inner :"flag_z#{i}"}
+  ack_a = output_size.times.map{ |i| inner :"ack_a#{i}"}
 
-  # aの値
-  typ.inner :a0_val, :a1_val
-
-  activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func0).(z0_val, a0_val)
-  activation_function(proc{|i| Math.tanh(i)}, typ, 4, 4).(:func1).(z1_val, a1_val)
-
-
-  inner :z0_flag, :z1_flag, :a0_ack, :a1_ack, :layer_ack
-
-  # zの中身の読み出して、読み出しフラグを1にする
-  par(clk.negedge) do
-    hif(ackB) do      
-      z[0].read(z0_val) { z0_flag <= 1 }
-      z[1].read(z1_val) { z1_flag <= 1 }
-    end
-    helse { z0_flag <= 0; z1_flag <= 0 }
+  output_size.times do |i|
+    activation_function(func, typ, integer_width, decimal_width, address_width).(:"func#{i}").(value_z[i], value_a[i])
   end
 
-  # 読み出しが終わったら、書き込んでackを1にする
   par(clk.posedge) do
-    hif(z0_flag & z1_flag) do      
-      a[0].write(a0_val) { a0_ack <= 1 }              
-      a[1].write(a1_val) { a1_ack <= 1 }            
+    hif(ack_add) do
+      output_size.times do |i|
+        z[i].read(value_z[i]) { flag_z[i] <= 1 }
+      end
+    end
+    helse do
+      output_size.times do |i|
+        flag_z[i] <= 0
+      end
     end
   end
 
-  layer_ack <= a0_ack & a1_ack
-  #------------------------------------------------------------
+  par(clk.posedge) do
+    hif(flag_z.inject(:&)) do
+      output_size.times do |i|
+        a[i].write(value_a[i]) { ack_a[i] <= 1 }
+      end
+    end
+  end
 
-  # メモリに書き込み
-  # メモリの書き込み用にwriteのbranchを用意
-  w0Mem.branch(:winc).output :w0Writer
-  w1Mem.branch(:winc).output :w1Writer
-  xMem.branch(:winc).output :xWriter
-  biasMem.branch(:winc).output :biasWriter
+  ack_layer <= ack_a.inject(:&)
+  #---------------------------------------------------------------------------
+  # パラメータの初期化
+  writer_w = output_size.times.map{ |i| channel_w[i].branch(:winc) }
+  channel_bias.branch(:winc).output :writer_bias
 
-  # メモリに格納する値
-  typ.inner :val
-
-  # クロックの立ち上がりの度にvalをメモリに書き込み
-  # wincのため、書き込むたびにアドレスが1つ増える
-  # fill == 1のときだけ書き込む
   par(clk.posedge) do
     hif(fill) do
-      w0Writer.write(val)
-      w1Writer.write(val)
-      xWriter.write(val)
-      biasWriter.write(val)
-    end
-  end
-
-  timed do
-    # リセット
-    clk <= 0
-    rst <= 0
-    req <= 0
-    val  <= _b8b00000000
-    fill <= 0
-    !10.ns
-
-    # メモリ読み出し位置の初期化
-    rst <= 1
-    !10.ns
-    clk <= 1
-    !10.ns
-    
-    # メモリの内容の初期化
-    clk <= 0
-    rst <= 0
-    fill <= 1
-    val <= _b8b00010000
-    !10.ns
-    2.times do |i|
-      clk <= 1
-      !10.ns
-      clk <= 0
-      !10.ns
-    end    
-
-    fill <= 0
-    clk <= 1
-
-    # 計算の実行
-    clk <= 0
-    req <= 1
-    !10.ns
-    10.times do
-      clk <= 1
-      !10.ns
-      clk <= 0
-      # ackが1になったら計算終了する
-      hif(ackB) { req <= 0 }
-      !10.ns     
+      output_size.times do |i|
+        writer_w[i].write(_b8b00010000)        
+      end
+      writer_bias.write(_b8b00010000)
     end
   end
 end
