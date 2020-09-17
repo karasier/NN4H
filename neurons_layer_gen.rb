@@ -1,4 +1,4 @@
-# neurons_layerのジェネリック化のテストベンチ
+# neurons_layerのジェネリック化モジュールとテストベンチ
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -8,60 +8,59 @@ require_relative "mac_counter.rb"
 
 include HDLRuby::High::Std
 
-integer_width = 4 # 整数部のビット幅
-decimal_width = 4 # 実数部のビット幅
-address_width = 4 # lutのアドレスのビット幅
-typ = signed[integer_width, decimal_width] # データ型
+system :layer_gen_bench do
+  # データ型の宣言
+  integer_width = 4 # 整数部のビット幅
+  decimal_width = 4 # 実数部のビット幅
+  address_width = 4 # lutのアドレスのビット幅
+  typ = signed[integer_width, decimal_width] # データ型
+  func = proc{|i| Math.tanh(i)} # 活性化関数
 
-system :layer_bench do
+  # ニューラルネットワークの構造
+  columns = [2, 2, 1]
+
+  # 重みを持つ層の形
+  neuron_columns = columns[1..-1]  
+
+  #---------------内部信号の宣言---------------------
   inner :clk,   # clock 
         :rst,   # reset
         :req,   # request
-        :ack_0, # 第1層のack
-        :ack_1, # 第2層のack
         :fill   # メモリの初期化用
 
-  # ニューラルネットワークへの入力のメモリ
+  # ackのジェネリック宣言
+  # 層の数だけ宣言
+  ack = neuron_columns.size.times.map{ |i| inner :"ack_#{i}"}  
+  #---------------チャンネルの宣言-------------------
+  # ニューラルネットワークへの入力を格納するメモリ
   mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_x)
 
-  # 第1層のニューロンの出力のメモリ
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a0)
+  # ニューロンの出力値を格納するメモリ
+  channel_a = neuron_columns.size.times.map{ |i| mem_file(typ, neuron_columns[i] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}") }
 
-  # ニューラルネットワークの出力のメモリ
-  mem_file(typ, 1, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_a1)
-
-  #channel_a = []
-  #col = [2, 1]
-  #2.times do |i|
-  #  mem_dual(typ, col[i], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}")
-  #end 
-
+  #---------------ブランチの宣言-------------------
   # 入力値のRead用ポート作成
-  channel_x.branch(:rinc).input :reader_x
-  #reader_x = channel_x.branch(:rinc)
-  channel_x.branch(:winc).output :writer_x
+  reader_x = channel_x.branch(:rinc)
 
-  # 第1層の出力値のR/W用ポート作成
-  channel_a0.branch(:anum).inout :accessor_a0
+  # 入力値のWrite用ポート作成
+  writer_x = channel_x.branch(:winc)
 
-  # 第1層の出力値のRead用ポート作成
-  channel_a0.branch(:rinc).input :reader_a0
+  # 隠れ層の出力値のRead用ポート作成
+  reader_a = (neuron_columns.size - 1).times.map{ |i| channel_a[i].branch(:rinc) }
 
-  # ニューラルネットワークの出力のR/W用ポート作成
-  channel_a1.branch(:anum).inout :accessor_a1
+  # ニューラルネットワークの出力値のR/W用ポート作成
+  accessor_a = neuron_columns.size.times.map{ |i| channel_a[i].branch(:anum) }
 
-  # ジェネリック化
-  #a0 = [accessor_a0.wrap(0), accessor_a0.wrap(1)]
-  #a1 = [accessor_a1.wrap(0)]
-  a0 = 2.times.map{ |i| accessor_a0.wrap(i) }
-  a1 = 1.times.map{ |i| accessor_a1.wrap(i) }
+  # アクセスの固定化
+  a = neuron_columns.size.times.map{ |i| neuron_columns[i].times.map{ |j| accessor_a[i].wrap(j) } }
 
-  # 入力層→隠れ層の計算
-  neurons_layer(typ, reader_x, a0).(:layer_hidden).(clk, rst, fill, req, ack_0)
-
+  #---------------neurons_layerのインスタンス生成-------------------
+  # 入力層→隠れ層の計算  
+  neurons_layer(func, typ, integer_width, decimal_width, address_width, columns[0], columns[1], reader_x, a[0]).(:layer_hidden).(clk, rst, fill, req, ack[0])  
+  
   # 隠れ層→出力層の計算
-  output_layer(typ, reader_a0, a1).(:layer_output).(clk, rst, fill, ack_0, ack_1)
-
+  output_layer(func, typ, integer_width, decimal_width, address_width, columns[1], columns[2], reader_a[0], a[1]).(:layer_output).(clk, rst, fill, ack[0], ack[1])
+  #---------------テストベンチと入力値の書き込み-------------------
   par(clk.posedge) do
     hif(fill) do
       writer_x.write(_b8b00010000)
@@ -114,9 +113,17 @@ system :layer_bench do
   end
 end
 
-system :neurons_layer do |typ, reader_x, a0|
+system :neurons_layer do |func, typ, integer_width, decimal_width, address_width, input_size, output_size, reader_input, a|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+  address_width = address_width.to_i
+  input_size = input_size.to_i
+  output_size = output_size.to_i
+
   input :clk, :rst, :fill, :req
-  output :ack_0
+  output :ack_layer
 
   inner :req_mac
   inner :ack, :ack_mac, :ack_add
@@ -124,80 +131,96 @@ system :neurons_layer do |typ, reader_x, a0|
   req_mac <= req & ~ack_mac
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
-  # 第1層の重みのメモリ
-  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_w0)
-  mem_dual(typ, 2, clk, rst, rinc: :rst, winc: :rst).(:channel_w1)
-  
-  # 重みのRead用ポート作成
-  channel_w0.branch(:rinc).input :reader_w0
-  channel_w1.branch(:rinc).input :reader_w1
+  # 重みのメモリ
+  channel_w = output_size.times.map{ |i| mem_dual(typ, input_size, clk, rst, rinc: :rst, winc: :rst).(:"channel_w#{i}") }
 
-  weights = [reader_w0, reader_w1]
+  # 重みのRead用ポートの作成
+  reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
+  
+  weights = output_size.times.map{ |i| reader_w[i] }
 
   # 積和計算の結果の格納用
-  mem_file(typ, 2, clk, rst, anum: :rst).(:channel_accum)
+  mem_file(typ, output_size, clk, rst, anum: :rst).(:channel_accum)
 
-  channel_accum.branch(:anum).inout :accum
-  result_mac = [accum.wrap(0), accum.wrap(1)]
+  accum = channel_accum.branch(:anum)
+  
+  result_mac = output_size.times.map{ |i| accum.wrap(i) }
+  
+  # 積和演算のモジュール
+  # 入力のニューロンの数だけackを出力する
+  mac_n1(typ, clk, req_mac, ack, weights, reader_input, result_mac)
 
-  # ニューロンの数だけ繰り返す必要あり
-  mac_n1(typ, clk, req_mac, ack, weights, reader_x, result_mac)
-  mac_counter(2).(:counter0).(clk, ack, rst, ack_mac)
+  # mac_n1のackのカウンタ
+  mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
 
-  mem_file(typ, 2, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
-  channel_bias.branch(:anum).input :reader_bias
-  channel_z.branch(:anum).inout :accessor_z
-
-  bias = [reader_bias.wrap(0), reader_bias.wrap(1)]
-  z = [accessor_z.wrap(0), accessor_z.wrap(1)]
+  reader_bias = channel_bias.branch(:anum) 
+  accessor_z = channel_z.branch(:anum)
+  
+  bias = output_size.times.map{ |i| reader_bias.wrap(i) }  
+  z = output_size.times.map{ |i| accessor_z.wrap(i) }
 
   add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
-  typ.inner :value_z0, :value_z1
-  typ.inner :value_a00, :value_a01
+  value_z = output_size.times.map{ |i| typ.inner :"value_z#{i}"}
+  value_a = output_size.times.map{ |i| typ.inner :"value_a#{i}"}     
 
-  inner :flag_z0, :flag_z1, :ack_a00, :ack_a01
+  flag_z = output_size.times.map{ |i| inner :"flag_z#{i}"}
+  ack_a = output_size.times.map{ |i| inner :"ack_a#{i}"}
 
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func0).(value_z0, value_a00)
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func1).(value_z1, value_a01)
+  output_size.times do |i|
+    activation_function(func, typ, integer_width, decimal_width, address_width).(:"func#{i}").(value_z[i], value_a[i])
+  end
 
   par(clk.posedge) do
     hif(ack_add) do
-      z[0].read(value_z0) { flag_z0 <= 1 }
-      z[1].read(value_z1) { flag_z1 <= 1 }
+      output_size.times do |i|
+        z[i].read(value_z[i]) { flag_z[i] <= 1 }
+      end
     end
-    helse { flag_z0 <= 0; flag_z1 <= 0}
+    helse do
+      output_size.times do |i|
+        flag_z[i] <= 0
+      end
+    end
   end
 
   par(clk.posedge) do
-    hif(flag_z0 & flag_z1) do
-        a0[0].write(value_a00) { ack_a00 <= 1 }
-        a0[1].write(value_a01) { ack_a01 <= 1 }
+    hif(flag_z.inject(:&)) do
+      output_size.times do |i|
+        a[i].write(value_a[i]) { ack_a[i] <= 1 }
       end
+    end
   end
 
-  ack_0 <= ack_a00 & ack_a01
+  ack_layer <= ack_a.inject(:&)
   #---------------------------------------------------------------------------
   # パラメータの初期化
-  channel_w0.branch(:winc).output :writer_w0
-  channel_w1.branch(:winc).output :writer_w1
+  writer_w = output_size.times.map{ |i| channel_w[i].branch(:winc) }
   channel_bias.branch(:winc).output :writer_bias
 
   par(clk.posedge) do
     hif(fill) do
-      writer_w0.write(_b8b00010000)
-      writer_w1.write(_b8b00010000)
+      output_size.times do |i|
+        writer_w[i].write(_b8b00010000)        
+      end
       writer_bias.write(_b8b00010000)
     end
   end
 end
 
-system :output_layer do |typ, reader_a0, a1|
+system :output_layer do |func, typ, integer_width, decimal_width, address_width, input_size, output_size, reader_a0, a1|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+  address_width = address_width.to_i
+
   input :clk, :rst, :fill, :req
   output :ack_1
 
@@ -248,7 +271,7 @@ system :output_layer do |typ, reader_a0, a1|
 
   inner :flag_z0, :ack_a10
 
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func10).(value_z0, value_a10)
+  activation_function(func, typ, integer_width, decimal_width, address_width).(:func10).(value_z0, value_a10)
 
   par(clk.posedge) do
     hif(ack_add) do

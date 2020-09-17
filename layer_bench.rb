@@ -1,6 +1,6 @@
 # neurons_layerのテストベンチ
 # mac_counterが正常に動作していることを確認。
-# ack_macが1になった後にmac_n1のreqを0にする方法を検討する必要がある。
+# output_layerのオーバーフローについて検討
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -10,12 +10,15 @@ require_relative "mac_counter.rb"
 
 include HDLRuby::High::Std
 
-integer_width = 4 # 整数部のビット幅
-decimal_width = 4 # 実数部のビット幅
-address_width = 4 # lutのアドレスのビット幅
-typ = signed[integer_width, decimal_width] # データ型
-
 system :layer_bench do
+  # データ型の宣言
+  # Declaration of data type.
+  integer_width = 4 # 整数部のビット幅
+  decimal_width = 4 # 実数部のビット幅
+  address_width = 4 # lutのアドレスのビット幅
+  typ = signed[integer_width, decimal_width] # データ型
+  func = proc{|i| Math.tanh(i)} # 活性化関数
+
   inner :clk,   # clock 
         :rst,   # reset
         :req,   # request
@@ -50,10 +53,10 @@ system :layer_bench do
   a1 = [accessor_a1.wrap(0)]
 
   # 入力層→隠れ層の計算
-  neurons_layer(typ, reader_x, a0).(:layer_hidden).(clk, rst, fill, req, ack_0)
+  neurons_layer(func, typ, integer_width, decimal_width, address_width, reader_x, a0).(:layer_hidden).(clk, rst, fill, req, ack_0)
 
   # 隠れ層→出力層の計算
-  output_layer(typ, reader_a0, a1).(:layer_output).(clk, rst, fill, ack_0, ack_1)
+  output_layer(func, typ, integer_width, decimal_width, address_width, reader_a0, a1).(:layer_output).(clk, rst, fill, ack_0, ack_1)
 
   par(clk.posedge) do
     hif(fill) do
@@ -107,7 +110,13 @@ system :layer_bench do
   end
 end
 
-system :neurons_layer do |typ, reader_x, a0|
+system :neurons_layer do |func, typ, integer_width, decimal_width, address_width, reader_x, a0|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+  address_width = address_width.to_i
+
   input :clk, :rst, :fill, :req
   output :ack_0
 
@@ -156,8 +165,8 @@ system :neurons_layer do |typ, reader_x, a0|
 
   inner :flag_z0, :flag_z1, :ack_a00, :ack_a01
 
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func0).(value_z0, value_a00)
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func1).(value_z1, value_a01)
+  activation_function(func, typ, integer_width, decimal_width, address_width).(:func0).(value_z0, value_a00)
+  activation_function(func, typ, integer_width, decimal_width, address_width).(:func1).(value_z1, value_a01)
 
   par(clk.posedge) do
     hif(ack_add) do
@@ -190,7 +199,13 @@ system :neurons_layer do |typ, reader_x, a0|
   end
 end
 
-system :output_layer do |typ, reader_a0, a1|
+system :output_layer do |func, typ, integer_width, decimal_width, address_width, reader_a0, a1|
+  func = func.to_proc
+  typ = typ.to_type
+  integer_width = integer_width.to_i
+  decimal_width = decimal_width.to_i
+  address_width = address_width.to_i
+
   input :clk, :rst, :fill, :req
   output :ack_1
 
@@ -241,7 +256,7 @@ system :output_layer do |typ, reader_a0, a1|
 
   inner :flag_z0, :ack_a10
 
-  activation_function(proc{|i| Math.tanh(i)}, typ, integer_width, decimal_width, address_width).(:func10).(value_z0, value_a10)
+  activation_function(func, typ, integer_width, decimal_width, address_width).(:func10).(value_z0, value_a10)
 
   par(clk.posedge) do
     hif(ack_add) do
