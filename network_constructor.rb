@@ -1,5 +1,6 @@
 # 与えられた構造に基づいてニューラルネットワークを生成するモジュールとテストベンチ
 # undefined method "get_by_name"のエラーが発生している。(neurons_layerのインスタンス生成の時に)
+# => branchの問題。子モジュールの子モジュールにはbranchが渡せない。
 # インターフェースについて検討する必要あり。
 
 require "std/memory.rb"
@@ -13,12 +14,11 @@ system :network_bench do
   integer_width = 4 # 整数部のビット幅
   decimal_width = 4 # 実数部のビット幅
   address_width = 4 # lutのアドレスのビット幅
-  typ = signed[integer_width, decimal_width] # データ型
-  func = proc{|i| Math.tanh(i) } # 活性化関数
-
+  typ = signed[integer_width, decimal_width] # データ型  
+  tanh = proc{ |i| Math.tanh(i) }
   # ニューラルネットワークの構造
   columns = [2, 2, 1]
-
+  func = [tanh, tanh] # 活性化関数
   #---------------内部信号の宣言---------------------
   inner :clk,   # clock 
         :rst,   # reset
@@ -26,31 +26,8 @@ system :network_bench do
         :fill   # メモリの初期化用
 
   inner :ack    # ニューラルネットワークのack
-  
-  #---------------チャンネルの宣言-------------------
-  # ニューラルネットワークへの入力を格納するメモリ
-  mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
 
-  mem_file(typ, columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
-
-  #---------------ブランチの宣言-------------------
-  # 入力値のRead用ポート作成
-  reader_input = channel_input.branch(:rinc)
-
-  # 入力値のWrite用ポート作成
-  writer_input = channel_input.branch(:winc)
-
-  # 出力値のR/W用ポート
-  accessor_output = channel_output.branch(:anum)
-
-  network_constructor(columns, func, typ, integer_width, decimal_width, address_width, reader_input, accessor_output).(:neural_network).(clk, rst, req, fill, ack)
-
-  #---------------テストベンチと入力値の書き込み-------------------
-  par(clk.posedge) do
-    hif(fill) do
-      writer_input.write(_b8b00010000)
-    end
-  end
+  network_constructor(columns, func, typ, integer_width, decimal_width, address_width).(:neural_network).(clk, rst, req, fill, ack)
 
   timed do
     # リセット
@@ -98,9 +75,9 @@ system :network_bench do
   end
 end
 
-system :network_constructor do |columns, func, typ, integer_width, decimal_width, address_width, reader_input, accessor_output|
+system :network_constructor do |columns, func, typ, integer_width, decimal_width, address_width|
   columns = columns.to_a
-  func = func.to_proc
+  func = func.to_a
   typ = typ.to_type
   integer_width = integer_width.to_i
   decimal_width = decimal_width.to_i
@@ -118,11 +95,26 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
 
   # ニューラルネットワークの計算のack
   ack_network <= ack[-1]
+  #---------------チャンネルの宣言-------------------
+  # ニューラルネットワークへの入力を格納するメモリ
+  mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
+
+  # ニューラルネットワークからの出力を格納するメモリ
+  mem_file(typ, columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
 
   # ニューロンの出力値を格納するメモリ
-  channel_a = (neuron_columns.size - 1).times.map{ |i| mem_file(typ, neuron_columns[i] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}") }
-  
+  channel_a = (neuron_columns.size - 1).times.map{ |i| mem_file(typ, neuron_columns[i] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}") }  
+
   #---------------ブランチの宣言-------------------
+  # 入力値のRead用ポート作成
+  reader_input = channel_input.branch(:rinc)
+
+  # 入力値のWrite用ポート作成
+  writer_input = channel_input.branch(:winc)
+
+  # 出力値のR/W用ポート
+  accessor_output = channel_output.branch(:anum)    
+
   # 隠れ層の出力値のRead用ポート作成
   reader_a = (neuron_columns.size - 1).times.map{ |i| channel_a[i].branch(:rinc) }
 
@@ -133,11 +125,18 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   # アクセスの固定化
   a = neuron_columns.size.times.map{ |i| neuron_columns[i].times.map{ |j| accessor_a[i].wrap(j) } }
   #---------------neurons_layerのインスタンス生成-------------------  
-  (columns.size - 1).times do |i|
+  neuron_columns.size.times do |i|
     if i == 0 then
-      neurons_layer(func, typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_input, a[i]).(:"layer#{i}").(clk, rst, fill, req, ack[i])
+      neurons_layer(func[i], typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_input, a[i]).(:"layer#{i}").(clk, rst, fill, req, ack[i])
     else
-      neurons_layer(func, typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i]).(:"layer#{i}").(clk, rst, fill, ack[i-1], ack[i])
+      neurons_layer(func[i], typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i]).(:"layer#{i}").(clk, rst, fill, ack[i-1], ack[i])
     end
-  end  
+  end
+  
+  #---------------テストベンチと入力値の書き込み-------------------
+  par(clk.posedge) do
+    hif(fill) do
+      writer_input.write(_b8b00010000)
+    end
+  end
 end
