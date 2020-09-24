@@ -14,6 +14,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    reg ack;
    wire ack__mac;
    reg ack__add;
+   wire fill__rom;
    wire signed[7:0] _00003a266;
    reg _00003a264;
    reg [0:0] _00003a265;
@@ -26,6 +27,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    reg ack__a0;
    reg [1:0] address__weights0;
    reg [0:0] address__bias;
+   reg ack__weights0;
+   reg ack__bias;
    reg signed[7:0] _00003a324;
    reg [0:-1] _00003a325;
    wire signed[7:0] w0  :0[0:1];
@@ -91,6 +94,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    assign ack__layer = ack__a0;
 
+   assign fill__rom = ((fill & ~ack__weights0) & ~ack__bias);
+
    assign _00003a266 = channel__w0_00003a252_00003a_00003adbus__r;
 
    assign _00003a264 = channel__w0_00003a252_00003a_00003atrig__r;
@@ -136,23 +141,6 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    always @( posedge clk ) begin
 
-      if (rst) begin
-         address__weights0 <= 32'd0;
-         address__bias <= 32'd0;
-      end
-
-      if ((address__weights0 == 32'd2)) begin
-         address__weights0 <= 32'd0;
-      end
-
-      if ((address__bias == 32'd1)) begin
-         address__bias <= 32'd0;
-      end
-
-   end
-
-   always @( posedge clk ) begin
-
       if ((rst == 32'd1)) begin
          _00003a325 <= 32'd0;
       end
@@ -163,7 +151,14 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
       _00003a268 <= 32'd0;
 
-      if (fill) begin
+      if (rst) begin
+         address__weights0 <= 32'd0;
+         ack__weights0 <= 32'd0;
+         address__bias <= 32'd0;
+         ack__bias <= 32'd0;
+      end
+
+      if (fill__rom) begin
          if ((rst == 32'd0)) begin
             _00003a269 <= (_00003a269 + 32'd1);
             _00003a268 <= 32'd1;
@@ -177,6 +172,14 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
             _00003a325 <= (_00003a325 + 32'd1);
          end
          address__bias <= (address__bias + 32'd1);
+      end
+
+      if ((address__weights0 == 32'd2)) begin
+         ack__weights0 <= 32'd1;
+      end
+
+      if ((address__bias == 32'd1)) begin
+         ack__bias <= 32'd1;
       end
 
    end

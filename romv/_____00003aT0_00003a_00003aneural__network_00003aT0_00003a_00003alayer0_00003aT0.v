@@ -15,6 +15,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    reg ack;
    wire ack__mac;
    reg ack__add;
+   wire fill__rom;
    wire signed[7:0] _00003a97;
    reg _00003a95;
    reg [0:0] _00003a96;
@@ -38,6 +39,9 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    reg [1:0] address__weights0;
    reg [1:0] address__weights1;
    reg [1:0] address__bias;
+   reg ack__weights0;
+   reg ack__weights1;
+   reg ack__bias;
    reg signed[7:0] _00003a197;
    reg signed[7:0] _00003a198;
    reg [0:0] _00003a199;
@@ -132,6 +136,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
    assign ack__layer = (ack__a0 & ack__a1);
 
+   assign fill__rom = ((fill & ~(ack__weights0 & ack__weights1)) & ~ack__bias);
+
    assign _00003a97 = channel__w0_00003a83_00003a_00003adbus__r;
 
    assign _00003a95 = channel__w0_00003a83_00003a_00003atrig__r;
@@ -202,28 +208,6 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
    always @( posedge clk ) begin
 
-      if (rst) begin
-         address__weights0 <= 32'd0;
-         address__weights1 <= 32'd0;
-         address__bias <= 32'd0;
-      end
-
-      if ((address__weights0 == 32'd2)) begin
-         address__weights0 <= 32'd0;
-      end
-
-      if ((address__weights1 == 32'd2)) begin
-         address__weights1 <= 32'd0;
-      end
-
-      if ((address__bias == 32'd2)) begin
-         address__bias <= 32'd0;
-      end
-
-   end
-
-   always @( posedge clk ) begin
-
       if ((rst == 32'd1)) begin
          _00003a199 <= 32'd0;
       end
@@ -240,7 +224,16 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
       _00003a99 <= 32'd0;
 
-      if (fill) begin
+      if (rst) begin
+         address__weights0 <= 32'd0;
+         ack__weights0 <= 32'd0;
+         address__weights1 <= 32'd0;
+         ack__weights1 <= 32'd0;
+         address__bias <= 32'd0;
+         ack__bias <= 32'd0;
+      end
+
+      if (fill__rom) begin
          if ((rst == 32'd0)) begin
             _00003a100 <= (_00003a100 + 32'd1);
             _00003a99 <= 32'd1;
@@ -261,6 +254,18 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
             _00003a199 <= (_00003a199 + 32'd1);
          end
          address__bias <= (address__bias + 32'd1);
+      end
+
+      if ((address__weights0 == 32'd2)) begin
+         ack__weights0 <= 32'd1;
+      end
+
+      if ((address__weights1 == 32'd2)) begin
+         ack__weights1 <= 32'd1;
+      end
+
+      if ((address__bias == 32'd2)) begin
+         ack__bias <= 32'd1;
       end
 
    end

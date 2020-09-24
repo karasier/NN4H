@@ -26,6 +26,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
 
   inner :req_mac
   inner :ack, :ack_mac, :ack_add
+  inner :fill_rom
 
   req_mac <= req & ~ack_mac
   #---------------------------------------------------------------------------
@@ -103,6 +104,9 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   address_weights = output_size.times.map{ |i| [input_size].inner :"address_weights#{i}"}
   [output_size].inner :address_bias
 
+  ack_weights = output_size.times.map{ |i| inner :"ack_weights#{i}"}
+  inner :ack_bias
+
   # 重みとバイアスの配列
   # テスト用
   weights = Array.new(output_size, Array.new(input_size, 1.0))
@@ -115,17 +119,21 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   # 重みとバイアスを格納するROMの宣言
   w = output_size.times.map{ |i| typ[-input_size].constant "w#{i}": quantize(weights[i], typ, decimal_width) }
   typ[-output_size].constant b: quantize(bias, typ, decimal_width)
+  
+  fill_rom <= fill & ~ack_weights.inject(:&) & ~ack_bias
 
   par(clk.posedge) do
     # アドレスの初期化
     hif(rst) do
       output_size.times do |i|
         address_weights[i] <= 0
+        ack_weights[i] <= 0
       end
       address_bias <= 0
+      ack_bias <= 0
     end
 
-    hif(fill) do
+    hif(fill_rom) do
       output_size.times do |i|
         writer_w[i].write(w[i][address_weights[i]])
         address_weights[i] <= address_weights[i] + 1       
@@ -136,12 +144,12 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
 
     output_size.times do |i|
       hif(address_weights[i] == input_size ) do
-        address_weights[i] <= 0
+        ack_weights[i] <= 1
       end
     end
 
     hif(address_bias == output_size) do
-      address_bias <= 0
+      ack_bias <= 1
     end
   end
 end
