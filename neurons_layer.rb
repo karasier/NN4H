@@ -1,4 +1,8 @@
 # ニューロンの計算モジュール
+# 任意の重みとバイアスを適用できるよう改善中
+# 重みとバイアスは配列で渡すようにする予定
+# 現在シミュレーション時にvcdファイル生成関連のエラーが
+# 発生しているため動作未確認
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -32,7 +36,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   # 重みのRead用ポートの作成
   reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
   
-  weights = output_size.times.map{ |i| reader_w[i] }
+  reader_weights = output_size.times.map{ |i| reader_w[i] }
 
   # 積和計算の結果の格納用
   mem_file(typ, output_size, clk, rst, anum: :rst).(:channel_accum)
@@ -43,7 +47,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   
   # 積和演算のモジュール
   # 入力のニューロンの数だけackを出力する
-  mac_n1(typ, clk, req_mac, ack, weights, reader_input, result_mac)
+  mac_n1(typ, clk, req_mac, ack, reader_weights, reader_input, result_mac)
 
   # mac_n1のackのカウンタ
   mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
@@ -53,13 +57,13 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
 
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
-  reader_bias = channel_bias.branch(:anum) 
+  accessor_bias = channel_bias.branch(:anum) 
   accessor_z = channel_z.branch(:anum)
   
-  bias = output_size.times.map{ |i| reader_bias.wrap(i) }  
+  reader_bias = output_size.times.map{ |i| accessor_bias.wrap(i) }  
   z = output_size.times.map{ |i| accessor_z.wrap(i) }
 
-  add_n(typ, clk, ack_mac, ack_add, result_mac, bias, z)
+  add_n(typ, clk, ack_mac, ack_add, result_mac, reader_bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
   value_z = output_size.times.map{ |i| typ.inner :"value_z#{i}"}
@@ -96,15 +100,52 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   ack_layer <= ack_a.inject(:&)
   #---------------------------------------------------------------------------
   # パラメータの初期化
+  address_weights = output_size.times.map{ |i| [input_size].inner :"address_weights#{i}"}
+  [output_size].inner :address_bias
+
+  # 重みとバイアスの配列
+  # テスト用
+  weights = Array.new(output_size, Array.new(input_size, 1.0))
+  bias = Array.new(output_size, 1.0)
+
+  # 書き込み用branchの宣言
   writer_w = output_size.times.map{ |i| channel_w[i].branch(:winc) }
   channel_bias.branch(:winc).output :writer_bias
 
+  # 重みとバイアスを格納するROMの宣言
+  w = output_size.times.map{ |i| typ[-input_size].constant "w#{i}": quantize(weights[i], typ, decimal_width) }
+  typ[-output_size].constant b: quantize(bias, typ, decimal_width)
+
   par(clk.posedge) do
+    # アドレスの初期化
+    hif(rst) do
+      output_size.times do |i|
+        address_weights[i] <= 0
+      end
+      address_bias <= 0
+    end
+
     hif(fill) do
       output_size.times do |i|
-        writer_w[i].write(_b8b00010000)        
+        writer_w[i].write(w[i][address_weights[i]])
+        address_weights[i] <= address_weights[i] + 1       
       end
-      writer_bias.write(_b8b00010000)
+      writer_bias.write(b[address_bias])
+      address_bias <= address_bias + 1
+    end
+
+    output_size.times do |i|
+      hif(address_weights[i] == input_size ) do
+        address_weights[i] <= 0
+      end
+    end
+
+    hif(address_bias == output_size) do
+      address_bias <= 0
     end
   end
+end
+
+def quantize(array, typ, decimal_width)
+  return array.map{ |value| value.to_fix(decimal_width).to_expr.as(typ) }
 end
