@@ -100,7 +100,7 @@ system :interpolator do |typ|
   interpolated_value <= base + (next_data - base) * remaining
 end
 
-# Make an array consists of a point of arbitrary activation function.
+# Make an array consists of a point of any activation function.
 # @param [Integer] lut_size the lut_size of LUT
 # @return [Array] table an array consists of a point of tanh
 def initialize_lut(func, lut_size, typ, integer_width, decimal_width, address_width)

@@ -9,10 +9,11 @@ require "std/linear.rb"
 require "std/fixpoint.rb"
 require_relative "activation_function.rb"
 require_relative "mac_counter.rb"
+require_relative "quantize.rb"
 
 include HDLRuby::High::Std
 
-system :neurons_layer do |func, typ, integer_width, decimal_width, address_width, input_size, output_size, reader_input, a|
+system :neurons_layer do |func, typ, integer_width, decimal_width, address_width, input_size, output_size, reader_input, a, weights, bias|
   func = func.to_proc
   typ = typ.to_type
   integer_width = integer_width.to_i
@@ -26,7 +27,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
 
   inner :req_mac
   inner :ack, :ack_mac, :ack_add
-  inner :fill_rom
+  inner :fill_channel
 
   req_mac <= req & ~ack_mac
   #---------------------------------------------------------------------------
@@ -101,16 +102,11 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   ack_layer <= ack_a.inject(:&)
   #---------------------------------------------------------------------------
   # パラメータの初期化
-  address_weights = output_size.times.map{ |i| [input_size].inner :"address_weights#{i}"}
-  [output_size].inner :address_bias
+  address_weights = output_size.times.map{ |i| [input_size.width].inner :"address_weights#{i}"}
+  [output_size.width].inner :address_bias
 
   ack_weights = output_size.times.map{ |i| inner :"ack_weights#{i}"}
   inner :ack_bias
-
-  # 重みとバイアスの配列
-  # テスト用
-  weights = Array.new(output_size, Array.new(input_size, 1.0))
-  bias = Array.new(output_size, 1.0)
 
   # 書き込み用branchの宣言
   writer_w = output_size.times.map{ |i| channel_w[i].branch(:winc) }
@@ -120,7 +116,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   w = output_size.times.map{ |i| typ[-input_size].constant "w#{i}": quantize(weights[i], typ, decimal_width) }
   typ[-output_size].constant b: quantize(bias, typ, decimal_width)
   
-  fill_rom <= fill & ~ack_weights.inject(:&) & ~ack_bias
+  fill_channel <= fill & ~(ack_weights.inject(:&) & ack_bias)
 
   par(clk.posedge) do
     # アドレスの初期化
@@ -133,27 +129,28 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
       ack_bias <= 0
     end
 
-    hif(fill_rom) do
+    hif(fill_channel) do
       output_size.times do |i|
-        writer_w[i].write(w[i][address_weights[i]])
-        address_weights[i] <= address_weights[i] + 1       
+        hif(~ack_weights[i]) do
+          writer_w[i].write(w[i][address_weights[i]])
+          address_weights[i] <= address_weights[i] + 1       
+        end
       end
-      writer_bias.write(b[address_bias])
-      address_bias <= address_bias + 1
+
+      hif(~ack_bias) do
+        writer_bias.write(b[address_bias])
+        address_bias <= address_bias + 1
+      end      
     end
 
     output_size.times do |i|
-      hif(address_weights[i] == input_size ) do
+      hif(address_weights[i] == input_size - 1 ) do
         ack_weights[i] <= 1
       end
     end
 
-    hif(address_bias == output_size) do
+    hif(address_bias == output_size - 1) do
       ack_bias <= 1
     end
   end
-end
-
-def quantize(array, typ, decimal_width)
-  return array.map{ |value| value.to_fix(decimal_width).to_expr.as(typ) }
 end
