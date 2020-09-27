@@ -30,6 +30,12 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   inner :fill_channel
 
   req_mac <= req & ~ack_mac
+
+  par(clk.posedge) do
+    ack <= 0
+    ack_mac <= 0
+    ack_add <= 0
+  end
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
   # 重みのメモリ
@@ -78,6 +84,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
     activation_function(func, typ, integer_width, decimal_width, address_width).(:"func#{i}").(value_z[i], value_a[i])
   end
 
+  # z(線形変換後の値)のメモリからの読み出し
   par(clk.posedge) do
     hif(ack_add) do
       output_size.times do |i|
@@ -91,8 +98,14 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
     end
   end
 
+  # a(活性化関数適用後の値)のメモリへの書き出し
   par(clk.posedge) do
-    hif(flag_z.inject(:&)) do
+    hif(rst) do
+      output_size.times do |i|
+        ack_a[i] <= 0
+      end
+    end
+    helsif(flag_z.inject(:&)) do
       output_size.times do |i|
         a[i].write(value_a[i]) { ack_a[i] <= 1 }
       end
@@ -102,9 +115,12 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   ack_layer <= ack_a.inject(:&)
   #---------------------------------------------------------------------------
   # パラメータの初期化
+
+  # ROMのアドレス
   address_weights = output_size.times.map{ |i| [input_size.width].inner :"address_weights#{i}"}
   [output_size.width].inner :address_bias
 
+  # ROMのack
   ack_weights = output_size.times.map{ |i| inner :"ack_weights#{i}"}
   inner :ack_bias
 
@@ -129,6 +145,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
       ack_bias <= 0
     end
 
+    # ROMから読み出してchannelへ書き込み
     hif(fill_channel) do
       output_size.times do |i|
         hif(~ack_weights[i]) do
@@ -143,6 +160,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
       end      
     end
 
+    # ack
     output_size.times do |i|
       hif(address_weights[i] == input_size - 1 ) do
         ack_weights[i] <= 1

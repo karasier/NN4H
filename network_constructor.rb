@@ -32,6 +32,12 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
 
   # ニューラルネットワークの計算のack
   ack_network <= ack[-1]
+
+  par(clk.posedge) do
+    neuron_columns.size.times do |i|
+      ack[i] <= 0
+    end
+  end
   #---------------チャンネルの宣言-------------------
   # ニューラルネットワークへの入力を格納するメモリ
   mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
