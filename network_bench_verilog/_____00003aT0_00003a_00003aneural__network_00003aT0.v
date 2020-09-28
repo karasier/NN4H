@@ -151,9 +151,9 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
 
    initial begin
 
-      rom__inputs[32'd0] = $signed(32'd10);
+      rom__inputs[32'd0] = $signed(32'd12);
 
-      rom__inputs[32'd1] = $signed(32'd10);
+      rom__inputs[32'd1] = $signed(32'd12);
 
    end
 

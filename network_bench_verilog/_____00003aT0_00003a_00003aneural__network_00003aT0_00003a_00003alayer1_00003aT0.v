@@ -288,11 +288,9 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    initial begin
 
-      w0[32'd0] = $signed(32'd14);
+      w0[32'd0] = $signed(-32'd79);
 
-      w0[32'd1] = $signed(32'd15);
-
-      b[32'd0] = $signed(-32'd1);
+      b[32'd0] = $signed(32'd0);
 
    end
 

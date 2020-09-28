@@ -424,15 +424,15 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
       w0[32'd0] = $signed(32'd7);
 
-      w0[32'd1] = $signed(32'd6);
+      w0[32'd1] = $signed(32'd7);
 
-      w1[32'd0] = $signed(32'd7);
+      w1[32'd0] = $signed(32'd39);
 
-      w1[32'd1] = $signed(32'd6);
+      w1[32'd1] = $signed(32'd39);
 
-      b[32'd0] = $signed(-32'd15);
+      b[32'd0] = $signed(32'd15);
 
-      b[32'd1] = $signed(32'd5);
+      b[32'd1] = $signed(32'd78);
 
    end
 
