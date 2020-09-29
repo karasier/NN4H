@@ -34,8 +34,10 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   ack_network <= ack[-1]
 
   par(clk.posedge) do
-    neuron_columns.size.times do |i|
-      ack[i] <= 0
+    hif(rst) do
+      neuron_columns.size.times do |i|
+        ack[i] <= 0
+      end
     end
   end
   #---------------チャンネルの宣言-------------------
@@ -81,7 +83,8 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   [columns[0].width].inner :address_inputs
   inner :ack_inputs
     
-  inputs = columns[0].times.map{ rand }
+  #inputs = columns[0].times.map{ rand }
+  inputs = [0, 1]
   puts "inputs : #{inputs}"
 
   typ[-columns[0]].constant rom_inputs: quantize(inputs, typ, decimal_width)

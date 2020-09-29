@@ -32,9 +32,11 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   req_mac <= req & ~ack_mac
 
   par(clk.posedge) do
-    ack <= 0
-    ack_mac <= 0
-    ack_add <= 0
+    hif(rst) do
+      ack <= 0
+      ack_mac <= 0
+      ack_add <= 0
+    end    
   end
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算

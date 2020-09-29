@@ -6,9 +6,9 @@ require_relative "network_loader.rb"
 
 system :network_bench do
     # データ型の宣言
-    integer_width = 4 # 整数部のビット幅
-    decimal_width = 4 # 実数部のビット幅
-    address_width = 4 # lutのアドレスのビット幅
+    integer_width = 8 # 整数部のビット幅
+    decimal_width = 8 # 実数部のビット幅
+    address_width = 8 # lutのアドレスのビット幅
     typ = signed[integer_width, decimal_width] # データ型  
     tanh = proc{ |i| Math.tanh(i) }
     
@@ -19,7 +19,7 @@ system :network_bench do
     neuron_columns = columns[1..-1]
 
     # ファイルからのパラメータ読み出し
-    parameters = load_network("xor.json")
+    parameters = load_network("xor1.json")
 
     # 重みとバイアスの配列の形状
     #weights_geometry = neuron_columns.zip(columns[0..-2])
@@ -32,8 +32,8 @@ system :network_bench do
     biases = parameters[:biases]
     weights = parameters[:weights]
 
-    puts "biases : #{biases}"
-    puts "weights : #{weights}"
+    #puts "biases : #{biases}"
+    #puts "weights : #{weights}"
 
     #---------------内部信号の宣言---------------------
     inner :clk,   # clock 
