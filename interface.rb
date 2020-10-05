@@ -6,6 +6,34 @@
 require 'HDLRuby'
 configure_high
 require_relative 'network_constructor.rb'
+#!/usr/bin/ruby
+
+require 'fileutils'
+require 'HDLRuby'
+require 'HDLRuby/hruby_check.rb'
+# require 'ripper'
+require 'HDLRuby/hruby_low2high'
+require 'HDLRuby/hruby_low2c'
+require 'HDLRuby/hruby_low2vhd'
+require 'HDLRuby/hruby_low_fix_types'
+# require 'HDLRuby/hruby_low_expand_types' # For now dormant
+require 'HDLRuby/hruby_low_without_outread'
+require 'HDLRuby/hruby_low_with_bool'
+require 'HDLRuby/hruby_low_bool2select'
+require 'HDLRuby/hruby_low_without_select'
+require 'HDLRuby/hruby_low_without_namespace'
+require 'HDLRuby/hruby_low_without_bit2vector'
+require 'HDLRuby/hruby_low_with_port'
+require 'HDLRuby/hruby_low_with_var'
+require 'HDLRuby/hruby_low_without_concat'
+require 'HDLRuby/hruby_low_without_connection'
+require 'HDLRuby/hruby_low_cleanup'
+
+require 'HDLRuby/hruby_verilog.rb'
+
+require 'HDLRuby/backend/hruby_allocator'
+require 'HDLRuby/backend/hruby_c_allocator'
+
 
 # データ型の宣言
 integer_width = 4 # 整数部のビット幅
@@ -35,9 +63,58 @@ puts "weights : #{weights}"
 # Instantiate it for checking.
 network_constructor(columns, func, typ, integer_width, decimal_width, address_width, weights, biases).(:neural_network)
 
-# Generate the low level representation.
-low = neural_network.systemT.to_low
+def to_verilog(top_instance)
+  # Generate the low level representation.
+  top_system = top_instance.to_low.systemT
 
-# Displays it
-puts low.to_yaml.size
+  top_system.each_systemT_deep do |systemT|
+    systemT.to_upper_space!
+    systemT.to_global_systemTs!
+    
+    # systemT.break_types!
+    # systemT.expand_types!
+    systemT.initial_concat_to_timed!
+    systemT.with_port!
+  end
+
+  output = []
+  # Single file generation mode.
+  top_system.each_systemT_deep.reverse_each do |systemT|
+    output << systemT.to_verilog
+  end
+
+  # Displays it
+  puts output
+end
+
+def to_vhdl(top_instance)
+  top_system = top_instance.to_low.systemT
+
+  top_system.each_systemT_deep do |systemT|
+    systemT.outread2inner!            #unless $options[:vhdl08] || $options[:alliance]
+    systemT.with_boolean!
+    systemT.boolean_in_assign2select! #unless $options[:alliance]
+    systemT.bit2vector2inner!         #unless $options[:vhdl08] || $options[:alliance]
+    systemT.select2case!              # if     $options[:alliance]
+    systemT.break_concat_assigns!     # if     $options[:alliance]
+    systemT.to_upper_space!
+    systemT.to_global_systemTs!
+    systemT.break_types!
+    systemT.with_port!
+    systemT.with_var!
+    systemT.cleanup!
+  end 
+
+  output = []
+  # Single file generation mode.
+  top_system.each_systemT_deep.reverse_each do |systemT|
+    output << systemT.to_vhdl
+  end
+
+  # Displays it
+  puts output
+end
+
+to_verilog(neural_network)
+to_vhdl(neural_network)
 
