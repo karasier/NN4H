@@ -69,28 +69,28 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    reg add__n_00003a357_00003a_00003alvok0;
    reg add__n_00003a357_00003a_00003arvok0;
    reg add__n_00003a357_00003a_00003arun;
-   wire _00005e_000060106;
-   wire _00005e_000060107;
-   wire _00005e_000060108;
    wire _00005e_000060109;
-   wire signed[7:0] _00005e_000060110;
-   wire signed[7:0] _00005e_000060111;
+   wire _00005e_000060110;
+   wire _00005e_000060111;
+   wire _00005e_000060112;
+   wire signed[7:0] _00005e_000060113;
+   wire signed[7:0] _00005e_000060114;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003acounter_00003aT00 counter(.clk(_00005e_000060106),.ack(_00005e_000060107),.rst(_00005e_000060108),.ack__mac(_00005e_000060109));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00 func0(.z__value(_00005e_000060110),.a(_00005e_000060111));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003acounter_00003aT00 counter(.clk(_00005e_000060109),.ack(_00005e_000060110),.rst(_00005e_000060111),.ack__mac(_00005e_000060112));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00 func0(.z__value(_00005e_000060113),.a(_00005e_000060114));
    assign req__mac = (req & ~ack__mac);
 
-   assign _00005e_000060106 = clk;
+   assign _00005e_000060109 = clk;
 
-   assign _00005e_000060107 = ack;
+   assign _00005e_000060110 = ack;
 
-   assign _00005e_000060108 = rst;
+   assign _00005e_000060111 = rst;
 
-   assign ack__mac = _00005e_000060109;
+   assign ack__mac = _00005e_000060112;
 
-   assign _00005e_000060110 = value__z0;
+   assign _00005e_000060113 = value__z0;
 
-   assign value__a0 = _00005e_000060111;
+   assign value__a0 = _00005e_000060114;
 
    assign ack__layer = ack__a0;
 
@@ -120,11 +120,11 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    always @( posedge clk ) begin
 
-      ack <= 32'd0;
-
-      ack__mac <= 32'd0;
-
-      ack__add <= 32'd0;
+      if (rst) begin
+         ack <= 32'd0;
+         ack__mac <= 32'd0;
+         ack__add <= 32'd0;
+      end
 
    end
 
@@ -227,12 +227,6 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
       mac__n1_00003a306_00003a_00003arun <= 32'd0;
 
-      if (~mac__n1_00003a306_00003a_00003arun) begin
-         mac__n1_00003a306_00003a_00003arvok <= 32'd0;
-         mac__n1_00003a306_00003a_00003alvok0 <= 32'd0;
-         mac__n1_00003a306_00003a_00003aav0 <= 32'd0;
-      end
-
       if ((req__mac | mac__n1_00003a306_00003a_00003arun)) begin
          mac__n1_00003a306_00003a_00003arun <= 32'd1;
          if ((rst == 32'd0)) begin
@@ -257,6 +251,11 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
             mac__n1_00003a306_00003a_00003aav0 <= (mac__n1_00003a306_00003a_00003aav0 + (($unsigned(mac__n1_00003a306_00003a_00003alv0) * mac__n1_00003a306_00003a_00003arv) >> 32'd4));
             _00003a283 <= ((mac__n1_00003a306_00003a_00003aav0 + (($unsigned(mac__n1_00003a306_00003a_00003alv0) * mac__n1_00003a306_00003a_00003arv) >> 32'd4)) + (($unsigned(mac__n1_00003a306_00003a_00003alv0) * mac__n1_00003a306_00003a_00003arv) >> 32'd4));
          end
+      end
+      else begin
+         mac__n1_00003a306_00003a_00003arvok <= 32'd0;
+         mac__n1_00003a306_00003a_00003alvok0 <= 32'd0;
+         mac__n1_00003a306_00003a_00003aav0 <= 32'd0;
       end
 
    end
@@ -288,9 +287,11 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    initial begin
 
-      w0[32'd0] = $signed(-32'd79);
+      w0[32'd0] = $signed(32'd26);
 
-      b[32'd0] = $signed(32'd0);
+      w0[32'd1] = $signed(-32'd25);
+
+      b[32'd0] = $signed(32'd34);
 
    end
 

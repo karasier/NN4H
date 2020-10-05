@@ -1,7 +1,6 @@
 # テスト用ベンチ
 # 現在、xorの学習結果を移植している。
-# 重みとバイアスの計算でオーバーフローが発生。
-# => オーバーフロー対策の必要がある。
+# ファイル読み出しの手法を変えたところ正常に計算できることが確認できた。
 
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"

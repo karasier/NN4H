@@ -32,7 +32,7 @@ def load_network(path)
       weights = []
       neuron_columns.size.times do |i|
         weights_array = weights_matrix[i].split(',').map!{ |item| item.delete("/[\-]/").gsub(" ","").to_f}.to_a
-        weights.push(weights_array.each_slice(weights_geometry[i][0]).to_a)
+        weights.push(weights_array.each_slice(weights_geometry[i][1]).to_a)
       end
       puts "weights : #{weights}"
       
