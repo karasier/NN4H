@@ -84,7 +84,7 @@ def to_verilog(top_instance)
   end
 
   # Displays it
-  puts output
+  puts output.size
 end
 
 def to_vhdl(top_instance)
@@ -112,9 +112,8 @@ def to_vhdl(top_instance)
   end
 
   # Displays it
-  puts output
+  puts output.size
 end
 
 to_verilog(neural_network)
-to_vhdl(neural_network)
-
+#to_vhdl(neural_network)
