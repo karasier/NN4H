@@ -82,6 +82,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    reg mac__n1_00003a173_00003a_00003alvok0;
    reg mac__n1_00003a173_00003a_00003alvok1;
    reg mac__n1_00003a173_00003a_00003arvok;
+   reg mac__n1_00003a173_00003a_00003awok0;
+   reg mac__n1_00003a173_00003a_00003awok1;
    reg mac__n1_00003a173_00003a_00003arun;
    wire signed[7:0] channel__bias_00003a180_00003a_00003areg__0;
    wire signed[7:0] channel__bias_00003a180_00003a_00003areg__1;
@@ -337,49 +339,81 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
       if (~mac__n1_00003a173_00003a_00003arun) begin
          mac__n1_00003a173_00003a_00003arvok <= 32'd0;
          mac__n1_00003a173_00003a_00003alvok0 <= 32'd0;
-         mac__n1_00003a173_00003a_00003aav0 <= 32'd0;
+         mac__n1_00003a173_00003a_00003awok0 <= 32'd0;
          mac__n1_00003a173_00003a_00003alvok1 <= 32'd0;
-         mac__n1_00003a173_00003a_00003aav1 <= 32'd0;
+         mac__n1_00003a173_00003a_00003awok1 <= 32'd0;
       end
 
       if ((req__mac | mac__n1_00003a173_00003a_00003arun)) begin
          mac__n1_00003a173_00003a_00003arun <= 32'd1;
-         if ((rst == 32'd0)) begin
-            if ((_00003a13 == 32'd1)) begin
-               mac__n1_00003a173_00003a_00003arv <= _00003a15;
-               mac__n1_00003a173_00003a_00003arvok <= 32'd1;
+         if (~mac__n1_00003a173_00003a_00003arvok) begin
+            if ((rst == 32'd0)) begin
+               if ((_00003a13 == 32'd1)) begin
+                  mac__n1_00003a173_00003a_00003arv <= _00003a15;
+                  mac__n1_00003a173_00003a_00003arvok <= 32'd1;
+               end
+               else begin
+                  _00003a14 <= (_00003a14 + 32'd1);
+                  _00003a13 <= 32'd1;
+               end
             end
-            _00003a14 <= (_00003a14 + 32'd1);
-            _00003a13 <= 32'd1;
          end
-         if ((rst == 32'd0)) begin
-            if ((_00003a95 == 32'd1)) begin
-               mac__n1_00003a173_00003a_00003alv0 <= _00003a97;
-               mac__n1_00003a173_00003a_00003alvok0 <= 32'd1;
+         if (~mac__n1_00003a173_00003a_00003alvok0) begin
+            if ((rst == 32'd0)) begin
+               if ((_00003a95 == 32'd1)) begin
+                  mac__n1_00003a173_00003a_00003alv0 <= _00003a97;
+                  mac__n1_00003a173_00003a_00003alvok0 <= 32'd1;
+               end
+               else begin
+                  _00003a96 <= (_00003a96 + 32'd1);
+                  _00003a95 <= 32'd1;
+               end
             end
-            _00003a96 <= (_00003a96 + 32'd1);
-            _00003a95 <= 32'd1;
          end
-         if ((mac__n1_00003a173_00003a_00003alvok0 & mac__n1_00003a173_00003a_00003arvok)) begin
+         if (((mac__n1_00003a173_00003a_00003alvok0 & mac__n1_00003a173_00003a_00003arvok) & ~mac__n1_00003a173_00003a_00003awok0)) begin
             ack <= 32'd1;
             mac__n1_00003a173_00003a_00003arun <= 32'd0;
-            mac__n1_00003a173_00003a_00003aav0 <= (mac__n1_00003a173_00003a_00003aav0 + (($unsigned(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
-            _00003a143 <= ((mac__n1_00003a173_00003a_00003aav0 + (($unsigned(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4)) + (($unsigned(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            mac__n1_00003a173_00003a_00003aav0 <= (mac__n1_00003a173_00003a_00003aav0 + (($signed(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            _00003a143 <= ((mac__n1_00003a173_00003a_00003aav0 + (($signed(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4)) + (($signed(mac__n1_00003a173_00003a_00003alv0) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            mac__n1_00003a173_00003a_00003awok0 <= 32'd1;
          end
-         if ((rst == 32'd0)) begin
-            if ((_00003a124 == 32'd1)) begin
-               mac__n1_00003a173_00003a_00003alv1 <= _00003a126;
-               mac__n1_00003a173_00003a_00003alvok1 <= 32'd1;
+         if ((mac__n1_00003a173_00003a_00003awok0 & mac__n1_00003a173_00003a_00003awok1)) begin
+            mac__n1_00003a173_00003a_00003awok0 <= 32'd0;
+            mac__n1_00003a173_00003a_00003awok1 <= 32'd0;
+            mac__n1_00003a173_00003a_00003alvok0 <= 32'd0;
+            mac__n1_00003a173_00003a_00003alvok1 <= 32'd0;
+            mac__n1_00003a173_00003a_00003arvok <= 32'd0;
+         end
+         if (~mac__n1_00003a173_00003a_00003alvok1) begin
+            if ((rst == 32'd0)) begin
+               if ((_00003a124 == 32'd1)) begin
+                  mac__n1_00003a173_00003a_00003alv1 <= _00003a126;
+                  mac__n1_00003a173_00003a_00003alvok1 <= 32'd1;
+               end
+               else begin
+                  _00003a125 <= (_00003a125 + 32'd1);
+                  _00003a124 <= 32'd1;
+               end
             end
-            _00003a125 <= (_00003a125 + 32'd1);
-            _00003a124 <= 32'd1;
          end
-         if ((mac__n1_00003a173_00003a_00003alvok1 & mac__n1_00003a173_00003a_00003arvok)) begin
+         if (((mac__n1_00003a173_00003a_00003alvok1 & mac__n1_00003a173_00003a_00003arvok) & ~mac__n1_00003a173_00003a_00003awok1)) begin
             ack <= 32'd1;
             mac__n1_00003a173_00003a_00003arun <= 32'd0;
-            mac__n1_00003a173_00003a_00003aav1 <= (mac__n1_00003a173_00003a_00003aav1 + (($unsigned(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
-            _00003a144 <= ((mac__n1_00003a173_00003a_00003aav1 + (($unsigned(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4)) + (($unsigned(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            mac__n1_00003a173_00003a_00003aav1 <= (mac__n1_00003a173_00003a_00003aav1 + (($signed(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            _00003a144 <= ((mac__n1_00003a173_00003a_00003aav1 + (($signed(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4)) + (($signed(mac__n1_00003a173_00003a_00003alv1) * mac__n1_00003a173_00003a_00003arv) >> 32'd4));
+            mac__n1_00003a173_00003a_00003awok1 <= 32'd1;
          end
+         if ((mac__n1_00003a173_00003a_00003awok0 & mac__n1_00003a173_00003a_00003awok1)) begin
+            mac__n1_00003a173_00003a_00003awok0 <= 32'd0;
+            mac__n1_00003a173_00003a_00003awok1 <= 32'd0;
+            mac__n1_00003a173_00003a_00003alvok0 <= 32'd0;
+            mac__n1_00003a173_00003a_00003alvok1 <= 32'd0;
+            mac__n1_00003a173_00003a_00003arvok <= 32'd0;
+         end
+      end
+      else begin
+         mac__n1_00003a173_00003a_00003aav0 <= 32'd0;
+         mac__n1_00003a173_00003a_00003aav1 <= 32'd0;
       end
 
    end
@@ -422,17 +456,17 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
    initial begin
 
-      w0[32'd0] = $signed(32'd21);
+      w0[32'd0] = $signed(32'd16);
 
-      w0[32'd1] = $signed(-32'd23);
+      w0[32'd1] = $signed(32'd16);
 
-      w1[32'd0] = $signed(32'd30);
+      w1[32'd0] = $signed(32'd16);
 
-      w1[32'd1] = $signed(-32'd35);
+      w1[32'd1] = $signed(32'd16);
 
-      b[32'd0] = $signed(-32'd7);
+      b[32'd0] = $signed(32'd16);
 
-      b[32'd1] = $signed(32'd19);
+      b[32'd1] = $signed(32'd16);
 
    end
 

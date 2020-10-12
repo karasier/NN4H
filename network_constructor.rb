@@ -84,7 +84,7 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   inner :ack_inputs
     
   #inputs = columns[0].times.map{ rand }
-  inputs = [1, 0]
+  inputs = [1, 1]
   puts "inputs : #{inputs}"
 
   typ[-columns[0]].constant rom_inputs: quantize(inputs, typ, decimal_width)

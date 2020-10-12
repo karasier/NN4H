@@ -15,22 +15,10 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
       end
       else if (ack) begin
          q <= (q + 32'd1);
-      end
-
-   end
-
-   always @( negedge clk ) begin
-
-      if ((q == 32'd1)) begin
-         q <= 32'd0;
-      end
-
-   end
-
-   always @( q ) begin
-
-      if ((q == 32'd1)) begin
-         ack__mac <= 32'd1;
+         if ((q == 32'd2)) begin
+            q <= 32'd0;
+            ack__mac <= 32'd1;
+         end
       end
 
    end

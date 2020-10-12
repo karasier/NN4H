@@ -6,6 +6,6 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    input signed[7:0] next__data;
    output signed[7:0] interpolated__value;
 
-   assign interpolated__value = (base + (($unsigned((next__data - base)) * remaining) >> 32'd4));
+   assign interpolated__value = (base + (($signed((next__data - base)) * remaining) >> 32'd4));
 
 endmodule
