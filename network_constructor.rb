@@ -43,6 +43,8 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   #---------------チャンネルの宣言-------------------
   # ニューラルネットワークへの入力を格納するメモリ
   mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
+  #inputs = [1, 1]
+  #mem_rom(typ, columns[0], clk, rst, quantize(inputs, typ, decimal_width), rinc: :rst, winc: :rst).(:channel_input)
 
   # ニューラルネットワークからの出力を格納するメモリ
   mem_file(typ, columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
@@ -79,6 +81,7 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   end
   
   #---------------入力値の書き込み-------------------
+#=begin
   inner :fill_inputs
   [columns[0].width].inner :address_inputs
   inner :ack_inputs
@@ -106,4 +109,5 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
       ack_inputs <= 1
     end
   end
+#=end
 end

@@ -44,8 +44,8 @@ system :param_checker do
     activation_function(func, typ, integer_width, decimal_width, address_width).(:func0_1).(z0_1, a0_1)
 
     timed do
-        x0 <= _b8b00000000
-        x1 <= _b8b00000000
+        x0 <= _b8b00010000
+        x1 <= _b8b00010000
         w00_0 <= _b8b00010101
         w01_0 <= _b8b00011110
         w10_0 <= _b8b11101001

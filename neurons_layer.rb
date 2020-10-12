@@ -1,8 +1,6 @@
 # ニューロンの計算モジュール
-# 任意の重みとバイアスを適用できるよう改善中
-# 重みとバイアスは配列で渡すようにする予定
-# 現在シミュレーション時にvcdファイル生成関連のエラーが
-# 発生しているため動作未確認
+# 任意の重みとバイアスを適用できる。
+# 重みとバイアスはジェネリックパラメータとして配列で渡す。
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -64,6 +62,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   #---------------------------------------------------------------------------
   # バイアスの計算
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
+  #mem_rom(typ, output_size, clk, rst, quantize(bias, typ, decimal_width), rinc: :rst).(:channel_bias)
 
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 

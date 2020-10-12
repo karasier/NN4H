@@ -71,20 +71,44 @@ def to_verilog(top_instance)
     systemT.to_upper_space!
     systemT.to_global_systemTs!
     
-    # systemT.break_types!
-    # systemT.expand_types!
     systemT.initial_concat_to_timed!
     systemT.with_port!
   end
 
-  output = []
-  # Single file generation mode.
-  top_system.each_systemT_deep.reverse_each do |systemT|
-    output << systemT.to_verilog
+  input = "neural_network.rb"
+  basename = File.basename(input, File.extname(input))
+  output = "verilog_files"
+  basename = output + "/" + basename
+  # # File name counter.
+  # $namecount = 0
+  # Prepare the initial name for the main file.
+  name = basename + ".v"
+  # Multiple files generation mode.
+  top_system.each_systemT_deep do |systemT|
+    # Generate the name if necessary.
+    unless name
+      name = output + "/" +
+            HDLRuby::Verilog.name_to_verilog(systemT.name) +
+            ".v"
+    end
+    # Open the file for current systemT
+    outfile = File.open(name,"w")
+    # Generate the Verilog code in to.
+    outfile << systemT.to_verilog
+    # Close the file.
+    outfile.close
+    # Clears the name.
+    name = nil
   end
 
+  #output = []
+  # Single file generation mode.
+  #top_system.each_systemT_deep.reverse_each do |systemT|
+  #  output << systemT.to_verilog
+  #end
+
   # Displays it
-  puts output.size
+  #puts output.size
 end
 
 def to_vhdl(top_instance)

@@ -1,8 +1,8 @@
 # A module of counter for times of mac_n1 ack.
 
 system :mac_counter do |layer_size|
-  #ack_times = layer_size == 1 ? 1 : (layer_size - 1)
-  ack_times = layer_size
+  ack_times = layer_size == 1 ? 1 : (layer_size - 1)
+  #ack_times = layer_size
 
   input :clk, :ack, :rst
   output :ack_mac
