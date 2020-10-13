@@ -10,6 +10,7 @@ require_relative "quantize.rb"
 
 include HDLRuby::High::Std
 
+module FastNeurons
 system :network_constructor do |columns, func, typ, integer_width, decimal_width, address_width, weights, biases|
   columns = columns.to_a
   func = func.to_a
@@ -110,4 +111,11 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
     end
   end
 #=end
+end
+
+def instantiate(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+  return network_constructor(columns, func, typ, integer_width, decimal_width, address_width, weights, biases).(:neural_network)
+end
+
+module_function :instantiate
 end

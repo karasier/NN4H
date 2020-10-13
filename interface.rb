@@ -61,7 +61,7 @@ puts "biases : #{biases}"
 puts "weights : #{weights}"
 
 # Instantiate it for checking.
-network_constructor(columns, func, typ, integer_width, decimal_width, address_width, weights, biases).(:neural_network)
+instance = FastNeurons.instantiate(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
 
 def to_verilog(top_instance)
   # Generate the low level representation.
@@ -77,9 +77,15 @@ def to_verilog(top_instance)
 
   input = "neural_network.rb"
   basename = File.basename(input, File.extname(input))
-  output = "verilog_files"
+  output = "neural_network"
   basename = output + "/" + basename
-  # # File name counter.
+
+  # Create a directory if necessary.
+  unless File.directory?(output)
+    FileUtils.mkdir_p(output)
+  end
+
+  # File name counter.
   # $namecount = 0
   # Prepare the initial name for the main file.
   name = basename + ".v"
@@ -139,5 +145,5 @@ def to_vhdl(top_instance)
   puts output.size
 end
 
-to_verilog(neural_network)
+to_verilog(instance)
 #to_vhdl(neural_network)
