@@ -39,7 +39,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
   # 重みのメモリ
-  channel_w = output_size.times.map{ |i| mem_dual(typ, input_size, clk, rst, rinc: :rst, winc: :rst).(:"channel_w#{i}") }
+  channel_w = output_size.times.map{ |i| mem_dual(typ, input_size, clk, rst, rinc: :rst, winc: :rst).(:"channel_w#{i}") }  
 
   # 重みのRead用ポートの作成
   reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
@@ -61,8 +61,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
-  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
-  #mem_rom(typ, output_size, clk, rst, quantize(bias, typ, decimal_width), rinc: :rst).(:channel_bias)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)  
 
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
@@ -145,31 +144,32 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
       address_bias <= 0
       ack_bias <= 0
     end
+    helse do
+      # ROMから読み出してchannelへ書き込み
+      hif(fill_channel) do
+        output_size.times do |i|
+          hif(~ack_weights[i]) do
+            writer_w[i].write(w[i][address_weights[i]])
+            address_weights[i] <= address_weights[i] + 1       
+          end
+        end
 
-    # ROMから読み出してchannelへ書き込み
-    hif(fill_channel) do
+        hif(~ack_bias) do
+          writer_bias.write(b[address_bias])
+          address_bias <= address_bias + 1
+        end      
+      end
+
+      # ack
       output_size.times do |i|
-        hif(~ack_weights[i]) do
-          writer_w[i].write(w[i][address_weights[i]])
-          address_weights[i] <= address_weights[i] + 1       
+        hif(address_weights[i] == input_size - 1 ) do
+          ack_weights[i] <= 1
         end
       end
 
-      hif(~ack_bias) do
-        writer_bias.write(b[address_bias])
-        address_bias <= address_bias + 1
-      end      
-    end
-
-    # ack
-    output_size.times do |i|
-      hif(address_weights[i] == input_size - 1 ) do
-        ack_weights[i] <= 1
+      hif(address_bias == output_size - 1) do
+        ack_bias <= 1
       end
-    end
-
-    hif(address_bias == output_size - 1) do
-      ack_bias <= 1
     end
   end
 end

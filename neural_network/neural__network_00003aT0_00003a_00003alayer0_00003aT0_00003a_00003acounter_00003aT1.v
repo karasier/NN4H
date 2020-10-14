@@ -7,7 +7,7 @@ module neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003acounte
    output reg ack__mac;
    reg [1:0] q;
 
-   always @( posedge clk ) begin
+   always @( negedge clk ) begin
 
       if (rst) begin
          q <= 32'd0;
@@ -15,8 +15,7 @@ module neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003acounte
       end
       else if (ack) begin
          q <= (q + 32'd1);
-         if ((q == 32'd1)) begin
-            q <= 32'd0;
+         if ((q == 32'd2)) begin
             ack__mac <= 32'd1;
          end
       end

@@ -152,9 +152,9 @@ module neural__network_00003aT0( clk, rst, req, fill, ack__network );
 
    initial begin
 
-      rom__inputs[32'd0] = $signed(32'd16);
+      rom__inputs[32'd0] = $signed(32'd0);
 
-      rom__inputs[32'd1] = $signed(32'd16);
+      rom__inputs[32'd1] = $signed(32'd0);
 
    end
 

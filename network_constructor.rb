@@ -1,16 +1,12 @@
 # 与えられた構造に基づいてニューラルネットワークを生成するモジュール
-# undefined method "get_by_name"のエラーが発生している。(neurons_layerのインスタンス生成の時に)
-# => branchの問題。子モジュールの子モジュールにはbranchが渡せない。
-# インターフェースについて検討する必要あり。
 
 require "std/memory.rb"
 require "std/fixpoint.rb"
-require_relative "neurons_layer.rb"
+require_relative "neurons_layer_rom.rb"
 require_relative "quantize.rb"
 
 include HDLRuby::High::Std
 
-module FastNeurons
 system :network_constructor do |columns, func, typ, integer_width, decimal_width, address_width, weights, biases|
   columns = columns.to_a
   func = func.to_a
@@ -44,8 +40,6 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   #---------------チャンネルの宣言-------------------
   # ニューラルネットワークへの入力を格納するメモリ
   mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
-  #inputs = [1, 1]
-  #mem_rom(typ, columns[0], clk, rst, quantize(inputs, typ, decimal_width), rinc: :rst, winc: :rst).(:channel_input)
 
   # ニューラルネットワークからの出力を格納するメモリ
   mem_file(typ, columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
@@ -82,12 +76,10 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   end
   
   #---------------入力値の書き込み-------------------
-#=begin
   inner :fill_inputs
   [columns[0].width].inner :address_inputs
   inner :ack_inputs
     
-  #inputs = columns[0].times.map{ rand }
   inputs = [1, 1]
   puts "inputs : #{inputs}"
 
@@ -100,22 +92,15 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
       address_inputs <= 0
       ack_inputs <= 0
     end
+    helse do
+      hif(fill_inputs) do
+        writer_input.write(rom_inputs[address_inputs])
+        address_inputs <= address_inputs + 1      
+      end
 
-    hif(fill_inputs) do
-      writer_input.write(rom_inputs[address_inputs])
-      address_inputs <= address_inputs + 1      
-    end
-
-    hif(address_inputs == columns[0] - 1) do
-      ack_inputs <= 1
+      hif(address_inputs == columns[0] - 1) do
+        ack_inputs <= 1
+      end
     end
   end
-#=end
-end
-
-def instantiate(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
-  return network_constructor(columns, func, typ, integer_width, decimal_width, address_width, weights, biases).(:neural_network)
-end
-
-module_function :instantiate
 end

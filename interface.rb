@@ -34,34 +34,28 @@ require 'HDLRuby/hruby_verilog.rb'
 require 'HDLRuby/backend/hruby_allocator'
 require 'HDLRuby/backend/hruby_c_allocator'
 
-
-# データ型の宣言
-integer_width = 4 # 整数部のビット幅
-decimal_width = 4 # 実数部のビット幅
-address_width = 4 # lutのアドレスのビット幅
-typ = signed[integer_width, decimal_width] # データ型  
-tanh = proc{ |i| Math.tanh(i) }
-    
-# ニューラルネットワークの構造
-columns = [2, 2, 1]
-func = [tanh, tanh] # 活性化関数
-
-# 重みを持つ層の形
-neuron_columns = columns[1..-1]
-
-# 重みとバイアスの配列の形状
-weights_geometry = neuron_columns.zip(columns[0..-2])
-biases_geometry = neuron_columns.map{ |col| col }
-
-# ランダムに初期化した重みとバイアスの配列
-biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
-weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
-
-puts "biases : #{biases}"
-puts "weights : #{weights}"
-
 # Instantiate it for checking.
-instance = FastNeurons.instantiate(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+
+$network_constructor_caller = proc { |*args,&blk| network_constructor(*args,&blk) }
+
+class NN4H
+  include HDLRuby
+  
+def initialize(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+  @columns = columns
+  @func = func
+  @typ = typ
+  @integer_width = integer_width
+  @decimal_width = decimal_width
+  @address_width = address_width
+  @weights = weights
+  @biases = biases
+end
+
+def instantiate
+  # return network_constructor(@columns, @func, @typ, @integer_width, @decimal_width, @address_width, @weights, @biases).(:neural_network)
+  return $network_constructor_caller.(@columns, @func, @typ, @integer_width, @decimal_width, @address_width, @weights, @biases).(:neural_network)
+end
 
 def to_verilog(top_instance)
   # Generate the low level representation.
@@ -144,6 +138,34 @@ def to_vhdl(top_instance)
   # Displays it
   puts output.size
 end
+end
 
-to_verilog(instance)
+# データ型の宣言
+integer_width = 4 # 整数部のビット幅
+decimal_width = 4 # 実数部のビット幅
+address_width = 4 # lutのアドレスのビット幅
+typ = signed[integer_width, decimal_width] # データ型  
+tanh = proc{ |i| Math.tanh(i) }
+    
+# ニューラルネットワークの構造
+columns = [2, 2, 1]
+func = [tanh, tanh] # 活性化関数
+
+# 重みを持つ層の形
+neuron_columns = columns[1..-1]
+
+# 重みとバイアスの配列の形状
+weights_geometry = neuron_columns.zip(columns[0..-2])
+biases_geometry = neuron_columns.map{ |col| col }
+
+# ランダムに初期化した重みとバイアスの配列
+biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
+weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
+
+puts "biases : #{biases}"
+puts "weights : #{weights}"
+
+nn = NN4H.new(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+instance = nn.instantiate
+nn.to_verilog(instance)
 #to_vhdl(neural_network)

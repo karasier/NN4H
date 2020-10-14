@@ -106,35 +106,35 @@ module neural__network_00003aT0_00003a_00003alayer0_00003aT0( clk, rst, fill, re
    reg add__n_00003a240_00003a_00003arvok0;
    reg add__n_00003a240_00003a_00003arvok1;
    reg add__n_00003a240_00003a_00003arun;
+   wire _00005e_00006092;
    wire _00005e_00006093;
    wire _00005e_00006094;
    wire _00005e_00006095;
-   wire _00005e_00006096;
+   wire signed[7:0] _00005e_00006096;
    wire signed[7:0] _00005e_00006097;
    wire signed[7:0] _00005e_00006098;
    wire signed[7:0] _00005e_00006099;
-   wire signed[7:0] _00005e_000060100;
 
-   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003acounter_00003aT1 counter(.clk(_00005e_00006093),.ack(_00005e_00006094),.rst(_00005e_00006095),.ack__mac(_00005e_00006096));
-   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1 func0(.z__value(_00005e_00006097),.a(_00005e_00006098));
-   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc1_00003aT0 func1(.z__value(_00005e_00006099),.a(_00005e_000060100));
+   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003acounter_00003aT1 counter(.clk(_00005e_00006092),.ack(_00005e_00006093),.rst(_00005e_00006094),.ack__mac(_00005e_00006095));
+   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1 func0(.z__value(_00005e_00006096),.a(_00005e_00006097));
+   neural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc1_00003aT0 func1(.z__value(_00005e_00006098),.a(_00005e_00006099));
    assign req__mac = (req & ~ack__mac);
 
-   assign _00005e_00006093 = clk;
+   assign _00005e_00006092 = clk;
 
-   assign _00005e_00006094 = ack;
+   assign _00005e_00006093 = ack;
 
-   assign _00005e_00006095 = rst;
+   assign _00005e_00006094 = rst;
 
-   assign ack__mac = _00005e_00006096;
+   assign ack__mac = _00005e_00006095;
 
-   assign _00005e_00006097 = value__z0;
+   assign _00005e_00006096 = value__z0;
 
-   assign value__a0 = _00005e_00006098;
+   assign value__a0 = _00005e_00006097;
 
-   assign _00005e_00006099 = value__z1;
+   assign _00005e_00006098 = value__z1;
 
-   assign value__a1 = _00005e_000060100;
+   assign value__a1 = _00005e_00006099;
 
    assign ack__layer = (ack__a0 & ack__a1);
 
@@ -248,46 +248,44 @@ module neural__network_00003aT0_00003a_00003alayer0_00003aT0( clk, rst, fill, re
          address__bias <= 32'd0;
          ack__bias <= 32'd0;
       end
-
-      if (fill__channel) begin
-         if (~ack__weights0) begin
-            if ((rst == 32'd0)) begin
-               _00003a100 <= (_00003a100 + 32'd1);
-               _00003a99 <= 32'd1;
-               _00003a101 <= w0[address__weights0];
+      else begin
+         if (fill__channel) begin
+            if (~ack__weights0) begin
+               if ((rst == 32'd0)) begin
+                  _00003a100 <= (_00003a100 + 32'd1);
+                  _00003a99 <= 32'd1;
+                  _00003a101 <= w0[address__weights0];
+               end
+               address__weights0 <= (address__weights0 + 32'd1);
             end
-            address__weights0 <= (address__weights0 + 32'd1);
-         end
-         if (~ack__weights1) begin
-            if ((rst == 32'd0)) begin
-               _00003a129 <= (_00003a129 + 32'd1);
-               _00003a128 <= 32'd1;
-               _00003a130 <= w1[address__weights1];
+            if (~ack__weights1) begin
+               if ((rst == 32'd0)) begin
+                  _00003a129 <= (_00003a129 + 32'd1);
+                  _00003a128 <= 32'd1;
+                  _00003a130 <= w1[address__weights1];
+               end
+               address__weights1 <= (address__weights1 + 32'd1);
             end
-            address__weights1 <= (address__weights1 + 32'd1);
-         end
-         if (~ack__bias) begin
-            if ((rst == 32'd0)) begin
-               case(_00003a199)
-                  32'd0: _00003a197 <= b[address__bias];
-                  32'd1: _00003a198 <= b[address__bias];
-               endcase
-               _00003a199 <= (_00003a199 + 32'd1);
+            if (~ack__bias) begin
+               if ((rst == 32'd0)) begin
+                  case(_00003a199)
+                     32'd0: _00003a197 <= b[address__bias];
+                     32'd1: _00003a198 <= b[address__bias];
+                  endcase
+                  _00003a199 <= (_00003a199 + 32'd1);
+               end
+               address__bias <= (address__bias + 32'd1);
             end
-            address__bias <= (address__bias + 32'd1);
          end
-      end
-
-      if ((address__weights0 == 32'd1)) begin
-         ack__weights0 <= 32'd1;
-      end
-
-      if ((address__weights1 == 32'd1)) begin
-         ack__weights1 <= 32'd1;
-      end
-
-      if ((address__bias == 32'd1)) begin
-         ack__bias <= 32'd1;
+         if ((address__weights0 == 32'd1)) begin
+            ack__weights0 <= 32'd1;
+         end
+         if ((address__weights1 == 32'd1)) begin
+            ack__weights1 <= 32'd1;
+         end
+         if ((address__bias == 32'd1)) begin
+            ack__bias <= 32'd1;
+         end
       end
 
    end
@@ -456,17 +454,17 @@ module neural__network_00003aT0_00003a_00003alayer0_00003aT0( clk, rst, fill, re
 
    initial begin
 
-      w0[32'd0] = $signed(-32'd1);
+      w0[32'd0] = $signed(32'd2);
 
-      w0[32'd1] = $signed(32'd0);
+      w0[32'd1] = $signed(-32'd5);
 
-      w1[32'd0] = $signed(-32'd1);
+      w1[32'd0] = $signed(32'd2);
 
-      w1[32'd1] = $signed(32'd0);
+      w1[32'd1] = $signed(-32'd5);
 
-      b[32'd0] = $signed(32'd0);
+      b[32'd0] = $signed(-32'd2);
 
-      b[32'd1] = $signed(32'd14);
+      b[32'd1] = $signed(-32'd10);
 
    end
 

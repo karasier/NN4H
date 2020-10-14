@@ -1,6 +1,7 @@
 # テスト用ベンチ
 # 現在、xorの学習結果を移植している。
-# ファイル読み出しの手法を変えたところ正常に計算できることが確認できた。
+# => mem_dualをmem_romに変更したところ、読み出しが上手くいかない。
+# => おそらく、mem_romのrincが原因。mem_dualのrincをコピーしたところ動作した。
 
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"
@@ -34,8 +35,8 @@ system :network_bench do
     biases = parameters[:biases]
     weights = parameters[:weights]
 
-    puts "biases : #{biases}"
-    puts "weights : #{weights}"
+    #puts "biases : #{biases}"
+    #puts "weights : #{weights}"
 
     #---------------内部信号の宣言---------------------
     inner :clk,   # clock 
@@ -60,8 +61,12 @@ system :network_bench do
       !10.ps
       clk <= 1
       !10.ps
+      clk <= 0
+      !10.ps
+      clk <= 1
+      !10.ps
       
-      # メモリの内容の初期化
+      # パラメータのメモリへの書き込み
       clk <= 0
       rst <= 0
       fill <= 1
@@ -76,14 +81,16 @@ system :network_bench do
   
       fill <= 0
       clk <= 1
-  
+      !10.ps
+
       # 計算の実行
       clk <= 0
       req <= 1
       !10.ps
       clk <= 1
       !10.ps
-      clk <= 0    
+      clk <= 0
+      !10.ps   
       20.times do
         clk <= 1
         !10.ps
