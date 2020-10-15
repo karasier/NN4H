@@ -45,6 +45,14 @@ module _____00003aT0( );
 
       clk = 32'd0;
 
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
       rst = 32'd0;
 
       fill = 32'd1;
@@ -135,6 +143,8 @@ module _____00003aT0( );
 
       clk = 32'd1;
 
+      #10
+
       clk = 32'd0;
 
       req = 32'd1;
@@ -147,12 +157,6 @@ module _____00003aT0( );
 
       clk = 32'd0;
 
-      clk = 32'd1;
-
-      #10
-
-      clk = 32'd0;
-
       #10
 
       clk = 32'd1;
@@ -307,6 +311,21 @@ module _____00003aT0( );
 
       #10
 
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      $finish;
+
+   end
+
+   initial begin
+      $dumpfile("nn.vcd");
+      $dumpvars(0, _____00003aT0);
    end
 
 endmodule

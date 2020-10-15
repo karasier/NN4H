@@ -41,20 +41,21 @@ $network_constructor_caller = proc { |*args,&blk| network_constructor(*args,&blk
 class NN4H
   include HDLRuby
   
-def initialize(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+def initialize(columns, func, typ, integer_width, decimal_width, address_width, inputs, weights, biases)
   @columns = columns
   @func = func
   @typ = typ
   @integer_width = integer_width
   @decimal_width = decimal_width
   @address_width = address_width
+  @inputs = inputs
   @weights = weights
   @biases = biases
 end
 
 def instantiate
   # return network_constructor(@columns, @func, @typ, @integer_width, @decimal_width, @address_width, @weights, @biases).(:neural_network)
-  return $network_constructor_caller.(@columns, @func, @typ, @integer_width, @decimal_width, @address_width, @weights, @biases).(:neural_network)
+  return $network_constructor_caller.(@columns, @func, @typ, @integer_width, @decimal_width, @address_width, @inputs, @weights, @biases).(:neural_network)
 end
 
 def to_verilog(top_instance)
@@ -161,11 +162,13 @@ biases_geometry = neuron_columns.map{ |col| col }
 # ランダムに初期化した重みとバイアスの配列
 biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
 weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
+inputs = [1, 1]
 
 puts "biases : #{biases}"
 puts "weights : #{weights}"
+puts "inputs : #{inputs}"
 
-nn = NN4H.new(columns, func, typ, integer_width, decimal_width, address_width, weights, biases)
+nn = NN4H.new(columns, func, typ, integer_width, decimal_width, address_width, inputs, weights, biases)
 instance = nn.instantiate
 nn.to_verilog(instance)
 #to_vhdl(neural_network)

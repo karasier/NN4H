@@ -7,32 +7,32 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    wire signed[7:0] next__data;
    wire [3:0] address;
    wire signed[7:0] remaining;
-   wire [3:0] _00005e_000060508;
-   wire signed[7:0] _00005e_000060509;
-   wire signed[7:0] _00005e_000060510;
-   wire signed[7:0] _00005e_000060511;
-   wire signed[7:0] _00005e_000060512;
-   wire signed[7:0] _00005e_000060513;
-   wire signed[7:0] _00005e_000060514;
+   wire [3:0] _00005e_000060431;
+   wire signed[7:0] _00005e_000060432;
+   wire signed[7:0] _00005e_000060433;
+   wire signed[7:0] _00005e_000060434;
+   wire signed[7:0] _00005e_000060435;
+   wire signed[7:0] _00005e_000060436;
+   wire signed[7:0] _00005e_000060437;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1_00003a_00003amy__lut_00003aT2 my__lut(.address(_00005e_000060508),.base(_00005e_000060509),.next__data(_00005e_000060510));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1_00003a_00003amy__interpolator_00003aT2 my__interpolator(.remaining(_00005e_000060511),.base(_00005e_000060512),.next__data(_00005e_000060513),.interpolated__value(_00005e_000060514));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1_00003a_00003amy__lut_00003aT2 my__lut(.address(_00005e_000060431),.base(_00005e_000060432),.next__data(_00005e_000060433));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0_00003a_00003afunc0_00003aT1_00003a_00003amy__interpolator_00003aT2 my__interpolator(.remaining(_00005e_000060434),.base(_00005e_000060435),.next__data(_00005e_000060436),.interpolated__value(_00005e_000060437));
    assign address = z__value[7:4];
 
    assign remaining = {{1'b0,1'b0,1'b0,1'b0},z__value[3:0]};
 
-   assign _00005e_000060508 = address;
+   assign _00005e_000060431 = address;
 
-   assign base = _00005e_000060509;
+   assign base = _00005e_000060432;
 
-   assign next__data = _00005e_000060510;
+   assign next__data = _00005e_000060433;
 
-   assign _00005e_000060511 = remaining;
+   assign _00005e_000060434 = remaining;
 
-   assign _00005e_000060512 = base;
+   assign _00005e_000060435 = base;
 
-   assign _00005e_000060513 = next__data;
+   assign _00005e_000060436 = next__data;
 
-   assign a = _00005e_000060514;
+   assign a = _00005e_000060437;
 
 endmodule

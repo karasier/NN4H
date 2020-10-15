@@ -2,23 +2,32 @@
 
 require "std/memory.rb"
 require "std/fixpoint.rb"
-require_relative "neurons_layer_rom.rb"
+require_relative "neurons_layer.rb"
 require_relative "quantize.rb"
 
 include HDLRuby::High::Std
 
-system :network_constructor do |columns, func, typ, integer_width, decimal_width, address_width, weights, biases|
+system :network_constructor do |columns, functions, types, integer_width, decimal_width, address_width, inputs, weights, biases|
   columns = columns.to_a
-  func = func.to_a
-  func = func.map{ |f| f.to_proc }
-  typ = typ.to_type
   integer_width = integer_width.to_i
   decimal_width = decimal_width.to_i
   address_width = address_width.to_i
 
   # 重みを持つ層の形
   neuron_columns = columns[1..-1]
+  
+  # 活性化関数の配列の作成
+  unless functions.instance_of?(Array) then
+    functions = Array.new(neuron_columns.size, functions)
+  end
+  
+  # データ型の配列の作成
+  if types.instance_of?(HDLRuby::High::TypeDef) then
+    types = Array.new(columns.size, types)
+  end
 
+  functions.map{ |func| func.to_proc }
+  types.map{ |typ| typ.to_type }
   #------------------入出力の宣言-------------------
   input :clk, :rst, :req, :fill
   output :ack_network
@@ -39,13 +48,13 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   end
   #---------------チャンネルの宣言-------------------
   # ニューラルネットワークへの入力を格納するメモリ
-  mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
+  mem_dual(types[0], columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_input)
 
   # ニューラルネットワークからの出力を格納するメモリ
-  mem_file(typ, columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
+  mem_file(types[-1], columns[-1] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_output)
 
   # ニューロンの出力値を格納するメモリ
-  channel_a = (neuron_columns.size - 1).times.map{ |i| mem_file(typ, neuron_columns[i] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}") }  
+  channel_a = (neuron_columns.size - 1).times.map{ |i| mem_file(types[i+1], neuron_columns[i] , clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:"channel_a#{i}") }  
 
   #---------------ブランチの宣言-------------------
   # 入力値のRead用ポート作成
@@ -69,9 +78,9 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   #---------------neurons_layerのインスタンス生成-------------------  
   neuron_columns.size.times do |i|
     if i == 0 then
-      neurons_layer(func[i], typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_input, a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, fill, req, ack[i])
+      neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_input, a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, req, ack[i])
     else
-      neurons_layer(func[i], typ, integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, fill, ack[i-1], ack[i])
+      neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, ack[i-1], ack[i])
     end
   end
   
@@ -79,11 +88,8 @@ system :network_constructor do |columns, func, typ, integer_width, decimal_width
   inner :fill_inputs
   [columns[0].width].inner :address_inputs
   inner :ack_inputs
-    
-  inputs = [1, 1]
-  puts "inputs : #{inputs}"
 
-  typ[-columns[0]].constant rom_inputs: quantize(inputs, typ, decimal_width)
+  types[0][-columns[0]].constant rom_inputs: quantize(inputs, types[0], decimal_width)
   
   fill_inputs <= fill & ~ack_inputs
 

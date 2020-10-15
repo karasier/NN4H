@@ -11,7 +11,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    wire fill__inputs;
    reg [1:0] address__inputs;
    reg ack__inputs;
-   wire signed[7:0] rom__inputs  :0[0:1];
+   reg signed[7:0] rom__inputs  [0:1];
    reg _00003a17;
    reg [0:0] _00003a18;
    reg signed[7:0] _00003a19;
@@ -21,7 +21,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    wire signed[7:0] channel__input_00003a1_00003a_00003adbus__w;
    wire [0:0] channel__input_00003a1_00003a_00003aabus__r;
    wire [0:0] channel__input_00003a1_00003a_00003aabus__w;
-   wire signed[7:0] channel__input_00003a1_00003a_00003amem  :0[0:1];
+   reg signed[7:0] channel__input_00003a1_00003a_00003amem  [0:1];
    wire signed[7:0] channel__output_00003a30_00003a_00003areg__0;
    wire [0:-1] channel__output_00003a30_00003a_00003arinc_00003a39_00003a_00003aabus__r;
    wire [0:-1] channel__output_00003a30_00003a_00003awinc_00003a42_00003a_00003aabus__w;
@@ -41,41 +41,35 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    wire _00005e_00006027;
    wire _00005e_00006028;
    wire _00005e_00006029;
-   wire _00005e_00006030;
+   wire signed[7:0] _00005e_00006030;
    wire _00005e_00006031;
-   wire signed[7:0] _00005e_00006032;
-   wire _00005e_00006033;
-   wire [0:0] _00005e_00006034;
+   wire [0:0] _00005e_00006032;
+   wire signed[7:0] _00005e_00006033;
+   wire signed[7:0] _00005e_00006034;
    wire signed[7:0] _00005e_00006035;
    wire signed[7:0] _00005e_00006036;
    wire signed[7:0] _00005e_00006037;
-   wire signed[7:0] _00005e_00006038;
-   wire signed[7:0] _00005e_00006039;
-   wire [0:0] _00005e_00006040;
+   wire [0:0] _00005e_00006038;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0 layer0(.clk(_00005e_00006022),.rst(_00005e_00006023),.fill(_00005e_00006024),.req(_00005e_00006025),._00003a15(_00005e_00006032),.ack__layer(_00005e_00006026),._00003a13(_00005e_00006033),._00003a14(_00005e_00006034),._00003a55(_00005e_00006036),._00003a56(_00005e_00006037));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0 layer1(.clk(_00005e_00006027),.rst(_00005e_00006028),.fill(_00005e_00006029),.req(_00005e_00006030),._00003a66(_00005e_00006038),._00003a67(_00005e_00006039),.ack__layer(_00005e_00006031),._00003a68(_00005e_00006040),._00003a32(_00005e_00006035));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0 layer0(.clk(_00005e_00006022),.rst(_00005e_00006023),.req(_00005e_00006024),._00003a15(_00005e_00006030),.ack__layer(_00005e_00006025),._00003a13(_00005e_00006031),._00003a14(_00005e_00006032),._00003a55(_00005e_00006034),._00003a56(_00005e_00006035));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0 layer1(.clk(_00005e_00006026),.rst(_00005e_00006027),.req(_00005e_00006028),._00003a66(_00005e_00006036),._00003a67(_00005e_00006037),.ack__layer(_00005e_00006029),._00003a68(_00005e_00006038),._00003a32(_00005e_00006033));
    assign ack__network = ack__1;
 
    assign _00005e_00006022 = clk;
 
    assign _00005e_00006023 = rst;
 
-   assign _00005e_00006024 = fill;
+   assign _00005e_00006024 = req;
 
-   assign _00005e_00006025 = req;
+   assign ack__0 = _00005e_00006025;
 
-   assign ack__0 = _00005e_00006026;
+   assign _00005e_00006026 = clk;
 
-   assign _00005e_00006027 = clk;
+   assign _00005e_00006027 = rst;
 
-   assign _00005e_00006028 = rst;
+   assign _00005e_00006028 = ack__0;
 
-   assign _00005e_00006029 = fill;
-
-   assign _00005e_00006030 = ack__0;
-
-   assign ack__1 = _00005e_00006031;
+   assign ack__1 = _00005e_00006029;
 
    assign fill__inputs = (fill & ~ack__inputs);
 
@@ -85,23 +79,23 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
 
    assign _00003a19 = channel__input_00003a1_00003a_00003adbus__w;
 
-   assign _00005e_00006032 = channel__input_00003a1_00003a_00003adbus__r;
+   assign _00005e_00006030 = channel__input_00003a1_00003a_00003adbus__r;
 
-   assign _00005e_00006033 = channel__input_00003a1_00003a_00003atrig__r;
+   assign _00005e_00006031 = channel__input_00003a1_00003a_00003atrig__r;
 
-   assign _00005e_00006034 = channel__input_00003a1_00003a_00003aabus__r;
+   assign _00005e_00006032 = channel__input_00003a1_00003a_00003aabus__r;
 
-   assign _00005e_00006035 = channel__output_00003a30_00003a_00003areg__0;
+   assign _00005e_00006033 = channel__output_00003a30_00003a_00003areg__0;
+
+   assign _00005e_00006034 = channel__a0_00003a53_00003a_00003areg__0;
+
+   assign _00005e_00006035 = channel__a0_00003a53_00003a_00003areg__1;
 
    assign _00005e_00006036 = channel__a0_00003a53_00003a_00003areg__0;
 
    assign _00005e_00006037 = channel__a0_00003a53_00003a_00003areg__1;
 
-   assign _00005e_00006038 = channel__a0_00003a53_00003a_00003areg__0;
-
-   assign _00005e_00006039 = channel__a0_00003a53_00003a_00003areg__1;
-
-   assign _00005e_00006040 = channel__a0_00003a53_00003a_00003arinc_00003a65_00003a_00003aabus__r;
+   assign _00005e_00006038 = channel__a0_00003a53_00003a_00003arinc_00003a65_00003a_00003aabus__r;
 
    always @( posedge clk ) begin
 
@@ -124,18 +118,18 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
          address__inputs <= 32'd0;
          ack__inputs <= 32'd0;
       end
-
-      if (fill__inputs) begin
-         if ((rst == 32'd0)) begin
-            _00003a18 <= (_00003a18 + 32'd1);
-            _00003a17 <= 32'd1;
-            _00003a19 <= rom__inputs[address__inputs];
+      else begin
+         if (fill__inputs) begin
+            if ((rst == 32'd0)) begin
+               _00003a18 <= (_00003a18 + 32'd1);
+               _00003a17 <= 32'd1;
+               _00003a19 <= rom__inputs[address__inputs];
+            end
+            address__inputs <= (address__inputs + 32'd1);
          end
-         address__inputs <= (address__inputs + 32'd1);
-      end
-
-      if ((address__inputs == 32'd1)) begin
-         ack__inputs <= 32'd1;
+         if ((address__inputs == 32'd1)) begin
+            ack__inputs <= 32'd1;
+         end
       end
 
    end

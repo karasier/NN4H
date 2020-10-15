@@ -1,7 +1,6 @@
 # ニューロンの計算モジュール
 # 任意の重みとバイアスを適用できる。
 # 重みとバイアスはジェネリックパラメータとして配列で渡す。
-# mem_dualをmem_romに変更したバージョン
 
 require "std/memory.rb"
 require "std/linear.rb"
@@ -39,8 +38,8 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   end
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
-  # 重みのメモリ  
-  channel_w = output_size.times.map{ |i| mem_rom(typ, input_size, clk, rst, quantize(weights[i], typ, decimal_width), rinc: :rst, winc: :rst).(:"channel_w#{i}") }
+  # 重みのメモリ
+  channel_w = output_size.times.map{ |i| mem_dual(typ, input_size, clk, rst, rinc: :rst, winc: :rst).(:"channel_w#{i}") }  
 
   # 重みのRead用ポートの作成
   reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
@@ -62,8 +61,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
-  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)
-  #mem_rom(typ, output_size, clk, rst, quantize(bias, typ, decimal_width), rinc: :rst).(:channel_bias)
+  mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_bias)  
 
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
@@ -118,36 +116,57 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   #---------------------------------------------------------------------------
   # パラメータの初期化
 
-  # ROMのアドレス  
+  # ROMのアドレス
+  address_weights = output_size.times.map{ |i| [input_size.width].inner :"address_weights#{i}"}
   [output_size.width].inner :address_bias
 
-  # ROMのack  
+  # ROMのack
+  ack_weights = output_size.times.map{ |i| inner :"ack_weights#{i}"}
   inner :ack_bias
 
-  # 書き込み用branchの宣言  
+  # 書き込み用branchの宣言
+  writer_w = output_size.times.map{ |i| channel_w[i].branch(:winc) }
   channel_bias.branch(:winc).output :writer_bias
 
-  # 重みとバイアスを格納するROMの宣言  
+  # 重みとバイアスを格納するROMの宣言
+  w = output_size.times.map{ |i| typ[-input_size].constant "w#{i}": quantize(weights[i], typ, decimal_width) }
   typ[-output_size].constant b: quantize(bias, typ, decimal_width)
   
-  fill_channel <= fill & ~(ack_bias)
+  fill_channel <= fill & ~(ack_weights.inject(:&) & ack_bias)
 
   par(clk.posedge) do
     # アドレスの初期化
-    hif(rst) do      
+    hif(rst) do
+      output_size.times do |i|
+        address_weights[i] <= 0
+        ack_weights[i] <= 0
+      end
       address_bias <= 0
       ack_bias <= 0
     end
     helse do
       # ROMから読み出してchannelへ書き込み
-      hif(fill_channel) do        
+      hif(fill_channel) do
+        output_size.times do |i|
+          hif(~ack_weights[i]) do
+            writer_w[i].write(w[i][address_weights[i]])
+            address_weights[i] <= address_weights[i] + 1       
+          end
+        end
+
         hif(~ack_bias) do
           writer_bias.write(b[address_bias])
           address_bias <= address_bias + 1
         end      
       end
 
-      # ack      
+      # ack
+      output_size.times do |i|
+        hif(address_weights[i] == input_size - 1 ) do
+          ack_weights[i] <= 1
+        end
+      end
+
       hif(address_bias == output_size - 1) do
         ack_bias <= 1
       end

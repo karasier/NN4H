@@ -2,6 +2,7 @@
 # 現在、xorの学習結果を移植している。
 # => mem_dualをmem_romに変更したところ、読み出しが上手くいかない。
 # => おそらく、mem_romのrincが原因。mem_dualのrincをコピーしたところ動作した。
+# => biasはraddrを用いてアクセスする。
 
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"
@@ -23,20 +24,13 @@ system :network_bench do
 
     # ファイルからのパラメータ読み出し
     parameters = load_network("xor.json")
-
-    # 重みとバイアスの配列の形状
-    #weights_geometry = neuron_columns.zip(columns[0..-2])
-    #biases_geometry = neuron_columns.map{ |col| col }
-  
-    # ランダムに初期化した重みとバイアスの配列
-    #biases = biases_geometry.map{ |size| size.times.map{ rand(1.0..1.0) }}  
-    #weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(1.0..1.0) } ) }
   
     biases = parameters[:biases]
     weights = parameters[:weights]
 
-    #puts "biases : #{biases}"
-    #puts "weights : #{weights}"
+    inputs = [1, 1]
+
+    puts "inputs : #{inputs}"
 
     #---------------内部信号の宣言---------------------
     inner :clk,   # clock 
@@ -46,7 +40,7 @@ system :network_bench do
   
     inner :ack    # ニューラルネットワークのack
   
-    network_constructor(columns, func, typ, integer_width, decimal_width, address_width, weights, biases).(:neural_network).(clk, rst, req, fill, ack)
+    network_constructor(columns, func, typ, integer_width, decimal_width, address_width, inputs, weights, biases).(:neural_network).(clk, rst, req, fill, ack)
   
     timed do
       # リセット

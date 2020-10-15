@@ -7,7 +7,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    output reg ack__mac;
    reg [1:0] q;
 
-   always @( posedge clk ) begin
+   always @( negedge clk ) begin
 
       if (rst) begin
          q <= 32'd0;

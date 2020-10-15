@@ -4,7 +4,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    input [3:0] address;
    output signed[7:0] base;
    output reg signed[7:0] next__data;
-   wire signed[7:0] lut  :0[0:15];
+   reg signed[7:0] lut  [0:15];
 
    assign base = lut[address];
 
