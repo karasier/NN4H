@@ -7,7 +7,7 @@ require_relative "quantize.rb"
 
 include HDLRuby::High::Std
 
-system :network_constructor do |columns, functions, types, integer_width, decimal_width, address_width, inputs, outputs, weights, biases|
+system :network_constructor do |columns, functions, types, integer_width, decimal_width, address_width, inputs, outputs, weights, biases|  
   columns = columns.to_a
   integer_width = integer_width.to_i
   decimal_width = decimal_width.to_i
@@ -88,28 +88,35 @@ system :network_constructor do |columns, functions, types, integer_width, decima
   inner :fill_inputs # 入力値への書き込み命令
   types[0].inner :value_inputs # メモリから読み出した値
   [columns[0].width].inner :address_inputs # アドレス
-  inner :ack_inputs
+  inner :flag_inputs # 読み出し完了のflag
+  inner :ack_inputs # 書き込み完了のack  
   
   ack_fill <= ack_inputs
-  fill_inputs <= fill & ~ack_inputs
+  fill_inputs <= fill & ~ack_inputs & ~flag_inputs
 
   par(clk.posedge) do
-    hif(rst) do
+    hif(rst) do      
       address_inputs <= 0
+      flag_inputs <= 0            
       ack_inputs <= 0
     end
-    helse do
-      hif(fill_inputs) do
+    helsif(fill_inputs) do      
+      inputs.read(value_inputs) { flag_inputs <= 1 }                
+    end
+    helsif(flag_inputs) do                
+      writer_inputs.write(value_inputs) do
         seq do
-          inputs.read(value_inputs) do
-            writer_inputs.write(value_inputs) { address_inputs <= address_inputs + 1 }
-            
-            hif(address_inputs == columns[0]) do
-              ack_inputs <= 1
-            end
+          address_inputs <= address_inputs + 1
+          flag_inputs <= 0
+          
+          hif(address_inputs == columns[0]) do
+            ack_inputs <= 1
           end
         end
-      end
+      end          
+    end  
+    helse do
+      flag_inputs <= 0
     end
   end
 
@@ -117,26 +124,33 @@ system :network_constructor do |columns, functions, types, integer_width, decima
   inner :fill_outputs
   types[-1].inner :value_outputs # メモリから読み出した値
   [columns[-1].width].inner :address_outputs # アドレス
+  inner :flag_outputs # 読み出し完了のflag
 
-  fill_outputs <= ack[-1] & ~ack_network
+  fill_outputs <= ack[-1] & ~ack_network & ~flag_outputs
 
   par(clk.posedge) do
     hif(rst) do
-      address_outputs <= 0
+      address_outputs <= 0      
+      flag_outputs <= 0
       ack_network <= 0
     end
-    helse do
-      hif(fill_outputs) do
+    helsif(fill_outputs) do
+      reader_outputs.read(value_outputs) { flag_outputs <= 1 }
+    end
+    helsif(flag_outputs) do
+      outputs.write(value_outputs) do
         seq do
-          reader_outputs.read(value_outputs) do
-            outputs.write(value_outputs) { address_outputs <= address_outputs + 1 }
-            
-            hif(address_outputs == columns[-1]) do
-              ack_network <= 1
-            end
+          address_outputs <= address_outputs + 1
+          flag_outputs <= 0
+
+          hif(address_outputs == columns[-1]) do
+            ack_network <= 1
           end
         end
       end
     end
-  end
+    helse do
+      flag_outputs <= 0
+    end
+  end      
 end

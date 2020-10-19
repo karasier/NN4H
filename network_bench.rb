@@ -1,8 +1,5 @@
 # テスト用ベンチ
 # 現在、xorの学習結果を移植している。
-# => mem_dualをmem_romに変更したところ、読み出しが上手くいかない。
-# => おそらく、mem_romのrincが原因。mem_dualのrincをコピーしたところ動作した。
-# => biasはraddrを用いてアクセスする。
 
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"

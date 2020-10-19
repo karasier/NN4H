@@ -1,0 +1,1 @@
+require_relative "child1.rb"
