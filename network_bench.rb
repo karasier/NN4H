@@ -12,16 +12,18 @@ system :network_bench do
     decimal_width = 4 # 実数部のビット幅
     address_width = 4 # lutのアドレスのビット幅
     typ = signed[integer_width, decimal_width] # データ型  
-    tanh = proc{ |i| Math.tanh(i) }
+    tanh = proc{ |x| Math.tanh(x) }
+    sigmoid = proc{ |x| 1 / (1 + Math.exp(-x)) }
+    linear = proc { |x| x }
     
     # ニューラルネットワークの構造
     columns = [2, 2, 3]
-    func = [tanh, tanh] # 活性化関数
+    func = [sigmoid, linear] # 活性化関数
     
     neuron_columns = columns[1..-1]
 
     # ファイルからのパラメータ読み出し
-    #parameters = load_network("xor.json")
+    #parameters = load_network("xor1.json")
   
     #biases = parameters[:biases]
     #weights = parameters[:weights]
@@ -32,7 +34,7 @@ system :network_bench do
     biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
     weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
 
-    inputs = [1, 0]
+    inputs = [1, 1]
 
     puts "inputs : #{inputs}"
 
