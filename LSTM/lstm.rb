@@ -1,46 +1,69 @@
-repuire_realative 'FastNeurons-master/lib/fast_neurons'
+require_relative 'FastNeurons-master/lib/fast_neurons'
 
-f = File.open("fakeNewsDataset/fake/biz01.fake.txt");
+class LSTM
+  def initialize(x_size,h_size)
+    @nn_forget = FastNeurons::NN.new([x_size + h_size,h_size],[:Sigmoid])
 
-#入力データ[c_in,h_in,x_in]
-inputs = [ [[1,2], [3,4], [5,6]], [[1,2], [3,4], [5,6]] ]
+    @nn_input0 = FastNeurons::NN.new([x_size + h_size,h_size],[:Sigmoid])
 
-c_in = h_in = x_in = nil
+    @nn_input1 = FastNeurons::NN.new([x_size + h_size,h_size],[:Tanh])
 
-nn_forget = FastNeurons::NN.new([8,1],[:Sigmoid])
+    @nn_output0 = FastNeurons::NN.new([x_size + h_size,h_size],[:Sigmoid])
 
-nn_input0 = FastNeurons::NN.new([8,1],[:Sigmoid])
+    @nn_forget.randomize
+    @nn_input0.randomize
+    @nn_input1.randomize
+    @nn_output0.randomize
 
-nn_input1 = FastNeurons::NN.new([8,1],[:Tanh])
+  end
 
-nn_output0 = FastNeurons::NN.new([8,1],[:Sigmoid])
+  def input(x, c, h)
+    #@x_in = N[x, dtype: :float]
+    #@c_in = N[c, dtype: :float]
+    #@h_in = N[h, dtype: :float]
+    @x_in = x.clone
+    @c_in = c.clone
+    @h_in = h.clone
 
-# nn_output1 = FastNeurons::NN.new([2,1],[:Tanh])
-nn_output1 = proc { abc.call.map {|u| Math.tanh(u) }}
+  end
 
-#忘却ゲート
-uvw = proc { c_in * nn_forget.get_outputs }
+  def output
+    return [@h_out.to_a, @c_out.to_a]
+  end
 
-#入力ゲート
-xyz = proc { nn_input0.get_outputs * nn_input1 }
+  def propagate
 
-#出力ゲート
-abc = proc { uvw.call + xyz.call }
 
-inputs.each |c, h, x|
-   c_in = N[c, dtype: :float].transpose
-   h_in = N[h, dtype: :float].transpose
-   x_in = N[x, dtype: :float].transpose
-   nn_inputs = x + c
-   nn_forget.input(nn_inputs)
-   nn_input0.input(nn_inputs)
-   ...
-   nn_forget.propagate
-   ...
+    #忘却ゲート
+    uvw = proc { N[@c_in, dtype: :float64].transpose * @nn_forget.get_outputs }
+
+    #入力ゲート
+    xyz = proc { @nn_input0.get_outputs * @nn_input1.get_outputs }
+
+    #出力ゲート
+    abc = proc { uvw.call + xyz.call }
+
+    # nn_output1 = FastNeurons::NN.new([2,1],[:Tanh])
+    pqr = proc { abc.call.map {|u| Math.tanh(u) }}
+
+    nn_output1 = proc { pqr.call * @nn_output0.get_outputs}
+
+    nn_inputs = @x_in + @c_in
+    @nn_forget.input(nn_inputs)
+    @nn_input0.input(nn_inputs)
+    @nn_input1.input(nn_inputs)
+    @nn_output0.input(nn_inputs)
+
+    @nn_forget.propagate
+    @nn_input0.propagate
+    @nn_input1.propagate
+    @nn_output0.propagate
+
+    @h_out = nn_output1.call
+    @c_out = abc.call
+  end
+
+  def back_propagate
+  end
+
 end
-
-nn_forget.randomize
-nn_input0.randomize
-nn_input1.randomize
-nn_output0.randomize
-nn_output1.randomize
