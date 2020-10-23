@@ -1,6 +1,6 @@
 require_relative 'FastNeurons-master/lib/fast_neurons'
 
-class LSTM
+class LSTMCell
   def initialize(x_size,h_size)
     @nn_forget = FastNeurons::NN.new([x_size + h_size,h_size],[:Sigmoid])
 
@@ -66,4 +66,21 @@ class LSTM
   def back_propagate
   end
 
+end
+
+
+
+class LSTM
+
+  def initialize(cells_num, x_size, h_size)
+      @cells = cells_num.times { LSTMCell.new(x_size, h_size) }
+  end
+
+  def input(xs)
+     @xs = x.to_a
+  end
+
+  def propagate
+
+  end
 end
