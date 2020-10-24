@@ -14,25 +14,26 @@ system :network_bench do
     typ = signed[integer_width, decimal_width] # データ型  
     tanh = proc{ |x| Math.tanh(x) }
     sigmoid = proc{ |x| 1 / (1 + Math.exp(-x)) }
+    relu = proc{ |x| [x, 0].max }
     linear = proc { |x| x }
     
     # ニューラルネットワークの構造
-    columns = [2, 2, 3]
+    columns = [2, 2, 1]
     func = [sigmoid, linear] # 活性化関数
     
     neuron_columns = columns[1..-1]
 
     # ファイルからのパラメータ読み出し
-    #parameters = load_network("xor1.json")
+    parameters = load_network("xor1.json")
   
-    #biases = parameters[:biases]
-    #weights = parameters[:weights]
+    biases = parameters[:biases]
+    weights = parameters[:weights]
 
-    weights_geometry = neuron_columns.zip(columns[0..-2])
-    biases_geometry = neuron_columns.map{ |col| col }
+    #weights_geometry = neuron_columns.zip(columns[0..-2])
+    #biases_geometry = neuron_columns.map{ |col| col }
     
-    biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
-    weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
+    #biases = biases_geometry.map{ |size| size.times.map{ rand(-1.0..1.0) }}  
+    #weights = weights_geometry.map{ |shape| Array.new(shape[0], shape[1].times.map{ rand(-1.0..1.0) } ) }
 
     inputs = [1, 1]
 
