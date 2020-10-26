@@ -26,11 +26,11 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
    initial begin
 
-      lut[32'd0] = $signed(32'd0);
+      lut[32'd0] = $signed(32'd8);
 
-      lut[32'd1] = $signed(32'd12);
+      lut[32'd1] = $signed(32'd11);
 
-      lut[32'd2] = $signed(32'd15);
+      lut[32'd2] = $signed(32'd14);
 
       lut[32'd3] = $signed(32'd15);
 
@@ -42,21 +42,21 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
 
       lut[32'd7] = $signed(32'd15);
 
-      lut[32'd8] = $signed(-32'd15);
+      lut[32'd8] = $signed(32'd0);
 
-      lut[32'd9] = $signed(-32'd15);
+      lut[32'd9] = $signed(32'd0);
 
-      lut[32'd10] = $signed(-32'd15);
+      lut[32'd10] = $signed(32'd0);
 
-      lut[32'd11] = $signed(-32'd15);
+      lut[32'd11] = $signed(32'd0);
 
-      lut[32'd12] = $signed(-32'd15);
+      lut[32'd12] = $signed(32'd0);
 
-      lut[32'd13] = $signed(-32'd15);
+      lut[32'd13] = $signed(32'd0);
 
-      lut[32'd14] = $signed(-32'd15);
+      lut[32'd14] = $signed(32'd1);
 
-      lut[32'd15] = $signed(-32'd12);
+      lut[32'd15] = $signed(32'd4);
 
    end
 

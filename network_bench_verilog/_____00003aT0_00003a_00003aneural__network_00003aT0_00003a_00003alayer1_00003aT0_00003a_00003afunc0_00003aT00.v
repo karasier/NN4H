@@ -7,32 +7,38 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    wire signed[7:0] next__data;
    wire [3:0] address;
    wire signed[7:0] remaining;
-   wire [3:0] _00005e_000060431;
-   wire signed[7:0] _00005e_000060432;
-   wire signed[7:0] _00005e_000060433;
-   wire signed[7:0] _00005e_000060434;
-   wire signed[7:0] _00005e_000060435;
-   wire signed[7:0] _00005e_000060436;
-   wire signed[7:0] _00005e_000060437;
+   wire signed[7:0] change;
+   wire [3:0] _00005e_000060551;
+   wire signed[7:0] _00005e_000060552;
+   wire signed[7:0] _00005e_000060553;
+   wire signed[7:0] _00005e_000060554;
+   wire signed[7:0] _00005e_000060555;
+   wire signed[7:0] _00005e_000060556;
+   wire signed[7:0] _00005e_000060557;
+   wire signed[7:0] _00005e_000060558;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00_00003a_00003amy__lut_00003aT10 my__lut(.address(_00005e_000060431),.base(_00005e_000060432),.next__data(_00005e_000060433));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00_00003a_00003amy__interpolator_00003aT10 my__interpolator(.remaining(_00005e_000060434),.base(_00005e_000060435),.next__data(_00005e_000060436),.interpolated__value(_00005e_000060437));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00_00003a_00003amy__lut_00003aT10 my__lut(.address(_00005e_000060551),.base(_00005e_000060552),.next__data(_00005e_000060553));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00_00003a_00003amy__interpolator_00003aT10 my__interpolator(.base(_00005e_000060554),.next__data(_00005e_000060555),.change(_00005e_000060556),.remaining(_00005e_000060557),.interpolated__value(_00005e_000060558));
    assign address = z__value[7:4];
 
    assign remaining = {{1'b0,1'b0,1'b0,1'b0},z__value[3:0]};
 
-   assign _00005e_000060431 = address;
+   assign change = {{1'b0,1'b0,1'b0},1'b1,{1'b0,1'b0,1'b0,1'b0}};
 
-   assign base = _00005e_000060432;
+   assign _00005e_000060551 = address;
 
-   assign next__data = _00005e_000060433;
+   assign base = _00005e_000060552;
 
-   assign _00005e_000060434 = remaining;
+   assign next__data = _00005e_000060553;
 
-   assign _00005e_000060435 = base;
+   assign _00005e_000060554 = base;
 
-   assign _00005e_000060436 = next__data;
+   assign _00005e_000060555 = next__data;
 
-   assign a = _00005e_000060437;
+   assign _00005e_000060556 = change;
+
+   assign _00005e_000060557 = remaining;
+
+   assign a = _00005e_000060558;
 
 endmodule
