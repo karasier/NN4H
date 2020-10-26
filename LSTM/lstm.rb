@@ -1,5 +1,5 @@
-require_relative 'FastNeurons-master/lib/fast_neurons'
-
+#require_relative 'FastNeurons-master/lib/fast_neurons'
+require_relative '..\..\FastNeurons\lib\fast_neurons.rb'
 class LSTMCell
   def initialize(x_size,h_size)
     @nn_forget = FastNeurons::NN.new([x_size + h_size,h_size],[:Sigmoid])
