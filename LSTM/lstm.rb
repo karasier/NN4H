@@ -64,6 +64,8 @@ class LSTMCell
   end
 
   def back_propagate
+
+
   end
 
 end
@@ -76,11 +78,13 @@ class LSTM
       @cells = cells_num.times { LSTMCell.new(x_size, h_size) }
   end
 
-  def input(xs)
+  def input(x)
      @xs = x.to_a
+
   end
 
   def propagate
+
 
   end
 end
