@@ -23,7 +23,7 @@ system :network_bench do
     func = [tanh, linear] # 活性化関数  
 
     # ファイルからのパラメータ読み出し
-    parameters = load_network("xor3.json")
+    parameters = load_network("xor.json")
   
     biases = parameters[:biases]
     weights = parameters[:weights]    
