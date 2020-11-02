@@ -27,7 +27,7 @@ class LSTMCell
     # @h_in = N[h.clone.flatten, dtype: :float64].transpose
 
     @x_in = x.clone
-    @c_in = c.clone
+    @c_in = c.is_a?(Array) ? N[c, dtype: :float64].transpose : c.clone
     @h_in = h.clone
 
      puts "\ninput: data"
@@ -47,7 +47,10 @@ class LSTMCell
   def propagate
 
     #忘却ゲート
-    uvw = proc { N[@c_in, dtype: :float64].transpose * @nn_forget.get_outputs }
+    #　uvw = proc { N[@c_in.to_a, dtype: :float64].transpose * @nn_forget.get_outputs }
+    uvw = proc {
+             # puts "Now @cin_in.shape=#{@c_in.shape} @nn_forget.get_outputs.shape=#{@nn_forget.get_outputs.shape}"
+            @c_in * @nn_forget.get_outputs }
     # uvw = proc { @c_in * @nn_forget.get_outputs }
 
     #入力ゲート
@@ -71,7 +74,7 @@ class LSTMCell
     puts @x_in.class
     puts @c_in.class
 
-    nn_inputs = @x_in + @c_in
+    nn_inputs = @x_in + @c_in.to_a
     # print nn_inputs
     @nn_forget.input(nn_inputs)
     @nn_input0.input(nn_inputs)
@@ -114,19 +117,32 @@ class LSTM
   end
 
   def propagate
+    @c = []
+    @h = []
     puts "\ncells[0]: propagate"
     @cells[0].propagate
-    @c,@h = @cells[0].output
+    @c[0],@h[0] = @cells[0].output
     # puts "output data"
     # puts @c
     # puts @h
 
-    @cells[1].input(@xs[1],@c,@h)
+    @cells[1].input(@xs[1],@c[0],@h[0])
     puts "\ncells[1]: propagate"
     @cells[1].propagate
-    # puts "output data"
-    # puts @c
-    # puts @h
+    @c[1],@h[1] = @cells[1].output
+
+    @cells[2].input(@xs[2],@c[1],@h[1])
+    puts "\ncells[1]: propagate"
+    @cells[2].propagate
+    @c[2],@h[2] = @cells[2].output
+
+    puts "output data"
+    puts "#{@c[2]}"
+    puts ""
+    puts "#{@h[2]}"
+    puts ""
+
+
 
     # puts @cells.length
     #  for i in 1..@cells.length-1 do
