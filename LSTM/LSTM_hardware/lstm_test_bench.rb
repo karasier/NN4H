@@ -68,4 +68,55 @@ system :lstm_test do
     network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:sigmoid_neural_network).(clk, rst, req, fill, ack_fill_sig, ack_network_sig)
 
     network_constructor(columns, func_tanh, typ, integer_width, decimal_width, address_width, reader_inputs_tanh, writer_outputs_tanh, weights_tanh, biases_tanh).(:tanh_neural_network).(clk, rst, req, fill, ack_fill_tanh, ack_network_tanh)
-end
+
+    timed do
+      # リセット
+      clk <= 0
+      rst <= 0
+      req <= 0
+      fill <= 0
+      !10.ps
+
+      # メモリ読み出し位置の初期化
+      rst <= 1
+      !10.ps
+      clk <= 1
+      !10.ps
+      clk <= 0
+      !10.ps
+      clk <= 1
+      !10.ps
+
+      # パラメータのメモリへの書き込み
+      clk <= 0
+      rst <= 0
+      fill <= 1
+
+      !10.ps
+      10.times do |i|
+        clk <= 1
+        !10.ps
+        clk <= 0
+        !10.ps
+      end
+
+      fill <= 0
+      clk <= 1
+      !10.ps
+
+      # 計算の実行
+      clk <= 0
+      req <= 1
+      !10.ps
+      clk <= 1
+      !10.ps
+      clk <= 0
+      !10.ps
+      30.times do
+        clk <= 1
+        !10.ps
+        clk <= 0
+        !10.ps
+      end
+    end
+  end
