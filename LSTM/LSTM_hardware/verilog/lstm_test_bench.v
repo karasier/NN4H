@@ -1,10 +1,10 @@
 `timescale 1ps/1ps
 
 module _____00003aT0( ); 
-   wire clk;
-   wire rst;
-   wire req;
-   wire fill;
+   reg clk;
+   reg rst;
+   reg req;
+   reg fill;
    wire ack__fill__sig;
    wire ack__network__sig;
    wire ack__fill__tanh;
@@ -105,6 +105,384 @@ module _____00003aT0( );
    assign _00005e_00006022 = ram__outputs__tanh_00003a60_00003a_00003aabus__w;
 
    assign _00005e_00006023 = ram__outputs__tanh_00003a60_00003a_00003adbus__w;
+
+   initial begin
+
+      clk = 32'd0;
+
+      rst = 32'd0;
+
+      req = 32'd0;
+
+      fill = 32'd0;
+
+      #10
+
+      rst = 32'd1;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      rst = 32'd0;
+
+      fill = 32'd1;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      fill = 32'd0;
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      req = 32'd1;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+      clk = 32'd1;
+
+      #10
+
+      clk = 32'd0;
+
+      #10
+
+   end
 
    always @( negedge clk ) begin
 

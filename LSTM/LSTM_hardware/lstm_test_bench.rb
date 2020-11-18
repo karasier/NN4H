@@ -1,4 +1,4 @@
-require "std/memory.rb"
+require 'std/memory.rb'
 require 'std/linear.rb'
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"

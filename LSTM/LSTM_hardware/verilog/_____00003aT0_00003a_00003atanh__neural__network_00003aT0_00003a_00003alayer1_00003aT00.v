@@ -31,10 +31,10 @@ module _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003ala
    wire [0:0] channel__w0_00003a627_00003a_00003aabus__r;
    wire signed[7:0] channel__w0_00003a627_00003a_00003amem  :0[0:1];
    wire signed[7:0] channel__accum_00003a642_00003a_00003areg__0;
-   wire [0:-1] channel__accum_00003a642_00003a_00003arinc_00003a651_00003a_00003aabus__r;
-   wire [0:-1] channel__accum_00003a642_00003a_00003awinc_00003a655_00003a_00003aabus__w;
-   wire [0:-1] channel__accum_00003a642_00003a_00003ardec_00003a659_00003a_00003aabus__r;
-   wire [0:-1] channel__accum_00003a642_00003a_00003awdec_00003a663_00003a_00003aabus__w;
+   wire [0:0] channel__accum_00003a642_00003a_00003arinc_00003a651_00003a_00003aabus__r;
+   wire [0:0] channel__accum_00003a642_00003a_00003awinc_00003a655_00003a_00003aabus__w;
+   wire [0:0] channel__accum_00003a642_00003a_00003ardec_00003a659_00003a_00003aabus__r;
+   wire [0:0] channel__accum_00003a642_00003a_00003awdec_00003a663_00003a_00003aabus__w;
    reg signed[7:0] mac__n1_00003a667_00003a_00003alv0;
    reg signed[7:0] mac__n1_00003a667_00003a_00003aav0;
    reg signed[7:0] mac__n1_00003a667_00003a_00003arv;
@@ -47,39 +47,39 @@ module _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003ala
    wire [0:0] channel__b0_00003a672_00003a_00003aabus__r;
    reg signed[7:0] channel__b0_00003a672_00003a_00003amem  :0[0:0] = $signed(-32'd9);
    wire signed[7:0] channel__z_00003a687_00003a_00003areg__0;
-   wire [0:-1] channel__z_00003a687_00003a_00003arinc_00003a696_00003a_00003aabus__r;
-   wire [0:-1] channel__z_00003a687_00003a_00003awinc_00003a699_00003a_00003aabus__w;
-   wire [0:-1] channel__z_00003a687_00003a_00003ardec_00003a702_00003a_00003aabus__r;
-   wire [0:-1] channel__z_00003a687_00003a_00003awdec_00003a706_00003a_00003aabus__w;
+   wire [0:0] channel__z_00003a687_00003a_00003arinc_00003a696_00003a_00003aabus__r;
+   wire [0:0] channel__z_00003a687_00003a_00003awinc_00003a699_00003a_00003aabus__w;
+   wire [0:0] channel__z_00003a687_00003a_00003ardec_00003a702_00003a_00003aabus__r;
+   wire [0:0] channel__z_00003a687_00003a_00003awdec_00003a706_00003a_00003aabus__w;
    reg signed[7:0] add__n_00003a710_00003a_00003alv0;
    reg signed[7:0] add__n_00003a710_00003a_00003arv0;
    reg add__n_00003a710_00003a_00003alvok0;
    reg add__n_00003a710_00003a_00003arvok0;
    reg add__n_00003a710_00003a_00003arun;
-   wire _00005e_000060250;
-   wire _00005e_000060251;
-   wire _00005e_000060252;
-   wire _00005e_000060253;
-   wire signed[7:0] _00005e_000060254;
-   wire signed[7:0] _00005e_000060255;
+   wire _00005e_000060259;
+   wire _00005e_000060260;
+   wire _00005e_000060261;
+   wire _00005e_000060262;
+   wire signed[7:0] _00005e_000060263;
+   wire signed[7:0] _00005e_000060264;
 
-   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00_00003a_00003acounter_00003aT20 counter(.clk(_00005e_000060250),.ack(_00005e_000060251),.rst(_00005e_000060252),.ack__mac(_00005e_000060253));
-   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00_00003a_00003afunc0_00003aT20 func0(.z__value(_00005e_000060254),.a(_00005e_000060255));
+   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00_00003a_00003acounter_00003aT20 counter(.clk(_00005e_000060259),.ack(_00005e_000060260),.rst(_00005e_000060261),.ack__mac(_00005e_000060262));
+   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00_00003a_00003afunc0_00003aT20 func0(.z__value(_00005e_000060263),.a(_00005e_000060264));
    assign req__mac = (req & ~ack__mac);
 
-   assign _00005e_000060250 = clk;
+   assign _00005e_000060259 = clk;
 
-   assign _00005e_000060251 = ack;
+   assign _00005e_000060260 = ack;
 
-   assign _00005e_000060252 = rst;
+   assign _00005e_000060261 = rst;
 
-   assign ack__mac = _00005e_000060253;
+   assign ack__mac = _00005e_000060262;
 
    assign _00003a677 = rst;
 
-   assign _00005e_000060254 = value__z0;
+   assign _00005e_000060263 = value__z0;
 
-   assign value__a0 = _00005e_000060255;
+   assign value__a0 = _00005e_000060264;
 
    assign ack__layer = ack__a0;
 

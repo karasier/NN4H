@@ -28,7 +28,7 @@ module _____00003aT0_00003a_00003atanh__neural__network_00003aT0( clk, rst, req,
    reg [0:0] address__outputs;
    reg flag__outputs;
    wire signed[7:0] _00003a444;
-   reg [0:-1] _00003a445;
+   reg [0:0] _00003a445;
    wire channel__inputs_00003a405_00003a_00003atrig__r;
    wire channel__inputs_00003a405_00003a_00003atrig__w;
    reg signed[7:0] channel__inputs_00003a405_00003a_00003adbus__r;
@@ -37,51 +37,51 @@ module _____00003aT0_00003a_00003atanh__neural__network_00003aT0( clk, rst, req,
    wire [0:0] channel__inputs_00003a405_00003a_00003aabus__w;
    wire signed[7:0] channel__inputs_00003a405_00003a_00003amem  :0[0:1];
    wire signed[7:0] channel__outputs_00003a434_00003a_00003areg__0;
-   wire [0:-1] channel__outputs_00003a434_00003a_00003arinc_00003a443_00003a_00003aabus__r;
-   wire [0:-1] channel__outputs_00003a434_00003a_00003awinc_00003a446_00003a_00003aabus__w;
-   wire [0:-1] channel__outputs_00003a434_00003a_00003ardec_00003a449_00003a_00003aabus__r;
-   wire [0:-1] channel__outputs_00003a434_00003a_00003awdec_00003a453_00003a_00003aabus__w;
+   wire [0:0] channel__outputs_00003a434_00003a_00003arinc_00003a443_00003a_00003aabus__r;
+   wire [0:0] channel__outputs_00003a434_00003a_00003awinc_00003a446_00003a_00003aabus__w;
+   wire [0:0] channel__outputs_00003a434_00003a_00003ardec_00003a449_00003a_00003aabus__r;
+   wire [0:0] channel__outputs_00003a434_00003a_00003awdec_00003a453_00003a_00003aabus__w;
    wire signed[7:0] channel__a0_00003a457_00003a_00003areg__0;
    wire signed[7:0] channel__a0_00003a457_00003a_00003areg__1;
    wire [0:0] channel__a0_00003a457_00003a_00003arinc_00003a469_00003a_00003aabus__r;
    wire [0:0] channel__a0_00003a457_00003a_00003awinc_00003a473_00003a_00003aabus__w;
    wire [0:0] channel__a0_00003a457_00003a_00003ardec_00003a477_00003a_00003aabus__r;
    wire [0:0] channel__a0_00003a457_00003a_00003awdec_00003a482_00003a_00003aabus__w;
-   wire _00005e_00006081;
-   wire _00005e_00006082;
-   wire _00005e_00006083;
-   wire _00005e_00006084;
-   wire _00005e_00006085;
-   wire _00005e_00006086;
-   wire _00005e_00006087;
-   wire _00005e_00006088;
-   wire signed[7:0] _00005e_000060936;
-   wire _00005e_000060937;
-   wire [0:0] _00005e_000060938;
-   wire signed[7:0] _00005e_000060939;
-   wire signed[7:0] _00005e_000060940;
-   wire signed[7:0] _00005e_000060941;
-   wire signed[7:0] _00005e_000060942;
-   wire signed[7:0] _00005e_000060943;
-   wire [0:0] _00005e_000060944;
+   wire _00005e_00006090;
+   wire _00005e_00006091;
+   wire _00005e_00006092;
+   wire _00005e_00006093;
+   wire _00005e_00006094;
+   wire _00005e_00006095;
+   wire _00005e_00006096;
+   wire _00005e_00006097;
+   wire signed[7:0] _00005e_000060945;
+   wire _00005e_000060946;
+   wire [0:0] _00005e_000060947;
+   wire signed[7:0] _00005e_000060948;
+   wire signed[7:0] _00005e_000060949;
+   wire signed[7:0] _00005e_000060950;
+   wire signed[7:0] _00005e_000060951;
+   wire signed[7:0] _00005e_000060952;
+   wire [0:0] _00005e_000060953;
 
-   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer0_00003aT00 layer0(.clk(_00005e_00006081),.rst(_00005e_00006082),.req(_00005e_00006083),._00003a419(_00005e_000060936),.ack__layer(_00005e_00006084),._00003a417(_00005e_000060937),._00003a418(_00005e_000060938),._00003a459(_00005e_000060940),._00003a460(_00005e_000060941));
-   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00 layer1(.clk(_00005e_00006085),.rst(_00005e_00006086),.req(_00005e_00006087),._00003a470(_00005e_000060942),._00003a471(_00005e_000060943),.ack__layer(_00005e_00006088),._00003a472(_00005e_000060944),._00003a436(_00005e_000060939));
-   assign _00005e_00006081 = clk;
+   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer0_00003aT00 layer0(.clk(_00005e_00006090),.rst(_00005e_00006091),.req(_00005e_00006092),._00003a419(_00005e_000060945),.ack__layer(_00005e_00006093),._00003a417(_00005e_000060946),._00003a418(_00005e_000060947),._00003a459(_00005e_000060949),._00003a460(_00005e_000060950));
+   _____00003aT0_00003a_00003atanh__neural__network_00003aT0_00003a_00003alayer1_00003aT00 layer1(.clk(_00005e_00006094),.rst(_00005e_00006095),.req(_00005e_00006096),._00003a470(_00005e_000060951),._00003a471(_00005e_000060952),.ack__layer(_00005e_00006097),._00003a472(_00005e_000060953),._00003a436(_00005e_000060948));
+   assign _00005e_00006090 = clk;
 
-   assign _00005e_00006082 = rst;
+   assign _00005e_00006091 = rst;
 
-   assign _00005e_00006083 = req;
+   assign _00005e_00006092 = req;
 
-   assign ack__0 = _00005e_00006084;
+   assign ack__0 = _00005e_00006093;
 
-   assign _00005e_00006085 = clk;
+   assign _00005e_00006094 = clk;
 
-   assign _00005e_00006086 = rst;
+   assign _00005e_00006095 = rst;
 
-   assign _00005e_00006087 = ack__0;
+   assign _00005e_00006096 = ack__0;
 
-   assign ack__1 = _00005e_00006088;
+   assign ack__1 = _00005e_00006097;
 
    assign ack__fill = ack__inputs;
 
@@ -95,27 +95,27 @@ module _____00003aT0_00003a_00003atanh__neural__network_00003aT0( clk, rst, req,
 
    assign _00003a423 = channel__inputs_00003a405_00003a_00003adbus__w;
 
-   assign _00005e_000060936 = channel__inputs_00003a405_00003a_00003adbus__r;
+   assign _00005e_000060945 = channel__inputs_00003a405_00003a_00003adbus__r;
 
-   assign _00005e_000060937 = channel__inputs_00003a405_00003a_00003atrig__r;
+   assign _00005e_000060946 = channel__inputs_00003a405_00003a_00003atrig__r;
 
-   assign _00005e_000060938 = channel__inputs_00003a405_00003a_00003aabus__r;
+   assign _00005e_000060947 = channel__inputs_00003a405_00003a_00003aabus__r;
 
    assign _00003a444 = channel__outputs_00003a434_00003a_00003areg__0;
 
-   assign _00005e_000060939 = channel__outputs_00003a434_00003a_00003areg__0;
+   assign _00005e_000060948 = channel__outputs_00003a434_00003a_00003areg__0;
 
    assign _00003a445 = channel__outputs_00003a434_00003a_00003arinc_00003a443_00003a_00003aabus__r;
 
-   assign _00005e_000060940 = channel__a0_00003a457_00003a_00003areg__0;
+   assign _00005e_000060949 = channel__a0_00003a457_00003a_00003areg__0;
 
-   assign _00005e_000060941 = channel__a0_00003a457_00003a_00003areg__1;
+   assign _00005e_000060950 = channel__a0_00003a457_00003a_00003areg__1;
 
-   assign _00005e_000060942 = channel__a0_00003a457_00003a_00003areg__0;
+   assign _00005e_000060951 = channel__a0_00003a457_00003a_00003areg__0;
 
-   assign _00005e_000060943 = channel__a0_00003a457_00003a_00003areg__1;
+   assign _00005e_000060952 = channel__a0_00003a457_00003a_00003areg__1;
 
-   assign _00005e_000060944 = channel__a0_00003a457_00003a_00003arinc_00003a469_00003a_00003aabus__r;
+   assign _00005e_000060953 = channel__a0_00003a457_00003a_00003arinc_00003a469_00003a_00003aabus__r;
 
    always @( posedge clk ) begin
 
