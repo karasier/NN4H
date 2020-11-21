@@ -44,20 +44,25 @@ system :lstm_test do
           :ack_network_sig, # ニューラルネット:ワークのack:tanh
 
           :ack_fill_tanh,
-          :ack_network_tanh
+          :ack_network_tanh,
 
-    inputs = quantize(inputs, typ[0], decimal_width)
+          :req_mul,
+          :ack_mul
+
+    
+    inputs = quantize(inputs, typ, decimal_width)
     # NOTE: 入力のメモリに関して
     # network_constructorにはbranchを渡すので、mem_romからmem_dualやmem_fileに変更できる。
     # ただし、branchはrincのみ。つまり、rincのbranchを持つメモリなら何でもOK。
-    mem_rom(typ[0], columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom
+    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom
 
-    mem_dual(typ[-1], columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram
 
-    mem_rom(typ[0], columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_tanh) # 入力値を格納するrom
+    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_tanh) # 入力値を格納するrom
 
-    mem_dual(typ[-1], columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_tanh) # 出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_tanh) # 出力値を格納するram
 
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_mul)
 
     reader_inputs_sig = rom_inputs_sig.branch(:rinc) # 入力値の読み出し用branch
     writer_outputs_sig = ram_outputs_sig.branch(:winc) # 出力値の書き込み用branch
@@ -65,9 +70,21 @@ system :lstm_test do
     reader_inputs_tanh = rom_inputs_tanh.branch(:rinc) # 入力値の読み出し用branch
     writer_outputs_tanh = ram_outputs_tanh.branch(:winc) # 出力値の書き込み用branch
 
+    mul_inputs_sig = ram_outputs_sig.branch(:anum)
+    mul_inputs_tanh = ram_outputs_tanh.branch(:anum)
+    mul_outputs = ram_outputs_mul.branch(:anum)
+
+    sig_outputs = columns[-1].times.map{ |i| mul_inputs_sig.wrap(i) }
+    tanh_outputs = columns[-1].times.map{ |i| mul_inputs_tanh.wrap(i) }
+    mul_outputs = columns[-1].times.map{ |i| mul_outputs.wrap(i) }
+
     network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:sigmoid_neural_network).(clk, rst, req, fill, ack_fill_sig, ack_network_sig)
 
     network_constructor(columns, func_tanh, typ, integer_width, decimal_width, address_width, reader_inputs_tanh, writer_outputs_tanh, weights_tanh, biases_tanh).(:tanh_neural_network).(clk, rst, req, fill, ack_fill_tanh, ack_network_tanh)
+
+    req_mul <= ack_network_sig & ack_network_tanh
+
+    mul_n(typ, clk, req_mul, ack_mul, sig_outputs, tanh_outputs, mul_outputs)
 
     timed do
       # リセット
