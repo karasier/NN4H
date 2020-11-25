@@ -1,0 +1,3636 @@
+$date
+   22 11 2020 03:15
+$end
+$version
+   Generated from HDLRuby simulator
+$end
+$comment
+   Is it an easter egg?
+$end
+$timescale 1ps $end
+$scope module __$T0 $end
+$var wire 1 __$T0$__$T$clk clk $end
+$var wire 1 __$T0$__$T$rst rst $end
+$var wire 1 __$T0$__$T$req req $end
+$var wire 1 __$T0$__$T$fill fill $end
+$var wire 1 __$T0$__$T$ack_fill_sig ack_fill_sig $end
+$var wire 1 __$T0$__$T$ack_network_sig ack_network_sig $end
+$var wire 1 __$T0$__$T$ack_fill_tanh ack_fill_tanh $end
+$var wire 1 __$T0$__$T$ack_network_tanh ack_network_tanh $end
+$var wire 1 __$T0$__$T$req_mul req_mul $end
+$var wire 1 __$T0$__$T$ack_mul ack_mul $end
+$var wire 8 __$T0$__$T$$18 $18 $end
+$var wire 8 __$T0$__$T$$56 $56 $end
+$var wire 8 __$T0$__$T$$79 $79 $end
+$scope module sigmoid_neural_network $end
+$var wire 1 sigmoid_neural_network$T0$clk clk $end
+$var wire 1 sigmoid_neural_network$T0$rst rst $end
+$var wire 1 sigmoid_neural_network$T0$req req $end
+$var wire 1 sigmoid_neural_network$T0$fill fill $end
+$var wire 8 sigmoid_neural_network$T0$$10 $10 $end
+$var wire 1 sigmoid_neural_network$T0$ack_fill ack_fill $end
+$var wire 1 sigmoid_neural_network$T0$ack_network ack_network $end
+$var wire 1 sigmoid_neural_network$T0$$8 $8 $end
+$var wire 1 sigmoid_neural_network$T0$$9 $9 $end
+$var wire 8 sigmoid_neural_network$T0$$29 $29 $end
+$var wire 1 sigmoid_neural_network$T0$$30 $30 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_0 ack_0 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_1 ack_1 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs fill_inputs $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$value_inputs value_inputs $end
+$var wire 2 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_inputs address_inputs $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs flag_inputs $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_inputs ack_inputs $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116 $116 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$117 $117 $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$$118 $118 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_outputs fill_outputs $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$value_outputs value_outputs $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_outputs address_outputs $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_outputs flag_outputs $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$$139 $139 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$140 $140 $end
+$scope module layer0 $end
+$var wire 1 layer0$T1$clk clk $end
+$var wire 1 layer0$T1$rst rst $end
+$var wire 1 layer0$T1$req req $end
+$var wire 8 layer0$T1$$114 $114 $end
+$var wire 1 layer0$T1$ack_layer ack_layer $end
+$var wire 1 layer0$T1$$112 $112 $end
+$var wire 1 layer0$T1$$113 $113 $end
+$var wire 8 layer0$T1$$154 $154 $end
+$var wire 8 layer0$T1$$155 $155 $end
+$var wire 1 layer0$T1$layer0$T$req_mac req_mac $end
+$var wire 1 layer0$T1$layer0$T$ack ack $end
+$var wire 1 layer0$T1$layer0$T$ack_mac ack_mac $end
+$var wire 1 layer0$T1$layer0$T$ack_add ack_add $end
+$var wire 8 layer0$T1$layer0$T$$191 $191 $end
+$var wire 1 layer0$T1$layer0$T$$189 $189 $end
+$var wire 1 layer0$T1$layer0$T$$190 $190 $end
+$var wire 8 layer0$T1$layer0$T$$214 $214 $end
+$var wire 8 layer0$T1$layer0$T$$215 $215 $end
+$var wire 8 layer0$T1$layer0$T$$206 $206 $end
+$var wire 1 layer0$T1$layer0$T$$204 $204 $end
+$var wire 1 layer0$T1$layer0$T$$205 $205 $end
+$var wire 8 layer0$T1$layer0$T$$255 $255 $end
+$var wire 1 layer0$T1$layer0$T$$256 $256 $end
+$var wire 1 layer0$T1$layer0$T$$253 $253 $end
+$var wire 1 layer0$T1$layer0$T$$254 $254 $end
+$var wire 8 layer0$T1$layer0$T$$283 $283 $end
+$var wire 8 layer0$T1$layer0$T$$284 $284 $end
+$var wire 8 layer0$T1$layer0$T$$270 $270 $end
+$var wire 1 layer0$T1$layer0$T$$271 $271 $end
+$var wire 1 layer0$T1$layer0$T$$268 $268 $end
+$var wire 1 layer0$T1$layer0$T$$269 $269 $end
+$var wire 8 layer0$T1$layer0$T$value_z0 value_z0 $end
+$var wire 8 layer0$T1$layer0$T$value_z1 value_z1 $end
+$var wire 8 layer0$T1$layer0$T$value_a0 value_a0 $end
+$var wire 8 layer0$T1$layer0$T$value_a1 value_a1 $end
+$var wire 1 layer0$T1$layer0$T$flag_z0 flag_z0 $end
+$var wire 1 layer0$T1$layer0$T$flag_z1 flag_z1 $end
+$var wire 1 layer0$T1$layer0$T$ack_a0 ack_a0 $end
+$var wire 1 layer0$T1$layer0$T$ack_a1 ack_a1 $end
+$scope module counter $end
+$var wire 1 counter$T3$clk clk $end
+$var wire 1 counter$T3$ack ack $end
+$var wire 1 counter$T3$rst rst $end
+$var wire 1 counter$T3$ack_mac ack_mac $end
+$var wire 2 counter$T3$counter$T$q q $end
+$upscope $end
+$scope module func0 $end
+$var wire 8 func0$T3$z_value z_value $end
+$var wire 8 func0$T3$a a $end
+$var wire 8 func0$T3$func0$T$base base $end
+$var wire 8 func0$T3$func0$T$next_data next_data $end
+$var wire 4 func0$T3$func0$T$address address $end
+$var wire 8 func0$T3$func0$T$remaining remaining $end
+$var wire 8 func0$T3$func0$T$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T5$address address $end
+$var wire 8 my_lut$T5$base base $end
+$var wire 8 my_lut$T5$next_data next_data $end
+$var wire 128 my_lut$T5$my_lut$T$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T5$base base $end
+$var wire 8 my_interpolator$T5$next_data next_data $end
+$var wire 8 my_interpolator$T5$change change $end
+$var wire 8 my_interpolator$T5$remaining remaining $end
+$var wire 8 my_interpolator$T5$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module func1 $end
+$var wire 8 func1$T1$z_value z_value $end
+$var wire 8 func1$T1$a a $end
+$var wire 8 func1$T1$func1$T$base base $end
+$var wire 8 func1$T1$func1$T$next_data next_data $end
+$var wire 4 func1$T1$func1$T$address address $end
+$var wire 8 func1$T1$func1$T$remaining remaining $end
+$var wire 8 func1$T1$func1$T$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T00$address address $end
+$var wire 8 my_lut$T00$base base $end
+$var wire 8 my_lut$T00$next_data next_data $end
+$var wire 128 my_lut$T00$my_lut$T0$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T00$base base $end
+$var wire 8 my_interpolator$T00$next_data next_data $end
+$var wire 8 my_interpolator$T00$change change $end
+$var wire 8 my_interpolator$T00$remaining remaining $end
+$var wire 8 my_interpolator$T00$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module channel_w0$182 $end
+$var wire 1 layer0$T1$layer0$T$channel_w0$182$trig_r trig_r $end
+$var wire 8 layer0$T1$layer0$T$channel_w0$182$dbus_r dbus_r $end
+$var wire 1 layer0$T1$layer0$T$channel_w0$182$abus_r abus_r $end
+$var wire 16 layer0$T1$layer0$T$channel_w0$182$mem mem $end
+$upscope $end
+$scope module channel_w1$197 $end
+$var wire 1 layer0$T1$layer0$T$channel_w1$197$trig_r trig_r $end
+$var wire 8 layer0$T1$layer0$T$channel_w1$197$dbus_r dbus_r $end
+$var wire 1 layer0$T1$layer0$T$channel_w1$197$abus_r abus_r $end
+$var wire 16 layer0$T1$layer0$T$channel_w1$197$mem mem $end
+$upscope $end
+$scope module channel_accum$212 $end
+$var wire 8 layer0$T1$layer0$T$channel_accum$212$reg_0 reg_0 $end
+$var wire 8 layer0$T1$layer0$T$channel_accum$212$reg_1 reg_1 $end
+$scope module rinc$224 $end
+$var wire 1 layer0$T1$layer0$T$channel_accum$212$rinc$224$abus_r abus_r $end
+$upscope $end
+$scope module winc$229 $end
+$var wire 1 layer0$T1$layer0$T$channel_accum$212$winc$229$abus_w abus_w $end
+$upscope $end
+$scope module rdec$234 $end
+$var wire 1 layer0$T1$layer0$T$channel_accum$212$rdec$234$abus_r abus_r $end
+$upscope $end
+$scope module wdec$239 $end
+$var wire 1 layer0$T1$layer0$T$channel_accum$212$wdec$239$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module mac_n1$244 $end
+$var wire 8 layer0$T1$layer0$T$mac_n1$244$lv0 lv0 $end
+$var wire 8 layer0$T1$layer0$T$mac_n1$244$lv1 lv1 $end
+$var wire 8 layer0$T1$layer0$T$mac_n1$244$av0 av0 $end
+$var wire 8 layer0$T1$layer0$T$mac_n1$244$av1 av1 $end
+$var wire 8 layer0$T1$layer0$T$mac_n1$244$rv rv $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$lvok0 lvok0 $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$lvok1 lvok1 $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$rvok rvok $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$wok0 wok0 $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$wok1 wok1 $end
+$var wire 1 layer0$T1$layer0$T$mac_n1$244$run run $end
+$upscope $end
+$scope module channel_b0$251 $end
+$var wire 1 layer0$T1$layer0$T$channel_b0$251$trig_r trig_r $end
+$var wire 8 layer0$T1$layer0$T$channel_b0$251$dbus_r dbus_r $end
+$var wire 1 layer0$T1$layer0$T$channel_b0$251$abus_r abus_r $end
+$var wire 8 layer0$T1$layer0$T$channel_b0$251$mem mem $end
+$upscope $end
+$scope module channel_b1$266 $end
+$var wire 1 layer0$T1$layer0$T$channel_b1$266$trig_r trig_r $end
+$var wire 8 layer0$T1$layer0$T$channel_b1$266$dbus_r dbus_r $end
+$var wire 1 layer0$T1$layer0$T$channel_b1$266$abus_r abus_r $end
+$var wire 8 layer0$T1$layer0$T$channel_b1$266$mem mem $end
+$upscope $end
+$scope module channel_z$281 $end
+$var wire 8 layer0$T1$layer0$T$channel_z$281$reg_0 reg_0 $end
+$var wire 8 layer0$T1$layer0$T$channel_z$281$reg_1 reg_1 $end
+$scope module rinc$293 $end
+$var wire 1 layer0$T1$layer0$T$channel_z$281$rinc$293$abus_r abus_r $end
+$upscope $end
+$scope module winc$297 $end
+$var wire 1 layer0$T1$layer0$T$channel_z$281$winc$297$abus_w abus_w $end
+$upscope $end
+$scope module rdec$301 $end
+$var wire 1 layer0$T1$layer0$T$channel_z$281$rdec$301$abus_r abus_r $end
+$upscope $end
+$scope module wdec$306 $end
+$var wire 1 layer0$T1$layer0$T$channel_z$281$wdec$306$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module add_n$311 $end
+$var wire 8 layer0$T1$layer0$T$add_n$311$lv0 lv0 $end
+$var wire 8 layer0$T1$layer0$T$add_n$311$lv1 lv1 $end
+$var wire 8 layer0$T1$layer0$T$add_n$311$rv0 rv0 $end
+$var wire 8 layer0$T1$layer0$T$add_n$311$rv1 rv1 $end
+$var wire 1 layer0$T1$layer0$T$add_n$311$lvok0 lvok0 $end
+$var wire 1 layer0$T1$layer0$T$add_n$311$lvok1 lvok1 $end
+$var wire 1 layer0$T1$layer0$T$add_n$311$rvok0 rvok0 $end
+$var wire 1 layer0$T1$layer0$T$add_n$311$rvok1 rvok1 $end
+$var wire 1 layer0$T1$layer0$T$add_n$311$run run $end
+$upscope $end
+$upscope $end
+$scope module layer1 $end
+$var wire 1 layer1$T1$clk clk $end
+$var wire 1 layer1$T1$rst rst $end
+$var wire 1 layer1$T1$req req $end
+$var wire 8 layer1$T1$$165 $165 $end
+$var wire 8 layer1$T1$$166 $166 $end
+$var wire 1 layer1$T1$ack_layer ack_layer $end
+$var wire 1 layer1$T1$$167 $167 $end
+$var wire 8 layer1$T1$$131 $131 $end
+$var wire 1 layer1$T1$layer1$T$req_mac req_mac $end
+$var wire 1 layer1$T1$layer1$T$ack ack $end
+$var wire 1 layer1$T1$layer1$T$ack_mac ack_mac $end
+$var wire 1 layer1$T1$layer1$T$ack_add ack_add $end
+$var wire 8 layer1$T1$layer1$T$$331 $331 $end
+$var wire 1 layer1$T1$layer1$T$$329 $329 $end
+$var wire 1 layer1$T1$layer1$T$$330 $330 $end
+$var wire 8 layer1$T1$layer1$T$$339 $339 $end
+$var wire 8 layer1$T1$layer1$T$$371 $371 $end
+$var wire 1 layer1$T1$layer1$T$$372 $372 $end
+$var wire 1 layer1$T1$layer1$T$$369 $369 $end
+$var wire 1 layer1$T1$layer1$T$$370 $370 $end
+$var wire 8 layer1$T1$layer1$T$$384 $384 $end
+$var wire 8 layer1$T1$layer1$T$value_z0 value_z0 $end
+$var wire 8 layer1$T1$layer1$T$value_a0 value_a0 $end
+$var wire 1 layer1$T1$layer1$T$flag_z0 flag_z0 $end
+$var wire 1 layer1$T1$layer1$T$ack_a0 ack_a0 $end
+$scope module counter $end
+$var wire 1 counter$T00$clk clk $end
+$var wire 1 counter$T00$ack ack $end
+$var wire 1 counter$T00$rst rst $end
+$var wire 1 counter$T00$ack_mac ack_mac $end
+$var wire 2 counter$T00$counter$T0$q q $end
+$upscope $end
+$scope module func0 $end
+$var wire 8 func0$T00$z_value z_value $end
+$var wire 8 func0$T00$a a $end
+$var wire 8 func0$T00$func0$T0$base base $end
+$var wire 8 func0$T00$func0$T0$next_data next_data $end
+$var wire 4 func0$T00$func0$T0$address address $end
+$var wire 8 func0$T00$func0$T0$remaining remaining $end
+$var wire 8 func0$T00$func0$T0$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T10$address address $end
+$var wire 8 my_lut$T10$base base $end
+$var wire 8 my_lut$T10$next_data next_data $end
+$var wire 128 my_lut$T10$my_lut$T1$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T10$base base $end
+$var wire 8 my_interpolator$T10$next_data next_data $end
+$var wire 8 my_interpolator$T10$change change $end
+$var wire 8 my_interpolator$T10$remaining remaining $end
+$var wire 8 my_interpolator$T10$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module channel_w0$322 $end
+$var wire 1 layer1$T1$layer1$T$channel_w0$322$trig_r trig_r $end
+$var wire 8 layer1$T1$layer1$T$channel_w0$322$dbus_r dbus_r $end
+$var wire 1 layer1$T1$layer1$T$channel_w0$322$abus_r abus_r $end
+$var wire 16 layer1$T1$layer1$T$channel_w0$322$mem mem $end
+$upscope $end
+$scope module channel_accum$337 $end
+$var wire 8 layer1$T1$layer1$T$channel_accum$337$reg_0 reg_0 $end
+$scope module rinc$346 $end
+$var wire 1 layer1$T1$layer1$T$channel_accum$337$rinc$346$abus_r abus_r $end
+$upscope $end
+$scope module winc$350 $end
+$var wire 1 layer1$T1$layer1$T$channel_accum$337$winc$350$abus_w abus_w $end
+$upscope $end
+$scope module rdec$354 $end
+$var wire 1 layer1$T1$layer1$T$channel_accum$337$rdec$354$abus_r abus_r $end
+$upscope $end
+$scope module wdec$358 $end
+$var wire 1 layer1$T1$layer1$T$channel_accum$337$wdec$358$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module mac_n1$362 $end
+$var wire 8 layer1$T1$layer1$T$mac_n1$362$lv0 lv0 $end
+$var wire 8 layer1$T1$layer1$T$mac_n1$362$av0 av0 $end
+$var wire 8 layer1$T1$layer1$T$mac_n1$362$rv rv $end
+$var wire 1 layer1$T1$layer1$T$mac_n1$362$lvok0 lvok0 $end
+$var wire 1 layer1$T1$layer1$T$mac_n1$362$rvok rvok $end
+$var wire 1 layer1$T1$layer1$T$mac_n1$362$wok0 wok0 $end
+$var wire 1 layer1$T1$layer1$T$mac_n1$362$run run $end
+$upscope $end
+$scope module channel_b0$367 $end
+$var wire 1 layer1$T1$layer1$T$channel_b0$367$trig_r trig_r $end
+$var wire 8 layer1$T1$layer1$T$channel_b0$367$dbus_r dbus_r $end
+$var wire 1 layer1$T1$layer1$T$channel_b0$367$abus_r abus_r $end
+$var wire 8 layer1$T1$layer1$T$channel_b0$367$mem mem $end
+$upscope $end
+$scope module channel_z$382 $end
+$var wire 8 layer1$T1$layer1$T$channel_z$382$reg_0 reg_0 $end
+$scope module rinc$391 $end
+$var wire 1 layer1$T1$layer1$T$channel_z$382$rinc$391$abus_r abus_r $end
+$upscope $end
+$scope module winc$394 $end
+$var wire 1 layer1$T1$layer1$T$channel_z$382$winc$394$abus_w abus_w $end
+$upscope $end
+$scope module rdec$397 $end
+$var wire 1 layer1$T1$layer1$T$channel_z$382$rdec$397$abus_r abus_r $end
+$upscope $end
+$scope module wdec$401 $end
+$var wire 1 layer1$T1$layer1$T$channel_z$382$wdec$401$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module add_n$405 $end
+$var wire 8 layer1$T1$layer1$T$add_n$405$lv0 lv0 $end
+$var wire 8 layer1$T1$layer1$T$add_n$405$rv0 rv0 $end
+$var wire 1 layer1$T1$layer1$T$add_n$405$lvok0 lvok0 $end
+$var wire 1 layer1$T1$layer1$T$add_n$405$rvok0 rvok0 $end
+$var wire 1 layer1$T1$layer1$T$add_n$405$run run $end
+$upscope $end
+$upscope $end
+$scope module channel_inputs$100 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r trig_r $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w trig_w $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_r dbus_r $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_w dbus_w $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_r abus_r $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_w abus_w $end
+$var wire 16 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$mem mem $end
+$scope module rinc$111 $end
+$upscope $end
+$upscope $end
+$scope module channel_outputs$129 $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$reg_0 reg_0 $end
+$scope module anum$130 $end
+$upscope $end
+$scope module rinc$138 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$rinc$138$abus_r abus_r $end
+$upscope $end
+$scope module winc$141 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$winc$141$abus_w abus_w $end
+$upscope $end
+$scope module rdec$144 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$rdec$144$abus_r abus_r $end
+$upscope $end
+$scope module wdec$148 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$wdec$148$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module channel_a0$152 $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_0 reg_0 $end
+$var wire 8 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_1 reg_1 $end
+$scope module anum$153 $end
+$upscope $end
+$scope module rinc$164 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rinc$164$abus_r abus_r $end
+$upscope $end
+$scope module winc$168 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$winc$168$abus_w abus_w $end
+$upscope $end
+$scope module rdec$172 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rdec$172$abus_r abus_r $end
+$upscope $end
+$scope module wdec$177 $end
+$var wire 1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$wdec$177$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tanh_neural_network $end
+$var wire 1 tanh_neural_network$T0$clk clk $end
+$var wire 1 tanh_neural_network$T0$rst rst $end
+$var wire 1 tanh_neural_network$T0$req req $end
+$var wire 1 tanh_neural_network$T0$fill fill $end
+$var wire 8 tanh_neural_network$T0$$48 $48 $end
+$var wire 1 tanh_neural_network$T0$ack_fill ack_fill $end
+$var wire 1 tanh_neural_network$T0$ack_network ack_network $end
+$var wire 1 tanh_neural_network$T0$$46 $46 $end
+$var wire 1 tanh_neural_network$T0$$47 $47 $end
+$var wire 8 tanh_neural_network$T0$$67 $67 $end
+$var wire 1 tanh_neural_network$T0$$68 $68 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$ack_0 ack_0 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$ack_1 ack_1 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs fill_inputs $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$value_inputs value_inputs $end
+$var wire 2 tanh_neural_network$T0$tanh_neural_network$T$address_inputs address_inputs $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs flag_inputs $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$ack_inputs ack_inputs $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$$432 $432 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$$433 $433 $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$$434 $434 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$fill_outputs fill_outputs $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$value_outputs value_outputs $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$address_outputs address_outputs $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$flag_outputs flag_outputs $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$$455 $455 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$$456 $456 $end
+$scope module layer0 $end
+$var wire 1 layer0$T00$clk clk $end
+$var wire 1 layer0$T00$rst rst $end
+$var wire 1 layer0$T00$req req $end
+$var wire 8 layer0$T00$$430 $430 $end
+$var wire 1 layer0$T00$ack_layer ack_layer $end
+$var wire 1 layer0$T00$$428 $428 $end
+$var wire 1 layer0$T00$$429 $429 $end
+$var wire 8 layer0$T00$$470 $470 $end
+$var wire 8 layer0$T00$$471 $471 $end
+$var wire 1 layer0$T00$layer0$T0$req_mac req_mac $end
+$var wire 1 layer0$T00$layer0$T0$ack ack $end
+$var wire 1 layer0$T00$layer0$T0$ack_mac ack_mac $end
+$var wire 1 layer0$T00$layer0$T0$ack_add ack_add $end
+$var wire 8 layer0$T00$layer0$T0$$507 $507 $end
+$var wire 1 layer0$T00$layer0$T0$$505 $505 $end
+$var wire 1 layer0$T00$layer0$T0$$506 $506 $end
+$var wire 8 layer0$T00$layer0$T0$$530 $530 $end
+$var wire 8 layer0$T00$layer0$T0$$531 $531 $end
+$var wire 8 layer0$T00$layer0$T0$$522 $522 $end
+$var wire 1 layer0$T00$layer0$T0$$520 $520 $end
+$var wire 1 layer0$T00$layer0$T0$$521 $521 $end
+$var wire 8 layer0$T00$layer0$T0$$571 $571 $end
+$var wire 1 layer0$T00$layer0$T0$$572 $572 $end
+$var wire 1 layer0$T00$layer0$T0$$569 $569 $end
+$var wire 1 layer0$T00$layer0$T0$$570 $570 $end
+$var wire 8 layer0$T00$layer0$T0$$599 $599 $end
+$var wire 8 layer0$T00$layer0$T0$$600 $600 $end
+$var wire 8 layer0$T00$layer0$T0$$586 $586 $end
+$var wire 1 layer0$T00$layer0$T0$$587 $587 $end
+$var wire 1 layer0$T00$layer0$T0$$584 $584 $end
+$var wire 1 layer0$T00$layer0$T0$$585 $585 $end
+$var wire 8 layer0$T00$layer0$T0$value_z0 value_z0 $end
+$var wire 8 layer0$T00$layer0$T0$value_z1 value_z1 $end
+$var wire 8 layer0$T00$layer0$T0$value_a0 value_a0 $end
+$var wire 8 layer0$T00$layer0$T0$value_a1 value_a1 $end
+$var wire 1 layer0$T00$layer0$T0$flag_z0 flag_z0 $end
+$var wire 1 layer0$T00$layer0$T0$flag_z1 flag_z1 $end
+$var wire 1 layer0$T00$layer0$T0$ack_a0 ack_a0 $end
+$var wire 1 layer0$T00$layer0$T0$ack_a1 ack_a1 $end
+$scope module counter $end
+$var wire 1 counter$T10$clk clk $end
+$var wire 1 counter$T10$ack ack $end
+$var wire 1 counter$T10$rst rst $end
+$var wire 1 counter$T10$ack_mac ack_mac $end
+$var wire 2 counter$T10$counter$T1$q q $end
+$upscope $end
+$scope module func0 $end
+$var wire 8 func0$T10$z_value z_value $end
+$var wire 8 func0$T10$a a $end
+$var wire 8 func0$T10$func0$T1$base base $end
+$var wire 8 func0$T10$func0$T1$next_data next_data $end
+$var wire 4 func0$T10$func0$T1$address address $end
+$var wire 8 func0$T10$func0$T1$remaining remaining $end
+$var wire 8 func0$T10$func0$T1$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T20$address address $end
+$var wire 8 my_lut$T20$base base $end
+$var wire 8 my_lut$T20$next_data next_data $end
+$var wire 128 my_lut$T20$my_lut$T2$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T20$base base $end
+$var wire 8 my_interpolator$T20$next_data next_data $end
+$var wire 8 my_interpolator$T20$change change $end
+$var wire 8 my_interpolator$T20$remaining remaining $end
+$var wire 8 my_interpolator$T20$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module func1 $end
+$var wire 8 func1$T00$z_value z_value $end
+$var wire 8 func1$T00$a a $end
+$var wire 8 func1$T00$func1$T0$base base $end
+$var wire 8 func1$T00$func1$T0$next_data next_data $end
+$var wire 4 func1$T00$func1$T0$address address $end
+$var wire 8 func1$T00$func1$T0$remaining remaining $end
+$var wire 8 func1$T00$func1$T0$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T30$address address $end
+$var wire 8 my_lut$T30$base base $end
+$var wire 8 my_lut$T30$next_data next_data $end
+$var wire 128 my_lut$T30$my_lut$T3$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T30$base base $end
+$var wire 8 my_interpolator$T30$next_data next_data $end
+$var wire 8 my_interpolator$T30$change change $end
+$var wire 8 my_interpolator$T30$remaining remaining $end
+$var wire 8 my_interpolator$T30$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module channel_w0$498 $end
+$var wire 1 layer0$T00$layer0$T0$channel_w0$498$trig_r trig_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_w0$498$dbus_r dbus_r $end
+$var wire 1 layer0$T00$layer0$T0$channel_w0$498$abus_r abus_r $end
+$var wire 16 layer0$T00$layer0$T0$channel_w0$498$mem mem $end
+$upscope $end
+$scope module channel_w1$513 $end
+$var wire 1 layer0$T00$layer0$T0$channel_w1$513$trig_r trig_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_w1$513$dbus_r dbus_r $end
+$var wire 1 layer0$T00$layer0$T0$channel_w1$513$abus_r abus_r $end
+$var wire 16 layer0$T00$layer0$T0$channel_w1$513$mem mem $end
+$upscope $end
+$scope module channel_accum$528 $end
+$var wire 8 layer0$T00$layer0$T0$channel_accum$528$reg_0 reg_0 $end
+$var wire 8 layer0$T00$layer0$T0$channel_accum$528$reg_1 reg_1 $end
+$scope module rinc$540 $end
+$var wire 1 layer0$T00$layer0$T0$channel_accum$528$rinc$540$abus_r abus_r $end
+$upscope $end
+$scope module winc$545 $end
+$var wire 1 layer0$T00$layer0$T0$channel_accum$528$winc$545$abus_w abus_w $end
+$upscope $end
+$scope module rdec$550 $end
+$var wire 1 layer0$T00$layer0$T0$channel_accum$528$rdec$550$abus_r abus_r $end
+$upscope $end
+$scope module wdec$555 $end
+$var wire 1 layer0$T00$layer0$T0$channel_accum$528$wdec$555$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module mac_n1$560 $end
+$var wire 8 layer0$T00$layer0$T0$mac_n1$560$lv0 lv0 $end
+$var wire 8 layer0$T00$layer0$T0$mac_n1$560$lv1 lv1 $end
+$var wire 8 layer0$T00$layer0$T0$mac_n1$560$av0 av0 $end
+$var wire 8 layer0$T00$layer0$T0$mac_n1$560$av1 av1 $end
+$var wire 8 layer0$T00$layer0$T0$mac_n1$560$rv rv $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$lvok0 lvok0 $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$lvok1 lvok1 $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$rvok rvok $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$wok0 wok0 $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$wok1 wok1 $end
+$var wire 1 layer0$T00$layer0$T0$mac_n1$560$run run $end
+$upscope $end
+$scope module channel_b0$567 $end
+$var wire 1 layer0$T00$layer0$T0$channel_b0$567$trig_r trig_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_b0$567$dbus_r dbus_r $end
+$var wire 1 layer0$T00$layer0$T0$channel_b0$567$abus_r abus_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_b0$567$mem mem $end
+$upscope $end
+$scope module channel_b1$582 $end
+$var wire 1 layer0$T00$layer0$T0$channel_b1$582$trig_r trig_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_b1$582$dbus_r dbus_r $end
+$var wire 1 layer0$T00$layer0$T0$channel_b1$582$abus_r abus_r $end
+$var wire 8 layer0$T00$layer0$T0$channel_b1$582$mem mem $end
+$upscope $end
+$scope module channel_z$597 $end
+$var wire 8 layer0$T00$layer0$T0$channel_z$597$reg_0 reg_0 $end
+$var wire 8 layer0$T00$layer0$T0$channel_z$597$reg_1 reg_1 $end
+$scope module rinc$609 $end
+$var wire 1 layer0$T00$layer0$T0$channel_z$597$rinc$609$abus_r abus_r $end
+$upscope $end
+$scope module winc$613 $end
+$var wire 1 layer0$T00$layer0$T0$channel_z$597$winc$613$abus_w abus_w $end
+$upscope $end
+$scope module rdec$617 $end
+$var wire 1 layer0$T00$layer0$T0$channel_z$597$rdec$617$abus_r abus_r $end
+$upscope $end
+$scope module wdec$622 $end
+$var wire 1 layer0$T00$layer0$T0$channel_z$597$wdec$622$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module add_n$627 $end
+$var wire 8 layer0$T00$layer0$T0$add_n$627$lv0 lv0 $end
+$var wire 8 layer0$T00$layer0$T0$add_n$627$lv1 lv1 $end
+$var wire 8 layer0$T00$layer0$T0$add_n$627$rv0 rv0 $end
+$var wire 8 layer0$T00$layer0$T0$add_n$627$rv1 rv1 $end
+$var wire 1 layer0$T00$layer0$T0$add_n$627$lvok0 lvok0 $end
+$var wire 1 layer0$T00$layer0$T0$add_n$627$lvok1 lvok1 $end
+$var wire 1 layer0$T00$layer0$T0$add_n$627$rvok0 rvok0 $end
+$var wire 1 layer0$T00$layer0$T0$add_n$627$rvok1 rvok1 $end
+$var wire 1 layer0$T00$layer0$T0$add_n$627$run run $end
+$upscope $end
+$upscope $end
+$scope module layer1 $end
+$var wire 1 layer1$T00$clk clk $end
+$var wire 1 layer1$T00$rst rst $end
+$var wire 1 layer1$T00$req req $end
+$var wire 8 layer1$T00$$481 $481 $end
+$var wire 8 layer1$T00$$482 $482 $end
+$var wire 1 layer1$T00$ack_layer ack_layer $end
+$var wire 1 layer1$T00$$483 $483 $end
+$var wire 8 layer1$T00$$447 $447 $end
+$var wire 1 layer1$T00$layer1$T0$req_mac req_mac $end
+$var wire 1 layer1$T00$layer1$T0$ack ack $end
+$var wire 1 layer1$T00$layer1$T0$ack_mac ack_mac $end
+$var wire 1 layer1$T00$layer1$T0$ack_add ack_add $end
+$var wire 8 layer1$T00$layer1$T0$$647 $647 $end
+$var wire 1 layer1$T00$layer1$T0$$645 $645 $end
+$var wire 1 layer1$T00$layer1$T0$$646 $646 $end
+$var wire 8 layer1$T00$layer1$T0$$655 $655 $end
+$var wire 8 layer1$T00$layer1$T0$$687 $687 $end
+$var wire 1 layer1$T00$layer1$T0$$688 $688 $end
+$var wire 1 layer1$T00$layer1$T0$$685 $685 $end
+$var wire 1 layer1$T00$layer1$T0$$686 $686 $end
+$var wire 8 layer1$T00$layer1$T0$$700 $700 $end
+$var wire 8 layer1$T00$layer1$T0$value_z0 value_z0 $end
+$var wire 8 layer1$T00$layer1$T0$value_a0 value_a0 $end
+$var wire 1 layer1$T00$layer1$T0$flag_z0 flag_z0 $end
+$var wire 1 layer1$T00$layer1$T0$ack_a0 ack_a0 $end
+$scope module counter $end
+$var wire 1 counter$T20$clk clk $end
+$var wire 1 counter$T20$ack ack $end
+$var wire 1 counter$T20$rst rst $end
+$var wire 1 counter$T20$ack_mac ack_mac $end
+$var wire 2 counter$T20$counter$T2$q q $end
+$upscope $end
+$scope module func0 $end
+$var wire 8 func0$T20$z_value z_value $end
+$var wire 8 func0$T20$a a $end
+$var wire 8 func0$T20$func0$T2$base base $end
+$var wire 8 func0$T20$func0$T2$next_data next_data $end
+$var wire 4 func0$T20$func0$T2$address address $end
+$var wire 8 func0$T20$func0$T2$remaining remaining $end
+$var wire 8 func0$T20$func0$T2$change change $end
+$scope module my_lut $end
+$var wire 4 my_lut$T40$address address $end
+$var wire 8 my_lut$T40$base base $end
+$var wire 8 my_lut$T40$next_data next_data $end
+$var wire 128 my_lut$T40$my_lut$T4$lut lut $end
+$upscope $end
+$scope module my_interpolator $end
+$var wire 8 my_interpolator$T40$base base $end
+$var wire 8 my_interpolator$T40$next_data next_data $end
+$var wire 8 my_interpolator$T40$change change $end
+$var wire 8 my_interpolator$T40$remaining remaining $end
+$var wire 8 my_interpolator$T40$interpolated_value interpolated_value $end
+$upscope $end
+$upscope $end
+$scope module channel_w0$638 $end
+$var wire 1 layer1$T00$layer1$T0$channel_w0$638$trig_r trig_r $end
+$var wire 8 layer1$T00$layer1$T0$channel_w0$638$dbus_r dbus_r $end
+$var wire 1 layer1$T00$layer1$T0$channel_w0$638$abus_r abus_r $end
+$var wire 16 layer1$T00$layer1$T0$channel_w0$638$mem mem $end
+$upscope $end
+$scope module channel_accum$653 $end
+$var wire 8 layer1$T00$layer1$T0$channel_accum$653$reg_0 reg_0 $end
+$scope module rinc$662 $end
+$var wire 1 layer1$T00$layer1$T0$channel_accum$653$rinc$662$abus_r abus_r $end
+$upscope $end
+$scope module winc$666 $end
+$var wire 1 layer1$T00$layer1$T0$channel_accum$653$winc$666$abus_w abus_w $end
+$upscope $end
+$scope module rdec$670 $end
+$var wire 1 layer1$T00$layer1$T0$channel_accum$653$rdec$670$abus_r abus_r $end
+$upscope $end
+$scope module wdec$674 $end
+$var wire 1 layer1$T00$layer1$T0$channel_accum$653$wdec$674$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module mac_n1$678 $end
+$var wire 8 layer1$T00$layer1$T0$mac_n1$678$lv0 lv0 $end
+$var wire 8 layer1$T00$layer1$T0$mac_n1$678$av0 av0 $end
+$var wire 8 layer1$T00$layer1$T0$mac_n1$678$rv rv $end
+$var wire 1 layer1$T00$layer1$T0$mac_n1$678$lvok0 lvok0 $end
+$var wire 1 layer1$T00$layer1$T0$mac_n1$678$rvok rvok $end
+$var wire 1 layer1$T00$layer1$T0$mac_n1$678$wok0 wok0 $end
+$var wire 1 layer1$T00$layer1$T0$mac_n1$678$run run $end
+$upscope $end
+$scope module channel_b0$683 $end
+$var wire 1 layer1$T00$layer1$T0$channel_b0$683$trig_r trig_r $end
+$var wire 8 layer1$T00$layer1$T0$channel_b0$683$dbus_r dbus_r $end
+$var wire 1 layer1$T00$layer1$T0$channel_b0$683$abus_r abus_r $end
+$var wire 8 layer1$T00$layer1$T0$channel_b0$683$mem mem $end
+$upscope $end
+$scope module channel_z$698 $end
+$var wire 8 layer1$T00$layer1$T0$channel_z$698$reg_0 reg_0 $end
+$scope module rinc$707 $end
+$var wire 1 layer1$T00$layer1$T0$channel_z$698$rinc$707$abus_r abus_r $end
+$upscope $end
+$scope module winc$710 $end
+$var wire 1 layer1$T00$layer1$T0$channel_z$698$winc$710$abus_w abus_w $end
+$upscope $end
+$scope module rdec$713 $end
+$var wire 1 layer1$T00$layer1$T0$channel_z$698$rdec$713$abus_r abus_r $end
+$upscope $end
+$scope module wdec$717 $end
+$var wire 1 layer1$T00$layer1$T0$channel_z$698$wdec$717$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module add_n$721 $end
+$var wire 8 layer1$T00$layer1$T0$add_n$721$lv0 lv0 $end
+$var wire 8 layer1$T00$layer1$T0$add_n$721$rv0 rv0 $end
+$var wire 1 layer1$T00$layer1$T0$add_n$721$lvok0 lvok0 $end
+$var wire 1 layer1$T00$layer1$T0$add_n$721$rvok0 rvok0 $end
+$var wire 1 layer1$T00$layer1$T0$add_n$721$run run $end
+$upscope $end
+$upscope $end
+$scope module channel_inputs$416 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r trig_r $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w trig_w $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_r dbus_r $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_w dbus_w $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_r abus_r $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_w abus_w $end
+$var wire 16 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$mem mem $end
+$scope module rinc$427 $end
+$upscope $end
+$upscope $end
+$scope module channel_outputs$445 $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$reg_0 reg_0 $end
+$scope module anum$446 $end
+$upscope $end
+$scope module rinc$454 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$rinc$454$abus_r abus_r $end
+$upscope $end
+$scope module winc$457 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$winc$457$abus_w abus_w $end
+$upscope $end
+$scope module rdec$460 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$rdec$460$abus_r abus_r $end
+$upscope $end
+$scope module wdec$464 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$wdec$464$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module channel_a0$468 $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_0 reg_0 $end
+$var wire 8 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_1 reg_1 $end
+$scope module anum$469 $end
+$upscope $end
+$scope module rinc$480 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rinc$480$abus_r abus_r $end
+$upscope $end
+$scope module winc$484 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$winc$484$abus_w abus_w $end
+$upscope $end
+$scope module rdec$488 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rdec$488$abus_r abus_r $end
+$upscope $end
+$scope module wdec$493 $end
+$var wire 1 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$wdec$493$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module rom_inputs_sig$1 $end
+$var wire 1 __$T0$__$T$rom_inputs_sig$1$trig_r trig_r $end
+$var wire 8 __$T0$__$T$rom_inputs_sig$1$dbus_r dbus_r $end
+$var wire 1 __$T0$__$T$rom_inputs_sig$1$abus_r abus_r $end
+$var wire 16 __$T0$__$T$rom_inputs_sig$1$mem mem $end
+$scope module rinc$7 $end
+$upscope $end
+$upscope $end
+$scope module ram_outputs_sig$16 $end
+$var wire 8 __$T0$__$T$ram_outputs_sig$16$reg_0 reg_0 $end
+$scope module rinc$25 $end
+$var wire 1 __$T0$__$T$ram_outputs_sig$16$rinc$25$abus_r abus_r $end
+$upscope $end
+$scope module winc$28 $end
+$var wire 1 __$T0$__$T$ram_outputs_sig$16$winc$28$abus_w abus_w $end
+$upscope $end
+$scope module rdec$31 $end
+$var wire 1 __$T0$__$T$ram_outputs_sig$16$rdec$31$abus_r abus_r $end
+$upscope $end
+$scope module wdec$35 $end
+$var wire 1 __$T0$__$T$ram_outputs_sig$16$wdec$35$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module rom_inputs_tanh$39 $end
+$var wire 1 __$T0$__$T$rom_inputs_tanh$39$trig_r trig_r $end
+$var wire 8 __$T0$__$T$rom_inputs_tanh$39$dbus_r dbus_r $end
+$var wire 1 __$T0$__$T$rom_inputs_tanh$39$abus_r abus_r $end
+$var wire 16 __$T0$__$T$rom_inputs_tanh$39$mem mem $end
+$scope module rinc$45 $end
+$upscope $end
+$upscope $end
+$scope module ram_outputs_tanh$54 $end
+$var wire 8 __$T0$__$T$ram_outputs_tanh$54$reg_0 reg_0 $end
+$scope module rinc$63 $end
+$var wire 1 __$T0$__$T$ram_outputs_tanh$54$rinc$63$abus_r abus_r $end
+$upscope $end
+$scope module winc$66 $end
+$var wire 1 __$T0$__$T$ram_outputs_tanh$54$winc$66$abus_w abus_w $end
+$upscope $end
+$scope module rdec$69 $end
+$var wire 1 __$T0$__$T$ram_outputs_tanh$54$rdec$69$abus_r abus_r $end
+$upscope $end
+$scope module wdec$73 $end
+$var wire 1 __$T0$__$T$ram_outputs_tanh$54$wdec$73$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module ram_outputs_mul$77 $end
+$var wire 8 __$T0$__$T$ram_outputs_mul$77$reg_0 reg_0 $end
+$scope module rinc$86 $end
+$var wire 1 __$T0$__$T$ram_outputs_mul$77$rinc$86$abus_r abus_r $end
+$upscope $end
+$scope module winc$89 $end
+$var wire 1 __$T0$__$T$ram_outputs_mul$77$winc$89$abus_w abus_w $end
+$upscope $end
+$scope module rdec$92 $end
+$var wire 1 __$T0$__$T$ram_outputs_mul$77$rdec$92$abus_r abus_r $end
+$upscope $end
+$scope module wdec$96 $end
+$var wire 1 __$T0$__$T$ram_outputs_mul$77$wdec$96$abus_w abus_w $end
+$upscope $end
+$upscope $end
+$scope module mul_n$732 $end
+$scope module add_n$733 $end
+$var wire 8 __$T0$__$T$mul_n$732$add_n$733$lv0 lv0 $end
+$var wire 8 __$T0$__$T$mul_n$732$add_n$733$rv0 rv0 $end
+$var wire 1 __$T0$__$T$mul_n$732$add_n$733$lvok0 lvok0 $end
+$var wire 1 __$T0$__$T$mul_n$732$add_n$733$rvok0 rvok0 $end
+$var wire 1 __$T0$__$T$mul_n$732$add_n$733$run run $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+bxxxxxxxx my_interpolator$T40$base
+bxxxxxxxx my_interpolator$T40$next_data
+bxxxxxxxx my_interpolator$T40$change
+bxxxxxxxx my_interpolator$T40$remaining
+bxxxxxxxx my_interpolator$T40$interpolated_value
+bxxxx my_lut$T40$address
+bxxxxxxxx my_lut$T40$base
+bxxxxxxxx my_lut$T40$next_data
+b11110000111000001101000011000000101100001010000010010000100000000111000001100000010100000100000000110000001000000001000000000000 my_lut$T40$my_lut$T4$lut
+bxxxxxxxx func0$T20$z_value
+bxxxxxxxx func0$T20$a
+bxxxxxxxx func0$T20$func0$T2$base
+bxxxxxxxx func0$T20$func0$T2$next_data
+bxxxx func0$T20$func0$T2$address
+bxxxxxxxx func0$T20$func0$T2$remaining
+bxxxxxxxx func0$T20$func0$T2$change
+bx counter$T20$clk
+bx counter$T20$ack
+bx counter$T20$rst
+bx counter$T20$ack_mac
+bxx counter$T20$counter$T2$q
+bx layer1$T00$clk
+bx layer1$T00$rst
+bx layer1$T00$req
+bxxxxxxxx layer1$T00$$481
+bxxxxxxxx layer1$T00$$482
+bx layer1$T00$ack_layer
+bx layer1$T00$$483
+bxxxxxxxx layer1$T00$$447
+bx layer1$T00$layer1$T0$req_mac
+bx layer1$T00$layer1$T0$ack
+bx layer1$T00$layer1$T0$ack_mac
+bx layer1$T00$layer1$T0$ack_add
+bxxxxxxxx layer1$T00$layer1$T0$$647
+bx layer1$T00$layer1$T0$$645
+bx layer1$T00$layer1$T0$$646
+bxxxxxxxx layer1$T00$layer1$T0$$655
+bxxxxxxxx layer1$T00$layer1$T0$$687
+bx layer1$T00$layer1$T0$$688
+bx layer1$T00$layer1$T0$$685
+bx layer1$T00$layer1$T0$$686
+bxxxxxxxx layer1$T00$layer1$T0$$700
+bxxxxxxxx layer1$T00$layer1$T0$value_z0
+bxxxxxxxx layer1$T00$layer1$T0$value_a0
+bx layer1$T00$layer1$T0$flag_z0
+bx layer1$T00$layer1$T0$ack_a0
+bx layer1$T00$layer1$T0$channel_w0$638$trig_r
+bxxxxxxxx layer1$T00$layer1$T0$channel_w0$638$dbus_r
+bx layer1$T00$layer1$T0$channel_w0$638$abus_r
+b0001011111101001 layer1$T00$layer1$T0$channel_w0$638$mem
+bxxxxxxxx layer1$T00$layer1$T0$channel_accum$653$reg_0
+bx layer1$T00$layer1$T0$channel_accum$653$rinc$662$abus_r
+bx layer1$T00$layer1$T0$channel_accum$653$winc$666$abus_w
+bx layer1$T00$layer1$T0$channel_accum$653$rdec$670$abus_r
+bx layer1$T00$layer1$T0$channel_accum$653$wdec$674$abus_w
+bxxxxxxxx layer1$T00$layer1$T0$mac_n1$678$lv0
+bxxxxxxxx layer1$T00$layer1$T0$mac_n1$678$av0
+bxxxxxxxx layer1$T00$layer1$T0$mac_n1$678$rv
+bx layer1$T00$layer1$T0$mac_n1$678$lvok0
+bx layer1$T00$layer1$T0$mac_n1$678$rvok
+bx layer1$T00$layer1$T0$mac_n1$678$wok0
+bx layer1$T00$layer1$T0$mac_n1$678$run
+bx layer1$T00$layer1$T0$channel_b0$683$trig_r
+bxxxxxxxx layer1$T00$layer1$T0$channel_b0$683$dbus_r
+bx layer1$T00$layer1$T0$channel_b0$683$abus_r
+b11110111 layer1$T00$layer1$T0$channel_b0$683$mem
+bxxxxxxxx layer1$T00$layer1$T0$channel_z$698$reg_0
+bx layer1$T00$layer1$T0$channel_z$698$rinc$707$abus_r
+bx layer1$T00$layer1$T0$channel_z$698$winc$710$abus_w
+bx layer1$T00$layer1$T0$channel_z$698$rdec$713$abus_r
+bx layer1$T00$layer1$T0$channel_z$698$wdec$717$abus_w
+bxxxxxxxx layer1$T00$layer1$T0$add_n$721$lv0
+bxxxxxxxx layer1$T00$layer1$T0$add_n$721$rv0
+bx layer1$T00$layer1$T0$add_n$721$lvok0
+bx layer1$T00$layer1$T0$add_n$721$rvok0
+bx layer1$T00$layer1$T0$add_n$721$run
+bxxxxxxxx my_interpolator$T30$base
+bxxxxxxxx my_interpolator$T30$next_data
+bxxxxxxxx my_interpolator$T30$change
+bxxxxxxxx my_interpolator$T30$remaining
+bxxxxxxxx my_interpolator$T30$interpolated_value
+bxxxx my_lut$T30$address
+bxxxxxxxx my_lut$T30$base
+bxxxxxxxx my_lut$T30$next_data
+b11110100111100011111000111110001111100011111000111110001111100010000111100001111000011110000111100001111000011110000110000000000 my_lut$T30$my_lut$T3$lut
+bxxxxxxxx func1$T00$z_value
+bxxxxxxxx func1$T00$a
+bxxxxxxxx func1$T00$func1$T0$base
+bxxxxxxxx func1$T00$func1$T0$next_data
+bxxxx func1$T00$func1$T0$address
+bxxxxxxxx func1$T00$func1$T0$remaining
+bxxxxxxxx func1$T00$func1$T0$change
+bxxxxxxxx my_interpolator$T20$base
+bxxxxxxxx my_interpolator$T20$next_data
+bxxxxxxxx my_interpolator$T20$change
+bxxxxxxxx my_interpolator$T20$remaining
+bxxxxxxxx my_interpolator$T20$interpolated_value
+bxxxx my_lut$T20$address
+bxxxxxxxx my_lut$T20$base
+bxxxxxxxx my_lut$T20$next_data
+b11110100111100011111000111110001111100011111000111110001111100010000111100001111000011110000111100001111000011110000110000000000 my_lut$T20$my_lut$T2$lut
+bxxxxxxxx func0$T10$z_value
+bxxxxxxxx func0$T10$a
+bxxxxxxxx func0$T10$func0$T1$base
+bxxxxxxxx func0$T10$func0$T1$next_data
+bxxxx func0$T10$func0$T1$address
+bxxxxxxxx func0$T10$func0$T1$remaining
+bxxxxxxxx func0$T10$func0$T1$change
+bx counter$T10$clk
+bx counter$T10$ack
+bx counter$T10$rst
+bx counter$T10$ack_mac
+bxx counter$T10$counter$T1$q
+bx layer0$T00$clk
+bx layer0$T00$rst
+bx layer0$T00$req
+bxxxxxxxx layer0$T00$$430
+bx layer0$T00$ack_layer
+bx layer0$T00$$428
+bx layer0$T00$$429
+bxxxxxxxx layer0$T00$$470
+bxxxxxxxx layer0$T00$$471
+bx layer0$T00$layer0$T0$req_mac
+bx layer0$T00$layer0$T0$ack
+bx layer0$T00$layer0$T0$ack_mac
+bx layer0$T00$layer0$T0$ack_add
+bxxxxxxxx layer0$T00$layer0$T0$$507
+bx layer0$T00$layer0$T0$$505
+bx layer0$T00$layer0$T0$$506
+bxxxxxxxx layer0$T00$layer0$T0$$530
+bxxxxxxxx layer0$T00$layer0$T0$$531
+bxxxxxxxx layer0$T00$layer0$T0$$522
+bx layer0$T00$layer0$T0$$520
+bx layer0$T00$layer0$T0$$521
+bxxxxxxxx layer0$T00$layer0$T0$$571
+bx layer0$T00$layer0$T0$$572
+bx layer0$T00$layer0$T0$$569
+bx layer0$T00$layer0$T0$$570
+bxxxxxxxx layer0$T00$layer0$T0$$599
+bxxxxxxxx layer0$T00$layer0$T0$$600
+bxxxxxxxx layer0$T00$layer0$T0$$586
+bx layer0$T00$layer0$T0$$587
+bx layer0$T00$layer0$T0$$584
+bx layer0$T00$layer0$T0$$585
+bxxxxxxxx layer0$T00$layer0$T0$value_z0
+bxxxxxxxx layer0$T00$layer0$T0$value_z1
+bxxxxxxxx layer0$T00$layer0$T0$value_a0
+bxxxxxxxx layer0$T00$layer0$T0$value_a1
+bx layer0$T00$layer0$T0$flag_z0
+bx layer0$T00$layer0$T0$flag_z1
+bx layer0$T00$layer0$T0$ack_a0
+bx layer0$T00$layer0$T0$ack_a1
+bx layer0$T00$layer0$T0$channel_w0$498$trig_r
+bxxxxxxxx layer0$T00$layer0$T0$channel_w0$498$dbus_r
+bx layer0$T00$layer0$T0$channel_w0$498$abus_r
+b1110011011100011 layer0$T00$layer0$T0$channel_w0$498$mem
+bx layer0$T00$layer0$T0$channel_w1$513$trig_r
+bxxxxxxxx layer0$T00$layer0$T0$channel_w1$513$dbus_r
+bx layer0$T00$layer0$T0$channel_w1$513$abus_r
+b1111010111110100 layer0$T00$layer0$T0$channel_w1$513$mem
+bxxxxxxxx layer0$T00$layer0$T0$channel_accum$528$reg_0
+bxxxxxxxx layer0$T00$layer0$T0$channel_accum$528$reg_1
+bx layer0$T00$layer0$T0$channel_accum$528$rinc$540$abus_r
+bx layer0$T00$layer0$T0$channel_accum$528$winc$545$abus_w
+bx layer0$T00$layer0$T0$channel_accum$528$rdec$550$abus_r
+bx layer0$T00$layer0$T0$channel_accum$528$wdec$555$abus_w
+bxxxxxxxx layer0$T00$layer0$T0$mac_n1$560$lv0
+bxxxxxxxx layer0$T00$layer0$T0$mac_n1$560$lv1
+bxxxxxxxx layer0$T00$layer0$T0$mac_n1$560$av0
+bxxxxxxxx layer0$T00$layer0$T0$mac_n1$560$av1
+bxxxxxxxx layer0$T00$layer0$T0$mac_n1$560$rv
+bx layer0$T00$layer0$T0$mac_n1$560$lvok0
+bx layer0$T00$layer0$T0$mac_n1$560$lvok1
+bx layer0$T00$layer0$T0$mac_n1$560$rvok
+bx layer0$T00$layer0$T0$mac_n1$560$wok0
+bx layer0$T00$layer0$T0$mac_n1$560$wok1
+bx layer0$T00$layer0$T0$mac_n1$560$run
+bx layer0$T00$layer0$T0$channel_b0$567$trig_r
+bxxxxxxxx layer0$T00$layer0$T0$channel_b0$567$dbus_r
+bx layer0$T00$layer0$T0$channel_b0$567$abus_r
+b00000101 layer0$T00$layer0$T0$channel_b0$567$mem
+bx layer0$T00$layer0$T0$channel_b1$582$trig_r
+bxxxxxxxx layer0$T00$layer0$T0$channel_b1$582$dbus_r
+bx layer0$T00$layer0$T0$channel_b1$582$abus_r
+b00001110 layer0$T00$layer0$T0$channel_b1$582$mem
+bxxxxxxxx layer0$T00$layer0$T0$channel_z$597$reg_0
+bxxxxxxxx layer0$T00$layer0$T0$channel_z$597$reg_1
+bx layer0$T00$layer0$T0$channel_z$597$rinc$609$abus_r
+bx layer0$T00$layer0$T0$channel_z$597$winc$613$abus_w
+bx layer0$T00$layer0$T0$channel_z$597$rdec$617$abus_r
+bx layer0$T00$layer0$T0$channel_z$597$wdec$622$abus_w
+bxxxxxxxx layer0$T00$layer0$T0$add_n$627$lv0
+bxxxxxxxx layer0$T00$layer0$T0$add_n$627$lv1
+bxxxxxxxx layer0$T00$layer0$T0$add_n$627$rv0
+bxxxxxxxx layer0$T00$layer0$T0$add_n$627$rv1
+bx layer0$T00$layer0$T0$add_n$627$lvok0
+bx layer0$T00$layer0$T0$add_n$627$lvok1
+bx layer0$T00$layer0$T0$add_n$627$rvok0
+bx layer0$T00$layer0$T0$add_n$627$rvok1
+bx layer0$T00$layer0$T0$add_n$627$run
+bx tanh_neural_network$T0$clk
+bx tanh_neural_network$T0$rst
+bx tanh_neural_network$T0$req
+bx tanh_neural_network$T0$fill
+bxxxxxxxx tanh_neural_network$T0$$48
+bx tanh_neural_network$T0$ack_fill
+bx tanh_neural_network$T0$ack_network
+bx tanh_neural_network$T0$$46
+bx tanh_neural_network$T0$$47
+bxxxxxxxx tanh_neural_network$T0$$67
+bx tanh_neural_network$T0$$68
+bx tanh_neural_network$T0$tanh_neural_network$T$ack_0
+bx tanh_neural_network$T0$tanh_neural_network$T$ack_1
+bx tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$value_inputs
+bxx tanh_neural_network$T0$tanh_neural_network$T$address_inputs
+bx tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+bx tanh_neural_network$T0$tanh_neural_network$T$ack_inputs
+bx tanh_neural_network$T0$tanh_neural_network$T$$432
+bx tanh_neural_network$T0$tanh_neural_network$T$$433
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$$434
+bx tanh_neural_network$T0$tanh_neural_network$T$fill_outputs
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$value_outputs
+bx tanh_neural_network$T0$tanh_neural_network$T$address_outputs
+bx tanh_neural_network$T0$tanh_neural_network$T$flag_outputs
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$$455
+bx tanh_neural_network$T0$tanh_neural_network$T$$456
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_r
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_w
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_w
+bxxxxxxxxxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$mem
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$reg_0
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$rinc$454$abus_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$winc$457$abus_w
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$rdec$460$abus_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$wdec$464$abus_w
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_0
+bxxxxxxxx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_1
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rinc$480$abus_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$winc$484$abus_w
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rdec$488$abus_r
+bx tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$wdec$493$abus_w
+bxxxxxxxx my_interpolator$T10$base
+bxxxxxxxx my_interpolator$T10$next_data
+bxxxxxxxx my_interpolator$T10$change
+bxxxxxxxx my_interpolator$T10$remaining
+bxxxxxxxx my_interpolator$T10$interpolated_value
+bxxxx my_lut$T10$address
+bxxxxxxxx my_lut$T10$base
+bxxxxxxxx my_lut$T10$next_data
+b11110000111000001101000011000000101100001010000010010000100000000111000001100000010100000100000000110000001000000001000000000000 my_lut$T10$my_lut$T1$lut
+bxxxxxxxx func0$T00$z_value
+bxxxxxxxx func0$T00$a
+bxxxxxxxx func0$T00$func0$T0$base
+bxxxxxxxx func0$T00$func0$T0$next_data
+bxxxx func0$T00$func0$T0$address
+bxxxxxxxx func0$T00$func0$T0$remaining
+bxxxxxxxx func0$T00$func0$T0$change
+bx counter$T00$clk
+bx counter$T00$ack
+bx counter$T00$rst
+bx counter$T00$ack_mac
+bxx counter$T00$counter$T0$q
+bx layer1$T1$clk
+bx layer1$T1$rst
+bx layer1$T1$req
+bxxxxxxxx layer1$T1$$165
+bxxxxxxxx layer1$T1$$166
+bx layer1$T1$ack_layer
+bx layer1$T1$$167
+bxxxxxxxx layer1$T1$$131
+bx layer1$T1$layer1$T$req_mac
+bx layer1$T1$layer1$T$ack
+bx layer1$T1$layer1$T$ack_mac
+bx layer1$T1$layer1$T$ack_add
+bxxxxxxxx layer1$T1$layer1$T$$331
+bx layer1$T1$layer1$T$$329
+bx layer1$T1$layer1$T$$330
+bxxxxxxxx layer1$T1$layer1$T$$339
+bxxxxxxxx layer1$T1$layer1$T$$371
+bx layer1$T1$layer1$T$$372
+bx layer1$T1$layer1$T$$369
+bx layer1$T1$layer1$T$$370
+bxxxxxxxx layer1$T1$layer1$T$$384
+bxxxxxxxx layer1$T1$layer1$T$value_z0
+bxxxxxxxx layer1$T1$layer1$T$value_a0
+bx layer1$T1$layer1$T$flag_z0
+bx layer1$T1$layer1$T$ack_a0
+bx layer1$T1$layer1$T$channel_w0$322$trig_r
+bxxxxxxxx layer1$T1$layer1$T$channel_w0$322$dbus_r
+bx layer1$T1$layer1$T$channel_w0$322$abus_r
+b0011000011001100 layer1$T1$layer1$T$channel_w0$322$mem
+bxxxxxxxx layer1$T1$layer1$T$channel_accum$337$reg_0
+bx layer1$T1$layer1$T$channel_accum$337$rinc$346$abus_r
+bx layer1$T1$layer1$T$channel_accum$337$winc$350$abus_w
+bx layer1$T1$layer1$T$channel_accum$337$rdec$354$abus_r
+bx layer1$T1$layer1$T$channel_accum$337$wdec$358$abus_w
+bxxxxxxxx layer1$T1$layer1$T$mac_n1$362$lv0
+bxxxxxxxx layer1$T1$layer1$T$mac_n1$362$av0
+bxxxxxxxx layer1$T1$layer1$T$mac_n1$362$rv
+bx layer1$T1$layer1$T$mac_n1$362$lvok0
+bx layer1$T1$layer1$T$mac_n1$362$rvok
+bx layer1$T1$layer1$T$mac_n1$362$wok0
+bx layer1$T1$layer1$T$mac_n1$362$run
+bx layer1$T1$layer1$T$channel_b0$367$trig_r
+bxxxxxxxx layer1$T1$layer1$T$channel_b0$367$dbus_r
+bx layer1$T1$layer1$T$channel_b0$367$abus_r
+b11110101 layer1$T1$layer1$T$channel_b0$367$mem
+bxxxxxxxx layer1$T1$layer1$T$channel_z$382$reg_0
+bx layer1$T1$layer1$T$channel_z$382$rinc$391$abus_r
+bx layer1$T1$layer1$T$channel_z$382$winc$394$abus_w
+bx layer1$T1$layer1$T$channel_z$382$rdec$397$abus_r
+bx layer1$T1$layer1$T$channel_z$382$wdec$401$abus_w
+bxxxxxxxx layer1$T1$layer1$T$add_n$405$lv0
+bxxxxxxxx layer1$T1$layer1$T$add_n$405$rv0
+bx layer1$T1$layer1$T$add_n$405$lvok0
+bx layer1$T1$layer1$T$add_n$405$rvok0
+bx layer1$T1$layer1$T$add_n$405$run
+bxxxxxxxx my_interpolator$T00$base
+bxxxxxxxx my_interpolator$T00$next_data
+bxxxxxxxx my_interpolator$T00$change
+bxxxxxxxx my_interpolator$T00$remaining
+bxxxxxxxx my_interpolator$T00$interpolated_value
+bxxxx my_lut$T00$address
+bxxxxxxxx my_lut$T00$base
+bxxxxxxxx my_lut$T00$next_data
+b00000100000000010000000000000000000000000000000000000000000000000000111100001111000011110000111100001111000011100000101100001000 my_lut$T00$my_lut$T0$lut
+bxxxxxxxx func1$T1$z_value
+bxxxxxxxx func1$T1$a
+bxxxxxxxx func1$T1$func1$T$base
+bxxxxxxxx func1$T1$func1$T$next_data
+bxxxx func1$T1$func1$T$address
+bxxxxxxxx func1$T1$func1$T$remaining
+bxxxxxxxx func1$T1$func1$T$change
+bxxxxxxxx my_interpolator$T5$base
+bxxxxxxxx my_interpolator$T5$next_data
+bxxxxxxxx my_interpolator$T5$change
+bxxxxxxxx my_interpolator$T5$remaining
+bxxxxxxxx my_interpolator$T5$interpolated_value
+bxxxx my_lut$T5$address
+bxxxxxxxx my_lut$T5$base
+bxxxxxxxx my_lut$T5$next_data
+b00000100000000010000000000000000000000000000000000000000000000000000111100001111000011110000111100001111000011100000101100001000 my_lut$T5$my_lut$T$lut
+bxxxxxxxx func0$T3$z_value
+bxxxxxxxx func0$T3$a
+bxxxxxxxx func0$T3$func0$T$base
+bxxxxxxxx func0$T3$func0$T$next_data
+bxxxx func0$T3$func0$T$address
+bxxxxxxxx func0$T3$func0$T$remaining
+bxxxxxxxx func0$T3$func0$T$change
+bx counter$T3$clk
+bx counter$T3$ack
+bx counter$T3$rst
+bx counter$T3$ack_mac
+bxx counter$T3$counter$T$q
+bx layer0$T1$clk
+bx layer0$T1$rst
+bx layer0$T1$req
+bxxxxxxxx layer0$T1$$114
+bx layer0$T1$ack_layer
+bx layer0$T1$$112
+bx layer0$T1$$113
+bxxxxxxxx layer0$T1$$154
+bxxxxxxxx layer0$T1$$155
+bx layer0$T1$layer0$T$req_mac
+bx layer0$T1$layer0$T$ack
+bx layer0$T1$layer0$T$ack_mac
+bx layer0$T1$layer0$T$ack_add
+bxxxxxxxx layer0$T1$layer0$T$$191
+bx layer0$T1$layer0$T$$189
+bx layer0$T1$layer0$T$$190
+bxxxxxxxx layer0$T1$layer0$T$$214
+bxxxxxxxx layer0$T1$layer0$T$$215
+bxxxxxxxx layer0$T1$layer0$T$$206
+bx layer0$T1$layer0$T$$204
+bx layer0$T1$layer0$T$$205
+bxxxxxxxx layer0$T1$layer0$T$$255
+bx layer0$T1$layer0$T$$256
+bx layer0$T1$layer0$T$$253
+bx layer0$T1$layer0$T$$254
+bxxxxxxxx layer0$T1$layer0$T$$283
+bxxxxxxxx layer0$T1$layer0$T$$284
+bxxxxxxxx layer0$T1$layer0$T$$270
+bx layer0$T1$layer0$T$$271
+bx layer0$T1$layer0$T$$268
+bx layer0$T1$layer0$T$$269
+bxxxxxxxx layer0$T1$layer0$T$value_z0
+bxxxxxxxx layer0$T1$layer0$T$value_z1
+bxxxxxxxx layer0$T1$layer0$T$value_a0
+bxxxxxxxx layer0$T1$layer0$T$value_a1
+bx layer0$T1$layer0$T$flag_z0
+bx layer0$T1$layer0$T$flag_z1
+bx layer0$T1$layer0$T$ack_a0
+bx layer0$T1$layer0$T$ack_a1
+bx layer0$T1$layer0$T$channel_w0$182$trig_r
+bxxxxxxxx layer0$T1$layer0$T$channel_w0$182$dbus_r
+bx layer0$T1$layer0$T$channel_w0$182$abus_r
+b1100101011000110 layer0$T1$layer0$T$channel_w0$182$mem
+bx layer0$T1$layer0$T$channel_w1$197$trig_r
+bxxxxxxxx layer0$T1$layer0$T$channel_w1$197$dbus_r
+bx layer0$T1$layer0$T$channel_w1$197$abus_r
+b1110011111100110 layer0$T1$layer0$T$channel_w1$197$mem
+bxxxxxxxx layer0$T1$layer0$T$channel_accum$212$reg_0
+bxxxxxxxx layer0$T1$layer0$T$channel_accum$212$reg_1
+bx layer0$T1$layer0$T$channel_accum$212$rinc$224$abus_r
+bx layer0$T1$layer0$T$channel_accum$212$winc$229$abus_w
+bx layer0$T1$layer0$T$channel_accum$212$rdec$234$abus_r
+bx layer0$T1$layer0$T$channel_accum$212$wdec$239$abus_w
+bxxxxxxxx layer0$T1$layer0$T$mac_n1$244$lv0
+bxxxxxxxx layer0$T1$layer0$T$mac_n1$244$lv1
+bxxxxxxxx layer0$T1$layer0$T$mac_n1$244$av0
+bxxxxxxxx layer0$T1$layer0$T$mac_n1$244$av1
+bxxxxxxxx layer0$T1$layer0$T$mac_n1$244$rv
+bx layer0$T1$layer0$T$mac_n1$244$lvok0
+bx layer0$T1$layer0$T$mac_n1$244$lvok1
+bx layer0$T1$layer0$T$mac_n1$244$rvok
+bx layer0$T1$layer0$T$mac_n1$244$wok0
+bx layer0$T1$layer0$T$mac_n1$244$wok1
+bx layer0$T1$layer0$T$mac_n1$244$run
+bx layer0$T1$layer0$T$channel_b0$251$trig_r
+bxxxxxxxx layer0$T1$layer0$T$channel_b0$251$dbus_r
+bx layer0$T1$layer0$T$channel_b0$251$abus_r
+b00000111 layer0$T1$layer0$T$channel_b0$251$mem
+bx layer0$T1$layer0$T$channel_b1$266$trig_r
+bxxxxxxxx layer0$T1$layer0$T$channel_b1$266$dbus_r
+bx layer0$T1$layer0$T$channel_b1$266$abus_r
+b00100001 layer0$T1$layer0$T$channel_b1$266$mem
+bxxxxxxxx layer0$T1$layer0$T$channel_z$281$reg_0
+bxxxxxxxx layer0$T1$layer0$T$channel_z$281$reg_1
+bx layer0$T1$layer0$T$channel_z$281$rinc$293$abus_r
+bx layer0$T1$layer0$T$channel_z$281$winc$297$abus_w
+bx layer0$T1$layer0$T$channel_z$281$rdec$301$abus_r
+bx layer0$T1$layer0$T$channel_z$281$wdec$306$abus_w
+bxxxxxxxx layer0$T1$layer0$T$add_n$311$lv0
+bxxxxxxxx layer0$T1$layer0$T$add_n$311$lv1
+bxxxxxxxx layer0$T1$layer0$T$add_n$311$rv0
+bxxxxxxxx layer0$T1$layer0$T$add_n$311$rv1
+bx layer0$T1$layer0$T$add_n$311$lvok0
+bx layer0$T1$layer0$T$add_n$311$lvok1
+bx layer0$T1$layer0$T$add_n$311$rvok0
+bx layer0$T1$layer0$T$add_n$311$rvok1
+bx layer0$T1$layer0$T$add_n$311$run
+bx sigmoid_neural_network$T0$clk
+bx sigmoid_neural_network$T0$rst
+bx sigmoid_neural_network$T0$req
+bx sigmoid_neural_network$T0$fill
+bxxxxxxxx sigmoid_neural_network$T0$$10
+bx sigmoid_neural_network$T0$ack_fill
+bx sigmoid_neural_network$T0$ack_network
+bx sigmoid_neural_network$T0$$8
+bx sigmoid_neural_network$T0$$9
+bxxxxxxxx sigmoid_neural_network$T0$$29
+bx sigmoid_neural_network$T0$$30
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_0
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_1
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$value_inputs
+bxx sigmoid_neural_network$T0$sigmoid_neural_network$T$address_inputs
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_inputs
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$$117
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$$118
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_outputs
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$value_outputs
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$address_outputs
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_outputs
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$$139
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$$140
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_r
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_w
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_w
+bxxxxxxxxxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$mem
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$reg_0
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$rinc$138$abus_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$winc$141$abus_w
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$rdec$144$abus_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$wdec$148$abus_w
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_0
+bxxxxxxxx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_1
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rinc$164$abus_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$winc$168$abus_w
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rdec$172$abus_r
+bx sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$wdec$177$abus_w
+bx __$T0$__$T$clk
+bx __$T0$__$T$rst
+bx __$T0$__$T$req
+bx __$T0$__$T$fill
+bx __$T0$__$T$ack_fill_sig
+bx __$T0$__$T$ack_network_sig
+bx __$T0$__$T$ack_fill_tanh
+bx __$T0$__$T$ack_network_tanh
+bx __$T0$__$T$req_mul
+bx __$T0$__$T$ack_mul
+bxxxxxxxx __$T0$__$T$$18
+bxxxxxxxx __$T0$__$T$$56
+bxxxxxxxx __$T0$__$T$$79
+bx __$T0$__$T$rom_inputs_sig$1$trig_r
+bxxxxxxxx __$T0$__$T$rom_inputs_sig$1$dbus_r
+bx __$T0$__$T$rom_inputs_sig$1$abus_r
+b0001000000010000 __$T0$__$T$rom_inputs_sig$1$mem
+bxxxxxxxx __$T0$__$T$ram_outputs_sig$16$reg_0
+bx __$T0$__$T$ram_outputs_sig$16$rinc$25$abus_r
+bx __$T0$__$T$ram_outputs_sig$16$winc$28$abus_w
+bx __$T0$__$T$ram_outputs_sig$16$rdec$31$abus_r
+bx __$T0$__$T$ram_outputs_sig$16$wdec$35$abus_w
+bx __$T0$__$T$rom_inputs_tanh$39$trig_r
+bxxxxxxxx __$T0$__$T$rom_inputs_tanh$39$dbus_r
+bx __$T0$__$T$rom_inputs_tanh$39$abus_r
+b0001000000010000 __$T0$__$T$rom_inputs_tanh$39$mem
+bxxxxxxxx __$T0$__$T$ram_outputs_tanh$54$reg_0
+bx __$T0$__$T$ram_outputs_tanh$54$rinc$63$abus_r
+bx __$T0$__$T$ram_outputs_tanh$54$winc$66$abus_w
+bx __$T0$__$T$ram_outputs_tanh$54$rdec$69$abus_r
+bx __$T0$__$T$ram_outputs_tanh$54$wdec$73$abus_w
+bxxxxxxxx __$T0$__$T$ram_outputs_mul$77$reg_0
+bx __$T0$__$T$ram_outputs_mul$77$rinc$86$abus_r
+bx __$T0$__$T$ram_outputs_mul$77$winc$89$abus_w
+bx __$T0$__$T$ram_outputs_mul$77$rdec$92$abus_r
+bx __$T0$__$T$ram_outputs_mul$77$wdec$96$abus_w
+bxxxxxxxx __$T0$__$T$mul_n$732$add_n$733$lv0
+bxxxxxxxx __$T0$__$T$mul_n$732$add_n$733$rv0
+bx __$T0$__$T$mul_n$732$add_n$733$lvok0
+bx __$T0$__$T$mul_n$732$add_n$733$rvok0
+bx __$T0$__$T$mul_n$732$add_n$733$run
+$end
+#0
+b0 __$T0$__$T$clk
+b0 __$T0$__$T$rst
+b0 __$T0$__$T$req
+b0 __$T0$__$T$fill
+b0 sigmoid_neural_network$T0$clk
+b0 sigmoid_neural_network$T0$rst
+b0 sigmoid_neural_network$T0$req
+b0 sigmoid_neural_network$T0$fill
+b0 tanh_neural_network$T0$clk
+b0 tanh_neural_network$T0$rst
+b0 tanh_neural_network$T0$req
+b0 tanh_neural_network$T0$fill
+b00010000 __$T0$__$T$rom_inputs_sig$1$dbus_r
+b00010000 __$T0$__$T$rom_inputs_tanh$39$dbus_r
+b0 layer0$T1$clk
+b0 layer0$T1$rst
+b0 layer0$T1$req
+b0 layer1$T1$clk
+b0 layer1$T1$rst
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b0 layer0$T00$clk
+b0 layer0$T00$rst
+b0 layer0$T00$req
+b0 layer1$T00$clk
+b0 layer1$T00$rst
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+b00010000 sigmoid_neural_network$T0$$10
+b00010000 tanh_neural_network$T0$$48
+b0 counter$T3$clk
+b0 counter$T3$rst
+b11000110 layer0$T1$layer0$T$channel_w0$182$dbus_r
+b11100110 layer0$T1$layer0$T$channel_w1$197$dbus_r
+b00000111 layer0$T1$layer0$T$channel_b0$251$dbus_r
+b00100001 layer0$T1$layer0$T$channel_b1$266$dbus_r
+b0 layer0$T1$layer0$T$$256
+b0 layer0$T1$layer0$T$$271
+b0 layer0$T1$layer0$T$req_mac
+b0 counter$T00$clk
+b0 counter$T00$rst
+b11001100 layer1$T1$layer1$T$channel_w0$322$dbus_r
+b11110101 layer1$T1$layer1$T$channel_b0$367$dbus_r
+b0 layer1$T1$layer1$T$$372
+b0 counter$T10$clk
+b0 counter$T10$rst
+b11100011 layer0$T00$layer0$T0$channel_w0$498$dbus_r
+b11110100 layer0$T00$layer0$T0$channel_w1$513$dbus_r
+b00000101 layer0$T00$layer0$T0$channel_b0$567$dbus_r
+b00001110 layer0$T00$layer0$T0$channel_b1$582$dbus_r
+b0 layer0$T00$layer0$T0$$572
+b0 layer0$T00$layer0$T0$$587
+b0 layer0$T00$layer0$T0$req_mac
+b0 counter$T20$clk
+b0 counter$T20$rst
+b11101001 layer1$T00$layer1$T0$channel_w0$638$dbus_r
+b11110111 layer1$T00$layer1$T0$channel_b0$683$dbus_r
+b0 layer1$T00$layer1$T0$$688
+b11000110 layer0$T1$layer0$T$$191
+b11100110 layer0$T1$layer0$T$$206
+b00000111 layer0$T1$layer0$T$$255
+b00100001 layer0$T1$layer0$T$$270
+b11001100 layer1$T1$layer1$T$$331
+b11110101 layer1$T1$layer1$T$$371
+b11100011 layer0$T00$layer0$T0$$507
+b11110100 layer0$T00$layer0$T0$$522
+b00000101 layer0$T00$layer0$T0$$571
+b00001110 layer0$T00$layer0$T0$$586
+b11101001 layer1$T00$layer1$T0$$647
+b11110111 layer1$T00$layer1$T0$$687
+#10
+#10
+b1 __$T0$__$T$rst
+b1 sigmoid_neural_network$T0$rst
+b1 tanh_neural_network$T0$rst
+b1 layer0$T1$rst
+b1 layer1$T1$rst
+b1 layer0$T00$rst
+b1 layer1$T00$rst
+b1 counter$T3$rst
+b1 layer0$T1$layer0$T$$256
+b1 layer0$T1$layer0$T$$271
+b1 counter$T00$rst
+b1 layer1$T1$layer1$T$$372
+b1 counter$T10$rst
+b1 layer0$T00$layer0$T0$$572
+b1 layer0$T00$layer0$T0$$587
+b1 counter$T20$rst
+b1 layer1$T00$layer1$T0$$688
+#20
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b0 __$T0$__$T$ack_mul
+b0 __$T0$__$T$mul_n$732$add_n$733$run
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_0
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_1
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$117
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+b1 sigmoid_neural_network$T0$$9
+b0 sigmoid_neural_network$T0$$8
+b00 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_inputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_inputs
+b0 sigmoid_neural_network$T0$$30
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$$140
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_outputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_outputs
+b0 sigmoid_neural_network$T0$ack_network
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b0 tanh_neural_network$T0$tanh_neural_network$T$ack_0
+b0 tanh_neural_network$T0$tanh_neural_network$T$ack_1
+b1 tanh_neural_network$T0$tanh_neural_network$T$$433
+b0 tanh_neural_network$T0$tanh_neural_network$T$$432
+b1 tanh_neural_network$T0$$47
+b0 tanh_neural_network$T0$$46
+b00 tanh_neural_network$T0$tanh_neural_network$T$address_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$ack_inputs
+b0 tanh_neural_network$T0$$68
+b0 tanh_neural_network$T0$tanh_neural_network$T$$456
+b0 tanh_neural_network$T0$tanh_neural_network$T$address_outputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$flag_outputs
+b0 tanh_neural_network$T0$ack_network
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$205
+b0 layer0$T1$layer0$T$$204
+b1 layer0$T1$layer0$T$$190
+b0 layer0$T1$layer0$T$$189
+b1 layer0$T1$$113
+b0 layer0$T1$$112
+b0 layer0$T1$layer0$T$ack
+b0 layer0$T1$layer0$T$mac_n1$244$run
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b0 layer0$T1$layer0$T$ack_add
+b0 layer0$T1$layer0$T$add_n$311$run
+b0 layer0$T1$layer0$T$ack_mac
+b0 layer0$T1$layer0$T$ack_a0
+b0 layer0$T1$layer0$T$ack_a1
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$330
+b0 layer1$T1$layer1$T$$329
+b0 layer1$T1$$167
+b0 layer1$T1$layer1$T$ack
+b0 layer1$T1$layer1$T$mac_n1$362$run
+b0 layer1$T1$layer1$T$$369
+b0 layer1$T1$layer1$T$ack_add
+b0 layer1$T1$layer1$T$add_n$405$run
+b0 layer1$T1$layer1$T$ack_mac
+b0 layer1$T1$layer1$T$ack_a0
+b0 layer1$T1$req
+b0 sigmoid_neural_network$T0$ack_fill
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_outputs
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_w
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+b0 __$T0$__$T$rom_inputs_sig$1$trig_r
+b1 __$T0$__$T$rom_inputs_sig$1$abus_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b0 __$T0$__$T$ram_outputs_sig$16$winc$28$abus_w
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$rinc$138$abus_r
+b0 __$T0$__$T$ack_network_sig
+b0 __$T0$__$T$ack_network_tanh
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$521
+b0 layer0$T00$layer0$T0$$520
+b1 layer0$T00$layer0$T0$$506
+b0 layer0$T00$layer0$T0$$505
+b1 layer0$T00$$429
+b0 layer0$T00$$428
+b0 layer0$T00$layer0$T0$ack
+b0 layer0$T00$layer0$T0$mac_n1$560$run
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b0 layer0$T00$layer0$T0$ack_add
+b0 layer0$T00$layer0$T0$add_n$627$run
+b0 layer0$T00$layer0$T0$ack_mac
+b0 layer0$T00$layer0$T0$ack_a0
+b0 layer0$T00$layer0$T0$ack_a1
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$646
+b0 layer1$T00$layer1$T0$$645
+b0 layer1$T00$$483
+b0 layer1$T00$layer1$T0$ack
+b0 layer1$T00$layer1$T0$mac_n1$678$run
+b0 layer1$T00$layer1$T0$$685
+b0 layer1$T00$layer1$T0$ack_add
+b0 layer1$T00$layer1$T0$add_n$721$run
+b0 layer1$T00$layer1$T0$ack_mac
+b0 layer1$T00$layer1$T0$ack_a0
+b0 layer1$T00$req
+b0 tanh_neural_network$T0$ack_fill
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_outputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_w
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+b0 __$T0$__$T$rom_inputs_tanh$39$trig_r
+b1 __$T0$__$T$rom_inputs_tanh$39$abus_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+b0 __$T0$__$T$ram_outputs_tanh$54$winc$66$abus_w
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$rinc$454$abus_r
+b1 layer0$T1$layer0$T$channel_w1$197$abus_r
+b0 layer0$T1$layer0$T$channel_w1$197$trig_r
+b1 layer0$T1$layer0$T$channel_w0$182$abus_r
+b0 layer0$T1$layer0$T$channel_w0$182$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_r
+b0 counter$T3$ack
+b0 layer0$T1$ack_layer
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer0$T1$layer0$T$req_mac
+b1 layer1$T1$layer1$T$channel_w0$322$abus_r
+b0 layer1$T1$layer1$T$channel_w0$322$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rinc$164$abus_r
+b0 counter$T00$ack
+b0 layer1$T1$ack_layer
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer1$T1$layer1$T$req_mac
+b0 __$T0$__$T$ack_fill_sig
+b0 __$T0$__$T$ack_fill_tanh
+b0 __$T0$__$T$req_mul
+b1 layer0$T00$layer0$T0$channel_w1$513$abus_r
+b0 layer0$T00$layer0$T0$channel_w1$513$trig_r
+b1 layer0$T00$layer0$T0$channel_w0$498$abus_r
+b0 layer0$T00$layer0$T0$channel_w0$498$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_r
+b0 counter$T10$ack
+b0 layer0$T00$ack_layer
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer0$T00$layer0$T0$req_mac
+b1 layer1$T00$layer1$T0$channel_w0$638$abus_r
+b0 layer1$T00$layer1$T0$channel_w0$638$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rinc$480$abus_r
+b0 counter$T20$ack
+b0 layer1$T00$ack_layer
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b0 layer1$T00$layer1$T0$req_mac
+#30
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b11001010 layer0$T1$layer0$T$channel_w0$182$dbus_r
+b11100111 layer0$T1$layer0$T$channel_w1$197$dbus_r
+b0 counter$T00$clk
+b00110000 layer1$T1$layer1$T$channel_w0$322$dbus_r
+b0 counter$T10$clk
+b11100110 layer0$T00$layer0$T0$channel_w0$498$dbus_r
+b11110101 layer0$T00$layer0$T0$channel_w1$513$dbus_r
+b0 counter$T20$clk
+b00010111 layer1$T00$layer1$T0$channel_w0$638$dbus_r
+b00 counter$T3$counter$T$q
+b0 counter$T3$ack_mac
+b11001010 layer0$T1$layer0$T$$191
+b11100111 layer0$T1$layer0$T$$206
+b00 counter$T00$counter$T0$q
+b0 counter$T00$ack_mac
+b00110000 layer1$T1$layer1$T$$331
+b00 counter$T10$counter$T1$q
+b0 counter$T10$ack_mac
+b11100110 layer0$T00$layer0$T0$$507
+b11110101 layer0$T00$layer0$T0$$522
+b00 counter$T20$counter$T2$q
+b0 counter$T20$ack_mac
+b00010111 layer1$T00$layer1$T0$$647
+#40
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b0 __$T0$__$T$mul_n$732$add_n$733$lvok0
+b0 __$T0$__$T$mul_n$732$add_n$733$rvok0
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$mac_n1$244$rvok
+b0 layer0$T1$layer0$T$mac_n1$244$lvok0
+b0 layer0$T1$layer0$T$mac_n1$244$wok0
+b0 layer0$T1$layer0$T$mac_n1$244$lvok1
+b0 layer0$T1$layer0$T$mac_n1$244$wok1
+b00000000 layer0$T1$layer0$T$mac_n1$244$av0
+b00000000 layer0$T1$layer0$T$mac_n1$244$av1
+b0 layer0$T1$layer0$T$add_n$311$lvok0
+b0 layer0$T1$layer0$T$add_n$311$rvok0
+b0 layer0$T1$layer0$T$add_n$311$lvok1
+b0 layer0$T1$layer0$T$add_n$311$rvok1
+b0 layer0$T1$layer0$T$flag_z0
+b0 layer0$T1$layer0$T$flag_z1
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$mac_n1$362$rvok
+b0 layer1$T1$layer1$T$mac_n1$362$lvok0
+b0 layer1$T1$layer1$T$mac_n1$362$wok0
+b00000000 layer1$T1$layer1$T$mac_n1$362$av0
+b0 layer1$T1$layer1$T$add_n$405$lvok0
+b0 layer1$T1$layer1$T$add_n$405$rvok0
+b0 layer1$T1$layer1$T$flag_z0
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$mac_n1$560$rvok
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok0
+b0 layer0$T00$layer0$T0$mac_n1$560$wok0
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok1
+b0 layer0$T00$layer0$T0$mac_n1$560$wok1
+b00000000 layer0$T00$layer0$T0$mac_n1$560$av0
+b00000000 layer0$T00$layer0$T0$mac_n1$560$av1
+b0 layer0$T00$layer0$T0$add_n$627$lvok0
+b0 layer0$T00$layer0$T0$add_n$627$rvok0
+b0 layer0$T00$layer0$T0$add_n$627$lvok1
+b0 layer0$T00$layer0$T0$add_n$627$rvok1
+b0 layer0$T00$layer0$T0$flag_z0
+b0 layer0$T00$layer0$T0$flag_z1
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$mac_n1$678$rvok
+b0 layer1$T00$layer1$T0$mac_n1$678$lvok0
+b0 layer1$T00$layer1$T0$mac_n1$678$wok0
+b00000000 layer1$T00$layer1$T0$mac_n1$678$av0
+b0 layer1$T00$layer1$T0$add_n$721$lvok0
+b0 layer1$T00$layer1$T0$add_n$721$rvok0
+b0 layer1$T00$layer1$T0$flag_z0
+#50
+b0 __$T0$__$T$clk
+b0 __$T0$__$T$rst
+b1 __$T0$__$T$fill
+b0 sigmoid_neural_network$T0$clk
+b0 sigmoid_neural_network$T0$rst
+b1 sigmoid_neural_network$T0$fill
+b0 tanh_neural_network$T0$clk
+b0 tanh_neural_network$T0$rst
+b1 tanh_neural_network$T0$fill
+b0 layer0$T1$clk
+b0 layer0$T1$rst
+b0 layer1$T1$clk
+b0 layer1$T1$rst
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b0 layer0$T00$clk
+b0 layer0$T00$rst
+b0 layer1$T00$clk
+b0 layer1$T00$rst
+b1 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+b0 counter$T3$clk
+b0 counter$T3$rst
+b0 layer0$T1$layer0$T$$256
+b0 layer0$T1$layer0$T$$271
+b0 counter$T00$clk
+b0 counter$T00$rst
+b0 layer1$T1$layer1$T$$372
+b0 counter$T10$clk
+b0 counter$T10$rst
+b0 layer0$T00$layer0$T0$$572
+b0 layer0$T00$layer0$T0$$587
+b0 counter$T20$clk
+b0 counter$T20$rst
+b0 layer1$T00$layer1$T0$$688
+#60
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 sigmoid_neural_network$T0$$8
+b0 sigmoid_neural_network$T0$$9
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 tanh_neural_network$T0$$46
+b0 tanh_neural_network$T0$$47
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 __$T0$__$T$rom_inputs_sig$1$trig_r
+b0 __$T0$__$T$rom_inputs_sig$1$abus_r
+b1 counter$T10$clk
+b1 counter$T20$clk
+b1 __$T0$__$T$rom_inputs_tanh$39$trig_r
+b0 __$T0$__$T$rom_inputs_tanh$39$abus_r
+#70
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#80
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b0 sigmoid_neural_network$T0$$8
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b0 tanh_neural_network$T0$$46
+b00010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$value_inputs
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+b00010000 tanh_neural_network$T0$tanh_neural_network$T$value_inputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+b1 counter$T3$clk
+b1 counter$T00$clk
+b0 __$T0$__$T$rom_inputs_sig$1$trig_r
+b1 counter$T10$clk
+b1 counter$T20$clk
+b0 __$T0$__$T$rom_inputs_tanh$39$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+#90
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#100
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$$117
+b00010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$$118
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 tanh_neural_network$T0$tanh_neural_network$T$$432
+b0 tanh_neural_network$T0$tanh_neural_network$T$$433
+b00010000 tanh_neural_network$T0$tanh_neural_network$T$$434
+b01 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_inputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+b01 tanh_neural_network$T0$tanh_neural_network$T$address_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_w
+b00010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_w
+b1 counter$T10$clk
+b1 counter$T20$clk
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_w
+b00010000 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_w
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+#110
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+bxxxxxxxx00010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$mem
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+bxxxxxxxx00010000 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$mem
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#120
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+b1 sigmoid_neural_network$T0$$8
+b1 sigmoid_neural_network$T0$$9
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b0 tanh_neural_network$T0$tanh_neural_network$T$$432
+b1 tanh_neural_network$T0$$46
+b1 tanh_neural_network$T0$$47
+b1 counter$T3$clk
+b1 counter$T00$clk
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+b1 __$T0$__$T$rom_inputs_sig$1$trig_r
+b1 __$T0$__$T$rom_inputs_sig$1$abus_r
+b1 counter$T10$clk
+b1 counter$T20$clk
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+b1 __$T0$__$T$rom_inputs_tanh$39$trig_r
+b1 __$T0$__$T$rom_inputs_tanh$39$abus_r
+#130
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#140
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b0 sigmoid_neural_network$T0$$8
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b0 tanh_neural_network$T0$$46
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+b1 counter$T3$clk
+b1 counter$T00$clk
+b0 __$T0$__$T$rom_inputs_sig$1$trig_r
+b1 counter$T10$clk
+b1 counter$T20$clk
+b0 __$T0$__$T$rom_inputs_tanh$39$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_inputs
+#150
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#160
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$$117
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 tanh_neural_network$T0$tanh_neural_network$T$$432
+b1 tanh_neural_network$T0$tanh_neural_network$T$$433
+b10 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_inputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_inputs
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_inputs
+b10 tanh_neural_network$T0$tanh_neural_network$T$address_inputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$flag_inputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$ack_inputs
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_w
+b1 counter$T10$clk
+b1 counter$T20$clk
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_w
+b1 sigmoid_neural_network$T0$ack_fill
+b1 tanh_neural_network$T0$ack_fill
+b1 __$T0$__$T$ack_fill_sig
+b1 __$T0$__$T$ack_fill_tanh
+#170
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0001000000010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$mem
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0001000000010000 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$mem
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#180
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$$116
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b0 tanh_neural_network$T0$tanh_neural_network$T$$432
+b1 counter$T3$clk
+b1 counter$T00$clk
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_w
+b1 counter$T10$clk
+b1 counter$T20$clk
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_w
+#190
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b00010000 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$dbus_r
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b00010000 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$dbus_r
+b0 counter$T3$clk
+b0 counter$T00$clk
+b00010000 layer0$T1$$114
+b0 counter$T10$clk
+b0 counter$T20$clk
+b00010000 layer0$T00$$430
+#200
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 counter$T20$clk
+#210
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#220
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 counter$T20$clk
+#230
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#240
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 counter$T20$clk
+#250
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#260
+b0 __$T0$__$T$fill
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b0 sigmoid_neural_network$T0$fill
+b1 tanh_neural_network$T0$clk
+b0 tanh_neural_network$T0$fill
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 counter$T20$clk
+#270
+b0 __$T0$__$T$clk
+b1 __$T0$__$T$req
+b0 sigmoid_neural_network$T0$clk
+b1 sigmoid_neural_network$T0$req
+b0 tanh_neural_network$T0$clk
+b1 tanh_neural_network$T0$req
+b0 layer0$T1$clk
+b1 layer0$T1$req
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b1 layer0$T00$req
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b1 layer0$T1$layer0$T$req_mac
+b0 counter$T00$clk
+b0 counter$T10$clk
+b1 layer0$T00$layer0$T0$req_mac
+b0 counter$T20$clk
+#280
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$204
+b1 layer0$T1$layer0$T$$189
+b1 layer0$T1$$112
+b1 layer0$T1$layer0$T$mac_n1$244$run
+b0 layer0$T1$$113
+b0 layer0$T1$layer0$T$$190
+b0 layer0$T1$layer0$T$$205
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$520
+b1 layer0$T00$layer0$T0$$505
+b1 layer0$T00$$428
+b1 layer0$T00$layer0$T0$mac_n1$560$run
+b0 layer0$T00$$429
+b0 layer0$T00$layer0$T0$$506
+b0 layer0$T00$layer0$T0$$521
+b1 counter$T20$clk
+b1 layer0$T1$layer0$T$channel_w1$197$trig_r
+b1 layer0$T1$layer0$T$channel_w0$182$trig_r
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_r
+b0 layer0$T1$layer0$T$channel_w0$182$abus_r
+b0 layer0$T1$layer0$T$channel_w1$197$abus_r
+b1 layer0$T00$layer0$T0$channel_w1$513$trig_r
+b1 layer0$T00$layer0$T0$channel_w0$498$trig_r
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_r
+b0 layer0$T00$layer0$T0$channel_w0$498$abus_r
+b0 layer0$T00$layer0$T0$channel_w1$513$abus_r
+#290
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b11000110 layer0$T1$layer0$T$channel_w0$182$dbus_r
+b11100110 layer0$T1$layer0$T$channel_w1$197$dbus_r
+b0 counter$T00$clk
+b0 counter$T10$clk
+b11100011 layer0$T00$layer0$T0$channel_w0$498$dbus_r
+b11110100 layer0$T00$layer0$T0$channel_w1$513$dbus_r
+b0 counter$T20$clk
+b11000110 layer0$T1$layer0$T$$191
+b11100110 layer0$T1$layer0$T$$206
+b11100011 layer0$T00$layer0$T0$$507
+b11110100 layer0$T00$layer0$T0$$522
+#300
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$204
+b0 layer0$T1$layer0$T$$189
+b0 layer0$T1$$112
+b1 layer0$T1$layer0$T$ack
+b0 layer0$T1$layer0$T$mac_n1$244$run
+b11000110 layer0$T1$layer0$T$$214
+b1 layer0$T1$layer0$T$mac_n1$244$wok0
+b11100110 layer0$T1$layer0$T$$215
+b1 layer0$T1$layer0$T$mac_n1$244$wok1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$520
+b0 layer0$T00$layer0$T0$$505
+b0 layer0$T00$$428
+b1 layer0$T00$layer0$T0$ack
+b0 layer0$T00$layer0$T0$mac_n1$560$run
+b11100011 layer0$T00$layer0$T0$$530
+b1 layer0$T00$layer0$T0$mac_n1$560$wok0
+b11110100 layer0$T00$layer0$T0$$531
+b1 layer0$T00$layer0$T0$mac_n1$560$wok1
+b1 counter$T20$clk
+b00010000 layer0$T1$layer0$T$mac_n1$244$rv
+b1 layer0$T1$layer0$T$mac_n1$244$rvok
+b11000110 layer0$T1$layer0$T$mac_n1$244$lv0
+b1 layer0$T1$layer0$T$mac_n1$244$lvok0
+b11000110 layer0$T1$layer0$T$mac_n1$244$av0
+b11100110 layer0$T1$layer0$T$mac_n1$244$lv1
+b1 layer0$T1$layer0$T$mac_n1$244$lvok1
+b11100110 layer0$T1$layer0$T$mac_n1$244$av1
+b00010000 layer0$T00$layer0$T0$mac_n1$560$rv
+b1 layer0$T00$layer0$T0$mac_n1$560$rvok
+b11100011 layer0$T00$layer0$T0$mac_n1$560$lv0
+b1 layer0$T00$layer0$T0$mac_n1$560$lvok0
+b11100011 layer0$T00$layer0$T0$mac_n1$560$av0
+b11110100 layer0$T00$layer0$T0$mac_n1$560$lv1
+b1 layer0$T00$layer0$T0$mac_n1$560$lvok1
+b11110100 layer0$T00$layer0$T0$mac_n1$560$av1
+b0 layer0$T1$layer0$T$channel_w1$197$trig_r
+b0 layer0$T1$layer0$T$channel_w0$182$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+b1 counter$T3$ack
+b11000110 layer0$T1$layer0$T$channel_accum$212$reg_0
+b11100110 layer0$T1$layer0$T$channel_accum$212$reg_1
+b0 layer0$T00$layer0$T0$channel_w1$513$trig_r
+b0 layer0$T00$layer0$T0$channel_w0$498$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+b1 counter$T10$ack
+b11100011 layer0$T00$layer0$T0$channel_accum$528$reg_0
+b11110100 layer0$T00$layer0$T0$channel_accum$528$reg_1
+#310
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+b01 counter$T3$counter$T$q
+b01 counter$T10$counter$T1$q
+#320
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$ack
+b1 layer0$T1$layer0$T$mac_n1$244$run
+b0 layer0$T1$layer0$T$mac_n1$244$rvok
+b0 layer0$T1$layer0$T$mac_n1$244$lvok0
+b0 layer0$T1$layer0$T$mac_n1$244$wok0
+b0 layer0$T1$layer0$T$mac_n1$244$lvok1
+b0 layer0$T1$layer0$T$mac_n1$244$wok1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$ack
+b1 layer0$T00$layer0$T0$mac_n1$560$run
+b0 layer0$T00$layer0$T0$mac_n1$560$rvok
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok0
+b0 layer0$T00$layer0$T0$mac_n1$560$wok0
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok1
+b0 layer0$T00$layer0$T0$mac_n1$560$wok1
+b1 counter$T20$clk
+b0 counter$T3$ack
+b0 counter$T10$ack
+#330
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#340
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$204
+b1 layer0$T1$layer0$T$$189
+b1 layer0$T1$$112
+b1 layer0$T1$$113
+b1 layer0$T1$layer0$T$$190
+b1 layer0$T1$layer0$T$$205
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$520
+b1 layer0$T00$layer0$T0$$505
+b1 layer0$T00$$428
+b1 layer0$T00$$429
+b1 layer0$T00$layer0$T0$$506
+b1 layer0$T00$layer0$T0$$521
+b1 counter$T20$clk
+b1 layer0$T1$layer0$T$channel_w1$197$trig_r
+b1 layer0$T1$layer0$T$channel_w0$182$trig_r
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$abus_r
+b1 layer0$T1$layer0$T$channel_w0$182$abus_r
+b1 layer0$T1$layer0$T$channel_w1$197$abus_r
+b1 layer0$T00$layer0$T0$channel_w1$513$trig_r
+b1 layer0$T00$layer0$T0$channel_w0$498$trig_r
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$abus_r
+b1 layer0$T00$layer0$T0$channel_w0$498$abus_r
+b1 layer0$T00$layer0$T0$channel_w1$513$abus_r
+#350
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b11001010 layer0$T1$layer0$T$channel_w0$182$dbus_r
+b11100111 layer0$T1$layer0$T$channel_w1$197$dbus_r
+b0 counter$T00$clk
+b0 counter$T10$clk
+b11100110 layer0$T00$layer0$T0$channel_w0$498$dbus_r
+b11110101 layer0$T00$layer0$T0$channel_w1$513$dbus_r
+b0 counter$T20$clk
+b11001010 layer0$T1$layer0$T$$191
+b11100111 layer0$T1$layer0$T$$206
+b11100110 layer0$T00$layer0$T0$$507
+b11110101 layer0$T00$layer0$T0$$522
+#360
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$204
+b0 layer0$T1$layer0$T$$189
+b0 layer0$T1$$112
+b1 layer0$T1$layer0$T$ack
+b0 layer0$T1$layer0$T$mac_n1$244$run
+b10010000 layer0$T1$layer0$T$$214
+b1 layer0$T1$layer0$T$mac_n1$244$wok0
+b11001101 layer0$T1$layer0$T$$215
+b1 layer0$T1$layer0$T$mac_n1$244$wok1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$520
+b0 layer0$T00$layer0$T0$$505
+b0 layer0$T00$$428
+b1 layer0$T00$layer0$T0$ack
+b0 layer0$T00$layer0$T0$mac_n1$560$run
+b11001001 layer0$T00$layer0$T0$$530
+b1 layer0$T00$layer0$T0$mac_n1$560$wok0
+b11101001 layer0$T00$layer0$T0$$531
+b1 layer0$T00$layer0$T0$mac_n1$560$wok1
+b1 counter$T20$clk
+b1 layer0$T1$layer0$T$mac_n1$244$rvok
+b11001010 layer0$T1$layer0$T$mac_n1$244$lv0
+b1 layer0$T1$layer0$T$mac_n1$244$lvok0
+b10010000 layer0$T1$layer0$T$mac_n1$244$av0
+b11100111 layer0$T1$layer0$T$mac_n1$244$lv1
+b1 layer0$T1$layer0$T$mac_n1$244$lvok1
+b11001101 layer0$T1$layer0$T$mac_n1$244$av1
+b1 layer0$T00$layer0$T0$mac_n1$560$rvok
+b11100110 layer0$T00$layer0$T0$mac_n1$560$lv0
+b1 layer0$T00$layer0$T0$mac_n1$560$lvok0
+b11001001 layer0$T00$layer0$T0$mac_n1$560$av0
+b11110101 layer0$T00$layer0$T0$mac_n1$560$lv1
+b1 layer0$T00$layer0$T0$mac_n1$560$lvok1
+b11101001 layer0$T00$layer0$T0$mac_n1$560$av1
+b0 layer0$T1$layer0$T$channel_w1$197$trig_r
+b0 layer0$T1$layer0$T$channel_w0$182$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_inputs$100$trig_r
+b1 counter$T3$ack
+b10010000 layer0$T1$layer0$T$channel_accum$212$reg_0
+b11001101 layer0$T1$layer0$T$channel_accum$212$reg_1
+b0 layer0$T00$layer0$T0$channel_w1$513$trig_r
+b0 layer0$T00$layer0$T0$channel_w0$498$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_inputs$416$trig_r
+b1 counter$T10$ack
+b11001001 layer0$T00$layer0$T0$channel_accum$528$reg_0
+b11101001 layer0$T00$layer0$T0$channel_accum$528$reg_1
+#370
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+b00 counter$T3$counter$T$q
+b00 counter$T3$counter$T$q
+b1 counter$T3$ack_mac
+b00 counter$T10$counter$T1$q
+b00 counter$T10$counter$T1$q
+b1 counter$T10$ack_mac
+b1 layer0$T1$layer0$T$ack_mac
+b1 layer0$T00$layer0$T0$ack_mac
+b0 layer0$T1$layer0$T$req_mac
+b0 layer0$T00$layer0$T0$req_mac
+#380
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$ack
+b0 layer0$T1$layer0$T$mac_n1$244$rvok
+b0 layer0$T1$layer0$T$mac_n1$244$lvok0
+b0 layer0$T1$layer0$T$mac_n1$244$wok0
+b0 layer0$T1$layer0$T$mac_n1$244$lvok1
+b0 layer0$T1$layer0$T$mac_n1$244$wok1
+b00000000 layer0$T1$layer0$T$mac_n1$244$av0
+b00000000 layer0$T1$layer0$T$mac_n1$244$av1
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 layer0$T1$layer0$T$add_n$311$run
+b10010000 layer0$T1$layer0$T$add_n$311$lv0
+b1 layer0$T1$layer0$T$add_n$311$lvok0
+b0 layer0$T1$layer0$T$$254
+b11001101 layer0$T1$layer0$T$add_n$311$lv1
+b1 layer0$T1$layer0$T$add_n$311$lvok1
+b0 layer0$T1$layer0$T$$269
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$ack
+b0 layer0$T00$layer0$T0$mac_n1$560$rvok
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok0
+b0 layer0$T00$layer0$T0$mac_n1$560$wok0
+b0 layer0$T00$layer0$T0$mac_n1$560$lvok1
+b0 layer0$T00$layer0$T0$mac_n1$560$wok1
+b00000000 layer0$T00$layer0$T0$mac_n1$560$av0
+b00000000 layer0$T00$layer0$T0$mac_n1$560$av1
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 layer0$T00$layer0$T0$add_n$627$run
+b11001001 layer0$T00$layer0$T0$add_n$627$lv0
+b1 layer0$T00$layer0$T0$add_n$627$lvok0
+b0 layer0$T00$layer0$T0$$570
+b11101001 layer0$T00$layer0$T0$add_n$627$lv1
+b1 layer0$T00$layer0$T0$add_n$627$lvok1
+b0 layer0$T00$layer0$T0$$585
+b1 counter$T20$clk
+b0 counter$T3$ack
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$abus_r
+b0 layer0$T1$layer0$T$channel_b1$266$abus_r
+b0 counter$T10$ack
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$abus_r
+b0 layer0$T00$layer0$T0$channel_b1$582$abus_r
+#390
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#400
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b00000111 layer0$T1$layer0$T$add_n$311$rv0
+b1 layer0$T1$layer0$T$add_n$311$rvok0
+b00100001 layer0$T1$layer0$T$add_n$311$rv1
+b1 layer0$T1$layer0$T$add_n$311$rvok1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b00000101 layer0$T00$layer0$T0$add_n$627$rv0
+b1 layer0$T00$layer0$T0$add_n$627$rvok0
+b00001110 layer0$T00$layer0$T0$add_n$627$rv1
+b1 layer0$T00$layer0$T0$add_n$627$rvok1
+b1 counter$T20$clk
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+#410
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#420
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 layer0$T1$layer0$T$ack_add
+b0 layer0$T1$layer0$T$add_n$311$run
+b10010111 layer0$T1$layer0$T$$283
+b11101110 layer0$T1$layer0$T$$284
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 layer0$T00$layer0$T0$ack_add
+b0 layer0$T00$layer0$T0$add_n$627$run
+b11001110 layer0$T00$layer0$T0$$599
+b11110111 layer0$T00$layer0$T0$$600
+b1 counter$T20$clk
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b10010111 layer0$T1$layer0$T$channel_z$281$reg_0
+b11101110 layer0$T1$layer0$T$channel_z$281$reg_1
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b11001110 layer0$T00$layer0$T0$channel_z$597$reg_0
+b11110111 layer0$T00$layer0$T0$channel_z$597$reg_1
+#430
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#440
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b10010111 layer0$T1$layer0$T$value_z0
+b1 layer0$T1$layer0$T$flag_z0
+b11101110 layer0$T1$layer0$T$value_z1
+b1 layer0$T1$layer0$T$flag_z1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b11001110 layer0$T00$layer0$T0$value_z0
+b1 layer0$T00$layer0$T0$flag_z0
+b11110111 layer0$T00$layer0$T0$value_z1
+b1 layer0$T00$layer0$T0$flag_z1
+b1 counter$T20$clk
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b10010111 func0$T3$z_value
+b11101110 func1$T1$z_value
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b11001110 func0$T10$z_value
+b11110111 func1$T00$z_value
+b1001 func0$T3$func0$T$address
+b00000111 func0$T3$func0$T$remaining
+b1110 func1$T1$func1$T$address
+b00001110 func1$T1$func1$T$remaining
+b1100 func0$T10$func0$T1$address
+b00001110 func0$T10$func0$T1$remaining
+b1111 func1$T00$func1$T0$address
+b00000111 func1$T00$func1$T0$remaining
+b1001 my_lut$T5$address
+b00000111 my_interpolator$T5$remaining
+b1110 my_lut$T00$address
+b00001110 my_interpolator$T00$remaining
+b1100 my_lut$T20$address
+b00001110 my_interpolator$T20$remaining
+b1111 my_lut$T30$address
+b00000111 my_interpolator$T30$remaining
+b00000000 my_lut$T5$next_data
+b00000000 my_lut$T5$base
+b00000100 my_lut$T00$next_data
+b00000001 my_lut$T00$base
+b11110001 my_lut$T20$next_data
+b11110001 my_lut$T20$base
+b00000000 my_lut$T30$next_data
+b11110100 my_lut$T30$base
+b00000000 func0$T3$func0$T$base
+b00000000 func0$T3$func0$T$next_data
+b00000001 func1$T1$func1$T$base
+b00000100 func1$T1$func1$T$next_data
+b11110001 func0$T10$func0$T1$base
+b11110001 func0$T10$func0$T1$next_data
+b11110100 func1$T00$func1$T0$base
+b00000000 func1$T00$func1$T0$next_data
+b00000000 my_interpolator$T5$base
+b00000000 my_interpolator$T5$next_data
+b00000001 my_interpolator$T00$base
+b00000100 my_interpolator$T00$next_data
+b11110001 my_interpolator$T20$base
+b11110001 my_interpolator$T20$next_data
+b11110100 my_interpolator$T30$base
+b00000000 my_interpolator$T30$next_data
+b00000000 my_interpolator$T5$interpolated_value
+b00000011 my_interpolator$T00$interpolated_value
+b11110001 my_interpolator$T20$interpolated_value
+b11111001 my_interpolator$T30$interpolated_value
+b00000000 func0$T3$a
+b00000011 func1$T1$a
+b11110001 func0$T10$a
+b11111001 func1$T00$a
+b00000000 layer0$T1$layer0$T$value_a0
+b00000011 layer0$T1$layer0$T$value_a1
+b11110001 layer0$T00$layer0$T0$value_a0
+b11111001 layer0$T00$layer0$T0$value_a1
+#450
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#460
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b00000000 layer0$T1$$154
+b1 layer0$T1$layer0$T$ack_a0
+b00000011 layer0$T1$$155
+b1 layer0$T1$layer0$T$ack_a1
+b1 counter$T00$clk
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b11110001 layer0$T00$$470
+b1 layer0$T00$layer0$T0$ack_a0
+b11111001 layer0$T00$$471
+b1 layer0$T00$layer0$T0$ack_a1
+b1 counter$T20$clk
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b00000000 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_0
+b1 layer0$T1$ack_layer
+b00000011 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$reg_1
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b11110001 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_0
+b1 layer0$T00$ack_layer
+b11111001 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$reg_1
+b00000000 layer1$T1$$165
+b00000011 layer1$T1$$166
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_0
+b11110001 layer1$T00$$481
+b11111001 layer1$T00$$482
+b1 tanh_neural_network$T0$tanh_neural_network$T$ack_0
+b1 layer1$T1$req
+b1 layer1$T00$req
+b1 layer1$T1$layer1$T$req_mac
+b1 layer1$T00$layer1$T0$req_mac
+#470
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#480
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$329
+b1 layer1$T1$layer1$T$mac_n1$362$run
+b1 layer1$T1$layer1$T$mac_n1$362$rvok
+b00000000 layer1$T1$layer1$T$mac_n1$362$rv
+b1 layer1$T1$$167
+b0 layer1$T1$layer1$T$$330
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$645
+b1 layer1$T00$layer1$T0$mac_n1$678$run
+b1 layer1$T00$layer1$T0$mac_n1$678$rvok
+b11110001 layer1$T00$layer1$T0$mac_n1$678$rv
+b1 layer1$T00$$483
+b0 layer1$T00$layer1$T0$$646
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_w0$322$trig_r
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rinc$164$abus_r
+b0 layer1$T1$layer1$T$channel_w0$322$abus_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_w0$638$trig_r
+b1 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rinc$480$abus_r
+b0 layer1$T00$layer1$T0$channel_w0$638$abus_r
+#490
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b11001100 layer1$T1$layer1$T$channel_w0$322$dbus_r
+b0 counter$T10$clk
+b0 counter$T20$clk
+b11101001 layer1$T00$layer1$T0$channel_w0$638$dbus_r
+b11001100 layer1$T1$layer1$T$$331
+b11101001 layer1$T00$layer1$T0$$647
+#500
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$329
+b1 layer1$T1$layer1$T$ack
+b0 layer1$T1$layer1$T$mac_n1$362$run
+b00000000 layer1$T1$layer1$T$$339
+b1 layer1$T1$layer1$T$mac_n1$362$wok0
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$645
+b1 layer1$T00$layer1$T0$ack
+b0 layer1$T00$layer1$T0$mac_n1$678$run
+b00010101 layer1$T00$layer1$T0$$655
+b1 layer1$T00$layer1$T0$mac_n1$678$wok0
+b11001100 layer1$T1$layer1$T$mac_n1$362$lv0
+b1 layer1$T1$layer1$T$mac_n1$362$lvok0
+b11101001 layer1$T00$layer1$T0$mac_n1$678$lv0
+b1 layer1$T00$layer1$T0$mac_n1$678$lvok0
+b00010101 layer1$T00$layer1$T0$mac_n1$678$av0
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_w0$322$trig_r
+b1 counter$T00$ack
+b00000000 layer1$T1$layer1$T$channel_accum$337$reg_0
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_w0$638$trig_r
+b1 counter$T20$ack
+b00010101 layer1$T00$layer1$T0$channel_accum$653$reg_0
+#510
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+b01 counter$T00$counter$T0$q
+b01 counter$T20$counter$T2$q
+#520
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$ack
+b1 layer1$T1$layer1$T$mac_n1$362$run
+b0 layer1$T1$layer1$T$mac_n1$362$rvok
+b0 layer1$T1$layer1$T$mac_n1$362$lvok0
+b0 layer1$T1$layer1$T$mac_n1$362$wok0
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$ack
+b1 layer1$T00$layer1$T0$mac_n1$678$run
+b0 layer1$T00$layer1$T0$mac_n1$678$rvok
+b0 layer1$T00$layer1$T0$mac_n1$678$lvok0
+b0 layer1$T00$layer1$T0$mac_n1$678$wok0
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 counter$T00$ack
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 counter$T20$ack
+#530
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#540
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$329
+b00000011 layer1$T1$layer1$T$mac_n1$362$rv
+b1 layer1$T1$layer1$T$mac_n1$362$rvok
+b0 layer1$T1$$167
+b1 layer1$T1$layer1$T$$330
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$645
+b11111001 layer1$T00$layer1$T0$mac_n1$678$rv
+b1 layer1$T00$layer1$T0$mac_n1$678$rvok
+b0 layer1$T00$$483
+b1 layer1$T00$layer1$T0$$646
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_w0$322$trig_r
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_a0$152$rinc$164$abus_r
+b1 layer1$T1$layer1$T$channel_w0$322$abus_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_w0$638$trig_r
+b0 tanh_neural_network$T0$tanh_neural_network$T$channel_a0$468$rinc$480$abus_r
+b1 layer1$T00$layer1$T0$channel_w0$638$abus_r
+#550
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b00110000 layer1$T1$layer1$T$channel_w0$322$dbus_r
+b0 counter$T10$clk
+b0 counter$T20$clk
+b00010111 layer1$T00$layer1$T0$channel_w0$638$dbus_r
+b00110000 layer1$T1$layer1$T$$331
+b00010111 layer1$T00$layer1$T0$$647
+#560
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$329
+b1 layer1$T1$layer1$T$ack
+b0 layer1$T1$layer1$T$mac_n1$362$run
+b00001001 layer1$T1$layer1$T$$339
+b1 layer1$T1$layer1$T$mac_n1$362$wok0
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$645
+b1 layer1$T00$layer1$T0$ack
+b0 layer1$T00$layer1$T0$mac_n1$678$run
+b00001010 layer1$T00$layer1$T0$$655
+b1 layer1$T00$layer1$T0$mac_n1$678$wok0
+b00110000 layer1$T1$layer1$T$mac_n1$362$lv0
+b1 layer1$T1$layer1$T$mac_n1$362$lvok0
+b00001001 layer1$T1$layer1$T$mac_n1$362$av0
+b00010111 layer1$T00$layer1$T0$mac_n1$678$lv0
+b1 layer1$T00$layer1$T0$mac_n1$678$lvok0
+b00001010 layer1$T00$layer1$T0$mac_n1$678$av0
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_w0$322$trig_r
+b1 counter$T00$ack
+b00001001 layer1$T1$layer1$T$channel_accum$337$reg_0
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_w0$638$trig_r
+b1 counter$T20$ack
+b00001010 layer1$T00$layer1$T0$channel_accum$653$reg_0
+#570
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+b00 counter$T00$counter$T0$q
+b00 counter$T00$counter$T0$q
+b1 counter$T00$ack_mac
+b00 counter$T20$counter$T2$q
+b00 counter$T20$counter$T2$q
+b1 counter$T20$ack_mac
+b1 layer1$T1$layer1$T$ack_mac
+b1 layer1$T00$layer1$T0$ack_mac
+b0 layer1$T1$layer1$T$req_mac
+b0 layer1$T00$layer1$T0$req_mac
+#580
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$ack
+b0 layer1$T1$layer1$T$mac_n1$362$rvok
+b0 layer1$T1$layer1$T$mac_n1$362$lvok0
+b0 layer1$T1$layer1$T$mac_n1$362$wok0
+b00000000 layer1$T1$layer1$T$mac_n1$362$av0
+b1 layer1$T1$layer1$T$$369
+b1 layer1$T1$layer1$T$add_n$405$run
+b00001001 layer1$T1$layer1$T$add_n$405$lv0
+b1 layer1$T1$layer1$T$add_n$405$lvok0
+b0 layer1$T1$layer1$T$$370
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$ack
+b0 layer1$T00$layer1$T0$mac_n1$678$rvok
+b0 layer1$T00$layer1$T0$mac_n1$678$lvok0
+b0 layer1$T00$layer1$T0$mac_n1$678$wok0
+b00000000 layer1$T00$layer1$T0$mac_n1$678$av0
+b1 layer1$T00$layer1$T0$$685
+b1 layer1$T00$layer1$T0$add_n$721$run
+b00001010 layer1$T00$layer1$T0$add_n$721$lv0
+b1 layer1$T00$layer1$T0$add_n$721$lvok0
+b0 layer1$T00$layer1$T0$$686
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 counter$T00$ack
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$abus_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 counter$T20$ack
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$abus_r
+#590
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#600
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b11110101 layer1$T1$layer1$T$add_n$405$rv0
+b1 layer1$T1$layer1$T$add_n$405$rvok0
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b11110111 layer1$T00$layer1$T0$add_n$721$rv0
+b1 layer1$T00$layer1$T0$add_n$721$rvok0
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#610
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#620
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b1 layer1$T1$layer1$T$ack_add
+b0 layer1$T1$layer1$T$add_n$405$run
+b11111110 layer1$T1$layer1$T$$384
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b1 layer1$T00$layer1$T0$ack_add
+b0 layer1$T00$layer1$T0$add_n$721$run
+b00000001 layer1$T00$layer1$T0$$700
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b11111110 layer1$T1$layer1$T$channel_z$382$reg_0
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b00000001 layer1$T00$layer1$T0$channel_z$698$reg_0
+#630
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#640
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b11111110 layer1$T1$layer1$T$value_z0
+b1 layer1$T1$layer1$T$flag_z0
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b00000001 layer1$T00$layer1$T0$value_z0
+b1 layer1$T00$layer1$T0$flag_z0
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b11111110 func0$T00$z_value
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b00000001 func0$T20$z_value
+b1111 func0$T00$func0$T0$address
+b00001110 func0$T00$func0$T0$remaining
+b0000 func0$T20$func0$T2$address
+b00000001 func0$T20$func0$T2$remaining
+b1111 my_lut$T10$address
+b00001110 my_interpolator$T10$remaining
+b0000 my_lut$T40$address
+b00000001 my_interpolator$T40$remaining
+b00000000 my_lut$T10$next_data
+b11110000 my_lut$T10$base
+b00010000 my_lut$T40$next_data
+b00000000 my_lut$T40$base
+b11110000 func0$T00$func0$T0$base
+b00000000 func0$T00$func0$T0$next_data
+b00000000 func0$T20$func0$T2$base
+b00010000 func0$T20$func0$T2$next_data
+b11110000 my_interpolator$T10$base
+b00000000 my_interpolator$T10$next_data
+b00000000 my_interpolator$T40$base
+b00010000 my_interpolator$T40$next_data
+b11111110 my_interpolator$T10$interpolated_value
+b00000001 my_interpolator$T40$interpolated_value
+b11111110 func0$T00$a
+b00000001 func0$T20$a
+b11111110 layer1$T1$layer1$T$value_a0
+b00000001 layer1$T00$layer1$T0$value_a0
+#650
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#660
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b11111110 layer1$T1$$131
+b1 layer1$T1$layer1$T$ack_a0
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b00000001 layer1$T00$$447
+b1 layer1$T00$layer1$T0$ack_a0
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b11111110 sigmoid_neural_network$T0$sigmoid_neural_network$T$channel_outputs$129$reg_0
+b1 layer1$T1$ack_layer
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b00000001 tanh_neural_network$T0$tanh_neural_network$T$channel_outputs$445$reg_0
+b1 layer1$T00$ack_layer
+b11111110 sigmoid_neural_network$T0$sigmoid_neural_network$T$$139
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$ack_1
+b00000001 tanh_neural_network$T0$tanh_neural_network$T$$455
+b1 tanh_neural_network$T0$tanh_neural_network$T$ack_1
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_outputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$fill_outputs
+#670
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#680
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b11111110 sigmoid_neural_network$T0$sigmoid_neural_network$T$value_outputs
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_outputs
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b00000001 tanh_neural_network$T0$tanh_neural_network$T$value_outputs
+b1 tanh_neural_network$T0$tanh_neural_network$T$flag_outputs
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$fill_outputs
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 tanh_neural_network$T0$tanh_neural_network$T$fill_outputs
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#690
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#700
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b11111110 sigmoid_neural_network$T0$$29
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b00000001 tanh_neural_network$T0$$67
+b1 sigmoid_neural_network$T0$sigmoid_neural_network$T$address_outputs
+b0 sigmoid_neural_network$T0$sigmoid_neural_network$T$flag_outputs
+b1 sigmoid_neural_network$T0$ack_network
+b1 tanh_neural_network$T0$tanh_neural_network$T$address_outputs
+b0 tanh_neural_network$T0$tanh_neural_network$T$flag_outputs
+b1 tanh_neural_network$T0$ack_network
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b11111110 __$T0$__$T$ram_outputs_sig$16$reg_0
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b00000001 __$T0$__$T$ram_outputs_tanh$54$reg_0
+b1 __$T0$__$T$ack_network_sig
+b1 __$T0$__$T$ack_network_tanh
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b11111110 __$T0$__$T$$18
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+b00000001 __$T0$__$T$$56
+b1 __$T0$__$T$req_mul
+#710
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#720
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 __$T0$__$T$mul_n$732$add_n$733$run
+b11111110 __$T0$__$T$mul_n$732$add_n$733$lv0
+b1 __$T0$__$T$mul_n$732$add_n$733$lvok0
+b00000001 __$T0$__$T$mul_n$732$add_n$733$rv0
+b1 __$T0$__$T$mul_n$732$add_n$733$rvok0
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#730
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#740
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 __$T0$__$T$ack_mul
+b0 __$T0$__$T$mul_n$732$add_n$733$run
+b11111111 __$T0$__$T$$79
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b11111111 __$T0$__$T$ram_outputs_mul$77$reg_0
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#750
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#760
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#770
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#780
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#790
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#800
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#810
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#820
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#830
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#840
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#850
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#860
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b1 layer0$T1$layer0$T$$268
+b1 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b1 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b1 layer0$T00$layer0$T0$$584
+b1 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b1 layer1$T00$layer1$T0$$685
+b1 layer0$T1$layer0$T$channel_b1$266$trig_r
+b1 layer0$T1$layer0$T$channel_b0$251$trig_r
+b1 layer1$T1$layer1$T$channel_b0$367$trig_r
+b1 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b1 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b1 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#870
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#880
+b1 __$T0$__$T$clk
+b1 sigmoid_neural_network$T0$clk
+b1 tanh_neural_network$T0$clk
+b1 layer0$T1$clk
+b1 layer1$T1$clk
+b1 layer0$T00$clk
+b1 layer1$T00$clk
+b1 counter$T3$clk
+b0 layer0$T1$layer0$T$$268
+b0 layer0$T1$layer0$T$$253
+b1 counter$T00$clk
+b0 layer1$T1$layer1$T$$369
+b1 counter$T10$clk
+b0 layer0$T00$layer0$T0$$584
+b0 layer0$T00$layer0$T0$$569
+b1 counter$T20$clk
+b0 layer1$T00$layer1$T0$$685
+b0 layer0$T1$layer0$T$channel_b1$266$trig_r
+b0 layer0$T1$layer0$T$channel_b0$251$trig_r
+b0 layer1$T1$layer1$T$channel_b0$367$trig_r
+b0 layer0$T00$layer0$T0$channel_b1$582$trig_r
+b0 layer0$T00$layer0$T0$channel_b0$567$trig_r
+b0 layer1$T00$layer1$T0$channel_b0$683$trig_r
+#890
+b0 __$T0$__$T$clk
+b0 sigmoid_neural_network$T0$clk
+b0 tanh_neural_network$T0$clk
+b0 layer0$T1$clk
+b0 layer1$T1$clk
+b0 layer0$T00$clk
+b0 layer1$T00$clk
+b0 counter$T3$clk
+b0 counter$T00$clk
+b0 counter$T10$clk
+b0 counter$T20$clk
+#900
