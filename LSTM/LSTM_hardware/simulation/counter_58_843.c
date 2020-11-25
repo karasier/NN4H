@@ -2,16 +2,16 @@
 #include "hruby_sim.h"
 #include "hruby_sim_gen.h"
 
-SystemT counter_58_843_52714880;
+SystemT counter_58_843_55895240;
 
-SignalI clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800;
+SignalI clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420;
 
-SignalI makeclk_52712000() {
+SignalI makeclk_55917620() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800 = signalI;
-   signalI->owner = (Object)counter_58_843_52714880;
+   clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420 = signalI;
+   signalI->owner = (Object)counter_58_843_55895240;
    signalI->name = "clk";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -30,14 +30,14 @@ SignalI makeclk_52712000() {
    return signalI;
 };
 
-SignalI ack_52711940_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800;
+SignalI ack_55917560_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420;
 
-SignalI makeack_52711940() {
+SignalI makeack_55917560() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack_52711940_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800 = signalI;
-   signalI->owner = (Object)counter_58_843_52714880;
+   ack_55917560_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420 = signalI;
+   signalI->owner = (Object)counter_58_843_55895240;
    signalI->name = "ack";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -56,14 +56,14 @@ SignalI makeack_52711940() {
    return signalI;
 };
 
-SignalI rst_52711920_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800;
+SignalI rst_55917540_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420;
 
-SignalI makerst_52711920() {
+SignalI makerst_55917540() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   rst_52711920_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800 = signalI;
-   signalI->owner = (Object)counter_58_843_52714880;
+   rst_55917540_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420 = signalI;
+   signalI->owner = (Object)counter_58_843_55895240;
    signalI->name = "rst";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -82,14 +82,14 @@ SignalI makerst_52711920() {
    return signalI;
 };
 
-SignalI ack__mac_52711820_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800;
+SignalI ack__mac_55917480_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420;
 
-SignalI makeack__mac_52711820() {
+SignalI makeack__mac_55917480() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack__mac_52711820_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800 = signalI;
-   signalI->owner = (Object)counter_58_843_52714880;
+   ack__mac_55917480_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420 = signalI;
+   signalI->owner = (Object)counter_58_843_55895240;
    signalI->name = "ack_mac";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -108,71 +108,71 @@ SignalI makeack__mac_52711820() {
    return signalI;
 };
 
-Block __52694820;
+Block __55898840;
 
-Block __52694340;
+Block __55898620;
 
-void code__52694340() {
+void code__55898620() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__71624380(),q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
+      transmit_to_signal(make__77072720(),q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(make__71624260(),ack__mac_52711820_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__52694340() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __52694340 = block;
-   block->owner = (Object)__52694820;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52694340;
-
-   return block;
-};
-
-Block __52693400;
-
-Block __52693120;
-
-Block __52691920;
-
-void code__52691920() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__71623840(),q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
-      set_value_pos(pool_state);
-   }
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__71623780(),ack__mac_52711820_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
+      transmit_to_signal(make__77072660(),ack__mac_55917480_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
       set_value_pos(pool_state);
    }
 }
 
-Block make__52691920() {
+Block make__55898620() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52691920 = block;
-   block->owner = (Object)__52693120;
+   __55898620 = block;
+   block->owner = (Object)__55898840;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52691920;
+   block->function = &code__55898620;
 
    return block;
 };
 
-void code__52693120() {
+Block __55897800;
+
+Block __55897620;
+
+Block __55896620;
+
+void code__55896620() {
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__77072260(),q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
+      set_value_pos(pool_state);
+   }
+   {
+      unsigned int pool_state = get_value_pos();
+      transmit_to_signal_seq(make__77072180(),ack__mac_55917480_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
+      set_value_pos(pool_state);
+   }
+}
+
+Block make__55896620() {
+   Block block = malloc(sizeof(BlockS));
+   block->kind = BLOCK;
+
+   __55896620 = block;
+   block->owner = (Object)__55897620;
+   block->name = "";
+   block->num_inners = 0;
+   block->inners = calloc(sizeof(SignalI),block->num_inners);
+   block->function = &code__55896620;
+
+   return block;
+};
+
+void code__55897620() {
    {
       unsigned int pool_state = get_value_pos();
       transmit_to_signal_seq(({
@@ -184,17 +184,17 @@ void code__52693120() {
             src0 = ({
                   Value src0, dst = get_value();
                   unsigned int pool_state = get_value_pos();
-                  src0 = q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->c_value;
+                  src0 = q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->c_value;
                   dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                   set_value_pos(pool_state);
                dst; });
-            src1 = make__71624040();
+            src1 = make__77072460();
             dst = add_value(src0,src1,dst);
             set_value_pos(pool_state);
          dst; });
       dst = cast_value(src0,get_type_vector(get_type_bit(),2),dst);
       set_value_pos(pool_state);
-   dst; }),q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
+   dst; }),q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
       set_value_pos(pool_state);
    }
    {
@@ -204,122 +204,122 @@ void code__52693120() {
          src0 = ({
                Value src0, dst = get_value();
                unsigned int pool_state = get_value_pos();
-               src0 = q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->c_value;
+               src0 = q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->c_value;
                dst = cast_value(src0,get_type_vector(get_type_signed(),32),dst);
                set_value_pos(pool_state);
             dst; });
-         src1 = make__71623920();
+         src1 = make__77072340();
          dst = equal_value(src0,src1,dst);
 dst = reduce_or_value(dst,dst);         set_value_pos(pool_state);
       dst; });
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__52691920();
+    code__55896620();
    }
       }
    }
 }
 
-Block make__52693120() {
+Block make__55897620() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52693120 = block;
-   block->owner = (Object)__52693400;
+   __55897620 = block;
+   block->owner = (Object)__55897800;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52693120;
+   block->function = &code__55897620;
 
    return block;
 };
 
-void code__52693400() {
- code__52693120();
+void code__55897800() {
+ code__55897620();
 }
 
-Block make__52693400() {
+Block make__55897800() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52693400 = block;
-   block->owner = (Object)__52694820;
+   __55897800 = block;
+   block->owner = (Object)__55898840;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52693400;
+   block->function = &code__55897800;
 
    return block;
 };
 
-void code__52694820() {
+void code__55898840() {
    {
-      Value cond = rst_52711920_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->c_value;
+      Value cond = rst_55917540_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->c_value;
       if (is_defined_value(cond)) {
          if (value2integer(cond)) {
-    code__52694340();
+    code__55898620();
    }
-   else if (value2integer(ack_52711940_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->c_value)) {
-  code__52693400();
+   else if (value2integer(ack_55917560_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->c_value)) {
+  code__55897800();
    }
       }
    }
 }
 
-Block make__52694820() {
+Block make__55898840() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __52694820 = block;
-   block->owner = (Object)__52715340;
+   __55898840 = block;
+   block->owner = (Object)__55895620;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__52694820;
+   block->function = &code__55898840;
 
    return block;
 };
 
-Value make__71624380() {
+Value make__77072720() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_vector(get_type_bit(),2),1,data);
 }
 
-Value make__71624260() {
+Value make__77072660() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__71624040() {
+Value make__77072460() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__71623920() {
+Value make__77072340() {
    static unsigned long long data[] = { 2ULL };
    return make_set_value(get_type_vector(get_type_signed(),32),1,data);
 }
 
-Value make__71623840() {
+Value make__77072260() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_vector(get_type_bit(),2),1,data);
 }
 
-Value make__71623780() {
+Value make__77072180() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Scope counter_58_84_52696860;
+Scope counter_58_84_55899360;
 
-SignalI q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800;
+SignalI q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420;
 
-SignalI makeq_52695360() {
+SignalI makeq_55898960() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   q_52695360_counter_58_84_52696860_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800 = signalI;
-   signalI->owner = (Object)counter_58_84_52696860;
+   q_55898960_counter_58_84_55899360_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420 = signalI;
+   signalI->owner = (Object)counter_58_84_55899360;
    signalI->name = "q";
    signalI->type = get_type_vector(get_type_bit(),2);
    signalI->c_value = make_value(signalI->type,0);
@@ -338,69 +338,69 @@ SignalI makeq_52695360() {
    return signalI;
 };
 
-Behavior __52715340;
+Behavior __55895620;
 
-Behavior make__52715340() {
+Behavior make__55895620() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __52715340 = behavior;
-   behavior->owner = (Object)counter_58_84_52696860;
+   __55895620 = behavior;
+   behavior->owner = (Object)counter_58_84_55899360;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 1;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(NEGEDGE,clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800);
-   clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->num_neg += 1;
-   clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->neg = realloc(clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->neg,clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->num_neg*sizeof(Object));
-clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->neg[clk_52712000_counter_58_843_52714880_layer0_58_84_52407180_layer0_58_841_59735240_sigmoid__neural__network_58_84_52408180_sigmoid__neural__network_58_840_59750680______58_84_51099120______58_840_70256800->num_neg-1] = (Object)behavior;
-   behavior->block = make__52694820();
+   behavior->events[0] = make_event(NEGEDGE,clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420);
+   clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->num_neg += 1;
+   clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->neg = realloc(clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->neg,clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->num_neg*sizeof(Object));
+clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->neg[clk_55917620_counter_58_843_55895240_layer0_58_84_57677020_layer0_58_841_56849280_sigmoid__neural__network_58_84_52027200_sigmoid__neural__network_58_840_56864280______58_84_52267520______58_840_76060420->num_neg-1] = (Object)behavior;
+   behavior->block = make__55898840();
 
    return behavior;
 }
 
-Scope makecounter_58_84_52696860() {
+Scope makecounter_58_84_55899360() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   counter_58_84_52696860 = scope;
-   scope->owner = (Object)counter_58_843_52714880;
+   counter_58_84_55899360 = scope;
+   scope->owner = (Object)counter_58_843_55895240;
    scope->name = "counter:T";
    scope->num_systemIs = 0;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
    scope->num_inners = 1;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeq_52695360();
+   scope->inners[0] = makeq_55898960();
    scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
    scope->num_behaviors = 1;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__52715340();
+   scope->behaviors[0] = make__55895620();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-SystemT makecounter_58_843_52714880() {
+SystemT makecounter_58_843_55895240() {
    SystemT systemT = malloc(sizeof(SystemTS));
    systemT->kind = SYSTEMT;
 
-   counter_58_843_52714880 = systemT;
+   counter_58_843_55895240 = systemT;
 systemT->owner = NULL;
    systemT->name = "counter:T3";
    systemT->num_inputs = 3;
    systemT->inputs = calloc(sizeof(SignalI),systemT->num_inputs);
-   systemT->inputs[0] = makeclk_52712000();
-   systemT->inputs[1] = makeack_52711940();
-   systemT->inputs[2] = makerst_52711920();
+   systemT->inputs[0] = makeclk_55917620();
+   systemT->inputs[1] = makeack_55917560();
+   systemT->inputs[2] = makerst_55917540();
    systemT->num_outputs = 1;
    systemT->outputs = calloc(sizeof(SignalI),systemT->num_outputs);
-   systemT->outputs[0] = makeack__mac_52711820();
+   systemT->outputs[0] = makeack__mac_55917480();
    systemT->num_inouts = 0;
    systemT->inouts = calloc(sizeof(SignalI),systemT->num_inouts);
 
-   systemT->scope = makecounter_58_84_52696860();
+   systemT->scope = makecounter_58_84_55899360();
 
    return systemT;
 }
