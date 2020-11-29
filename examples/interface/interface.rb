@@ -1,9 +1,9 @@
 require 'HDLRuby'
 
 configure_high
-require_relative 'adder.rb'
+require_relative 'adder_gen.rb'
 
-adder(signed[15], signed[16]).(:adder_instance)
+adder_gen(signed[15], signed[16]).(:adder_instance)
 
 low = adder_instance.systemT.to_low
 
