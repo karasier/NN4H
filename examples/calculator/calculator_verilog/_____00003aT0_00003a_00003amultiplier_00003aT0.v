@@ -1,10 +1,10 @@
 `timescale 1ps/1ps
 
-module _____00003aT0_00003a_00003amultiplier_00003aT0( x, y, s ); 
-   input [3:0] x;
-   input [3:0] y;
-   output [7:0] s;
+module _____00003aT0_00003a_00003amultiplier_00003aT0( a, b, s ); 
+   input signed[3:0] a;
+   input signed[3:0] b;
+   output signed[7:0] s;
 
-   assign s = (x * y);
+   assign s = (a * b);
 
 endmodule
