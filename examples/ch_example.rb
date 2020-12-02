@@ -3,7 +3,7 @@ system :ch_example do
   channel1([8], 256).(:ch1)
 
   p0 = ch1.branch(:port0)
-  addr0 = port0.wrap(0)
+  addr0 = p0.wrap(0)
 end
 
 system :ch_access do |channel|
