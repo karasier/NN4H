@@ -32,13 +32,17 @@ system :channel_connector do
 
     mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
 
-    mem_file(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) # 出力値を格納するram(sig)
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) #
 
     reader_inputs_x = rom_inputs_x.branch(:rinc) #入力値xの読みだし用branch
     reader_inputs_h = rom_inputs_h.branch(:rinc) #入力値hの読みだし用branch
-    reader_inputs = ram_inputs.branch(:winc) #入力値を合成した値の書き込み用branch
+    reader_inputs_w = ram_inputs.branch(:winc) #入力値を合成した値の書き込み用branch
+    reader_inputs_r = ran_inputs.branch(:rinc)
 
-    merger([typ]*2,clk.negedge,[reader_inputs_x,reader_inputs_h],reader_inputs)
+    serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],reader_inputs_w)
+
+    duplicator(typ,clk.negedge,reader_inputs_r,[])
+
 
     timed do
       # リセット

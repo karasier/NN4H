@@ -5,7 +5,7 @@ require_relative "network_constructor.rb"
 require_relative "network_loader.rb"
 require_relative "quantize.rb"
 
-system :lstm_test do
+system :lstm_mul_test do
     # データ型の宣言
     integer_width = 4 # 整数部のビット幅
     decimal_width = 4 # 実数部のビット幅
@@ -55,12 +55,12 @@ system :lstm_test do
     # ただし、branchはrincのみ。つまり、rincのbranchを持つメモリなら何でもOK。
     mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_sig) # 出力値を格納するram
 
     mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_tanh) # 入力値を格納するrom
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_tanh) # 出力値を格納するram
-    
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_tanh) # 出力値を格納するram
+
     mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_mul)
 
     reader_inputs_sig = rom_inputs_sig.branch(:rinc) # 入力値の読み出し用branch

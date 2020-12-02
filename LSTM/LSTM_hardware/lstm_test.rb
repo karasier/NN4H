@@ -4,6 +4,7 @@ require "std/fixpoint.rb"
 require_relative "network_constructor.rb"
 require_relative "network_loader.rb"
 require_relative "quantize.rb"
+require_relative "activation_function.rb"
 require 'std/channel.rb'
 require 'std/connector.rb'
 
@@ -57,14 +58,16 @@ system :lstm_test do
     # NOTE: 入力のメモリに関して
     # network_constructorにはbranchを渡すので、mem_romからmem_dualやmem_fileに変更できる。
     # ただし、branchはrincのみ。つまり、rincのbranchを持つメモリなら何でもOK。
-    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
 
-    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
+    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
 
-    #          ↓         ↓ わからない
-    mem_file(typ*2, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
 
-    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom(sig)
+    # #          ↓         ↓ わからない
+    # mem_file(typ*2, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+
+    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom(sig)
+
 
     mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram(sig)
 
@@ -89,9 +92,9 @@ system :lstm_test do
     mul_outputs = ram_outputs_mul.branch(:anum)# 掛け算計算の出力値用branch
 
     #        ↓ わからない
-    merger([typ]*2,clk.negedge,[reader_inputs_x,reader_inputs_h],reader_inputs)
+    # serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],reader_inputs)
 
-    # duplicator(typ*2,clk.negedge,reader_inputs,[in_sig,in_tanh])
+    #s duplicator(typ*2,clk.negedge,reader_inputs,[in_sig,in_tanh])
 
     sig_outputs = columns[-1].times.map{ |i| mul_inputs_sig.wrap(i) }
     tanh_outputs = columns[-1].times.map{ |i| mul_inputs_tanh.wrap(i) }
