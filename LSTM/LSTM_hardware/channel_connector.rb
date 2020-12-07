@@ -15,7 +15,7 @@ system :channel_connector do
     decimal_width = 4 # 実数部のビット幅
     address_width = 4 # lutのアドレスのビット幅
     typ = signed[integer_width, decimal_width] # データ型
-    
+
     inputs_x = [1, 0]
     inputs_h = [0, 1]
     columns = [2, 2, 1]
@@ -43,7 +43,7 @@ system :channel_connector do
     reader_inputs_h = rom_inputs_h.branch(:rinc) #入力値hの読みだし用branch
     writer_inputs_serializer = ram_inputs_serializer.branch(:winc) #入力値を合成した値の書き込み用branch
     writer_inputs_meger = ram_inputs_merger.branch(:winc) #入力値を合成した値の書き込み用branch
-  
+
 
     serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],writer_inputs_serializer)
 

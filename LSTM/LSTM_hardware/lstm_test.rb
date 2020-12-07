@@ -21,7 +21,7 @@ system :lstm_test do
     linear = proc { |x| x }
 
     # ニューラルネットワークの構造
-    columns = [2, 2, 1]
+    columns = [16, 2, 8]
     func_sig = [sigmoid, linear] # 活性化関数
 
     func_tanh = [tanh, linear]   # 活性化関数
@@ -59,37 +59,97 @@ system :lstm_test do
     # network_constructorにはbranchを渡すので、mem_romからmem_dualやmem_fileに変更できる。
     # ただし、branchはrincのみ。つまり、rincのbranchを持つメモリなら何でもOK。
 
-    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
+    # mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
+    # mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
+    mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_c) # 入力値を格納するrom(c)
+    #         ↓     ↓ わからない
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
 
-    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_forg) # 忘却ゲートNNの入力値を格納するram
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_ingsig) # 入力ゲートNNの入力値を格納するram(sig)
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_ingtanh) # 入力ゲートNNの入力値を格納するram(tanh)
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_outg) # 出力ゲートNNの入力値を格納するram
 
-    # #          ↓         ↓ わからない
-    # mem_file(typ*2, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_forg) # 忘却ゲートNNの出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_ingsig) # 入力ゲートNNの出力値を格納するram(sig)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_ingtanh) # 入力ゲートNNの出力値を格納するram(tanh)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_outg) # 出力ゲートNNの出力値を格納するram
+
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_mul_forg) # 忘却ゲート(mul)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_mul_ing) # 入力ゲート(mul)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_sum_ing) # 入力ゲート(sum)の出力値を格納するram
+
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_input_tanh_outg) # 出力ゲート(tanh)の入力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_tanh_outg) # 出力ゲート(tanh)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_c) # 長期記憶の出力値を格納するram
+
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_h) # 短期記憶の出力値を格納するram
+
 
     # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom(sig)
 
+    # mem_dual(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram(sig)
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_sig) # 出力値を格納するram(sig)
+    # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_tanh) # 入力値を格納するrom(tanh)
 
-    mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_tanh) # 入力値を格納するrom(tanh)
+    # mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_tanh) # 出力値を格納するram(tanh)
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_tanh) # 出力値を格納するram(tanh)
+    # mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_mul)  # 掛け算の出力値を格納する
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_mul)  # 掛け算の出力値を格納する
 
-    reader_inputs_x = rom_inputs_x.branch(:rinc) #入力値xの読みだし用branch
-    reader_inputs_h = rom_inputs_h.branch(:rinc) #入力値hの読みだし用branch
-    reader_inputs = ram_inputs.branch(:winc) #入力値を合成した値の書き込み用branch
 
-    reader_inputs_sig = rom_inputs_sig.branch(:rinc) # 入力値の読み出し用branch
-    writer_outputs_sig = ram_outputs_sig.branch(:winc) # 出力値の書き込み用branch
 
-    reader_inputs_tanh = rom_inputs_tanh.branch(:rinc) # 入力値の読み出し用branch
-    writer_outputs_tanh = ram_outputs_tanh.branch(:winc) # 出力値の書き込み用branch
+    # reader_inputs_x = rom_inputs_x.branch(:rinc) # 入力値xの読みだし用branch
+    # reader_inputs_h = rom_inputs_h.branch(:rinc) # 入力値hの読みだし用branch
+    reader_inputs_c = rom_inputs_c.branch(:rinc) # 入力値cの読みだし用branch
+    writer_inputs = ram_inputs.branch(:winc) # 入力値を合成した値の書き込み用branch
 
-    mul_inputs_sig = ram_outputs_sig.branch(:anum) # 掛け算計算の入力値(sig)用branch
-    mul_inputs_tanh = ram_outputs_tanh.branch(:anum) # 掛け算計算の入力値(tanh)用branch
-    mul_outputs = ram_outputs_mul.branch(:anum)# 掛け算計算の出力値用branch
+    writer_input_forg = ram_input_forg.branch(:winc)
+    writer_input_ingsig = ram_input_ingsig.branch(:winc)
+    writer_input_ingtanh = ram_input_ingtanh.branch(:winc)
+    writer_input_outg = ram_input_outg.branch(:winc)
+
+    reader_input_forg = ram_input_forg.branch(:rinc)
+    reader_input_ingsig = ram_input_ingsig.branch(:rinc)
+    reader_input_ingtanh = ram_input_ingtanh.branch(:rinc)
+    reader_input_outg = ram_input_outg.branch(:rinc)
+
+    writer_output_forg = ram_output_forg.branch(:winc)
+    writer_output_ingsig = ram_output_ingsig.branch(:winc)
+    writer_output_ingtanh = ram_output_ingtanh.branch(:winc)
+    writer_output_outg = ram_output_outg.branch(:winc)
+
+    reader_output_forg = ram_output_forg.branch(:rinc)
+    reader_output_ingsig = ram_output_ingsig.branch(:rinc)
+    reader_output_ingtanh = ram_output_ingtanh.branch(:rinc)
+    reader_output_outg = ram_output_outg.branch(:rinc)
+
+    writer_output_mul_forg = ram_output_mul_forg.branch(:winc)
+    writer_output_mul_ing = ram_output_mul_ing.branch(:winc)
+
+    reader_output_mul_forg = ram_output_mul_forg.branch(:rinc)
+    reader_output_mul_ing = ram_output_mul_ing.branch(:rinc)
+    writer_output_sum_ing = ram_output_sum_ing.branch(:winc)
+
+    reader_output_sum_ing = ram_output_sum_ing.branch(:rinc)
+    writer_outputs_c = ram_outputs_c.branch(:winc)
+    writer_input_tanh_outg = ram_input_tanh_outg.branch(:winc)
+
+    reader_input_tanh_outg = ram_input_tanh_outg.branch(:rinc)
+    writer_output_tanh_outg = ram_output_tanh_outg.branch(:winc)
+    reader_output_tanh_outg = ram_output_tanh_outg.branch(:rinc)
+
+    writer_output_mul_outg = ram_output_h.branch(:rinc)
+
+    # reader_inputs_sig = rom_inputs_sig.branch(:rinc) # 入力値の読み出し用branch
+    # writer_outputs_sig = ram_outputs_sig.branch(:winc) # 出力値の書き込み用branch
+
+    # reader_inputs_tanh = rom_inputs_tanh.branch(:rinc) # 入力値の読み出し用branch
+    # writer_outputs_tanh = ram_outputs_tanh.branch(:winc) # 出力値の書き込み用branch
+
+    # mul_inputs_sig = ram_outputs_sig.branch(:anum) # 掛け算計算の入力値(sig)用branch
+    # mul_inputs_tanh = ram_outputs_tanh.branch(:anum) # 掛け算計算の入力値(tanh)用branch
+    # mul_outputs = ram_outputs_mul.branch(:anum)# 掛け算計算の出力値用branch
 
     #        ↓ わからない
     # serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],reader_inputs)
