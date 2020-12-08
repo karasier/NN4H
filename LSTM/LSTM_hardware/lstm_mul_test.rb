@@ -30,7 +30,8 @@ system :lstm_mul_test do
     biases_tanh = parameters_tanh[:biases]
     weights_tanh = parameters_tanh[:weights]
 
-    inputs = [1, 1]
+    inputs_x = [1, 0]
+    inputs_h = [0, 1]
 
     puts "inputs : #{inputs}"
 
@@ -49,7 +50,9 @@ system :lstm_mul_test do
           :req_mul,
           :ack_mul
 
-    inputs = quantize(inputs, typ, decimal_width)
+    inputs_x = quantize(inputs_x, typ, decimal_width)
+    inputs_h = quantize(inputs_h, typ, decimal_width)
+
     # NOTE: 入力のメモリに関して
     # network_constructorにはbranchを渡すので、mem_romからmem_dualやmem_fileに変更できる。
     # ただし、branchはrincのみ。つまり、rincのbranchを持つメモリなら何でもOK。

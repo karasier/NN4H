@@ -25,31 +25,30 @@ system :channel_connector do
           :req,   # request
           :fill   # 入力値のメモリへの書き込み
 
-    # inner :ack_fill_sig, # 書き込みのack:tanh
-          # :ack_network_sig, # ニューラルネット:ワークのack:tanh
-
     inputs_x = quantize(inputs_x, typ, decimal_width)
     inputs_h = quantize(inputs_h, typ, decimal_width)
 
     mem_rom(typ, columns[0], clk, rst, inputs_x, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
-
     mem_rom(typ, columns[0], clk, rst, inputs_h, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
 
     mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_inputs_serializer) #
-
     mem_dual(typ, columns[0]*2, clk, rst, rinc: :rst, winc: :rst).(:ram_inputs_merger) #
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_output_dupulicator0) #
+    mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_output_dupulicator1) #
 
     reader_inputs_x = rom_inputs_x.branch(:rinc) #入力値xの読みだし用branch
     reader_inputs_h = rom_inputs_h.branch(:rinc) #入力値hの読みだし用branch
     writer_inputs_serializer = ram_inputs_serializer.branch(:winc) #入力値を合成した値の書き込み用branch
     writer_inputs_meger = ram_inputs_merger.branch(:winc) #入力値を合成した値の書き込み用branch
 
+    writer_output_dupulicator0 = ram_output_dupulicator0.branch(:winc) #入力値を合成した値の書き込み用branch
+    writer_output_dupulicator1 = ram_output_dupulicator1.branch(:winc) #入力値を合成した値の書き込み用branch
 
-    serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],writer_inputs_serializer)
+    # serializer(typ,clk.negedge,[reader_inputs_x,reader_inputs_h],writer_inputs_serializer)
 
     # merger([typ]*2,clk.negedge,[reader_inputs_x,reader_inputs_h], writer_inputs_meger)
 
-    # duplicator(typ,clk.negedge,reader_inputs_r,[])
+    duplicator(typ,clk.negedge,reader_inputs_x,[writer_output_dupulicator0, writer_output_dupulicator1])
 
 
     timed do
