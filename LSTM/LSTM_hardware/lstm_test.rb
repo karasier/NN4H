@@ -21,13 +21,13 @@ system :lstm_test do
     linear = proc { |x| x }
 
     # ニューラルネットワークの構造
-    columns = [16, 2, 8]
+    columns = [8, 2, 8]
     func_sig = [sigmoid, linear] # 活性化関数
 
     func_tanh = [tanh, linear]   # 活性化関数
 
-    parameters_sig = load_network("xor1.json")
-    parameters_tanh = load_network("xor.json")
+    parameters_sig = load_network("lstm1.json")
+    parameters_tanh = load_network("lstm0.json")
 
     biases_sig = parameters_sig[:biases]
     weights_sig = parameters_sig[:weights]
@@ -77,28 +77,52 @@ system :lstm_test do
 
     # mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_x) # 入力値を格納するrom(x)
     # mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
-    mem_file(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:ram_inputs_c) # 入力値を格納するrom(c)
-    mem_file(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_inputs_c) # 入力値を格納するrom(c)
+    mem_file(typ, columns[0], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+
+    # Initialization of the input memories
+    init_ram_inputs_c = ram_inputs_c.branch(:winc)
+    init_ram_inputs = ram_inputs.branch(:winc)
+    [8].inner :init_idx
+
+    par(clk.posedge) do
+      hif(rst) { init_idx <= 0 }
+      hif(fill) do
+        hcase(init_idx)
+        # puts inputs
+        inputs.each_with_index do |inp, i|
+          # puts init_ram_inputs_c.class
+          hwhen(i) do
+            # puts "init_inputs_c[#{i}]: #{inp}"
+            init_ram_inputs_c.write(inp) { init_idx <= init_idx + 1 }
+          end
+          hwhen(i+inputs.size) do
+            # puts "init_inputs[#{i}]: #{inp}"
+            init_ram_inputs.write(inp) { init_idx <= init_idx + 1}
+          end
+        end
+      end
+    end
 
     mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_forg) # 忘却ゲートNNの入力値を格納するram
     mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_ingsig) # 入力ゲートNNの入力値を格納するram(sig)
     mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_ingtanh) # 入力ゲートNNの入力値を格納するram(tanh)
     mem_dual(typ, columns[0], clk, rst, rinc: :rst, winc: :rst).(:ram_input_outg) # 出力ゲートNNの入力値を格納するram
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_forg) # 忘却ゲートNNの出力値を格納するram
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_ingsig) # 入力ゲートNNの出力値を格納するram(sig)
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_ingtanh) # 入力ゲートNNの出力値を格納するram(tanh)
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_outg) # 出力ゲートNNの出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_forg) # 忘却ゲートNNの出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_ingsig) # 入力ゲートNNの出力値を格納するram(sig)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_ingtanh) # 入力ゲートNNの出力値を格納するram(tanh)
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_outg) # 出力ゲートNNの出力値を格納するram
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_mul_forg) # 忘却ゲート(mul)の出力値を格納するram
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_mul_ing) # 入力ゲート(mul)の出力値を格納するram
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_sum_ing) # 入力ゲート(sum)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_mul_forg) # 忘却ゲート(mul)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_mul_ing) # 入力ゲート(mul)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_sum_ing) # 入力ゲート(sum)の出力値を格納するram
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_input_tanh_outg) # 出力ゲート(tanh)の入力値を格納するram
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_output_tanh_outg) # 出力ゲート(tanh)の出力値を格納するram
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_c) # 長期記憶の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_input_tanh_outg) # 出力ゲート(tanh)の入力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_output_tanh_outg) # 出力ゲート(tanh)の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_c) # 長期記憶の出力値を格納するram
 
-    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst).(:ram_outputs_h) # 短期記憶の出力値を格納するram
+    mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_outputs_h) # 短期記憶の出力値を格納するram
 
 
     # mem_rom(typ, columns[0], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_sig) # 入力値を格納するrom(sig)
@@ -126,7 +150,7 @@ system :lstm_test do
     reader_input_forg = ram_input_forg.branch(:rinc)
     reader_input_ingsig = ram_input_ingsig.branch(:rinc)
     reader_input_ingtanh = ram_input_ingtanh.branch(:rinc)
-    reader_input_outg = ram_input_outg.branch(:rinc)
+    reader_input_outg= ram_input_outg.branch(:rinc)
 
     writer_output_forg = ram_output_forg.branch(:winc)
     writer_output_ingsig = ram_output_ingsig.branch(:winc)
@@ -172,15 +196,16 @@ system :lstm_test do
 
     # duplicator(typ*2,clk.negedge,reader_inputs,[in_sig,in_tanh])
 
-    duplicator(typ, clk.negedge, reader_inputs, [writer_input_forg, writer_input_ingsig, writer_input_ingtanh, writer_input_outg])
-        
+    # NNの入力用 duplicator
+    duplicator(typ, clk.negedge, reader_inputs,[writer_input_forg, writer_input_ingsig, writer_input_ingtanh, writer_input_outg])
+
     # 忘却ゲートNN
-    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:forget_sig_nn).(clk, rst, req, fill, ack_fill_forget_sig, ack_network_forget_sig)
+    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_input_forg, writer_output_forg, weights_sig, biases_sig).(:forget_sig_nn).(clk, rst, req, fill, ack_fill_forget_sig, ack_network_forget_sig)
     # 入力ゲートNN
-    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:input_sig_nn).(clk, rst, req, fill, ack_fill_input_sig, ack_network_input_sig)
-    network_constructor(columns, func_tanh, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_tanh, weights_tanh, biases_sig).(:input_tanh_nn).(clk, rst, req, fill, ack_fill_input_tanh, ack_network_input_tanh)
+    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_input_ingsig, writer_output_ingsig, weights_sig, biases_sig).(:input_sig_nn).(clk, rst, req, fill, ack_fill_input_sig, ack_network_input_sig)
+    network_constructor(columns, func_tanh, typ, integer_width, decimal_width, address_width, reader_input_ingtanh, writer_output_ingtanh, weights_tanh, biases_sig).(:input_tanh_nn).(clk, rst, req, fill, ack_fill_input_tanh, ack_network_input_tanh)
     # 出力ゲートNN
-    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:output_sig_nn).(clk, rst, req, fill, ack_fill_output_sig, ack_network_output_sig)
+    network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_input_outg, writer_output_outg, weights_sig, biases_sig).(:output_sig_nn).(clk, rst, req, fill, ack_fill_output_sig, ack_network_output_sig)
 
     # network_constructor(columns, func_sig, typ, integer_width, decimal_width, address_width, reader_inputs_sig, writer_outputs_sig, weights_sig, biases_sig).(:sigmoid_neural_network).(clk, rst, req, fill, ack_fill_sig, ack_network_sig)
 
@@ -189,11 +214,22 @@ system :lstm_test do
     # req_mul <= ack_network_sig & ack_network_tanh
 
     # 忘却ゲートでの演算
+    puts ram_inputs_c.branch(:anum).methods
+    # puts "#{ram_inputs_c.branch(:anum).wrap(0)}"
+    # puts "#{ram_output_forg.branch(:anum).wrap(8)}"
+    puts ram_output_forg.branch(:anum).class
+    # puts ram_output_forg.branch(:anum).class.methods
+    # puts ram_output_mul_forg.branch(:anum).class.methods
     req_mul_forg <= ack_network_forget_sig
-    outputs_c = columns[-1].times.map{ |i| reader_inputs_c.wrap(i) }
-    outputs_forg = columns[-1].times.map{ |i| reader_output_forg.wrap(i) }
-    outputs_mul_forg = columns[-1].times.map{ |i| output_mul_forg.wrap(i) }
-    mul_n(typ, clk, req_mul_forg, ack_mul_forg, outputs_c, outputs_forg, outputs_mul_forg)
+    # inputs_c = columns[-1].times.map{ |i|@ reader_inputs_c.wrap(i) }
+    inputs_c = columns[-1].times.map{ |i| ram_inputs_c.branch(:anum).wrap(i) }
+    # outputs_forg = columns[-1].times.map{ |i| reader_output_forg.wrap(i) }
+    outputs_forg = columns[-1].times.map{ |i| ram_output_forg.branch(:anam).wrap(i) }
+    # outputs_forg = [ram_output_forg.branch(:anam).wrap(0), ram_output_forg.branch(:anam).wrap(1), ram_output_forg.branch(:anam).wrap(2), ram_output_forg.branch(:anam).wrap(3), ram_output_forg.branch(:anam).wrap(4), ram_output_forg.branch(:anam).wrap(5), ram_output_forg.branch(:anam).wrap(6), ram_output_forg.branch(:anam).wrap(7)]
+    # outputs_mul_forg = columns[-1].times.map{ |i| output_mul_forg.wrap(i) }
+    outputs_mul_forg = columns[-1].times.map{ |i| ram_output_mul_forg.branch(:anam).wrap(i) }
+
+    mul_n(typ, clk, req_mul_forg, ack_mul_forg, inputs_c, outputs_forg, outputs_mul_forg)
 
     # 入力ゲートでの演算
     req_mul_ing <= ack_network_input_sig & ack_network_input_tanh
@@ -201,11 +237,11 @@ system :lstm_test do
     outputs_ingtanh = columns[-1].times.map{ |i| reader_output_ingtanh.wrap(i) }
     outputs_mul_ing = columns[-1].times.map{ |i| output_mul_ing.wrap(i) }
     mul_n(typ, clk, req_mul_ing, ack_mul_ing, outputs_ingsig, outputs_ingtanh, outputs_mul_ing)
-    
+
     req_sum_ing <= ack_mul_forg & ack_mul_ing
     outputs_sum_ing = columns[-1].times.map{ |i| writer_output_sum_ing.wrap(i) }
     add_n(typ, clk, req_sum_ing, ack_sum_ing, outputs_mul_forg, outputs_mul_ing, outputs_sum_ing)
-    
+
     # 出力ゲートでの演算
     outputs_outg = columns[-1].times.map{ |i| reader_output_outg.wrap(i) }
     outputs_tanh_outg = columns[-1].times.map{ |i| reader_output_tanh_outg.wrap(i) }
@@ -242,7 +278,7 @@ system :lstm_test do
       fill <= 1
 
       !10.ps
-      10.times do |i|
+      16.times do |i|
         clk <= 1
         !10.ps
         clk <= 0
@@ -252,6 +288,14 @@ system :lstm_test do
       fill <= 0
       clk <= 1
       !10.ps
+
+      # duplicatorの実行
+      10.times do |i|
+        clk <= 1
+        !10.ps
+        clk <= 0
+        !10.ps
+      end
 
       # 計算の実行
       clk <= 0

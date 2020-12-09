@@ -33,25 +33,28 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
       ack <= 0
       ack_mac <= 0
       ack_add <= 0
-    end    
+    end
   end
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
-  # 重みのメモリ  
-  channel_w = output_size.times.map{ |i| mem_rom(typ, input_size, clk, rst, quantize(weights[i], typ, decimal_width), rinc: :rst, winc: :rst).(:"channel_w#{i}") }
+  # 重みのメモリ
+
+  channel_w = output_size.times.map{ |i|
+  # puts "weights[#{i}] = #{weights[i]}"
+  mem_rom(typ, input_size, clk, rst, quantize(weights[i], typ, decimal_width), rinc: :rst, winc: :rst).(:"channel_w#{i}") }
 
   # 重みのRead用ポートの作成
   reader_w = output_size.times.map{ |i| channel_w[i].branch(:rinc) }
-  
+
   reader_weights = output_size.times.map{ |i| reader_w[i] }
 
   # 積和計算の結果の格納用
   mem_file(typ, output_size, clk, rst, anum: :rst).(:channel_accum)
 
   accum = channel_accum.branch(:anum)
-  
+
   result_mac = output_size.times.map{ |i| accum.wrap(i) }
-  
+
   # 積和演算のモジュール
   # 入力のニューロンの数だけackを出力する
   mac_n1(typ, clk, req_mac, ack, reader_weights, reader_input, result_mac)
@@ -67,14 +70,14 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
 
   reader_bias = output_size.times.map{ |i| channel_b[i].branch(:raddr).wrap(0) }
   accessor_z = channel_z.branch(:anum)
-  
+
   z = output_size.times.map{ |i| accessor_z.wrap(i) }
 
   add_n(typ, clk, ack_mac, ack_add, result_mac, reader_bias, z)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
   value_z = output_size.times.map{ |i| typ.inner :"value_z#{i}"}
-  value_a = output_size.times.map{ |i| typ.inner :"value_a#{i}"}     
+  value_a = output_size.times.map{ |i| typ.inner :"value_a#{i}"}
 
   flag_z = output_size.times.map{ |i| inner :"flag_z#{i}"}
   ack_a = output_size.times.map{ |i| inner :"ack_a#{i}"}
