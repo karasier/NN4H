@@ -138,7 +138,7 @@ system :lstm_test do
 
     # reader_inputs_x = rom_inputs_x.branch(:rinc) # 入力値xの読みだし用branch
     # reader_inputs_h = rom_inputs_h.branch(:rinc) # 入力値hの読みだし用branch
-    reader_inputs_c = ram_inputs_c.branch(:anam) # 入力値cの読みだし用branch
+    reader_inputs_c = ram_inputs_c.branch(:anum) # 入力値cの読みだし用branch
     # writer_inputs = ram_inputs.branch(:winc) # 入力値を合成した値の書き込み用branch
     reader_inputs = ram_inputs.branch(:rinc) # 入力値を合成した値の書き込み用branch
 
@@ -157,19 +157,19 @@ system :lstm_test do
     writer_output_ingtanh = ram_output_ingtanh.branch(:winc)
     writer_output_outg = ram_output_outg.branch(:winc)
 
-    reader_output_forg = ram_output_forg.branch(:anam)
-    reader_output_ingsig = ram_output_ingsig.branch(:anam)
-    reader_output_ingtanh = ram_output_ingtanh.branch(:anam)
-    reader_output_outg = ram_output_outg.branch(:anam)
+    reader_output_forg = ram_output_forg.branch(:anum)
+    reader_output_ingsig = ram_output_ingsig.branch(:anum)
+    reader_output_ingtanh = ram_output_ingtanh.branch(:anum)
+    reader_output_outg = ram_output_outg.branch(:anum)
 
     # writer_output_mul_forg = ram_output_mul_forg.branch(:anam)
     # writer_output_mul_ing = ram_output_mul_ing.branch(:anam)
 
     # reader_output_mul_forg = ram_output_mul_forg.branch(:anam)
     # reader_output_mul_ing = ram_output_mul_ing.branch(:anam)
-    output_mul_forg = ram_output_mul_forg.branch(:anam)
-    output_mul_ing = ram_output_mul_ing.branch(:anam)
-    writer_output_sum_ing = ram_output_sum_ing.branch(:anam)
+    output_mul_forg = ram_output_mul_forg.branch(:anum)
+    output_mul_ing = ram_output_mul_ing.branch(:anum)
+    writer_output_sum_ing = ram_output_sum_ing.branch(:anum)
 
     reader_output_sum_ing = ram_output_sum_ing.branch(:rinc)
     writer_outputs_c = ram_outputs_c.branch(:winc)
@@ -177,9 +177,9 @@ system :lstm_test do
 
     reader_input_tanh_outg = ram_input_tanh_outg.branch(:rinc)
     writer_output_tanh_outg = ram_output_tanh_outg.branch(:winc)
-    reader_output_tanh_outg = ram_output_tanh_outg.branch(:anam)
+    reader_output_tanh_outg = ram_output_tanh_outg.branch(:anum)
 
-    writer_output_mul_outg = ram_outputs_h.branch(:anam)
+    writer_output_mul_outg = ram_outputs_h.branch(:anum)
 
     # reader_inputs_sig = rom_inputs_sig.branch(:rinc) # 入力値の読み出し用branch
     # writer_outputs_sig = ram_outputs_sig.branch(:winc) # 出力値の書き込み用branch
@@ -214,20 +214,20 @@ system :lstm_test do
     # req_mul <= ack_network_sig & ack_network_tanh
 
     # 忘却ゲートでの演算
-    puts ram_inputs_c.branch(:anum).methods
     # puts "#{ram_inputs_c.branch(:anum).wrap(0)}"
     # puts "#{ram_output_forg.branch(:anum).wrap(8)}"
-    puts ram_output_forg.branch(:anum).class
-    # puts ram_output_forg.branch(:anum).class.methods
+    # puts ram_inputs_c.branch(:anum).methods
+    # puts ram_output_forg.branch(:anum).class
+    # puts ram_output_forg.branch(:anum).methods
     # puts ram_output_mul_forg.branch(:anum).class.methods
     req_mul_forg <= ack_network_forget_sig
-    # inputs_c = columns[-1].times.map{ |i|@ reader_inputs_c.wrap(i) }
-    inputs_c = columns[-1].times.map{ |i| ram_inputs_c.branch(:anum).wrap(i) }
-    # outputs_forg = columns[-1].times.map{ |i| reader_output_forg.wrap(i) }
-    outputs_forg = columns[-1].times.map{ |i| ram_output_forg.branch(:anam).wrap(i) }
+    inputs_c = columns[-1].times.map{ |i| reader_inputs_c.wrap(i) }
+    # inputs_c = columns[-1].times.map{ |i| ram_inputs_c.branch(:anum).wrap(i) }
+    outputs_forg = columns[-1].times.map{ |i| reader_output_forg.wrap(i) }
+    # outputs_forg = columns[-1].times.map{ |i| ram_output_forg.branch(:anum).wrap(i) }
     # outputs_forg = [ram_output_forg.branch(:anam).wrap(0), ram_output_forg.branch(:anam).wrap(1), ram_output_forg.branch(:anam).wrap(2), ram_output_forg.branch(:anam).wrap(3), ram_output_forg.branch(:anam).wrap(4), ram_output_forg.branch(:anam).wrap(5), ram_output_forg.branch(:anam).wrap(6), ram_output_forg.branch(:anam).wrap(7)]
     # outputs_mul_forg = columns[-1].times.map{ |i| output_mul_forg.wrap(i) }
-    outputs_mul_forg = columns[-1].times.map{ |i| ram_output_mul_forg.branch(:anam).wrap(i) }
+    outputs_mul_forg = columns[-1].times.map{ |i| ram_output_mul_forg.branch(:anum).wrap(i) }
 
     mul_n(typ, clk, req_mul_forg, ack_mul_forg, inputs_c, outputs_forg, outputs_mul_forg)
 
