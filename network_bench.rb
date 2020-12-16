@@ -20,10 +20,10 @@ system :network_bench do
     
     # ニューラルネットワークの構造
     columns = [2, 2, 1]
-    func = [tanh, linear] # 活性化関数  
+    func = [relu, linear] # 活性化関数  
 
     # ファイルからのパラメータ読み出し
-    parameters = load_network("xor.json")
+    parameters = load_network("xor2.json")
   
     biases = parameters[:biases]
     weights = parameters[:weights]    

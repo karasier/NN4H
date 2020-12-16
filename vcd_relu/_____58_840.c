@@ -2,1370 +2,1165 @@
 #include "hruby_sim.h"
 #include "hruby_sim_gen.h"
 
-SystemT _____58_840_56679140;
+SystemT _____58_840_48292660;
 
-Block __56519320;
+Block __46125920;
 
-void code__56519320() {
+void code__46125920() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117740(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49640020(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117680(),rst_50050640______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639940(),rst_46160200______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117620(),req_50050620______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639880(),req_46160120______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117560(),fill_50050600______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639800(),fill_46160060______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117460(),rst_50050640______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639680(),rst_46160200______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117360(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639600(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117300(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49639540(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57117160(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49637260(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116920(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49636640(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116460(),rst_50050640______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49636560(),rst_46160200______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116300(),fill_50050600______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49636140(),fill_46160060______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116240(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49636000(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116140(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49635660(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57116000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49635460(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115880(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49659860(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115760(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49659580(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115680(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49659360(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115580(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49658400(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115460(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49658140(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115400(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49657500(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115340(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49656760(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115280(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49656340(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115220(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49655480(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115160(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49655200(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115080(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49655060(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57115000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654980(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57114940(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654900(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57114860(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654780(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57114760(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654620(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57114700(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654380(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57114640(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49654060(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57139100(),fill_50050600______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49653740(),fill_46160060______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57139000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49653060(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138940(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49652320(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138840(),req_50050620______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49652240(),req_46160120______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138740(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49652120(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138580(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49651880(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138460(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49676080(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138320(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49675980(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57138120(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49675920(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137900(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49675720(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137820(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49675400(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137640(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49674920(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137560(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49671900(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137500(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49671160(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137440(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49670200(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137320(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49669720(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137240(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49690000(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137160(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49689440(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137100(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49689260(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57137020(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49689160(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136900(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49689000(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136820(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688700(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136760(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688560(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136660(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688380(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136520(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688280(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136460(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688160(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136360(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688100(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136240(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49688020(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136140(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49687880(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136080(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49687760(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57136020(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49687400(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135960(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49687300(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135900(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49687080(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135840(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686880(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135780(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686720(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135680(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686620(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135580(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686500(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135480(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686420(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57135080(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686340(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57134940(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686280(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57134800(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686200(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133960(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49686000(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133600(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49685780(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133520(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49685700(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133180(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49685620(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133120(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49685120(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133060(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49684960(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57133000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49684820(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132720(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49684740(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132640(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49684540(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132540(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49708800(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132480(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49708720(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132120(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49708560(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57132000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49708440(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131800(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49708320(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131660(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707900(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131580(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707840(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131300(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707760(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131240(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707680(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131120(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707500(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57131060(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707240(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57188120(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49707100(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57188060(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49706940(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57188000(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49704520(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57187860(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49703620(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal_seq(make__57187580(),clk_50050660______58_84_50287080______58_840_56679140);
+      transmit_to_signal_seq(make__49702220(),clk_46160240______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
-   hw_wait(make_delay(10,PS),__56679300);
+   hw_wait(make_delay(10,PS),__48294040);
 }
 
-Block make__56519320() {
+Block make__46125920() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __56519320 = block;
-   block->owner = (Object)__56679300;
+   __46125920 = block;
+   block->owner = (Object)__48294040;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56519320;
+   block->function = &code__46125920;
 
    return block;
 };
 
-Block __56754480;
+Block __49472920;
 
-void code__56754480() {
+void code__49472920() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(clk_50050660______58_84_50287080______58_840_56679140->c_value,clk_56083980_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
+      transmit_to_signal(clk_46160240______58_84_46161020______58_840_48292660->c_value,clk_45854740_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(rst_50050640______58_84_50287080______58_840_56679140->c_value,rst_56083940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
+      transmit_to_signal(rst_46160200______58_84_46161020______58_840_48292660->c_value,rst_45854680_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(req_50050620______58_84_50287080______58_840_56679140->c_value,req_56083920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
+      transmit_to_signal(req_46160120______58_84_46161020______58_840_48292660->c_value,req_45853960_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(fill_50050600______58_84_50287080______58_840_56679140->c_value,fill_56083860_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
+      transmit_to_signal(fill_46160060______58_84_46161020______58_840_48292660->c_value,fill_45853940_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
 }
 
-Block make__56754480() {
+Block make__49472920() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __56754480 = block;
-   block->owner = (Object)__56804580;
+   __49472920 = block;
+   block->owner = (Object)__49561020;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56754480;
+   block->function = &code__49472920;
 
    return block;
 };
 
-Block __56754380;
+Block __49472340;
 
-void code__56754380() {
+void code__49472340() {
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,ack__fill_50050580______58_84_50287080______58_840_56679140);
+      transmit_to_signal(ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->c_value,ack__fill_46159500______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
    {
       unsigned int pool_state = get_value_pos();
-      transmit_to_signal(ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,ack__network_50050560______58_84_50287080______58_840_56679140);
+      transmit_to_signal(ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->c_value,ack__network_46159480______58_84_46161020______58_840_48292660);
       set_value_pos(pool_state);
    }
 }
 
-Block make__56754380() {
+Block make__49472340() {
    Block block = malloc(sizeof(BlockS));
    block->kind = BLOCK;
 
-   __56754380 = block;
-   block->owner = (Object)__56804320;
+   __49472340 = block;
+   block->owner = (Object)__49554540;
    block->name = "";
    block->num_inners = 0;
    block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56754380;
+   block->function = &code__49472340;
 
    return block;
 };
 
-Block __46192780;
-
-void code__46192780() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(({
-      Value src0, dst = get_value();
-      unsigned int pool_state = get_value_pos();
-      src0 = ({
-            Value ref,dst = get_value();
-            unsigned long long idx;
-            unsigned int pool_state = get_value_pos();
-            ref = mem_46194460_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->c_value;
-            idx = value2integer(abus__r_50517580_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->c_value);
-            dst = read_range(ref,idx,idx,get_type_vector(get_type_signed(),8),dst);
-            set_value_pos(pool_state);
-         dst; });
-      dst = cast_value(src0,get_type_vector(get_type_signed(),8),dst);
-      set_value_pos(pool_state);
-   dst; }),dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__46192780() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __46192780 = block;
-   block->owner = (Object)__48370340;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__46192780;
-
-   return block;
-};
-
-Block __56803760;
-
-void code__56803760() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->c_value,_5810_56351020_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__56803760() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __56803760 = block;
-   block->owner = (Object)__56981260;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56803760;
-
-   return block;
-};
-
-Block __56803620;
-
-void code__56803620() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,trig__r_50416480_rom__inputs_581_50286780______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,abus__r_50517580_rom__inputs_581_50286780______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__56803620() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __56803620 = block;
-   block->owner = (Object)__56980980;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56803620;
-
-   return block;
-};
-
-Block __49250660;
-
-Block __49584540;
-
-void code__49584540() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal_range(dbus__w_48953220_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value,make_ref_rangeS(mem_49250800_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140,value2integer(abus__w_48952900_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value),value2integer(abus__w_48952900_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value)));
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__49584540() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __49584540 = block;
-   block->owner = (Object)__49250660;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__49584540;
-
-   return block;
-};
-
-void code__49250660() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(({
-      Value src0, dst = get_value();
-      unsigned int pool_state = get_value_pos();
-      src0 = ({
-            Value ref,dst = get_value();
-            unsigned long long idx;
-            unsigned int pool_state = get_value_pos();
-            ref = mem_49250800_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value;
-            idx = value2integer(abus__r_48952980_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value);
-            dst = read_range(ref,idx,idx,get_type_vector(get_type_signed(),8),dst);
-            set_value_pos(pool_state);
-         dst; });
-      dst = cast_value(src0,get_type_vector(get_type_signed(),8),dst);
-      set_value_pos(pool_state);
-   dst; }),dbus__r_48777040_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-   {
-      Value cond = trig__w_48698960_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140->c_value;
-      if (is_defined_value(cond)) {
-         if (value2integer(cond)) {
-    code__49584540();
-   }
-      }
-   }
-}
-
-Block make__49250660() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __49250660 = block;
-   block->owner = (Object)__50050800;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__49250660;
-
-   return block;
-};
-
-Block __56979800;
-
-void code__56979800() {
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,trig__w_48698960_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,abus__w_48952900_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-   {
-      unsigned int pool_state = get_value_pos();
-      transmit_to_signal(_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->c_value,dbus__w_48953220_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140);
-      set_value_pos(pool_state);
-   }
-}
-
-Block make__56979800() {
-   Block block = malloc(sizeof(BlockS));
-   block->kind = BLOCK;
-
-   __56979800 = block;
-   block->owner = (Object)__57010160;
-   block->name = "";
-   block->num_inners = 0;
-   block->inners = calloc(sizeof(SignalI),block->num_inners);
-   block->function = &code__56979800;
-
-   return block;
-};
-
-Value make__57120920() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_vector(get_type_signed(),8),1,data);
-}
-
-Value make__57120900() {
-   static unsigned long long data[] = { 0ULL };
-   return make_set_value(get_type_vector(get_type_signed(),8),1,data);
-}
-
-Value make__57117740() {
+Value make__49640020() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117680() {
+Value make__49639940() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117620() {
+Value make__49639880() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117560() {
+Value make__49639800() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117460() {
+Value make__49639680() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117360() {
+Value make__49639600() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117300() {
+Value make__49639540() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57117160() {
+Value make__49637260() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116920() {
+Value make__49636640() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116460() {
+Value make__49636560() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116300() {
+Value make__49636140() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116240() {
+Value make__49636000() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116140() {
+Value make__49635660() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57116000() {
+Value make__49635460() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115880() {
+Value make__49659860() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115760() {
+Value make__49659580() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115680() {
+Value make__49659360() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115580() {
+Value make__49658400() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115460() {
+Value make__49658140() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115400() {
+Value make__49657500() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115340() {
+Value make__49656760() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115280() {
+Value make__49656340() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115220() {
+Value make__49655480() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115160() {
+Value make__49655200() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115080() {
+Value make__49655060() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57115000() {
+Value make__49654980() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57114940() {
+Value make__49654900() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57114860() {
+Value make__49654780() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57114760() {
+Value make__49654620() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57114700() {
+Value make__49654380() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57114640() {
+Value make__49654060() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57139100() {
+Value make__49653740() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57139000() {
+Value make__49653060() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138940() {
+Value make__49652320() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138840() {
+Value make__49652240() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138740() {
+Value make__49652120() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138580() {
+Value make__49651880() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138460() {
+Value make__49676080() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138320() {
+Value make__49675980() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57138120() {
+Value make__49675920() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137900() {
+Value make__49675720() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137820() {
+Value make__49675400() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137640() {
+Value make__49674920() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137560() {
+Value make__49671900() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137500() {
+Value make__49671160() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137440() {
+Value make__49670200() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137320() {
+Value make__49669720() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137240() {
+Value make__49690000() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137160() {
+Value make__49689440() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137100() {
+Value make__49689260() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57137020() {
+Value make__49689160() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136900() {
+Value make__49689000() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136820() {
+Value make__49688700() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136760() {
+Value make__49688560() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136660() {
+Value make__49688380() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136520() {
+Value make__49688280() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136460() {
+Value make__49688160() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136360() {
+Value make__49688100() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136240() {
+Value make__49688020() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136140() {
+Value make__49687880() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136080() {
+Value make__49687760() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57136020() {
+Value make__49687400() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135960() {
+Value make__49687300() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135900() {
+Value make__49687080() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135840() {
+Value make__49686880() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135780() {
+Value make__49686720() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135680() {
+Value make__49686620() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135580() {
+Value make__49686500() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135480() {
+Value make__49686420() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57135080() {
+Value make__49686340() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57134940() {
+Value make__49686280() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57134800() {
+Value make__49686200() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133960() {
+Value make__49686000() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133600() {
+Value make__49685780() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133520() {
+Value make__49685700() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133180() {
+Value make__49685620() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133120() {
+Value make__49685120() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133060() {
+Value make__49684960() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57133000() {
+Value make__49684820() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132720() {
+Value make__49684740() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132640() {
+Value make__49684540() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132540() {
+Value make__49708800() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132480() {
+Value make__49708720() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132120() {
+Value make__49708560() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57132000() {
+Value make__49708440() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131800() {
+Value make__49708320() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131660() {
+Value make__49707900() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131580() {
+Value make__49707840() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131300() {
+Value make__49707760() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131240() {
+Value make__49707680() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131120() {
+Value make__49707500() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57131060() {
+Value make__49707240() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57188120() {
+Value make__49707100() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57188060() {
+Value make__49706940() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57188000() {
+Value make__49704520() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57187860() {
+Value make__49703620() {
    static unsigned long long data[] = { 1ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Value make__57187580() {
+Value make__49702220() {
    static unsigned long long data[] = { 0ULL };
    return make_set_value(get_type_bit(),1,data);
 }
 
-Scope _____58_84_50287080;
+Scope _____58_84_46161020;
 
-SignalI clk_50050660______58_84_50287080______58_840_56679140;
+SignalI clk_46160240______58_84_46161020______58_840_48292660;
 
-SignalI makeclk_50050660() {
+SignalI makeclk_46160240() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   clk_50050660______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   clk_46160240______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "clk";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1384,14 +1179,14 @@ SignalI makeclk_50050660() {
    return signalI;
 };
 
-SignalI rst_50050640______58_84_50287080______58_840_56679140;
+SignalI rst_46160200______58_84_46161020______58_840_48292660;
 
-SignalI makerst_50050640() {
+SignalI makerst_46160200() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   rst_50050640______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   rst_46160200______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "rst";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1410,14 +1205,14 @@ SignalI makerst_50050640() {
    return signalI;
 };
 
-SignalI req_50050620______58_84_50287080______58_840_56679140;
+SignalI req_46160120______58_84_46161020______58_840_48292660;
 
-SignalI makereq_50050620() {
+SignalI makereq_46160120() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   req_50050620______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   req_46160120______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "req";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1436,14 +1231,14 @@ SignalI makereq_50050620() {
    return signalI;
 };
 
-SignalI fill_50050600______58_84_50287080______58_840_56679140;
+SignalI fill_46160060______58_84_46161020______58_840_48292660;
 
-SignalI makefill_50050600() {
+SignalI makefill_46160060() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   fill_50050600______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   fill_46160060______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "fill";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1462,14 +1257,14 @@ SignalI makefill_50050600() {
    return signalI;
 };
 
-SignalI ack__fill_50050580______58_84_50287080______58_840_56679140;
+SignalI ack__fill_46159500______58_84_46161020______58_840_48292660;
 
-SignalI makeack__fill_50050580() {
+SignalI makeack__fill_46159500() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack__fill_50050580______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   ack__fill_46159500______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "ack_fill";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1488,14 +1283,14 @@ SignalI makeack__fill_50050580() {
    return signalI;
 };
 
-SignalI ack__network_50050560______58_84_50287080______58_840_56679140;
+SignalI ack__network_46159480______58_84_46161020______58_840_48292660;
 
-SignalI makeack__network_50050560() {
+SignalI makeack__network_46159480() {
    SignalI signalI = malloc(sizeof(SignalIS));
    signalI->kind = SIGNALI;
 
-   ack__network_50050560______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)_____58_84_50287080;
+   ack__network_46159480______58_84_46161020______58_840_48292660 = signalI;
+   signalI->owner = (Object)_____58_84_46161020;
    signalI->name = "ack_network";
    signalI->type = get_type_bit();
    signalI->c_value = make_value(signalI->type,0);
@@ -1514,824 +1309,132 @@ SignalI makeack__network_50050560() {
    return signalI;
 };
 
-SystemI neural__network_56521560;
+SystemI nn__simulator_45852620;
 
-SystemI makeneural__network_56521560() {
+SystemI makenn__simulator_45852620() {
    SystemI systemI = malloc(sizeof(SystemIS));
    systemI->kind = SYSTEMI;
 
-   neural__network_56521560 = systemI;
-   systemI->owner = (Object)_____58_84_50287080;
-   systemI->name = "neural_network";
-   systemI->system = neural__network_58_840_56087020;
+   nn__simulator_45852620 = systemI;
+   systemI->owner = (Object)_____58_84_46161020;
+   systemI->name = "nn_simulator";
+   systemI->system = nn__simulator_58_840_45764760;
 
    return systemI;
 };
 
-Scope rom__inputs_581_50286780;
+Behavior __48294040;
 
-SignalI trig__r_50416480_rom__inputs_581_50286780______58_84_50287080______58_840_56679140;
-
-SignalI maketrig__r_50416480() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   trig__r_50416480_rom__inputs_581_50286780______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)rom__inputs_581_50286780;
-   signalI->name = "trig_r";
-   signalI->type = get_type_bit();
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140;
-
-SignalI makedbus__r_50517660() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)rom__inputs_581_50286780;
-   signalI->name = "dbus_r";
-   signalI->type = get_type_vector(get_type_signed(),8);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI abus__r_50517580_rom__inputs_581_50286780______58_84_50287080______58_840_56679140;
-
-SignalI makeabus__r_50517580() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   abus__r_50517580_rom__inputs_581_50286780______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)rom__inputs_581_50286780;
-   signalI->name = "abus_r";
-   signalI->type = get_type_vector(get_type_bit(),1);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI mem_46194460_rom__inputs_581_50286780______58_84_50287080______58_840_56679140;
-
-SignalI makemem_46194460() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   mem_46194460_rom__inputs_581_50286780______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)rom__inputs_581_50286780;
-   signalI->name = "mem";
-   signalI->type = get_type_vector(get_type_vector(get_type_signed(),8),2);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   copy_value(({
-         Value src0,src1;
-         Value dst = get_value();
-         unsigned int pool_state = get_value_pos();
-         src0 = make__57120920();
-         src1 = make__57120900();
-         concat_value(2,0,dst,src0,src1);
-         set_value_pos(pool_state);
-      dst; }),signalI->c_value);
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-Scope raddr_582_50286480;
-
-Scope makeraddr_582_50286480() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   raddr_582_50286480 = scope;
-   scope->owner = (Object)rom__inputs_581_50286780;
-   scope->name = "raddr:2";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope rinc_587_50286060;
-
-Behavior __56981260;
-
-Behavior make__56981260() {
+Behavior make__48294040() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __56981260 = behavior;
-   behavior->owner = (Object)rinc_587_50286060;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140);
-   dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->num_any += 1;
-   dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->any = realloc(dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->any,dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->any[dbus__r_50517660_rom__inputs_581_50286780______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->block = make__56803760();
-
-   return behavior;
-}
-
-Behavior __56980980;
-
-Behavior make__56980980() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __56980980 = behavior;
-   behavior->owner = (Object)rinc_587_50286060;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 2;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   _588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   _588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[_588_56350920_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   _589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   _589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[_589_56350820_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->block = make__56803620();
-
-   return behavior;
-}
-
-Scope makerinc_587_50286060() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   rinc_587_50286060 = scope;
-   scope->owner = (Object)rom__inputs_581_50286780;
-   scope->name = "rinc:7";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 2;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__56981260();
-   scope->behaviors[1] = make__56980980();
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope rdec_5811_50416920;
-
-Scope makerdec_5811_50416920() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   rdec_5811_50416920 = scope;
-   scope->owner = (Object)rom__inputs_581_50286780;
-   scope->name = "rdec:11";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Behavior __48370340;
-
-Behavior make__48370340() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __48370340 = behavior;
-   behavior->owner = (Object)rom__inputs_581_50286780;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(NEGEDGE,clk_50050660______58_84_50287080______58_840_56679140);
-   clk_50050660______58_84_50287080______58_840_56679140->num_neg += 1;
-   clk_50050660______58_84_50287080______58_840_56679140->neg = realloc(clk_50050660______58_84_50287080______58_840_56679140->neg,clk_50050660______58_84_50287080______58_840_56679140->num_neg*sizeof(Object));
-clk_50050660______58_84_50287080______58_840_56679140->neg[clk_50050660______58_84_50287080______58_840_56679140->num_neg-1] = (Object)behavior;
-   behavior->block = make__46192780();
-
-   return behavior;
-}
-
-Scope makerom__inputs_581_50286780() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   rom__inputs_581_50286780 = scope;
-   scope->owner = (Object)_____58_84_50287080;
-   scope->name = "rom_inputs:1";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 4;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = maketrig__r_50416480();
-   scope->inners[1] = makedbus__r_50517660();
-   scope->inners[2] = makeabus__r_50517580();
-   scope->inners[3] = makemem_46194460();
-   scope->num_scopes = 3;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = makeraddr_582_50286480();
-   scope->scopes[1] = makerinc_587_50286060();
-   scope->scopes[2] = makerdec_5811_50416920();
-   scope->num_behaviors = 1;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__48370340();
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope ram__outputs_5816_48370220;
-
-SignalI trig__r_48698980_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI maketrig__r_48698980() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   trig__r_48698980_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "trig_r";
-   signalI->type = get_type_bit();
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI trig__w_48698960_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI maketrig__w_48698960() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   trig__w_48698960_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "trig_w";
-   signalI->type = get_type_bit();
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI dbus__r_48777040_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI makedbus__r_48777040() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   dbus__r_48777040_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "dbus_r";
-   signalI->type = get_type_vector(get_type_signed(),8);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI dbus__w_48953220_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI makedbus__w_48953220() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   dbus__w_48953220_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "dbus_w";
-   signalI->type = get_type_vector(get_type_signed(),8);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI abus__r_48952980_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI makeabus__r_48952980() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   abus__r_48952980_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "abus_r";
-   signalI->type = get_type_vector(get_type_bit(),1);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI abus__w_48952900_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI makeabus__w_48952900() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   abus__w_48952900_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "abus_w";
-   signalI->type = get_type_vector(get_type_bit(),1);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-SignalI mem_49250800_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140;
-
-SignalI makemem_49250800() {
-   SignalI signalI = malloc(sizeof(SignalIS));
-   signalI->kind = SIGNALI;
-
-   mem_49250800_ram__outputs_5816_48370220______58_84_50287080______58_840_56679140 = signalI;
-   signalI->owner = (Object)ram__outputs_5816_48370220;
-   signalI->name = "mem";
-   signalI->type = get_type_vector(get_type_vector(get_type_signed(),8),1);
-   signalI->c_value = make_value(signalI->type,0);
-   signalI->c_value->signal = signalI;
-   signalI->f_value = make_value(signalI->type,0);
-   signalI->f_value->signal = signalI;
-   signalI->fading = 1;
-   signalI->num_any = 0;
-   signalI->any = NULL;
-   signalI->num_pos = 0;
-   signalI->pos = NULL;
-   signalI->num_neg = 0;
-   signalI->neg = NULL;
-   register_signal(signalI);
-
-   return signalI;
-};
-
-Scope raddr_5817_48369920;
-
-Scope makeraddr_5817_48369920() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   raddr_5817_48369920 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "raddr:17";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope waddr_5822_48369460;
-
-Scope makewaddr_5822_48369460() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   waddr_5822_48369460 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "waddr:22";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope rinc_5827_48369040;
-
-Scope makerinc_5827_48369040() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   rinc_5827_48369040 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "rinc:27";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope winc_5831_48368620;
-
-Behavior __57010160;
-
-Behavior make__57010160() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __57010160 = behavior;
-   behavior->owner = (Object)winc_5831_48368620;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 3;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   _5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   _5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[_5832_56350800_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   _5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   _5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[_5833_56350680_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[2] = make_event(ANYEDGE,_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   _5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   _5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[_5834_56521700_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->block = make__56979800();
-
-   return behavior;
-}
-
-Scope makewinc_5831_48368620() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   winc_5831_48368620 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "winc:31";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 1;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__57010160();
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope rdec_5835_48699840;
-
-Scope makerdec_5835_48699840() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   rdec_5835_48699840 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "rdec:35";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Scope wdec_5840_48699420;
-
-Scope makewdec_5840_48699420() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   wdec_5840_48699420 = scope;
-   scope->owner = (Object)ram__outputs_5816_48370220;
-   scope->name = "wdec:40";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 0;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->num_scopes = 0;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->num_behaviors = 0;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Behavior __50050800;
-
-Behavior make__50050800() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __50050800 = behavior;
-   behavior->owner = (Object)ram__outputs_5816_48370220;
-   behavior->activated = 0;
-   behavior->timed = 0;
-   behavior->num_events = 1;
-   behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(NEGEDGE,clk_50050660______58_84_50287080______58_840_56679140);
-   clk_50050660______58_84_50287080______58_840_56679140->num_neg += 1;
-   clk_50050660______58_84_50287080______58_840_56679140->neg = realloc(clk_50050660______58_84_50287080______58_840_56679140->neg,clk_50050660______58_84_50287080______58_840_56679140->num_neg*sizeof(Object));
-clk_50050660______58_84_50287080______58_840_56679140->neg[clk_50050660______58_84_50287080______58_840_56679140->num_neg-1] = (Object)behavior;
-   behavior->block = make__49250660();
-
-   return behavior;
-}
-
-Scope makeram__outputs_5816_48370220() {
-   Scope scope = malloc(sizeof(ScopeS));
-   scope->kind = SCOPE;
-
-   ram__outputs_5816_48370220 = scope;
-   scope->owner = (Object)_____58_84_50287080;
-   scope->name = "ram_outputs:16";
-   scope->num_systemIs = 0;
-   scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->num_inners = 7;
-   scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = maketrig__r_48698980();
-   scope->inners[1] = maketrig__w_48698960();
-   scope->inners[2] = makedbus__r_48777040();
-   scope->inners[3] = makedbus__w_48953220();
-   scope->inners[4] = makeabus__r_48952980();
-   scope->inners[5] = makeabus__w_48952900();
-   scope->inners[6] = makemem_49250800();
-   scope->num_scopes = 6;
-   scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = makeraddr_5817_48369920();
-   scope->scopes[1] = makewaddr_5822_48369460();
-   scope->scopes[2] = makerinc_5827_48369040();
-   scope->scopes[3] = makewinc_5831_48368620();
-   scope->scopes[4] = makerdec_5835_48699840();
-   scope->scopes[5] = makewdec_5840_48699420();
-   scope->num_behaviors = 1;
-   scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__50050800();
-   scope->num_codes = 0;
-   scope->codes = calloc(sizeof(Code),scope->num_codes);
-
-   return scope;
-}
-
-Behavior __56679300;
-
-Behavior make__56679300() {
-   Behavior behavior = malloc(sizeof(BehaviorS));
-   behavior->kind = BEHAVIOR;
-
-   __56679300 = behavior;
+   __48294040 = behavior;
    register_timed_behavior(behavior);
-   behavior->owner = (Object)_____58_84_50287080;
+   behavior->owner = (Object)_____58_84_46161020;
    behavior->activated = 0;
    behavior->timed = 1;
    behavior->num_events = 0;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->block = make__56519320();
+   behavior->block = make__46125920();
 
    return behavior;
 }
 
-Behavior __56804580;
+Behavior __49561020;
 
-Behavior make__56804580() {
+Behavior make__49561020() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __56804580 = behavior;
-   behavior->owner = (Object)_____58_84_50287080;
+   __49561020 = behavior;
+   behavior->owner = (Object)_____58_84_46161020;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 4;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,clk_50050660______58_84_50287080______58_840_56679140);
-   clk_50050660______58_84_50287080______58_840_56679140->num_any += 1;
-   clk_50050660______58_84_50287080______58_840_56679140->any = realloc(clk_50050660______58_84_50287080______58_840_56679140->any,clk_50050660______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-clk_50050660______58_84_50287080______58_840_56679140->any[clk_50050660______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,rst_50050640______58_84_50287080______58_840_56679140);
-   rst_50050640______58_84_50287080______58_840_56679140->num_any += 1;
-   rst_50050640______58_84_50287080______58_840_56679140->any = realloc(rst_50050640______58_84_50287080______58_840_56679140->any,rst_50050640______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-rst_50050640______58_84_50287080______58_840_56679140->any[rst_50050640______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[2] = make_event(ANYEDGE,req_50050620______58_84_50287080______58_840_56679140);
-   req_50050620______58_84_50287080______58_840_56679140->num_any += 1;
-   req_50050620______58_84_50287080______58_840_56679140->any = realloc(req_50050620______58_84_50287080______58_840_56679140->any,req_50050620______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-req_50050620______58_84_50287080______58_840_56679140->any[req_50050620______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[3] = make_event(ANYEDGE,fill_50050600______58_84_50287080______58_840_56679140);
-   fill_50050600______58_84_50287080______58_840_56679140->num_any += 1;
-   fill_50050600______58_84_50287080______58_840_56679140->any = realloc(fill_50050600______58_84_50287080______58_840_56679140->any,fill_50050600______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-fill_50050600______58_84_50287080______58_840_56679140->any[fill_50050600______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->block = make__56754480();
+   behavior->events[0] = make_event(ANYEDGE,clk_46160240______58_84_46161020______58_840_48292660);
+   clk_46160240______58_84_46161020______58_840_48292660->num_any += 1;
+   clk_46160240______58_84_46161020______58_840_48292660->any = realloc(clk_46160240______58_84_46161020______58_840_48292660->any,clk_46160240______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+clk_46160240______58_84_46161020______58_840_48292660->any[clk_46160240______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->events[1] = make_event(ANYEDGE,rst_46160200______58_84_46161020______58_840_48292660);
+   rst_46160200______58_84_46161020______58_840_48292660->num_any += 1;
+   rst_46160200______58_84_46161020______58_840_48292660->any = realloc(rst_46160200______58_84_46161020______58_840_48292660->any,rst_46160200______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+rst_46160200______58_84_46161020______58_840_48292660->any[rst_46160200______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->events[2] = make_event(ANYEDGE,req_46160120______58_84_46161020______58_840_48292660);
+   req_46160120______58_84_46161020______58_840_48292660->num_any += 1;
+   req_46160120______58_84_46161020______58_840_48292660->any = realloc(req_46160120______58_84_46161020______58_840_48292660->any,req_46160120______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+req_46160120______58_84_46161020______58_840_48292660->any[req_46160120______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->events[3] = make_event(ANYEDGE,fill_46160060______58_84_46161020______58_840_48292660);
+   fill_46160060______58_84_46161020______58_840_48292660->num_any += 1;
+   fill_46160060______58_84_46161020______58_840_48292660->any = realloc(fill_46160060______58_84_46161020______58_840_48292660->any,fill_46160060______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+fill_46160060______58_84_46161020______58_840_48292660->any[fill_46160060______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->block = make__49472920();
 
    return behavior;
 }
 
-Behavior __56804320;
+Behavior __49554540;
 
-Behavior make__56804320() {
+Behavior make__49554540() {
    Behavior behavior = malloc(sizeof(BehaviorS));
    behavior->kind = BEHAVIOR;
 
-   __56804320 = behavior;
-   behavior->owner = (Object)_____58_84_50287080;
+   __49554540 = behavior;
+   behavior->owner = (Object)_____58_84_46161020;
    behavior->activated = 0;
    behavior->timed = 0;
    behavior->num_events = 2;
    behavior->events = calloc(sizeof(Event),behavior->num_events);
-   behavior->events[0] = make_event(ANYEDGE,ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[ack__fill_56350960_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->events[1] = make_event(ANYEDGE,ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140);
-   ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any += 1;
-   ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any = realloc(ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any,ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any*sizeof(Object));
-ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->any[ack__network_56350940_neural__network_58_840_56087020______58_84_50287080______58_840_56679140->num_any-1] = (Object)behavior;
-   behavior->block = make__56754380();
+   behavior->events[0] = make_event(ANYEDGE,ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
+   ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any += 1;
+   ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any = realloc(ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any,ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any[ack__fill_45853820_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->events[1] = make_event(ANYEDGE,ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660);
+   ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any += 1;
+   ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any = realloc(ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any,ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any*sizeof(Object));
+ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->any[ack__network_45853800_nn__simulator_58_840_45764760______58_84_46161020______58_840_48292660->num_any-1] = (Object)behavior;
+   behavior->block = make__49472340();
 
    return behavior;
 }
 
-Scope make_____58_84_50287080() {
+Scope make_____58_84_46161020() {
    Scope scope = malloc(sizeof(ScopeS));
    scope->kind = SCOPE;
 
-   _____58_84_50287080 = scope;
-   scope->owner = (Object)_____58_840_56679140;
+   _____58_84_46161020 = scope;
+   scope->owner = (Object)_____58_840_48292660;
    scope->name = "__:T";
    scope->num_systemIs = 1;
    scope->systemIs = calloc(sizeof(SystemI),scope->num_systemIs);
-   scope->systemIs[0] = makeneural__network_56521560();
+   scope->systemIs[0] = makenn__simulator_45852620();
    scope->num_inners = 6;
    scope->inners = calloc(sizeof(SignalI),scope->num_inners);
-   scope->inners[0] = makeclk_50050660();
-   scope->inners[1] = makerst_50050640();
-   scope->inners[2] = makereq_50050620();
-   scope->inners[3] = makefill_50050600();
-   scope->inners[4] = makeack__fill_50050580();
-   scope->inners[5] = makeack__network_50050560();
-   scope->num_scopes = 2;
+   scope->inners[0] = makeclk_46160240();
+   scope->inners[1] = makerst_46160200();
+   scope->inners[2] = makereq_46160120();
+   scope->inners[3] = makefill_46160060();
+   scope->inners[4] = makeack__fill_46159500();
+   scope->inners[5] = makeack__network_46159480();
+   scope->num_scopes = 0;
    scope->scopes = calloc(sizeof(Scope),scope->num_scopes);
-   scope->scopes[0] = makerom__inputs_581_50286780();
-   scope->scopes[1] = makeram__outputs_5816_48370220();
    scope->num_behaviors = 3;
    scope->behaviors = calloc(sizeof(Behavior),scope->num_behaviors);
-   scope->behaviors[0] = make__56679300();
-   scope->behaviors[1] = make__56804580();
-   scope->behaviors[2] = make__56804320();
+   scope->behaviors[0] = make__48294040();
+   scope->behaviors[1] = make__49561020();
+   scope->behaviors[2] = make__49554540();
    scope->num_codes = 0;
    scope->codes = calloc(sizeof(Code),scope->num_codes);
 
    return scope;
 }
 
-SystemT make_____58_840_56679140() {
+SystemT make_____58_840_48292660() {
    SystemT systemT = malloc(sizeof(SystemTS));
    systemT->kind = SYSTEMT;
 
-   _____58_840_56679140 = systemT;
+   _____58_840_48292660 = systemT;
 systemT->owner = NULL;
    systemT->name = "__:T0";
    systemT->num_inputs = 0;
@@ -2341,7 +1444,7 @@ systemT->owner = NULL;
    systemT->num_inouts = 0;
    systemT->inouts = calloc(sizeof(SignalI),systemT->num_inouts);
 
-   systemT->scope = make_____58_84_50287080();
+   systemT->scope = make_____58_84_46161020();
 
    return systemT;
 }
