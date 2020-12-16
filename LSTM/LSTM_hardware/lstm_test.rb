@@ -214,21 +214,10 @@ system :lstm_test do
     # req_mul <= ack_network_sig & ack_network_tanh
 
     # 忘却ゲートでの演算
-    # puts "#{ram_inputs_c.branch(:anum).wrap(0)}"
-    # puts "#{ram_output_forg.branch(:anum).wrap(8)}"
-    # puts ram_inputs_c.branch(:anum).methods
-    # puts ram_output_forg.branch(:anum).class
-    # puts ram_output_forg.branch(:anum).methods
-    # puts ram_output_mul_forg.branch(:anum).class.methods
     req_mul_forg <= ack_network_forget_sig
     inputs_c = columns[-1].times.map{ |i| reader_inputs_c.wrap(i) }
-    # inputs_c = columns[-1].times.map{ |i| ram_inputs_c.branch(:anum).wrap(i) }
     outputs_forg = columns[-1].times.map{ |i| reader_output_forg.wrap(i) }
-    # outputs_forg = columns[-1].times.map{ |i| ram_output_forg.branch(:anum).wrap(i) }
-    # outputs_forg = [ram_output_forg.branch(:anam).wrap(0), ram_output_forg.branch(:anam).wrap(1), ram_output_forg.branch(:anam).wrap(2), ram_output_forg.branch(:anam).wrap(3), ram_output_forg.branch(:anam).wrap(4), ram_output_forg.branch(:anam).wrap(5), ram_output_forg.branch(:anam).wrap(6), ram_output_forg.branch(:anam).wrap(7)]
-    # outputs_mul_forg = columns[-1].times.map{ |i| output_mul_forg.wrap(i) }
-    outputs_mul_forg = columns[-1].times.map{ |i| ram_output_mul_forg.branch(:anum).wrap(i) }
-
+    outputs_mul_forg = columns[-1].times.map{ |i| output_mul_forg.wrap(i) }
     mul_n(typ, clk, req_mul_forg, ack_mul_forg, inputs_c, outputs_forg, outputs_mul_forg)
 
     # 入力ゲートでの演算
@@ -251,6 +240,8 @@ system :lstm_test do
     # sig_outputs = columns[-1].times.map{ |i| mul_inputs_sig.wrap(i) }
     # tanh_outputs = columns[-1].times.map{ |i| mul_inputs_tanh.wrap(i) }
     # mul_outputs = columns[-1].times.map{ |i| mul_outputs.wrap(i) }
+    
+
 
     duplicator(typ,clk.negedge,reader_output_sum_ing,[writer_outputs_c, writer_input_tanh_outg])
 
