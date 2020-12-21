@@ -1,5 +1,5 @@
 #require_relative 'FastNeurons-master/lib/fast_neurons'
-require_relative '..\..\FastNeurons\lib\fast_neurons.rb'
+require_relative '..\..\..\FastNeurons\lib\fast_neurons.rb'
 
 # LSTMブロックを表現するLSTMCellクラス
 class LSTMCell
@@ -43,7 +43,7 @@ class LSTMCell
   def propagate
     #忘却ゲート
     uvw = proc { @c_in * @nn_forget.get_outputs }
-    
+
     #入力ゲート
     xyz = proc { @nn_input0.get_outputs * @nn_input1.get_outputs }
 
@@ -84,7 +84,7 @@ class LSTM
 
   def input(x)
     @xs = x.to_a
-    @cells[0].input(@xs[0],[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+    @cells[0].input(@xs[0],[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
   end
 
   def propagate
@@ -92,10 +92,10 @@ class LSTM
     @c = []
     @h = []
 
-    # 最初のLSTMCellの実行    
+    # 最初のLSTMCellの実行
     @cells[0].propagate
     @c[0],@h[0] = @cells[0].output
- 
+
     # @cells[1].input(@xs[1],@c[0],@h[0])
     # puts "\ncells[1]: propagate"
     # @cells[1].propagate
@@ -114,7 +114,7 @@ class LSTM
 
     # ループでinput～output実行
      for i in 1..@cells.length-1 do
-       @cells[i].input(@xs[i].nil? ? [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] : @xs[i], @c[i-1], @h[i-1])
+       @cells[i].input(@xs[i].nil? ? [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] : @xs[i], @c[i-1], @h[i-1])
        @cells[i].propagate
        @c[i], @h[i] =@cells[i].output
       #  print @c[i]
@@ -171,4 +171,3 @@ class LSTM
     puts "Success!!"
   end
 end
-

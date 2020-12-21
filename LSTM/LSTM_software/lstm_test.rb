@@ -1,11 +1,11 @@
-require_relative '..\..\FastNeurons\lib\fast_neurons.rb'
+require_relative '..\..\..\FastNeurons\lib\fast_neurons.rb'
 require_relative './lstm.rb'
 
 #LSTMCellの数
 lstm_size = 1500
 
 # 入力データx
-x = Array.new().map{Array.new(7,0)}
+x = Array.new().map{Array.new(8,0)}
 
 # text本文の出力
 # f = File.open("fakeNewsDataset/fake/biz01.fake.txt")
@@ -27,7 +27,7 @@ x = x.map{|x| x.map{|x| x.to_f}}
 
 # 入力データサイズの均一化(size = 7)
 x.map do |i|
-  while(i.size < 7) do
+  while(i.size < 8) do
     i.unshift(0.0)
   end
 end
@@ -58,7 +58,7 @@ end
 #      [0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0],
 #      [1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]]
 
-lstm = LSTM.new(lstm_size,7,7)
+lstm = LSTM.new(lstm_size,8,8)
 puts "\nlstm_size: #{lstm_size}"
 lstm.input(x)
 lstm.propagate
