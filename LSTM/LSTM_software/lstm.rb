@@ -1,5 +1,5 @@
 #require_relative 'FastNeurons-master/lib/fast_neurons'
-require_relative 'FastNeurons\lib\fast_neurons.rb'
+require_relative 'fast_neurons.rb'
 
 # LSTMブロックを表現するLSTMCellクラス
 class LSTMCell
