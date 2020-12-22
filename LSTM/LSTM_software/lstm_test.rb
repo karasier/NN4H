@@ -1,4 +1,4 @@
-require_relative '..\..\..\FastNeurons\lib\fast_neurons.rb'
+require_relative 'FastNeurons\lib\fast_neurons.rb'
 require_relative './lstm.rb'
 
 #LSTMCellの数

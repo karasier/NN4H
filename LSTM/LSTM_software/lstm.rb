@@ -1,5 +1,5 @@
 #require_relative 'FastNeurons-master/lib/fast_neurons'
-require_relative '..\..\..\FastNeurons\lib\fast_neurons.rb'
+require_relative 'FastNeurons\lib\fast_neurons.rb'
 
 # LSTMブロックを表現するLSTMCellクラス
 class LSTMCell
@@ -42,17 +42,17 @@ class LSTMCell
   # 実行メソッド
   def propagate
     #忘却ゲート
-    uvw = proc { @c_in * @nn_forget.get_outputs }
+    forget_gate = proc { @c_in * @nn_forget.get_outputs }
 
     #入力ゲート
-    xyz = proc { @nn_input0.get_outputs * @nn_input1.get_outputs }
+    input_gate = proc { @nn_input0.get_outputs * @nn_input1.get_outputs }
 
     #出力ゲート
-    abc = proc { uvw.call + xyz.call }
+    output_c_gate = proc { forget_gate.call + input_gate.call }
 
-    pqr = proc { abc.call.map {|u| Math.tanh(u) }}
+    tanh_gate = proc { output_c_gate.call.map {|u| Math.tanh(u) }}
 
-    nn_output1 = proc { pqr.call * @nn_output0.get_outputs}
+    output_h_gate = proc { tanh_gate.call * @nn_output0.get_outputs}
 
     nn_inputs = @x_in + @c_in.to_a
     @nn_forget.input(nn_inputs)
@@ -65,8 +65,8 @@ class LSTMCell
     @nn_input1.propagate
     @nn_output0.propagate
 
-    @h_out = nn_output1.call
-    @c_out = abc.call
+    @h_out = output_h_gate.call
+    @c_out = output_c_gate.call
   end
 
   def back_propagate
@@ -96,6 +96,9 @@ class LSTM
     @cells[0].propagate
     @c[0],@h[0] = @cells[0].output
 
+    puts @xs[0].class
+    puts @c[0].class
+    puts @h[0].class
     # @cells[1].input(@xs[1],@c[0],@h[0])
     # puts "\ncells[1]: propagate"
     # @cells[1].propagate
@@ -121,6 +124,9 @@ class LSTM
       #  puts
       #  print @h[i]
      end
+    puts @c[1].class
+    puts @h[1].class
+
   end
 
   def output_x_in
