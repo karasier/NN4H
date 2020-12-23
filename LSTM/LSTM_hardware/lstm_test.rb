@@ -79,6 +79,7 @@ system :lstm_test do
     # mem_rom(typ, columns[-1], clk, rst, inputs, rinc: :rst, winc: :rst).(:rom_inputs_h) # 入力値を格納するrom(h)
     mem_file(typ, columns[-1], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_inputs_c) # 入力値を格納するrom(c)
     mem_file(typ, columns[0], clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:ram_inputs) # 入力値を格納するrom(x,h)
+    
 
     # Initialization of the input memories
     init_ram_inputs_c = ram_inputs_c.branch(:winc)
