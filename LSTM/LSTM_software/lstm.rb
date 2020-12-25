@@ -70,7 +70,7 @@ class LSTMCell
   end
 
   def back_propagate
-
+    #未実装
   end
 end
 
