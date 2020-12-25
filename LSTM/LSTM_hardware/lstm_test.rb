@@ -175,9 +175,9 @@ system :lstm_test do
     writer_outputs_c = ram_outputs_c.branch(:winc)
     writer_input_tanh_outg = ram_input_tanh_outg.branch(:winc)
 
-    reader_input_tanh_outg = ram_input_tanh_outg.branch(:rinc)
-    writer_output_tanh_outg = ram_output_tanh_outg.branch(:winc)
-    reader_output_tanh_outg = ram_output_tanh_outg.branch(:anum)
+    reader_input_tanh_outg = ram_input_tanh_outg.branch(:anum)
+    # writer_output_tanh_outg = ram_output_tanh_outg.branch(:anum)
+    output_tanh_outg = ram_output_tanh_outg.branch(:anum)
 
     writer_output_mul_outg = ram_outputs_h.branch(:anum)
 
@@ -232,9 +232,20 @@ system :lstm_test do
     outputs_sum_ing = columns[-1].times.map{ |i| writer_output_sum_ing.wrap(i) }
     add_n(typ, clk, req_sum_ing, ack_sum_ing, outputs_mul_forg, outputs_mul_ing, outputs_sum_ing)
 
+    # 出力ゲートのduplicator
+    duplicator(typ,clk.negedge,reader_output_sum_ing,[writer_outputs_c, writer_input_tanh_outg])
+
+    # 出力ゲートTanh線形補間処理
+    input_tanh_outg = columns[-1].times.map{ |i| reader_input_tanh_outg.wrap(i) }
+    outputs_tanh_outg = columns[-1].times.map{ |i| output_tanh_outg.wrap(i) }
+
+    # columns[-1].times do |i|
+    #   activation_function(func, typ, integer_width, decimal_width, address_width).(:"func#{i}").(value_z[i], value_a[i])
+    # end
+
     # 出力ゲートでの演算
     outputs_outg = columns[-1].times.map{ |i| reader_output_outg.wrap(i) }
-    outputs_tanh_outg = columns[-1].times.map{ |i| reader_output_tanh_outg.wrap(i) }
+    # outputs_tanh_outg = columns[-1].times.map{ |i| reader_output_tanh_outg.wrap(i) }
     outputs_mul_outg = columns[-1].times.map{ |i| writer_output_mul_outg.wrap(i) }
     mul_n(typ, clk, req_mul_outg, ack_mul_outg, outputs_outg, outputs_tanh_outg, outputs_mul_outg)
 
@@ -242,7 +253,6 @@ system :lstm_test do
     # tanh_outputs = columns[-1].times.map{ |i| mul_inputs_tanh.wrap(i) }
     # mul_outputs = columns[-1].times.map{ |i| mul_outputs.wrap(i) }
 
-    duplicator(typ,clk.negedge,reader_output_sum_ing,[writer_outputs_c, writer_input_tanh_outg])
 
     timed do
       # リセット
