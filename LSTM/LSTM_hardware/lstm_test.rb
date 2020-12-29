@@ -239,6 +239,7 @@ system :lstm_test do
     # 出力ゲートTanh線形補間処理
     input_tanh_outg = columns[-1].times.map{ |i| reader_input_tanh_outg.wrap(i) }
     outputs_tanh_outg = columns[-1].times.map{ |i| output_tanh_outg.wrap(i) }
+    # 何とかしてTanh実装
 
     # columns[-1].times do |i|
     #   activation_function(func, typ, integer_width, decimal_width, address_width).(:"func#{i}").(value_z[i], value_a[i])
