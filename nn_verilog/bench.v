@@ -10,14 +10,14 @@ module _____00003aT0( );
    wire rom__inputs_00003a1_00003a_00003atrig__r;
    reg signed[7:0] rom__inputs_00003a1_00003a_00003adbus__r;
    wire [0:0] rom__inputs_00003a1_00003a_00003aabus__r;
-   wire signed[7:0] rom__inputs_00003a1_00003a_00003amem  :0[0:1];
+   reg signed[7:0] rom__inputs_00003a1_00003a_00003amem  [0:1];
    wire ram__outputs_00003a16_00003a_00003atrig__r;
    wire ram__outputs_00003a16_00003a_00003atrig__w;
    reg signed[7:0] ram__outputs_00003a16_00003a_00003adbus__r;
    wire signed[7:0] ram__outputs_00003a16_00003a_00003adbus__w;
    wire [0:0] ram__outputs_00003a16_00003a_00003aabus__r;
    wire [0:0] ram__outputs_00003a16_00003a_00003aabus__w;
-   wire signed[7:0] ram__outputs_00003a16_00003a_00003amem  :0[0:0];
+   reg signed[7:0] ram__outputs_00003a16_00003a_00003amem  [0:0];
    wire _00005e_0000600;
    wire _00005e_0000601;
    wire _00005e_0000602;
@@ -432,6 +432,8 @@ module _____00003aT0( );
 
       #10
 
+      $finish;
+
    end
 
    always @( negedge clk ) begin
@@ -452,10 +454,14 @@ module _____00003aT0( );
 
    initial begin
 
-      rom__inputs_00003a1_00003a_00003amem[32'd0] = $signed(32'd16);
+      rom__inputs_00003a1_00003a_00003amem[32'd0] = $signed(32'd0);
 
       rom__inputs_00003a1_00003a_00003amem[32'd1] = $signed(32'd16);
 
    end
 
+   initial begin
+      $dumpfile("nn.vcd");
+      $dumpvars(0, _____00003aT0);
+   end
 endmodule

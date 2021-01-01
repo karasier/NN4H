@@ -22,12 +22,12 @@ system :network_bench do
     func = [relu, linear] # 活性化関数  
 
     # ファイルからのパラメータ読み出し
-    parameters = load_network("xor2.json")
+    parameters = load_network("xor_relu.json")
   
     biases = parameters[:biases]
     weights = parameters[:weights]    
 
-    inputs = [1, 1]
+    inputs = [0, 1]
 
     puts "inputs : #{inputs}"
 
