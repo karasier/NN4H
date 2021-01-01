@@ -1,12 +1,11 @@
 # テスト用ベンチ
 # 現在、xorの学習結果を移植している。
-# => mem_dualをmem_romに変更したところ、読み出しが上手くいかない。
-# => おそらく、mem_romのrincが原因。mem_dualのrincをコピーしたところ動作した。
-# => biasはraddrを用いてアクセスする。
 
 require "std/fixpoint.rb"
 require_relative "network_constructor.rb"
+require_relative "network_simulator.rb"
 require_relative "network_loader.rb"
+require_relative "quantize.rb"
 
 system :network_bench do
     # データ型の宣言
@@ -14,19 +13,20 @@ system :network_bench do
     decimal_width = 4 # 実数部のビット幅
     address_width = 4 # lutのアドレスのビット幅
     typ = signed[integer_width, decimal_width] # データ型  
-    tanh = proc{ |i| Math.tanh(i) }
+    tanh = proc{ |x| Math.tanh(x) }
+    sigmoid = proc{ |x| 1 / (1 + Math.exp(-x)) }
+    relu = proc{ |x| [x, 0].max }
+    linear = proc { |x| x }
     
     # ニューラルネットワークの構造
     columns = [2, 2, 1]
-    func = [tanh, tanh] # 活性化関数
-    
-    neuron_columns = columns[1..-1]
+    func = [relu, linear] # 活性化関数  
 
     # ファイルからのパラメータ読み出し
-    parameters = load_network("xor.json")
+    parameters = load_network("xor_relu.json")
   
     biases = parameters[:biases]
-    weights = parameters[:weights]
+    weights = parameters[:weights]    
 
     inputs = [1, 1]
 
@@ -36,11 +36,12 @@ system :network_bench do
     inner :clk,   # clock 
           :rst,   # reset
           :req,   # request
-          :fill   # メモリの初期化用
+          :fill   # 入力値のメモリへの書き込み
   
-    inner :ack    # ニューラルネットワークのack
-  
-    network_constructor(columns, func, typ, integer_width, decimal_width, address_width, inputs, weights, biases).(:neural_network).(clk, rst, req, fill, ack)
+    inner :ack_fill, # 書き込みのack
+          :ack_network # ニューラルネットワークのack
+
+    network_simulator(columns, func, typ, integer_width, decimal_width, address_width, inputs, weights, biases).(:nn_simulator).(clk, rst, req, fill, ack_fill, ack_network)
   
     timed do
       # リセット
@@ -85,7 +86,7 @@ system :network_bench do
       !10.ps
       clk <= 0
       !10.ps   
-      20.times do
+      30.times do
         clk <= 1
         !10.ps
         clk <= 0

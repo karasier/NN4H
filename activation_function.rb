@@ -26,16 +26,17 @@ system :activation_function do |func, typ, integer_width, decimal_width, address
   # アドレスは入力データの整数部に対応
   [address_width].inner :address
   typ.inner :remaining
+  typ.inner :change
 
   # 入力データからアドレスとアドレスでない残りを取り出す
-  address <= z_value[z_value.width - 1..z_value.width - address_width]
-  remaining <= [[_b1b0] * address_width, z_value[z_value.width - address_width - 1..0]]
+  address <= z_value[(z_value.width - 1)..(z_value.width - address_width)]
+  remaining <= [[_b1b0] * address_width, z_value[(z_value.width - address_width - 1)..0]]
 
   # 活性化関数のLUT
   lut(func, typ, integer_width, decimal_width, address_width).(:my_lut).(address, base, next_data)
 
   # 線形補間
-  interpolator(typ).(:my_interpolator).(remaining, base, next_data, a)
+  interpolator(typ, integer_width, address_width).(:my_interpolator).(base, next_data, remaining, a)
 end
 
 # module of activation function's LUT
@@ -84,20 +85,31 @@ end
 
 # compute tanh
 # LUTの点の間の値を計算するモジュール
-system :interpolator do |typ|
+system :interpolator do |typ, integer_width, address_width|
   typ = typ.to_type
+  shift_bits = integer_width - address_width # シフトさせるビット数
 
-  # アドレスに対応する値など
-  typ.input :remaining, :base, :next_data
-
+  typ.input :base,       # 入力データのアドレスに対応する値 
+            :next_data,  # 入力データの次のアドレスに対応する値
+            :remaining   # 入力データのアドレスに対応しない部分(0埋め済み)
+  
   # 線形補間した値
   typ.output :interpolated_value
 
   # 線形補間
-  # y = x1 + ( (y2 - y1) / (x2 - x1) ) * (x - x1)
+  # y = y0 + ( (y1 - y0) / (x1 - x0) ) * (x - x0)
   # y => 線形補間した値
-  # x => x2とx1の間の値
-  interpolated_value <= base + (next_data - base) * remaining
+  # x => x0とx1の間の値
+  # changeはアドレスの変化量
+  # アドレスの変化量は2のべき乗の正の値しかとらないので、
+  # 除算はビットシフトで置き換えられる
+
+  # shift_bitsの正負によってビットシフトの方向を変える
+  if shift_bits < 0
+    interpolated_value <= base + ((next_data - base) << shift_bits.abs) * remaining
+  else
+    interpolated_value <= base + ((next_data - base) >> shift_bits) * remaining
+  end
 end
 
 # Make an array consists of a point of any activation function.
