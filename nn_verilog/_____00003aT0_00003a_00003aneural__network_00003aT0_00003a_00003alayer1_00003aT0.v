@@ -45,7 +45,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    wire channel__b0_00003a312_00003a_00003atrig__r;
    reg signed[7:0] channel__b0_00003a312_00003a_00003adbus__r;
    wire [0:0] channel__b0_00003a312_00003a_00003aabus__r;
-   reg signed[7:0] channel__b0_00003a312_00003a_00003amem  [0:0] = $signed(-32'd2);
+   reg signed[7:0] channel__b0_00003a312_00003a_00003amem  [0:0] = -32'd2;
    wire signed[7:0] channel__z_00003a327_00003a_00003areg__0;
    wire [0:0] channel__z_00003a327_00003a_00003arinc_00003a336_00003a_00003aabus__r;
    wire [0:0] channel__z_00003a327_00003a_00003awinc_00003a339_00003a_00003aabus__w;
@@ -56,30 +56,30 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
    reg add__n_00003a350_00003a_00003alvok0;
    reg add__n_00003a350_00003a_00003arvok0;
    reg add__n_00003a350_00003a_00003arun;
+   wire _00005e_000060220;
+   wire _00005e_000060221;
    wire _00005e_000060222;
    wire _00005e_000060223;
-   wire _00005e_000060224;
-   wire _00005e_000060225;
-   wire signed[7:0] _00005e_000060226;
-   wire signed[7:0] _00005e_000060227;
+   wire signed[7:0] _00005e_000060224;
+   wire signed[7:0] _00005e_000060225;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003acounter_00003aT00 counter(.clk(_00005e_000060222),.ack(_00005e_000060223),.rst(_00005e_000060224),.ack__mac(_00005e_000060225));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00 func0(.z__value(_00005e_000060226),.a(_00005e_000060227));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003acounter_00003aT00 counter(.clk(_00005e_000060220),.ack(_00005e_000060221),.rst(_00005e_000060222),.ack__mac(_00005e_000060223));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0_00003a_00003afunc0_00003aT00 func0(.z__value(_00005e_000060224),.a(_00005e_000060225));
    assign req__mac = (req & ~ack__mac);
 
-   assign _00005e_000060222 = clk;
+   assign _00005e_000060220 = clk;
 
-   assign _00005e_000060223 = ack;
+   assign _00005e_000060221 = ack;
 
-   assign _00005e_000060224 = rst;
+   assign _00005e_000060222 = rst;
 
-   assign ack__mac = _00005e_000060225;
+   assign ack__mac = _00005e_000060223;
 
    assign _00003a317 = rst;
 
-   assign _00005e_000060226 = value__z0;
+   assign _00005e_000060224 = value__z0;
 
-   assign value__a0 = _00005e_000060227;
+   assign value__a0 = _00005e_000060225;
 
    assign ack__layer = ack__a0;
 
@@ -188,8 +188,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
          if (((mac__n1_00003a307_00003a_00003alvok0 & mac__n1_00003a307_00003a_00003arvok) & ~mac__n1_00003a307_00003a_00003awok0)) begin
             ack <= 32'd1;
             mac__n1_00003a307_00003a_00003arun <= 32'd0;
-            mac__n1_00003a307_00003a_00003aav0 <= (mac__n1_00003a307_00003a_00003aav0 + (($signed(mac__n1_00003a307_00003a_00003alv0) * mac__n1_00003a307_00003a_00003arv) >> 32'd4));
-            _00003a284 <= ((mac__n1_00003a307_00003a_00003aav0 + (($signed(mac__n1_00003a307_00003a_00003alv0) * mac__n1_00003a307_00003a_00003arv) >> 32'd4)) + (($signed(mac__n1_00003a307_00003a_00003alv0) * mac__n1_00003a307_00003a_00003arv) >> 32'd4));
+            mac__n1_00003a307_00003a_00003aav0 <= (mac__n1_00003a307_00003a_00003aav0 + (($signed({{4{mac__n1_00003a307_00003a_00003alv0[7]}},mac__n1_00003a307_00003a_00003alv0}) * mac__n1_00003a307_00003a_00003arv) >> 32'd4));
+            _00003a284 <= ((mac__n1_00003a307_00003a_00003aav0 + (($signed({{4{mac__n1_00003a307_00003a_00003alv0[7]}},mac__n1_00003a307_00003a_00003alv0}) * mac__n1_00003a307_00003a_00003arv) >> 32'd4)) + (($signed({{4{mac__n1_00003a307_00003a_00003alv0[7]}},mac__n1_00003a307_00003a_00003alv0}) * mac__n1_00003a307_00003a_00003arv) >> 32'd4));
             mac__n1_00003a307_00003a_00003awok0 <= 32'd1;
          end
          if (mac__n1_00003a307_00003a_00003awok0) begin
@@ -248,9 +248,9 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_0
 
    initial begin
 
-      channel__w0_00003a267_00003a_00003amem[32'd0] = $signed(32'd20);
+      channel__w0_00003a267_00003a_00003amem[32'd0] = 32'd20;
 
-      channel__w0_00003a267_00003a_00003amem[32'd1] = $signed(32'd13);
+      channel__w0_00003a267_00003a_00003amem[32'd1] = 32'd13;
 
    end
 

@@ -27,7 +27,7 @@ system :network_bench do
     biases = parameters[:biases]
     weights = parameters[:weights]    
 
-    inputs = [0, 1]
+    inputs = [0, 0]
 
     puts "inputs : #{inputs}"
 

@@ -1,6 +1,5 @@
 require "std/fixpoint.rb"
 require_relative "quantize.rb"
-require_relative "network_loader.rb"
 require_relative "activation_function.rb"
 
 include HDLRuby::High::Std

@@ -1,0 +1,304 @@
+$date
+	Sun Jan 03 00:49:05 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module _____00003aT0 $end
+$var wire 8 ! a0__0 [7:0] $end
+$var wire 8 " a0__1 [7:0] $end
+$var wire 8 # a1__0 [7:0] $end
+$var wire 8 $ _00005e_0000605 [7:0] $end
+$var wire 8 % _00005e_0000604 [7:0] $end
+$var wire 8 & _00005e_0000603 [7:0] $end
+$var wire 8 ' _00005e_0000602 [7:0] $end
+$var wire 8 ( _00005e_0000601 [7:0] $end
+$var wire 8 ) _00005e_0000600 [7:0] $end
+$var reg 8 * b0__0 [7:0] $end
+$var reg 8 + b0__1 [7:0] $end
+$var reg 8 , b1__0 [7:0] $end
+$var reg 8 - r0__0 [7:0] $end
+$var reg 8 . r0__1 [7:0] $end
+$var reg 8 / r1__0 [7:0] $end
+$var reg 8 0 r1__1 [7:0] $end
+$var reg 8 1 w00__0 [7:0] $end
+$var reg 8 2 w00__1 [7:0] $end
+$var reg 8 3 w01__0 [7:0] $end
+$var reg 8 4 w10__0 [7:0] $end
+$var reg 8 5 w10__1 [7:0] $end
+$var reg 8 6 w11__0 [7:0] $end
+$var reg 8 7 x0 [7:0] $end
+$var reg 8 8 x1 [7:0] $end
+$var reg 8 9 z0__0 [7:0] $end
+$var reg 8 : z0__1 [7:0] $end
+$var reg 8 ; z1__0 [7:0] $end
+$scope module func0__0 $end
+$var wire 4 < _00005e_00006089 [3:0] $end
+$var wire 8 = _00005e_00006092 [7:0] $end
+$var wire 8 > _00005e_00006093 [7:0] $end
+$var wire 8 ? _00005e_00006094 [7:0] $end
+$var wire 8 @ a [7:0] $end
+$var wire 8 A base [7:0] $end
+$var wire 8 B next__data [7:0] $end
+$var wire 8 C z__value [7:0] $end
+$var wire 8 D remaining [7:0] $end
+$var wire 4 E address [3:0] $end
+$var wire 8 F _00005e_00006095 [7:0] $end
+$var wire 8 G _00005e_00006091 [7:0] $end
+$var wire 8 H _00005e_00006090 [7:0] $end
+$scope module my__interpolator $end
+$var wire 8 I base [7:0] $end
+$var wire 8 J next__data [7:0] $end
+$var wire 8 K remaining [7:0] $end
+$var reg 8 L _00003a27_00003a_00003a_00003a24 [7:0] $end
+$var reg 8 M _00003a27_00003a_00003a_00003a25 [7:0] $end
+$var reg 8 N interpolated__value [7:0] $end
+$upscope $end
+$scope module my__lut $end
+$var wire 4 O address [3:0] $end
+$var wire 8 P base [7:0] $end
+$var reg 8 Q next__data [7:0] $end
+$upscope $end
+$upscope $end
+$scope module func0__1 $end
+$var wire 4 R _00005e_00006089 [3:0] $end
+$var wire 8 S _00005e_00006092 [7:0] $end
+$var wire 8 T _00005e_00006093 [7:0] $end
+$var wire 8 U _00005e_00006094 [7:0] $end
+$var wire 8 V a [7:0] $end
+$var wire 8 W base [7:0] $end
+$var wire 8 X next__data [7:0] $end
+$var wire 8 Y z__value [7:0] $end
+$var wire 8 Z remaining [7:0] $end
+$var wire 4 [ address [3:0] $end
+$var wire 8 \ _00005e_00006095 [7:0] $end
+$var wire 8 ] _00005e_00006091 [7:0] $end
+$var wire 8 ^ _00005e_00006090 [7:0] $end
+$scope module my__interpolator $end
+$var wire 8 _ base [7:0] $end
+$var wire 8 ` next__data [7:0] $end
+$var wire 8 a remaining [7:0] $end
+$var reg 8 b _00003a45_00003a_00003a_00003a42 [7:0] $end
+$var reg 8 c _00003a45_00003a_00003a_00003a43 [7:0] $end
+$var reg 8 d interpolated__value [7:0] $end
+$upscope $end
+$scope module my__lut $end
+$var wire 4 e address [3:0] $end
+$var wire 8 f base [7:0] $end
+$var reg 8 g next__data [7:0] $end
+$upscope $end
+$upscope $end
+$scope module func1__0 $end
+$var wire 4 h _00005e_00006089 [3:0] $end
+$var wire 8 i _00005e_00006092 [7:0] $end
+$var wire 8 j _00005e_00006093 [7:0] $end
+$var wire 8 k _00005e_00006094 [7:0] $end
+$var wire 8 l a [7:0] $end
+$var wire 8 m base [7:0] $end
+$var wire 8 n next__data [7:0] $end
+$var wire 8 o z__value [7:0] $end
+$var wire 8 p remaining [7:0] $end
+$var wire 4 q address [3:0] $end
+$var wire 8 r _00005e_00006095 [7:0] $end
+$var wire 8 s _00005e_00006091 [7:0] $end
+$var wire 8 t _00005e_00006090 [7:0] $end
+$scope module my__interpolator $end
+$var wire 8 u base [7:0] $end
+$var wire 8 v next__data [7:0] $end
+$var wire 8 w remaining [7:0] $end
+$var reg 8 x _00003a36_00003a_00003a_00003a33 [7:0] $end
+$var reg 8 y _00003a36_00003a_00003a_00003a34 [7:0] $end
+$var reg 8 z interpolated__value [7:0] $end
+$upscope $end
+$scope module my__lut $end
+$var wire 4 { address [3:0] $end
+$var wire 8 | base [7:0] $end
+$var reg 8 } next__data [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx }
+bx |
+bx {
+bx z
+bx y
+bx x
+b0xxxx w
+bx v
+bx u
+bx t
+bx s
+bx r
+bx q
+b0xxxx p
+bx o
+bx n
+bx m
+bx l
+b0xxxx k
+bx j
+bx i
+bx h
+bx g
+bx f
+bx e
+bx d
+bx c
+bx b
+b0xxxx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+bx [
+b0xxxx Z
+bx Y
+bx X
+bx W
+bx V
+b0xxxx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+b0xxxx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+b0xxxx D
+bx C
+bx B
+bx A
+bx @
+b0xxxx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+b10000 8
+b0 7
+b11011101 6
+b11100111 5
+b11101001 4
+b11110 3
+b11010 2
+b10101 1
+bx 0
+bx /
+bx .
+bx -
+b10011 ,
+b100010 +
+b11111001 *
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+bx !
+$end
+#10
+b11110100 #
+b11110100 &
+b11110100 l
+b11110100 r
+b11110100 z
+b1100 y
+b1100 x
+b11110001 !
+b11110001 (
+b11110001 @
+b11110001 F
+b11110001 N
+b11 M
+b11 L
+b0 j
+b0 v
+b0 n
+b0 s
+b0 }
+b11110100 >
+b11110100 J
+b11110100 B
+b11110100 G
+b11110100 Q
+b11110100 i
+b11110100 u
+b11110100 m
+b11110100 t
+b11110100 |
+b1111 h
+b1111 {
+b1111 q
+b0 k
+b0 w
+b0 p
+b11110001 =
+b11110001 I
+b11110001 A
+b11110001 H
+b11110001 P
+b1110 <
+b1110 O
+b1110 E
+b10 ?
+b10 K
+b10 D
+b11110000 '
+b11110000 ;
+b11110000 o
+b11011101 /
+b11100010 )
+b11100010 9
+b11100010 C
+b11101001 -
+#20
+b1110 "
+b1110 $
+b1110 V
+b1110 \
+b1110 d
+b11 c
+b11 b
+b1111 T
+b1111 `
+b1111 X
+b1111 ]
+b1111 g
+b1100 S
+b1100 _
+b1100 W
+b1100 ^
+b1100 f
+b1 R
+b1 e
+b1 [
+b1011 U
+b1011 a
+b1011 Z
+b11011 %
+b11011 :
+b11011 Y
+b10010 0
+b11100111 .
+#30
