@@ -13,8 +13,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    output reg _00003a32;
    output reg [0:0] _00003a33;
    output reg signed[7:0] _00003a34;
-   reg ack__0;
-   reg ack__1;
+   wire ack__0;
+   wire ack__1;
    wire fill__inputs;
    reg signed[7:0] value__inputs;
    reg [1:0] address__inputs;
@@ -27,8 +27,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    reg signed[7:0] value__outputs;
    reg [0:0] address__outputs;
    reg flag__outputs;
-   wire signed[7:0] _00003a84;
-   reg [0:0] _00003a85;
+   wire signed[7:0] _00003a89;
+   reg [0:0] _00003a90;
    wire channel__inputs_00003a45_00003a_00003atrig__r;
    wire channel__inputs_00003a45_00003a_00003atrig__w;
    reg signed[7:0] channel__inputs_00003a45_00003a_00003adbus__r;
@@ -37,16 +37,16 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    wire [0:0] channel__inputs_00003a45_00003a_00003aabus__w;
    reg signed[7:0] channel__inputs_00003a45_00003a_00003amem  [0:1];
    wire signed[7:0] channel__outputs_00003a74_00003a_00003areg__0;
-   wire [0:0] channel__outputs_00003a74_00003a_00003arinc_00003a83_00003a_00003aabus__r;
-   wire [0:0] channel__outputs_00003a74_00003a_00003awinc_00003a86_00003a_00003aabus__w;
-   wire [0:0] channel__outputs_00003a74_00003a_00003ardec_00003a89_00003a_00003aabus__r;
-   wire [0:0] channel__outputs_00003a74_00003a_00003awdec_00003a93_00003a_00003aabus__w;
-   wire signed[7:0] channel__a0_00003a97_00003a_00003areg__0;
-   wire signed[7:0] channel__a0_00003a97_00003a_00003areg__1;
-   wire [0:0] channel__a0_00003a97_00003a_00003arinc_00003a109_00003a_00003aabus__r;
-   wire [0:0] channel__a0_00003a97_00003a_00003awinc_00003a113_00003a_00003aabus__w;
-   wire [0:0] channel__a0_00003a97_00003a_00003ardec_00003a117_00003a_00003aabus__r;
-   wire [0:0] channel__a0_00003a97_00003a_00003awdec_00003a122_00003a_00003aabus__w;
+   wire [0:0] channel__outputs_00003a74_00003a_00003arinc_00003a88_00003a_00003aabus__r;
+   wire [0:0] channel__outputs_00003a74_00003a_00003awinc_00003a91_00003a_00003aabus__w;
+   wire [0:0] channel__outputs_00003a74_00003a_00003ardec_00003a94_00003a_00003aabus__r;
+   wire [0:0] channel__outputs_00003a74_00003a_00003awdec_00003a98_00003a_00003aabus__w;
+   wire signed[7:0] channel__a0_00003a102_00003a_00003areg__0;
+   wire signed[7:0] channel__a0_00003a102_00003a_00003areg__1;
+   wire [0:0] channel__a0_00003a102_00003a_00003arinc_00003a122_00003a_00003aabus__r;
+   wire [0:0] channel__a0_00003a102_00003a_00003awinc_00003a126_00003a_00003aabus__w;
+   wire [0:0] channel__a0_00003a102_00003a_00003ardec_00003a130_00003a_00003aabus__r;
+   wire [0:0] channel__a0_00003a102_00003a_00003awdec_00003a135_00003a_00003aabus__w;
    wire _00005e_00006053;
    wire _00005e_00006054;
    wire _00005e_00006055;
@@ -65,8 +65,8 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
    wire signed[7:0] _00005e_00006068;
    wire [0:0] _00005e_00006069;
 
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0 layer0(.clk(_00005e_00006053),.rst(_00005e_00006054),.req(_00005e_00006055),._00003a59(_00005e_00006061),.ack__layer(_00005e_00006056),._00003a57(_00005e_00006062),._00003a58(_00005e_00006063),._00003a99(_00005e_00006065),._00003a100(_00005e_00006066));
-   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0 layer1(.clk(_00005e_00006057),.rst(_00005e_00006058),.req(_00005e_00006059),._00003a110(_00005e_00006067),._00003a111(_00005e_00006068),.ack__layer(_00005e_00006060),._00003a112(_00005e_00006069),._00003a76(_00005e_00006064));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_00003aT0 layer0(.clk(_00005e_00006053),.rst(_00005e_00006054),.req(_00005e_00006055),._00003a59(_00005e_00006061),.ack__layer(_00005e_00006056),._00003a57(_00005e_00006062),._00003a58(_00005e_00006063),._00003a106(_00005e_00006065),._00003a107(_00005e_00006066));
+   _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer1_00003aT0 layer1(.clk(_00005e_00006057),.rst(_00005e_00006058),.req(_00005e_00006059),._00003a123(_00005e_00006067),._00003a124(_00005e_00006068),.ack__layer(_00005e_00006060),._00003a125(_00005e_00006069),._00003a77(_00005e_00006064));
    assign _00005e_00006053 = clk;
 
    assign _00005e_00006054 = rst;
@@ -89,42 +89,33 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
 
    assign fill__outputs = ((ack__1 & ~ack__network) & ~flag__outputs);
 
-   assign _00003a61 = channel__inputs_00003a45_00003a_00003atrig__w;
+   assign channel__inputs_00003a45_00003a_00003atrig__w = _00003a61;
 
-   assign _00003a62 = channel__inputs_00003a45_00003a_00003aabus__w;
+   assign channel__inputs_00003a45_00003a_00003aabus__w = _00003a62;
 
-   assign _00003a63 = channel__inputs_00003a45_00003a_00003adbus__w;
+   assign channel__inputs_00003a45_00003a_00003adbus__w = _00003a63;
 
    assign _00005e_00006061 = channel__inputs_00003a45_00003a_00003adbus__r;
 
-   assign _00005e_00006062 = channel__inputs_00003a45_00003a_00003atrig__r;
+   assign channel__inputs_00003a45_00003a_00003atrig__r = _00005e_00006062;
 
-   assign _00005e_00006063 = channel__inputs_00003a45_00003a_00003aabus__r;
+   assign channel__inputs_00003a45_00003a_00003aabus__r = _00005e_00006063;
 
-   assign _00003a84 = channel__outputs_00003a74_00003a_00003areg__0;
+   assign _00003a89 = channel__outputs_00003a74_00003a_00003areg__0;
 
-   assign _00005e_00006064 = channel__outputs_00003a74_00003a_00003areg__0;
+   assign channel__outputs_00003a74_00003a_00003areg__0 = _00005e_00006064;
 
-   assign _00003a85 = channel__outputs_00003a74_00003a_00003arinc_00003a83_00003a_00003aabus__r;
+   assign channel__outputs_00003a74_00003a_00003arinc_00003a88_00003a_00003aabus__r = _00003a90;
 
-   assign _00005e_00006065 = channel__a0_00003a97_00003a_00003areg__0;
+   assign channel__a0_00003a102_00003a_00003areg__0 = _00005e_00006065;
 
-   assign _00005e_00006066 = channel__a0_00003a97_00003a_00003areg__1;
+   assign channel__a0_00003a102_00003a_00003areg__1 = _00005e_00006066;
 
-   assign _00005e_00006067 = channel__a0_00003a97_00003a_00003areg__0;
+   assign _00005e_00006067 = channel__a0_00003a102_00003a_00003areg__0;
 
-   assign _00005e_00006068 = channel__a0_00003a97_00003a_00003areg__1;
+   assign _00005e_00006068 = channel__a0_00003a102_00003a_00003areg__1;
 
-   assign _00005e_00006069 = channel__a0_00003a97_00003a_00003arinc_00003a109_00003a_00003aabus__r;
-
-   always @( posedge clk ) begin
-
-      if (rst) begin
-         ack__0 <= 32'd0;
-         ack__1 <= 32'd0;
-      end
-
-   end
+   assign channel__a0_00003a102_00003a_00003arinc_00003a122_00003a_00003aabus__r = _00005e_00006069;
 
    always @( posedge clk ) begin
 
@@ -152,7 +143,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
                flag__inputs <= 32'd1;
             end
             else begin
-               _00003a9 <= ((_00003a9 + 32'd1) == 32'd2) == 1 ? (_00003a9 + 32'd1) : 32'd0;
+               _00003a9 <= (_00003a9 + 32'd1);
                _00003a8 <= 32'd1;
             end
          end
@@ -164,7 +155,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
             ack__inputs <= 32'd1;
          end
          if ((rst == 32'd0)) begin
-            _00003a62 <= ((_00003a62 + 32'd1) == 32'd2) == 1 ? (_00003a62 + 32'd1) : 32'd0;
+            _00003a62 <= (_00003a62 + 32'd1);
             _00003a61 <= 32'd1;
             _00003a63 <= value__inputs;
          end
@@ -184,7 +175,7 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
       _00003a32 <= 32'd0;
 
       if ((rst == 32'd1)) begin
-         _00003a85 <= 32'd0;
+         _00003a90 <= 32'd0;
       end
 
       if (rst) begin
@@ -194,11 +185,11 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0( clk, rst, req, fill,
       end
       else if (fill__outputs) begin
          if ((rst == 32'd0)) begin
-            case(_00003a85)
-               32'd0: value__outputs <= _00003a84;
+            case(_00003a90)
+               32'd0: value__outputs <= _00003a89;
             endcase
             flag__outputs <= 32'd1;
-            _00003a85 <= ((_00003a85 + 32'd1) == 32'd1) == 1 ? (_00003a85 + 32'd1) : 32'd0;
+            _00003a90 <= ((_00003a90 + 32'd1) == 32'd1) == 1 ? (_00003a90 + 32'd1) : 32'd0;
          end
       end
       else if (flag__outputs) begin

@@ -5,16 +5,16 @@ module _____00003aT0_00003a_00003aneural__network_00003aT0_00003a_00003alayer0_0
    input signed[7:0] next__data;
    input signed[7:0] remaining;
    output reg signed[7:0] interpolated__value;
-   reg signed[7:0] _00003a489_00003a_00003a_00003a486;
-   reg signed[7:0] _00003a489_00003a_00003a_00003a487;
+   reg signed[7:0] _00003a534_00003a_00003a_00003a531;
+   reg signed[7:0] _00003a534_00003a_00003a_00003a532;
 
    always @( * ) begin
 
-      _00003a489_00003a_00003a_00003a486 = ((next__data - base) >> 32'd0);
+      _00003a534_00003a_00003a_00003a531 = ((next__data - base) >> 32'd0);
 
-      _00003a489_00003a_00003a_00003a487 = ((next__data - base) >> 32'd0);
+      _00003a534_00003a_00003a_00003a532 = ((next__data - base) >> 32'd0);
 
-      interpolated__value = (base + (($signed({{4{_00003a489_00003a_00003a_00003a487[7]}},_00003a489_00003a_00003a_00003a487}) * remaining) >> 32'd4));
+      interpolated__value = (base + (($signed({{4{_00003a534_00003a_00003a_00003a532[7]}},_00003a534_00003a_00003a_00003a532}) * remaining) >> 32'd4));
 
    end
 

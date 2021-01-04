@@ -27,7 +27,7 @@ system :network_bench do
     biases = parameters[:biases]
     weights = parameters[:weights]    
 
-    inputs = [0, 0]
+    inputs = [1, 0]
 
     puts "inputs : #{inputs}"
 
@@ -96,7 +96,7 @@ system :network_bench do
       !10.ps
       clk <= 0
       !10.ps   
-      40.times do
+      30.times do
         clk <= 1
         !10.ps
         clk <= 0

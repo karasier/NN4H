@@ -1,5 +1,5 @@
 $date
-   02 01 2021 02:06
+   05 01 2021 03:07
 $end
 $version
    Generated from HDLRuby simulator
@@ -648,7 +648,7 @@ bx __$T0$__$T$ack_network
 bx __$T0$__$T$rom_inputs$1$trig_r
 bxxxxxxxx __$T0$__$T$rom_inputs$1$dbus_r
 bx __$T0$__$T$rom_inputs$1$abus_r
-b0001000000000000 __$T0$__$T$rom_inputs$1$mem
+b0001000000010000 __$T0$__$T$rom_inputs$1$mem
 bx __$T0$__$T$ram_outputs$16$trig_r
 bx __$T0$__$T$ram_outputs$16$trig_w
 bxxxxxxxx __$T0$__$T$ram_outputs$16$dbus_r
@@ -666,14 +666,14 @@ b0 neural_network$T0$clk
 b0 neural_network$T0$rst
 b0 neural_network$T0$req
 b0 neural_network$T0$fill
-b00000000 __$T0$__$T$rom_inputs$1$dbus_r
+b00010000 __$T0$__$T$rom_inputs$1$dbus_r
 b0 layer0$T0$clk
 b0 layer0$T0$rst
 b0 layer0$T0$req
 b0 layer1$T0$clk
 b0 layer1$T0$rst
 b0 neural_network$T0$neural_network$T$fill_inputs
-b00000000 neural_network$T0$$10
+b00010000 neural_network$T0$$10
 b0 counter$T1$clk
 b0 counter$T1$rst
 b00001100 layer0$T0$layer0$T$channel_w0$127$dbus_r
@@ -710,8 +710,6 @@ b1 __$T0$__$T$clk
 b1 neural_network$T0$clk
 b1 layer0$T0$clk
 b1 layer1$T0$clk
-b0 neural_network$T0$neural_network$T$ack_0
-b0 neural_network$T0$neural_network$T$ack_1
 b1 neural_network$T0$neural_network$T$$62
 b0 neural_network$T0$neural_network$T$$61
 b1 neural_network$T0$$9
@@ -738,7 +736,6 @@ b0 layer0$T0$layer0$T$$213
 b0 layer0$T0$layer0$T$$198
 b0 layer0$T0$layer0$T$ack_add
 b0 layer0$T0$layer0$T$add_n$256$run
-b0 layer0$T0$layer0$T$ack_mac
 b0 layer0$T0$layer0$T$ack_a0
 b0 layer0$T0$layer0$T$ack_a1
 b1 counter$T00$clk
@@ -750,16 +747,13 @@ b0 layer1$T0$layer1$T$mac_n1$307$run
 b0 layer1$T0$layer1$T$$314
 b0 layer1$T0$layer1$T$ack_add
 b0 layer1$T0$layer1$T$add_n$350$run
-b0 layer1$T0$layer1$T$ack_mac
 b0 layer1$T0$layer1$T$ack_a0
-b0 layer1$T0$req
-b0 neural_network$T0$ack_fill
-b0 neural_network$T0$neural_network$T$fill_outputs
 b1 neural_network$T0$neural_network$T$channel_inputs$45$abus_w
 b0 neural_network$T0$neural_network$T$channel_inputs$45$trig_w
 b0 __$T0$__$T$rom_inputs$1$trig_r
 b1 __$T0$__$T$rom_inputs$1$abus_r
 b0 neural_network$T0$neural_network$T$fill_inputs
+b0 neural_network$T0$ack_fill
 b0 __$T0$__$T$ram_outputs$16$trig_w
 b1 __$T0$__$T$ram_outputs$16$abus_w
 b0 neural_network$T0$neural_network$T$channel_outputs$74$rinc$83$abus_r
@@ -774,22 +768,23 @@ b0 counter$T1$ack
 b0 layer0$T0$ack_layer
 b0 layer0$T0$layer0$T$channel_b1$211$trig_r
 b0 layer0$T0$layer0$T$channel_b0$196$trig_r
-b0 layer0$T0$layer0$T$req_mac
 b1 layer1$T0$layer1$T$channel_w0$267$abus_r
 b0 layer1$T0$layer1$T$channel_w0$267$trig_r
 b0 neural_network$T0$neural_network$T$channel_a0$97$rinc$109$abus_r
 b0 counter$T00$ack
 b0 layer1$T0$ack_layer
 b0 layer1$T0$layer1$T$channel_b0$312$trig_r
-b0 layer1$T0$layer1$T$req_mac
 b0 __$T0$__$T$ack_fill
+b0 neural_network$T0$neural_network$T$ack_0
+b0 neural_network$T0$neural_network$T$ack_1
+b0 layer1$T0$req
+b0 neural_network$T0$neural_network$T$fill_outputs
+b0 layer1$T0$layer1$T$req_mac
 #30
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
-b00010000 __$T0$__$T$rom_inputs$1$dbus_r
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b00010000 neural_network$T0$$10
 b0 counter$T1$clk
 b11110010 layer0$T0$layer0$T$channel_w0$127$dbus_r
 b00011000 layer0$T0$layer0$T$channel_w1$142$dbus_r
@@ -802,6 +797,10 @@ b00011000 layer0$T0$layer0$T$$151
 b00 counter$T00$counter$T0$q
 b0 counter$T00$ack_mac
 b00001101 layer1$T0$layer1$T$$276
+b0 layer0$T0$layer0$T$ack_mac
+b0 layer1$T0$layer1$T$ack_mac
+b0 layer0$T0$layer0$T$req_mac
+b0 layer1$T0$layer1$T$req_mac
 #40
 b1 __$T0$__$T$clk
 b1 neural_network$T0$clk
@@ -862,10 +861,8 @@ b0 __$T0$__$T$rom_inputs$1$abus_r
 #70
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
-b00000000 __$T0$__$T$rom_inputs$1$dbus_r
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b00000000 neural_network$T0$$10
 b0 counter$T1$clk
 b0 counter$T00$clk
 #80
@@ -874,7 +871,7 @@ b1 neural_network$T0$clk
 b1 layer0$T0$clk
 b1 layer1$T0$clk
 b0 neural_network$T0$$8
-b00000000 neural_network$T0$neural_network$T$value_inputs
+b00010000 neural_network$T0$neural_network$T$value_inputs
 b1 neural_network$T0$neural_network$T$flag_inputs
 b1 counter$T1$clk
 b1 counter$T00$clk
@@ -894,21 +891,21 @@ b1 layer0$T0$clk
 b1 layer1$T0$clk
 b1 neural_network$T0$neural_network$T$$61
 b0 neural_network$T0$neural_network$T$$62
-b00000000 neural_network$T0$neural_network$T$$63
+b00010000 neural_network$T0$neural_network$T$$63
 b01 neural_network$T0$neural_network$T$address_inputs
 b0 neural_network$T0$neural_network$T$flag_inputs
 b1 counter$T1$clk
 b1 counter$T00$clk
 b1 neural_network$T0$neural_network$T$channel_inputs$45$trig_w
 b0 neural_network$T0$neural_network$T$channel_inputs$45$abus_w
-b00000000 neural_network$T0$neural_network$T$channel_inputs$45$dbus_w
+b00010000 neural_network$T0$neural_network$T$channel_inputs$45$dbus_w
 b1 neural_network$T0$neural_network$T$fill_inputs
 #110
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-bxxxxxxxx00000000 neural_network$T0$neural_network$T$channel_inputs$45$mem
+bxxxxxxxx00010000 neural_network$T0$neural_network$T$channel_inputs$45$mem
 b0 counter$T1$clk
 b0 counter$T00$clk
 #120
@@ -927,10 +924,8 @@ b1 __$T0$__$T$rom_inputs$1$abus_r
 #130
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
-b00010000 __$T0$__$T$rom_inputs$1$dbus_r
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b00010000 neural_network$T0$$10
 b0 counter$T1$clk
 b0 counter$T00$clk
 #140
@@ -939,7 +934,6 @@ b1 neural_network$T0$clk
 b1 layer0$T0$clk
 b1 layer1$T0$clk
 b0 neural_network$T0$$8
-b00010000 neural_network$T0$neural_network$T$value_inputs
 b1 neural_network$T0$neural_network$T$flag_inputs
 b1 counter$T1$clk
 b1 counter$T00$clk
@@ -959,7 +953,6 @@ b1 layer0$T0$clk
 b1 layer1$T0$clk
 b1 neural_network$T0$neural_network$T$$61
 b1 neural_network$T0$neural_network$T$$62
-b00010000 neural_network$T0$neural_network$T$$63
 b10 neural_network$T0$neural_network$T$address_inputs
 b0 neural_network$T0$neural_network$T$flag_inputs
 b1 neural_network$T0$neural_network$T$ack_inputs
@@ -967,7 +960,6 @@ b1 counter$T1$clk
 b1 counter$T00$clk
 b1 neural_network$T0$neural_network$T$channel_inputs$45$trig_w
 b1 neural_network$T0$neural_network$T$channel_inputs$45$abus_w
-b00010000 neural_network$T0$neural_network$T$channel_inputs$45$dbus_w
 b1 neural_network$T0$ack_fill
 b1 __$T0$__$T$ack_fill
 #170
@@ -975,7 +967,7 @@ b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b0001000000000000 neural_network$T0$neural_network$T$channel_inputs$45$mem
+b0001000000010000 neural_network$T0$neural_network$T$channel_inputs$45$mem
 b0 counter$T1$clk
 b0 counter$T00$clk
 #180
@@ -1083,12 +1075,10 @@ b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b00000000 neural_network$T0$neural_network$T$channel_inputs$45$dbus_r
 b0 counter$T1$clk
 b00001100 layer0$T0$layer0$T$channel_w0$127$dbus_r
 b11101111 layer0$T0$layer0$T$channel_w1$142$dbus_r
 b0 counter$T00$clk
-b00000000 layer0$T0$$59
 b00001100 layer0$T0$layer0$T$$136
 b11101111 layer0$T0$layer0$T$$151
 #300
@@ -1100,23 +1090,25 @@ b1 counter$T1$clk
 b0 layer0$T0$$57
 b1 layer0$T0$layer0$T$ack
 b0 layer0$T0$layer0$T$mac_n1$189$run
-b00000000 layer0$T0$layer0$T$$159
+b00001100 layer0$T0$layer0$T$$159
 b1 layer0$T0$layer0$T$mac_n1$189$wok0
-b00000000 layer0$T0$layer0$T$$160
+b11101111 layer0$T0$layer0$T$$160
 b1 layer0$T0$layer0$T$mac_n1$189$wok1
 b1 counter$T00$clk
-b00000000 layer0$T0$layer0$T$mac_n1$189$rv
+b00010000 layer0$T0$layer0$T$mac_n1$189$rv
 b1 layer0$T0$layer0$T$mac_n1$189$rvok
 b0 layer0$T0$layer0$T$$134
 b00001100 layer0$T0$layer0$T$mac_n1$189$lv0
 b1 layer0$T0$layer0$T$mac_n1$189$lvok0
+b00001100 layer0$T0$layer0$T$mac_n1$189$av0
 b0 layer0$T0$layer0$T$$149
 b11101111 layer0$T0$layer0$T$mac_n1$189$lv1
 b1 layer0$T0$layer0$T$mac_n1$189$lvok1
+b11101111 layer0$T0$layer0$T$mac_n1$189$av1
 b0 neural_network$T0$neural_network$T$channel_inputs$45$trig_r
 b1 counter$T1$ack
-b00000000 layer0$T0$layer0$T$channel_accum$157$reg_0
-b00000000 layer0$T0$layer0$T$channel_accum$157$reg_1
+b00001100 layer0$T0$layer0$T$channel_accum$157$reg_0
+b11101111 layer0$T0$layer0$T$channel_accum$157$reg_1
 b0 layer0$T0$layer0$T$channel_w0$127$trig_r
 b0 layer0$T0$layer0$T$channel_w1$142$trig_r
 #310
@@ -1173,12 +1165,10 @@ b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
 b0 layer0$T0$clk
 b0 layer1$T0$clk
-b00010000 neural_network$T0$neural_network$T$channel_inputs$45$dbus_r
 b0 counter$T1$clk
 b11110010 layer0$T0$layer0$T$channel_w0$127$dbus_r
 b00011000 layer0$T0$layer0$T$channel_w1$142$dbus_r
 b0 counter$T00$clk
-b00010000 layer0$T0$$59
 b11110010 layer0$T0$layer0$T$$136
 b00011000 layer0$T0$layer0$T$$151
 #360
@@ -1190,25 +1180,24 @@ b1 counter$T1$clk
 b0 layer0$T0$$57
 b1 layer0$T0$layer0$T$ack
 b0 layer0$T0$layer0$T$mac_n1$189$run
-b11110010 layer0$T0$layer0$T$$159
+b11111110 layer0$T0$layer0$T$$159
 b1 layer0$T0$layer0$T$mac_n1$189$wok0
-b00011000 layer0$T0$layer0$T$$160
+b00000111 layer0$T0$layer0$T$$160
 b1 layer0$T0$layer0$T$mac_n1$189$wok1
 b1 counter$T00$clk
-b00010000 layer0$T0$layer0$T$mac_n1$189$rv
 b1 layer0$T0$layer0$T$mac_n1$189$rvok
 b0 layer0$T0$layer0$T$$134
 b11110010 layer0$T0$layer0$T$mac_n1$189$lv0
 b1 layer0$T0$layer0$T$mac_n1$189$lvok0
-b11110010 layer0$T0$layer0$T$mac_n1$189$av0
+b11111110 layer0$T0$layer0$T$mac_n1$189$av0
 b0 layer0$T0$layer0$T$$149
 b00011000 layer0$T0$layer0$T$mac_n1$189$lv1
 b1 layer0$T0$layer0$T$mac_n1$189$lvok1
-b00011000 layer0$T0$layer0$T$mac_n1$189$av1
+b00000111 layer0$T0$layer0$T$mac_n1$189$av1
 b0 neural_network$T0$neural_network$T$channel_inputs$45$trig_r
 b1 counter$T1$ack
-b11110010 layer0$T0$layer0$T$channel_accum$157$reg_0
-b00011000 layer0$T0$layer0$T$channel_accum$157$reg_1
+b11111110 layer0$T0$layer0$T$channel_accum$157$reg_0
+b00000111 layer0$T0$layer0$T$channel_accum$157$reg_1
 b0 layer0$T0$layer0$T$channel_w0$127$trig_r
 b0 layer0$T0$layer0$T$channel_w1$142$trig_r
 #370
@@ -1240,10 +1229,10 @@ b00000000 layer0$T0$layer0$T$mac_n1$189$av1
 b1 layer0$T0$layer0$T$$213
 b1 layer0$T0$layer0$T$$198
 b1 layer0$T0$layer0$T$add_n$256$run
-b11110010 layer0$T0$layer0$T$add_n$256$lv0
+b11111110 layer0$T0$layer0$T$add_n$256$lv0
 b1 layer0$T0$layer0$T$add_n$256$lvok0
 b0 layer0$T0$layer0$T$$199
-b00011000 layer0$T0$layer0$T$add_n$256$lv1
+b00000111 layer0$T0$layer0$T$add_n$256$lv1
 b1 layer0$T0$layer0$T$add_n$256$lvok1
 b0 layer0$T0$layer0$T$$214
 b1 counter$T00$clk
@@ -1291,13 +1280,13 @@ b1 layer0$T0$layer0$T$$213
 b1 layer0$T0$layer0$T$$198
 b1 layer0$T0$layer0$T$ack_add
 b0 layer0$T0$layer0$T$add_n$256$run
-b11110011 layer0$T0$layer0$T$$228
-b00010101 layer0$T0$layer0$T$$229
+b11111111 layer0$T0$layer0$T$$228
+b00000100 layer0$T0$layer0$T$$229
 b1 counter$T00$clk
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
 b1 layer0$T0$layer0$T$channel_b0$196$trig_r
-b11110011 layer0$T0$layer0$T$channel_z$226$reg_0
-b00010101 layer0$T0$layer0$T$channel_z$226$reg_1
+b11111111 layer0$T0$layer0$T$channel_z$226$reg_0
+b00000100 layer0$T0$layer0$T$channel_z$226$reg_1
 #430
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
@@ -1313,41 +1302,41 @@ b1 layer1$T0$clk
 b1 counter$T1$clk
 b0 layer0$T0$layer0$T$$213
 b0 layer0$T0$layer0$T$$198
-b11110011 layer0$T0$layer0$T$value_z0
+b11111111 layer0$T0$layer0$T$value_z0
 b1 layer0$T0$layer0$T$flag_z0
-b00010101 layer0$T0$layer0$T$value_z1
+b00000100 layer0$T0$layer0$T$value_z1
 b1 layer0$T0$layer0$T$flag_z1
 b1 counter$T00$clk
 b0 layer0$T0$layer0$T$channel_b1$211$trig_r
 b0 layer0$T0$layer0$T$channel_b0$196$trig_r
-b11110011 func0$T1$z_value
-b00010101 func1$T0$z_value
+b11111111 func0$T1$z_value
+b00000100 func1$T0$z_value
 b1111 func0$T1$func0$T$address
-b00000011 func0$T1$func0$T$remaining
-b0001 func1$T0$func1$T$address
-b00000101 func1$T0$func1$T$remaining
+b00001111 func0$T1$func0$T$remaining
+b0000 func1$T0$func1$T$address
+b00000100 func1$T0$func1$T$remaining
 b1111 my_lut$T2$address
-b00000011 my_interpolator$T2$remaining
-b0001 my_lut$T00$address
-b00000101 my_interpolator$T00$remaining
+b00001111 my_interpolator$T2$remaining
+b0000 my_lut$T00$address
+b00000100 my_interpolator$T00$remaining
 b00000000 my_lut$T2$next_data
 b00000000 my_lut$T2$base
-b00100000 my_lut$T00$next_data
-b00010000 my_lut$T00$base
+b00010000 my_lut$T00$next_data
+b00000000 my_lut$T00$base
 b00000000 func0$T1$func0$T$base
 b00000000 func0$T1$func0$T$next_data
-b00010000 func1$T0$func1$T$base
-b00100000 func1$T0$func1$T$next_data
+b00000000 func1$T0$func1$T$base
+b00010000 func1$T0$func1$T$next_data
 b00000000 my_interpolator$T2$base
 b00000000 my_interpolator$T2$next_data
-b00010000 my_interpolator$T00$base
-b00100000 my_interpolator$T00$next_data
+b00000000 my_interpolator$T00$base
+b00010000 my_interpolator$T00$next_data
 b00000000 my_interpolator$T2$interpolated_value
-b00010101 my_interpolator$T00$interpolated_value
+b00000100 my_interpolator$T00$interpolated_value
 b00000000 func0$T1$a
-b00010101 func1$T0$a
+b00000100 func1$T0$a
 b00000000 layer0$T0$layer0$T$value_a0
-b00010101 layer0$T0$layer0$T$value_a1
+b00000100 layer0$T0$layer0$T$value_a1
 #450
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
@@ -1365,16 +1354,16 @@ b1 layer0$T0$layer0$T$$213
 b1 layer0$T0$layer0$T$$198
 b00000000 layer0$T0$$99
 b1 layer0$T0$layer0$T$ack_a0
-b00010101 layer0$T0$$100
+b00000100 layer0$T0$$100
 b1 layer0$T0$layer0$T$ack_a1
 b1 counter$T00$clk
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
 b1 layer0$T0$layer0$T$channel_b0$196$trig_r
 b00000000 neural_network$T0$neural_network$T$channel_a0$97$reg_0
 b1 layer0$T0$ack_layer
-b00010101 neural_network$T0$neural_network$T$channel_a0$97$reg_1
+b00000100 neural_network$T0$neural_network$T$channel_a0$97$reg_1
 b00000000 layer1$T0$$110
-b00010101 layer1$T0$$111
+b00000100 layer1$T0$$111
 b1 neural_network$T0$neural_network$T$ack_0
 b1 layer1$T0$req
 b1 layer1$T0$layer1$T$req_mac
@@ -1476,7 +1465,7 @@ b1 counter$T1$clk
 b1 layer0$T0$layer0$T$$213
 b1 layer0$T0$layer0$T$$198
 b1 counter$T00$clk
-b00010101 layer1$T0$layer1$T$mac_n1$307$rv
+b00000100 layer1$T0$layer1$T$mac_n1$307$rv
 b1 layer1$T0$layer1$T$mac_n1$307$rvok
 b0 layer1$T0$$112
 b1 layer1$T0$layer1$T$$275
@@ -1506,16 +1495,16 @@ b0 layer0$T0$layer0$T$$198
 b1 counter$T00$clk
 b1 layer1$T0$layer1$T$ack
 b0 layer1$T0$layer1$T$mac_n1$307$run
-b00010001 layer1$T0$layer1$T$$284
+b00000011 layer1$T0$layer1$T$$284
 b1 layer1$T0$layer1$T$mac_n1$307$wok0
 b0 layer1$T0$layer1$T$$274
 b00001101 layer1$T0$layer1$T$mac_n1$307$lv0
 b1 layer1$T0$layer1$T$mac_n1$307$lvok0
-b00010001 layer1$T0$layer1$T$mac_n1$307$av0
+b00000011 layer1$T0$layer1$T$mac_n1$307$av0
 b0 layer0$T0$layer0$T$channel_b1$211$trig_r
 b0 layer0$T0$layer0$T$channel_b0$196$trig_r
 b1 counter$T00$ack
-b00010001 layer1$T0$layer1$T$channel_accum$282$reg_0
+b00000011 layer1$T0$layer1$T$channel_accum$282$reg_0
 b0 layer1$T0$layer1$T$channel_w0$267$trig_r
 #570
 b0 __$T0$__$T$clk
@@ -1545,7 +1534,7 @@ b0 layer1$T0$layer1$T$mac_n1$307$wok0
 b00000000 layer1$T0$layer1$T$mac_n1$307$av0
 b1 layer1$T0$layer1$T$$314
 b1 layer1$T0$layer1$T$add_n$350$run
-b00010001 layer1$T0$layer1$T$add_n$350$lv0
+b00000011 layer1$T0$layer1$T$add_n$350$lv0
 b1 layer1$T0$layer1$T$add_n$350$lvok0
 b0 layer1$T0$layer1$T$$315
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
@@ -1594,11 +1583,11 @@ b1 counter$T00$clk
 b1 layer1$T0$layer1$T$$314
 b1 layer1$T0$layer1$T$ack_add
 b0 layer1$T0$layer1$T$add_n$350$run
-b00001111 layer1$T0$layer1$T$$329
+b00000001 layer1$T0$layer1$T$$329
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
 b1 layer0$T0$layer0$T$channel_b0$196$trig_r
 b1 layer1$T0$layer1$T$channel_b0$312$trig_r
-b00001111 layer1$T0$layer1$T$channel_z$327$reg_0
+b00000001 layer1$T0$layer1$T$channel_z$327$reg_0
 #630
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
@@ -1616,25 +1605,25 @@ b0 layer0$T0$layer0$T$$213
 b0 layer0$T0$layer0$T$$198
 b1 counter$T00$clk
 b0 layer1$T0$layer1$T$$314
-b00001111 layer1$T0$layer1$T$value_z0
+b00000001 layer1$T0$layer1$T$value_z0
 b1 layer1$T0$layer1$T$flag_z0
 b0 layer0$T0$layer0$T$channel_b1$211$trig_r
 b0 layer0$T0$layer0$T$channel_b0$196$trig_r
 b0 layer1$T0$layer1$T$channel_b0$312$trig_r
-b00001111 func0$T00$z_value
+b00000001 func0$T00$z_value
 b0000 func0$T00$func0$T0$address
-b00001111 func0$T00$func0$T0$remaining
+b00000001 func0$T00$func0$T0$remaining
 b0000 my_lut$T10$address
-b00001111 my_interpolator$T10$remaining
+b00000001 my_interpolator$T10$remaining
 b00010000 my_lut$T10$next_data
 b00000000 my_lut$T10$base
 b00000000 func0$T00$func0$T0$base
 b00010000 func0$T00$func0$T0$next_data
 b00000000 my_interpolator$T10$base
 b00010000 my_interpolator$T10$next_data
-b00001111 my_interpolator$T10$interpolated_value
-b00001111 func0$T00$a
-b00001111 layer1$T0$layer1$T$value_a0
+b00000001 my_interpolator$T10$interpolated_value
+b00000001 func0$T00$a
+b00000001 layer1$T0$layer1$T$value_a0
 #650
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
@@ -1652,14 +1641,14 @@ b1 layer0$T0$layer0$T$$213
 b1 layer0$T0$layer0$T$$198
 b1 counter$T00$clk
 b1 layer1$T0$layer1$T$$314
-b00001111 layer1$T0$$76
+b00000001 layer1$T0$$76
 b1 layer1$T0$layer1$T$ack_a0
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
 b1 layer0$T0$layer0$T$channel_b0$196$trig_r
 b1 layer1$T0$layer1$T$channel_b0$312$trig_r
-b00001111 neural_network$T0$neural_network$T$channel_outputs$74$reg_0
+b00000001 neural_network$T0$neural_network$T$channel_outputs$74$reg_0
 b1 layer1$T0$ack_layer
-b00001111 neural_network$T0$neural_network$T$$84
+b00000001 neural_network$T0$neural_network$T$$84
 b1 neural_network$T0$neural_network$T$ack_1
 b1 neural_network$T0$neural_network$T$fill_outputs
 #670
@@ -1674,7 +1663,7 @@ b1 __$T0$__$T$clk
 b1 neural_network$T0$clk
 b1 layer0$T0$clk
 b1 layer1$T0$clk
-b00001111 neural_network$T0$neural_network$T$value_outputs
+b00000001 neural_network$T0$neural_network$T$value_outputs
 b1 neural_network$T0$neural_network$T$flag_outputs
 b1 counter$T1$clk
 b0 layer0$T0$layer0$T$$213
@@ -1699,7 +1688,7 @@ b1 layer0$T0$clk
 b1 layer1$T0$clk
 b1 neural_network$T0$$32
 b0 neural_network$T0$$33
-b00001111 neural_network$T0$$34
+b00000001 neural_network$T0$$34
 b1 neural_network$T0$neural_network$T$address_outputs
 b0 neural_network$T0$neural_network$T$flag_outputs
 b1 neural_network$T0$ack_network
@@ -1710,7 +1699,7 @@ b1 counter$T00$clk
 b1 layer1$T0$layer1$T$$314
 b1 __$T0$__$T$ram_outputs$16$trig_w
 b0 __$T0$__$T$ram_outputs$16$abus_w
-b00001111 __$T0$__$T$ram_outputs$16$dbus_w
+b00000001 __$T0$__$T$ram_outputs$16$dbus_w
 b1 __$T0$__$T$ack_network
 b1 layer0$T0$layer0$T$channel_b1$211$trig_r
 b1 layer0$T0$layer0$T$channel_b0$196$trig_r
@@ -1718,7 +1707,7 @@ b1 layer1$T0$layer1$T$channel_b0$312$trig_r
 #710
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
-b00001111 __$T0$__$T$ram_outputs$16$mem
+b00000001 __$T0$__$T$ram_outputs$16$mem
 b0 layer0$T0$clk
 b0 layer1$T0$clk
 b0 counter$T1$clk
@@ -1741,7 +1730,7 @@ b0 layer1$T0$layer1$T$channel_b0$312$trig_r
 #730
 b0 __$T0$__$T$clk
 b0 neural_network$T0$clk
-b00001111 __$T0$__$T$ram_outputs$16$dbus_r
+b00000001 __$T0$__$T$ram_outputs$16$dbus_r
 b0 layer0$T0$clk
 b0 layer1$T0$clk
 b0 counter$T1$clk
@@ -1907,3 +1896,203 @@ b0 layer1$T0$clk
 b0 counter$T1$clk
 b0 counter$T00$clk
 #900
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b1 layer0$T0$layer0$T$$213
+b1 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b1 layer1$T0$layer1$T$$314
+b1 layer0$T0$layer0$T$channel_b1$211$trig_r
+b1 layer0$T0$layer0$T$channel_b0$196$trig_r
+b1 layer1$T0$layer1$T$channel_b0$312$trig_r
+#910
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#920
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b0 layer0$T0$layer0$T$$213
+b0 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b0 layer1$T0$layer1$T$$314
+b0 layer0$T0$layer0$T$channel_b1$211$trig_r
+b0 layer0$T0$layer0$T$channel_b0$196$trig_r
+b0 layer1$T0$layer1$T$channel_b0$312$trig_r
+#930
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#940
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b1 layer0$T0$layer0$T$$213
+b1 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b1 layer1$T0$layer1$T$$314
+b1 layer0$T0$layer0$T$channel_b1$211$trig_r
+b1 layer0$T0$layer0$T$channel_b0$196$trig_r
+b1 layer1$T0$layer1$T$channel_b0$312$trig_r
+#950
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#960
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b0 layer0$T0$layer0$T$$213
+b0 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b0 layer1$T0$layer1$T$$314
+b0 layer0$T0$layer0$T$channel_b1$211$trig_r
+b0 layer0$T0$layer0$T$channel_b0$196$trig_r
+b0 layer1$T0$layer1$T$channel_b0$312$trig_r
+#970
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#980
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b1 layer0$T0$layer0$T$$213
+b1 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b1 layer1$T0$layer1$T$$314
+b1 layer0$T0$layer0$T$channel_b1$211$trig_r
+b1 layer0$T0$layer0$T$channel_b0$196$trig_r
+b1 layer1$T0$layer1$T$channel_b0$312$trig_r
+#990
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1000
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b0 layer0$T0$layer0$T$$213
+b0 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b0 layer1$T0$layer1$T$$314
+b0 layer0$T0$layer0$T$channel_b1$211$trig_r
+b0 layer0$T0$layer0$T$channel_b0$196$trig_r
+b0 layer1$T0$layer1$T$channel_b0$312$trig_r
+#1010
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1020
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b1 layer0$T0$layer0$T$$213
+b1 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b1 layer1$T0$layer1$T$$314
+b1 layer0$T0$layer0$T$channel_b1$211$trig_r
+b1 layer0$T0$layer0$T$channel_b0$196$trig_r
+b1 layer1$T0$layer1$T$channel_b0$312$trig_r
+#1030
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1040
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b0 layer0$T0$layer0$T$$213
+b0 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b0 layer1$T0$layer1$T$$314
+b0 layer0$T0$layer0$T$channel_b1$211$trig_r
+b0 layer0$T0$layer0$T$channel_b0$196$trig_r
+b0 layer1$T0$layer1$T$channel_b0$312$trig_r
+#1050
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1060
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b1 layer0$T0$layer0$T$$213
+b1 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b1 layer1$T0$layer1$T$$314
+b1 layer0$T0$layer0$T$channel_b1$211$trig_r
+b1 layer0$T0$layer0$T$channel_b0$196$trig_r
+b1 layer1$T0$layer1$T$channel_b0$312$trig_r
+#1070
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1080
+b1 __$T0$__$T$clk
+b1 neural_network$T0$clk
+b1 layer0$T0$clk
+b1 layer1$T0$clk
+b1 counter$T1$clk
+b0 layer0$T0$layer0$T$$213
+b0 layer0$T0$layer0$T$$198
+b1 counter$T00$clk
+b0 layer1$T0$layer1$T$$314
+b0 layer0$T0$layer0$T$channel_b1$211$trig_r
+b0 layer0$T0$layer0$T$channel_b0$196$trig_r
+b0 layer1$T0$layer1$T$channel_b0$312$trig_r
+#1090
+b0 __$T0$__$T$clk
+b0 neural_network$T0$clk
+b0 layer0$T0$clk
+b0 layer1$T0$clk
+b0 counter$T1$clk
+b0 counter$T00$clk
+#1100

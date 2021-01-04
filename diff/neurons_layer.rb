@@ -31,13 +31,13 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   par(clk.posedge) do
     hif(rst) do
       ack <= 0
-      #ack_mac <= 0
+      # ack_mac <= 0
       ack_add <= 0
     end    
   end
   #---------------------------------------------------------------------------
   # 入力と重みの積和計算
-  # 重みのメモリ  
+  # 重みのメモリ
   channel_w = output_size.times.map{ |i| mem_rom(typ, input_size, clk, rst, quantize(weights[i], typ, decimal_width), rinc: :rst, winc: :rst).(:"channel_w#{i}") }
 
   # 重みのRead用ポートの作成
@@ -49,28 +49,41 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   mem_file(typ, output_size, clk, rst, anum: :rst).(:channel_accum)
 
   accum = channel_accum.branch(:anum)
+  # accum_o = channel_accum.branch(:wnum)
+  # accum_i = channel_accum.branch(:rnum)
   
   result_mac = output_size.times.map{ |i| accum.wrap(i) }
+  # result_mac_o = output_size.times.map{ |i| accum_o.wrap(i) }
+  # result_mac_i = output_size.times.map{ |i| accum_i.wrap(i) }
   
   # 積和演算のモジュール
   # 入力のニューロンの数だけackを出力する
   mac_n1(typ, clk, req_mac, ack, reader_weights, reader_input, result_mac)
+  # mac_n1(typ, clk, req_mac, ack, reader_weights, reader_input, result_mac_o)
 
   # mac_n1のackのカウンタ
   mac_counter(input_size).(:counter).(clk, ack, rst, ack_mac)
   #---------------------------------------------------------------------------
   # バイアスの計算
   bias = quantize(bias, typ, decimal_width)
+  ## Gauthier: the content of the rom must be an array.
+  # channel_b = output_size.times.map{ |i| mem_rom(typ, 1, clk, rst, bias[i], rinc: :rst, winc: :rst).(:"channel_b#{i}") }
   channel_b = output_size.times.map{ |i| mem_rom(typ, 1, clk, rst, [bias[i]], rinc: :rst, winc: :rst).(:"channel_b#{i}") }
 
   mem_file(typ, output_size, clk, rst, rinc: :rst, winc: :rst, anum: :rst).(:channel_z)
 
   reader_bias = output_size.times.map{ |i| channel_b[i].branch(:raddr).wrap(0) }
   accessor_z = channel_z.branch(:anum)
+  # accessor_z_o = channel_z.branch(:wnum)
+  # accessor_z_i = channel_z.branch(:rnum)
   
   z = output_size.times.map{ |i| accessor_z.wrap(i) }
+  # z_o = output_size.times.map{ |i| accessor_z_o.wrap(i) }
+  # z_i = output_size.times.map{ |i| accessor_z_i.wrap(i) }
 
   add_n(typ, clk, ack_mac, ack_add, result_mac, reader_bias, z)
+  # add_n(typ, clk, ack_mac, ack_add, result_mac_i, reader_bias, z)
+  # add_n(typ, clk, ack_mac, ack_add, result_mac_i, reader_bias, z_o)
   #---------------------------------------------------------------------------
   # 活性化関数の適用
   value_z = output_size.times.map{ |i| typ.inner :"value_z#{i}"}
@@ -88,6 +101,7 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
     hif(ack_add) do
       output_size.times do |i|
         z[i].read(value_z[i]) { flag_z[i] <= 1 }
+        # z_i[i].read(value_z[i]) { flag_z[i] <= 1 }
       end
     end
     helse do

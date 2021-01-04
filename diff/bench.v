@@ -57,11 +57,12 @@ module _____00003aT0( );
    assign ram__outputs_00003a16_00003a_00003adbus__w = _00005e_00006011;
 
    initial begin
-      $monitor("t=%3d ack_network=%b x0=%b x1=%b y=%b",
+       $monitor("t=%3d ack_network=%b layer0.value_z0=%b layer0.value_z1=%b layer1.value_a0=%b mem=%b",
            $time,
            ack__network,
-           rom__inputs_00003a1_00003a_00003amem[0],
-           rom__inputs_00003a1_00003a_00003amem[1],
+           neural__network.layer0.value__z0,
+           neural__network.layer0.value__z1,
+           neural__network.layer1.value__a0,
            ram__outputs_00003a16_00003a_00003amem[0]);
 
       clk = 32'd0;
@@ -438,13 +439,7 @@ module _____00003aT0( );
 
       #10;
 
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
+      //// More
 
       clk = 32'd1;
 
@@ -477,54 +472,6 @@ module _____00003aT0( );
       clk = 32'd0;
 
       #10;
-
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
-
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
-
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
-
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
-
-      clk = 32'd1;
-
-      #10;
-
-      clk = 32'd0;
-
-      #10;
-
-      $finish;
-
-   end
-
-   initial begin
-      $dumpfile("nn.vcd");
-      $dumpvars(0, _____00003aT0);
    end
 
    always @( negedge clk ) begin
@@ -547,7 +494,7 @@ module _____00003aT0( );
 
       rom__inputs_00003a1_00003a_00003amem[32'd0] = 32'd16;
 
-      rom__inputs_00003a1_00003a_00003amem[32'd1] = 32'd16;
+      rom__inputs_00003a1_00003a_00003amem[32'd1] = 32'd0;
 
    end
 

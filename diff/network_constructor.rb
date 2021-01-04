@@ -36,15 +36,14 @@ system :network_constructor do |columns, functions, types, integer_width, decima
   # 隠れ層と出力層の数だけ宣言
   ack = neuron_columns.size.times.map{ |i| inner :"ack_#{i}"}  
 
-=begin   
-  par(clk.posedge) do
-    hif(rst) do
-      neuron_columns.size.times do |i|
-        ack[i] <= 0
-      end
-    end
-  end 
-=end
+  # Gauthier: those ack are rested elsewhere too.
+  # par(clk.posedge) do
+  #   hif(rst) do
+  #     neuron_columns.size.times do |i|
+  #       ack[i] <= 0
+  #     end
+  #   end
+  # end
   #---------------チャンネルの宣言-------------------
   # ニューラルネットワークへの入力を格納するメモリ
   mem_dual(types[0], columns[0], clk, rst, rinc: :rst, winc: :rst).(:channel_inputs)
@@ -64,6 +63,7 @@ system :network_constructor do |columns, functions, types, integer_width, decima
 
   # 出力値のR/W用ポート
   accessor_outputs = channel_outputs.branch(:anum)
+  # accessor_outputs = channel_outputs.branch(:wnum)
 
   # 出力値のRead用ポート
   reader_outputs = channel_outputs.branch(:rinc)
@@ -74,15 +74,20 @@ system :network_constructor do |columns, functions, types, integer_width, decima
   # ニューラルネットワークの出力値のR/W用ポート作成
   accessor_a = (neuron_columns.size - 1).times.map{ |i| channel_a[i].branch(:anum) }
   accessor_a << accessor_outputs
+  # accessor_a_o = (neuron_columns.size - 1).times.map{ |i| channel_a[i].branch(:wnum) }
+  # accessor_a_o << accessor_outputs
 
   # アクセスの固定化
   a = neuron_columns.size.times.map{ |i| neuron_columns[i].times.map{ |j| accessor_a[i].wrap(j) } }
+  # a_o = neuron_columns.size.times.map{ |i| neuron_columns[i].times.map{ |j| accessor_a_o[i].wrap(j) } }
   #---------------neurons_layerのインスタンス生成-------------------  
   neuron_columns.size.times do |i|
     if i == 0 then
       neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_inputs, a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, req, ack[i])
+      # neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_inputs, a_o[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, req, ack[i])
     else
       neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, ack[i-1], ack[i])
+      # neurons_layer(functions[i], types[i+1], integer_width, decimal_width, address_width, columns[i], columns[i+1], reader_a[i-1], a_o[i], weights[i], biases[i]).(:"layer#{i}").(clk, rst, ack[i-1], ack[i])
     end
   end
   
