@@ -31,7 +31,6 @@ system :neurons_layer do |func, typ, integer_width, decimal_width, address_width
   par(clk.posedge) do
     hif(rst) do
       ack <= 0
-      #ack_mac <= 0
       ack_add <= 0
     end    
   end
